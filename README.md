@@ -81,3 +81,7 @@ each([1, 5]) { item in
 NSLocalizedString(a, b) -> L(a)
 let dateFormatter = NSDateFormatter(dateFormat: "d EEEE MMMM yyyy")
 ```
+
+## Tests
+
+You can run Unit Tests using Xcode default behavior.
