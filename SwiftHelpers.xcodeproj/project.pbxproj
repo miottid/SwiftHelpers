@@ -9,9 +9,27 @@
 /* Begin PBXBuildFile section */
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0BF98EC1A667CFA0085ADA4 /* SwiftHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */; };
-		B0BF98F31A667CFA0085ADA4 /* DateHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */; };
-		B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */; };
+		B0BF98F31A667CFA0085ADA4 /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
+		B0BF98FE1A667D6C0085ADA4 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FC1A667D6C0085ADA4 /* NSDateExtension.swift */; };
 		B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */; };
+		B0BF99241A66C00B0085ADA4 /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99231A66C00B0085ADA4 /* NSTimerExtension.swift */; };
+		B0BF99251A66C00B0085ADA4 /* NSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99231A66C00B0085ADA4 /* NSTimerExtension.swift */; };
+		B0BF99271A66C0880085ADA4 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99261A66C0880085ADA4 /* ArrayExtension.swift */; };
+		B0BF99281A66C0880085ADA4 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99261A66C0880085ADA4 /* ArrayExtension.swift */; };
+		B0BF992A1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99291A66C0CA0085ADA4 /* NSDateFormatterExtension.swift */; };
+		B0BF992B1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99291A66C0CA0085ADA4 /* NSDateFormatterExtension.swift */; };
+		B0BF992D1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */; };
+		B0BF992E1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */; };
+		B0BF99301A66C1060085ADA4 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF992F1A66C1060085ADA4 /* IntExtension.swift */; };
+		B0BF99311A66C1060085ADA4 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF992F1A66C1060085ADA4 /* IntExtension.swift */; };
+		B0BF99331A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99321A66C12D0085ADA4 /* NSTimeIntervalExtension.swift */; };
+		B0BF99341A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99321A66C12D0085ADA4 /* NSTimeIntervalExtension.swift */; };
+		B0BF99361A66C1440085ADA4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99351A66C1440085ADA4 /* UIColorExtension.swift */; };
+		B0BF99371A66C1440085ADA4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99351A66C1440085ADA4 /* UIColorExtension.swift */; };
+		B0BF99391A66C2620085ADA4 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */; };
+		B0BF993A1A66C2620085ADA4 /* UIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */; };
+		B0BF993F1A66C3660085ADA4 /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */; };
+		B0BF99411A66C4510085ADA4 /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,10 +48,20 @@
 		B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHelpers.h; sourceTree = "<group>"; };
 		B0BF98EB1A667CFA0085ADA4 /* SwiftHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF98F11A667CFA0085ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTests.swift; sourceTree = "<group>"; };
-		B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateExtensionTests.swift; sourceTree = "<group>"; };
+		B0BF98FC1A667D6C0085ADA4 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelper.swift; sourceTree = "<group>"; };
 		B0BF991B1A6686F00085ADA4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B0BF99231A66C00B0085ADA4 /* NSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimerExtension.swift; sourceTree = "<group>"; };
+		B0BF99261A66C0880085ADA4 /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		B0BF99291A66C0CA0085ADA4 /* NSDateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtension.swift; sourceTree = "<group>"; };
+		B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		B0BF992F1A66C1060085ADA4 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		B0BF99321A66C12D0085ADA4 /* NSTimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimeIntervalExtension.swift; sourceTree = "<group>"; };
+		B0BF99351A66C1440085ADA4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenExtension.swift; sourceTree = "<group>"; };
+		B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
+		B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +107,15 @@
 			children = (
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
 				B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */,
-				B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */,
+				B0BF99261A66C0880085ADA4 /* ArrayExtension.swift */,
+				B0BF992F1A66C1060085ADA4 /* IntExtension.swift */,
+				B0BF98FC1A667D6C0085ADA4 /* NSDateExtension.swift */,
+				B0BF99231A66C00B0085ADA4 /* NSTimerExtension.swift */,
+				B0BF99291A66C0CA0085ADA4 /* NSDateFormatterExtension.swift */,
+				B0BF99321A66C12D0085ADA4 /* NSTimeIntervalExtension.swift */,
+				B0BF99351A66C1440085ADA4 /* UIColorExtension.swift */,
+				B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */,
+				B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
@@ -96,7 +132,9 @@
 		B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */,
+				B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */,
+				B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */,
+				B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
@@ -217,8 +255,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */,
+				B0BF992D1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */,
+				B0BF98FE1A667D6C0085ADA4 /* NSDateExtension.swift in Sources */,
+				B0BF99331A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */,
+				B0BF99301A66C1060085ADA4 /* IntExtension.swift in Sources */,
+				B0BF99241A66C00B0085ADA4 /* NSTimerExtension.swift in Sources */,
+				B0BF99361A66C1440085ADA4 /* UIColorExtension.swift in Sources */,
 				B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */,
+				B0BF992A1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */,
+				B0BF99271A66C0880085ADA4 /* ArrayExtension.swift in Sources */,
+				B0BF99391A66C2620085ADA4 /* UIScreenExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,7 +272,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BF98F31A667CFA0085ADA4 /* DateHelperTests.swift in Sources */,
+				B0BF992E1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */,
+				B0BF993A1A66C2620085ADA4 /* UIScreenExtension.swift in Sources */,
+				B0BF99341A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */,
+				B0BF99411A66C4510085ADA4 /* IntExtensionTests.swift in Sources */,
+				B0BF993F1A66C3660085ADA4 /* ArrayExtensionTests.swift in Sources */,
+				B0BF99281A66C0880085ADA4 /* ArrayExtension.swift in Sources */,
+				B0BF99371A66C1440085ADA4 /* UIColorExtension.swift in Sources */,
+				B0BF992B1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */,
+				B0BF99251A66C00B0085ADA4 /* NSTimerExtension.swift in Sources */,
+				B0BF98F31A667CFA0085ADA4 /* NSDateExtensionTests.swift in Sources */,
+				B0BF99311A66C1060085ADA4 /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

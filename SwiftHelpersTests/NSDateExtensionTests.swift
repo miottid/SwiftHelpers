@@ -7,12 +7,10 @@
 //
 
 import UIKit
-
 import XCTest
-
 import SwiftHelpers
 
-class DateHelperTests: XCTestCase {
+class NSDateExtensionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
