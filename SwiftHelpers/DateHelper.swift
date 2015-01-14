@@ -85,25 +85,25 @@ public class TimeInterval {
     public var years  : Int = 0
     
     ///Create an empty TimeInterval
-    init(){}
+    public init(){}
     
     ///Create a TimeInterval with the specified seconds
-    init(seconds: Int) { self.seconds = seconds }
+    public init(seconds: Int) { self.seconds = seconds }
     
     ///Create a TimeInterval with the specified minutes
-    init(minutes: Int) { self.minutes = minutes }
+    public init(minutes: Int) { self.minutes = minutes }
     
     ///Create a TimeInterval with the specified hours
-    init(hours: Int) { self.hours = hours }
+    public init(hours: Int) { self.hours = hours }
     
     ///Create a TimeInterval with the specified days
-    init(days: Int) { self.days = days }
+    public init(days: Int) { self.days = days }
     
     ///Create a TimeInterval with the specified months
-    init(months: Int) { self.months = months }
+    public init(months: Int) { self.months = months }
     
     ///Create a TimeInterval with the specified years
-    init(years: Int) { self.years = years }
+    public init(years: Int) { self.years = years }
     
     ///Create a new date by applying the TimeInterval
     ///

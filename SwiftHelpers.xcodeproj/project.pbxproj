@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0BF98EC1A667CFA0085ADA4 /* SwiftHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */; };
-		B0BF98F31A667CFA0085ADA4 /* SwiftHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* SwiftHelpersTests.swift */; };
+		B0BF98F31A667CFA0085ADA4 /* DateHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */; };
 		B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */; };
 		B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */; };
-		B0BF991C1A6686F00085ADA4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B0BF991B1A6686F00085ADA4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +30,7 @@
 		B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHelpers.h; sourceTree = "<group>"; };
 		B0BF98EB1A667CFA0085ADA4 /* SwiftHelpersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftHelpersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF98F11A667CFA0085ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0BF98F21A667CFA0085ADA4 /* SwiftHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHelpersTests.swift; sourceTree = "<group>"; };
+		B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTests.swift; sourceTree = "<group>"; };
 		B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelper.swift; sourceTree = "<group>"; };
 		B0BF991B1A6686F00085ADA4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -97,7 +96,7 @@
 		B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0BF98F21A667CFA0085ADA4 /* SwiftHelpersTests.swift */,
+				B0BF98F21A667CFA0085ADA4 /* DateHelperTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
@@ -218,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BF991C1A6686F00085ADA4 /* README.md in Sources */,
 				B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */,
 				B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */,
 			);
@@ -228,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BF98F31A667CFA0085ADA4 /* SwiftHelpersTests.swift in Sources */,
+				B0BF98F31A667CFA0085ADA4 /* DateHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
