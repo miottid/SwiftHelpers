@@ -1,8 +1,8 @@
 
 ## Features
 
-- [x] NSDate comparison operator
-- [x] ActiveRecord kind of dates
+- [x] NSDate comparison operators
+- [x] NSDate like ActiveRecord
 - [x] Various helpers
 
 ## Requirements
@@ -25,3 +25,46 @@ _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Sw
 7. Click on the `+` button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `SwiftHelpers.framework`.
 
 ---
+
+## Usage
+
+_Everything is documented, check it out_
+
+### NSDate comparison operators
+
+```swift
+import SwiftHelpers
+
+let date1 = ...
+let date2 = ...
+
+if date1 > date2 {
+  println("date1 > date2")
+}
+
+if date1 < date2 {
+  println("date1 < date2")
+}
+
+if date1 <= date2 {
+  println("date1 <= date2")
+}
+
+....
+```
+
+## NSDate like ActiveRecord
+
+```swift
+let yesterday = 1.day.ago
+let lastWeek = 1.week.ago
+let firstJanuary = 1.january
+let inTwoDays = NSDate() + 2.days
+...
+```
+
+## Various helpers
+
+```
+NSLocalizedString(a, b) -> L(a)
+```
