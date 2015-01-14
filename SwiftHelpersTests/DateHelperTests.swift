@@ -330,4 +330,53 @@ class DateHelperTests: XCTestCase {
         XCTAssert(anotherInterval.seconds == -30, "anotherInterval.seconds == -30")
     }
     
+    ///This whole thing is using this calendar, use `setDateHelperCalendar:`
+    private var CurrentCalendar = NSCalendar.currentCalendar()
+    
+    ///Use this var when copying dates from components
+    private let CalendarAllUnits =
+        NSCalendarUnit.CalendarUnitEra      |
+        NSCalendarUnit.CalendarUnitYear     |
+        NSCalendarUnit.CalendarUnitMonth    |
+        NSCalendarUnit.CalendarUnitDay      |
+        NSCalendarUnit.CalendarUnitHour     |
+        NSCalendarUnit.CalendarUnitMinute   |
+        NSCalendarUnit.CalendarUnitSecond   |
+        NSCalendarUnit.CalendarUnitCalendar |
+        NSCalendarUnit.CalendarUnitTimeZone
+    
+    func testDateOfYear() {
+        let date = 16.october.of(1986)
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: date)
+        XCTAssert(comps.day == 16, "comps.day == 16")
+        XCTAssert(comps.month == 10, "comps.month == 10")
+        XCTAssert(comps.year == 1986, "comps.year == 1986")
+        let of2014 = date.of(2014)
+        let compsOf2014 = CurrentCalendar.components(CalendarAllUnits, fromDate: of2014)
+        XCTAssert(compsOf2014.year == 2014, "comps.year == 2014")
+    }
+    
+    func testIsToday() {
+        let now = NSDate()
+        XCTAssert(now.isToday, "now.isToday")
+    }
+    
+    func testBeginningOfDay() {
+        let now = NSDate()
+        let begin = now.beginningOfDay
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: begin)
+        XCTAssert(comps.hour == 0, "comps.hour == 0")
+        XCTAssert(comps.minute == 0, "comps.minute == 0")
+        XCTAssert(comps.second == 0, "comps.second == 0")
+    }
+    
+    func testEndOfDay() {
+        let now = NSDate()
+        let begin = now.endOfDay
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: begin)
+        XCTAssert(comps.hour == 23, "comps.hour == 23")
+        XCTAssert(comps.minute == 59, "comps.minute == 59")
+        XCTAssert(comps.second == 59, "comps.second == 59")
+    }
+    
 }
