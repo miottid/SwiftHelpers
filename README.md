@@ -1,8 +1,12 @@
 
 ## Features
 
-- [x] NSDate comparison operators
-- [x] NSDate like ActiveRecord
+- [x] NSDate extension (like ActiveRecord)
+- [x] NSDateFormatter convenience
+- [x] Array.each
+- [x] Int / NSTimeInterval `.every`, a block based for NSTimer
+- [x] UIColor helpers
+- [x] UIView helpers
 - [x] Various helpers
 
 ## Requirements
@@ -12,7 +16,7 @@
 
 ## Installation
 
-> For application targets that do not support embedded frameworks, such as iOS 7, SwiftHelpers can be integrated by including the `DateHelper.swift` and `SwiftHelper.swift` source file directly, wrapping the top-level types in `struct SwiftHelpers` to simulate a namespace. Yes, this sucks.
+> For application targets that do not support embedded frameworks, such as iOS 7, SwiftHelpers can be integrated by including the `SwiftHelpers` folder directly, wrapping the top-level types in `struct SwiftHelpers` to simulate a namespace. Yes, this sucks.
 
 _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependency management, using SwiftHelpers in your project requires the following steps:_
 
