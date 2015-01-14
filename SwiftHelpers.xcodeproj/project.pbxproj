@@ -12,6 +12,7 @@
 		B0BF98F31A667CFA0085ADA4 /* SwiftHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* SwiftHelpersTests.swift */; };
 		B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */; };
 		B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */; };
+		B0BF991C1A6686F00085ADA4 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B0BF991B1A6686F00085ADA4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		B0BF98F21A667CFA0085ADA4 /* SwiftHelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftHelpersTests.swift; sourceTree = "<group>"; };
 		B0BF98FC1A667D6C0085ADA4 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		B0BF98FD1A667D6C0085ADA4 /* SwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftHelper.swift; sourceTree = "<group>"; };
+		B0BF991B1A6686F00085ADA4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		B0BF98D61A667CF90085ADA4 = {
 			isa = PBXGroup;
 			children = (
+				B0BF991B1A6686F00085ADA4 /* README.md */,
 				B0BF98E21A667CFA0085ADA4 /* SwiftHelpers */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E11A667CFA0085ADA4 /* Products */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BF991C1A6686F00085ADA4 /* README.md in Sources */,
 				B0BF98FE1A667D6C0085ADA4 /* DateHelper.swift in Sources */,
 				B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */,
 			);
