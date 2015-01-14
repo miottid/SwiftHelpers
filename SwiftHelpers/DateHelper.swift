@@ -361,8 +361,8 @@ extension NSDate {
         return self
     }
     
-    ///Create a new date representing the nearest day/month of the current
-    ///
+    ///Create a new date representing the next day/month of the
+    ///current date
     ///For exemple:
     /// let dateOfBirth = 16.october.of(1986)
     /// let nextBirthday = dateOfBirth.next
