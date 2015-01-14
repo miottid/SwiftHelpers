@@ -1,0 +1,484 @@
+//
+//  DateHelper.swift
+//  SwiftHelper
+//
+//  Created by David Miotti on 06/01/2015.
+//  Copyright (c) 2015 Wopata. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - NSDate comparison
+
+public func > (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) == .OrderedDescending
+}
+
+public func < (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) == .OrderedAscending
+}
+
+public func == (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) == .OrderedSame
+}
+
+public func != (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) != .OrderedSame
+}
+
+public func >= (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs > rhs || lhs == rhs
+}
+
+public func <= (lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs < rhs || lhs == rhs
+}
+
+// MARK: - Global vars
+
+///This whole thing is using this calendar, use `setDateHelperCalendar:`
+private var CurrentCalendar = NSCalendar.currentCalendar()
+
+///Use this var when copying dates from components
+private let CalendarAllUnits =
+    NSCalendarUnit.CalendarUnitEra      |
+    NSCalendarUnit.CalendarUnitYear     |
+    NSCalendarUnit.CalendarUnitMonth    |
+    NSCalendarUnit.CalendarUnitDay      |
+    NSCalendarUnit.CalendarUnitHour     |
+    NSCalendarUnit.CalendarUnitMinute   |
+    NSCalendarUnit.CalendarUnitSecond   |
+    NSCalendarUnit.CalendarUnitCalendar |
+    NSCalendarUnit.CalendarUnitTimeZone
+
+// MARK: - Private helpers
+
+///Create a date with specified day and month in the current year
+///
+///:param: day The day number in the month
+///:param: month The month number starting from 1
+///
+///:returns: A NSDate starting at the beginning of the day
+private func dateWithDayAndMonth(day: Int, month: Int) -> NSDate {
+    let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: NSDate())
+    comps.month = month
+    comps.day = day
+    comps.hour = 0
+    comps.minute = 0
+    comps.second = 0
+    if let date = CurrentCalendar.dateFromComponents(comps) {
+        return date
+    }
+    return NSDate()
+}
+
+// MARK: - TimeInterval Class
+
+///A TimeInterval is an abstract representation of a period
+///Because month and year can be express directly in seconds
+public class TimeInterval {
+    public var seconds: Int = 0
+    public var minutes: Int = 0
+    public var hours  : Int = 0
+    public var months : Int = 0
+    public var days   : Int = 0
+    public var years  : Int = 0
+    
+    ///Create an empty TimeInterval
+    init(){}
+    
+    ///Create a TimeInterval with the specified seconds
+    init(seconds: Int) { self.seconds = seconds }
+    
+    ///Create a TimeInterval with the specified minutes
+    init(minutes: Int) { self.minutes = minutes }
+    
+    ///Create a TimeInterval with the specified hours
+    init(hours: Int) { self.hours = hours }
+    
+    ///Create a TimeInterval with the specified days
+    init(days: Int) { self.days = days }
+    
+    ///Create a TimeInterval with the specified months
+    init(months: Int) { self.months = months }
+    
+    ///Create a TimeInterval with the specified years
+    init(years: Int) { self.years = years }
+    
+    ///Create a new date by applying the TimeInterval
+    ///
+    ///:param: fromNow false when you want to remove the time interval from current, true otherwise
+    ///
+    ///:returns: A new NSDate by applying the time offset
+    private func offsetDate(fromNow: Bool) -> NSDate {
+        let coef = fromNow ? 1 : -1
+        let offsetComponents = NSDateComponents()
+        offsetComponents.second = coef * seconds
+        offsetComponents.minute = coef * minutes
+        offsetComponents.hour   = coef * hours
+        offsetComponents.day    = coef * days
+        offsetComponents.month  = coef * months
+        offsetComponents.year   = coef * years
+        if let date = CurrentCalendar.dateByAddingComponents(offsetComponents, toDate: NSDate(), options: NSCalendarOptions(0)) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///Create a new date by applying the TimeInterval to now in the past
+    ///
+    ///:returns: A new NSDate by applying the time offset
+    public var ago: NSDate {
+        return offsetDate(false)
+    }
+    
+    ///Create a new date by applying the TimeInterval to now in the future
+    ///
+    ///:returns: A new NSDate by applying the time offset
+    public var fromNow: NSDate {
+        return offsetDate(true)
+    }
+    
+    ///Translate the TimeInterval in seconds
+    ///
+    ///:returns: The total number of seconds this interval contains
+    public var inSeconds: NSTimeInterval {
+        var interval: NSTimeInterval = 0
+        interval += Double(seconds)
+        interval += Double(minutes) * 60.0
+        interval += Double(hours)   * 60.0 * 60.0
+        interval += Double(days)    * 60.0 * 60.0 * 24.0
+        interval += Double(months)  * 60.0 * 60.0 * 24.0 * 31.0
+        interval += Double(years)   * 60.0 * 60.0 * 24.0 * 31.0 * 12.0
+        return interval
+    }
+    
+    ///Translate the TimeInterval in minutes
+    ///
+    ///:returns: The total number of minutes this interval contains
+    public var inMinutes: NSTimeInterval {
+        var interval: NSTimeInterval = 0
+        interval += Double(seconds) / 60.0
+        interval += Double(minutes)
+        interval += Double(hours)   * 60.0
+        interval += Double(days)    * 60.0 * 24.0
+        interval += Double(months)  * 60.0 * 24.0 * 31.0
+        interval += Double(years)   * 60.0 * 24.0 * 31.0 * 12.0
+        return interval
+    }
+    
+    ///Translate the TimeInterval in hours
+    ///
+    ///:returns: The total number of hours this interval contains
+    public var inHours: NSTimeInterval {
+        var interval: NSTimeInterval = 0
+        interval += Double(seconds) / 60.0 / 60.0
+        interval += Double(minutes) / 60.0
+        interval += Double(hours)
+        interval += Double(days)    * 24.0
+        interval += Double(months)  * 24.0 * 31.0
+        interval += Double(years)   * 24.0 * 31.0 * 12.0
+        return interval
+    }
+    
+    ///Translate the TimeInterval in hours
+    ///
+    ///:returns: The total number of days this interval contains
+    public var inDays: NSTimeInterval {
+        var interval: NSTimeInterval = 0
+        interval += Double(seconds) / 60.0 / 60.0 / 24.0
+        interval += Double(minutes) / 60.0 / 24.0
+        interval += Double(hours)   / 24.0
+        interval += Double(days)
+        interval += Double(months)  * 31.0
+        interval += Double(years)   * 31.0 * 12.0
+        return interval
+    }
+    
+}
+
+// MARK: TimeInterval Operators
+
+// Allow operations between NSDate with NSTimeInterval
+public func + (lhs: NSDate, rhs: NSTimeInterval) -> NSDate {
+    return lhs.dateByAddingTimeInterval(rhs)
+}
+
+public func - (lhs: NSDate, rhs: NSTimeInterval) -> NSDate {
+    return lhs.dateByAddingTimeInterval(-rhs)
+}
+
+public func += (inout lhs: NSDate, rhs: NSTimeInterval) {
+    lhs = NSDate(timeIntervalSince1970: lhs.timeIntervalSince1970 + rhs)
+}
+
+public func -= (inout lhs: NSDate, rhs: NSTimeInterval) {
+    lhs = NSDate(timeIntervalSince1970: lhs.timeIntervalSince1970 - rhs)
+}
+
+// Allow operation between NSDate and TimeInterval
+public func + (lhs: NSDate, rhs: TimeInterval) -> NSDate {
+    return lhs + rhs.inSeconds
+}
+
+public func - (lhs: NSDate, rhs: TimeInterval) -> NSDate {
+    return lhs - rhs.inSeconds
+}
+
+public func += (inout lhs: NSDate, rhs: TimeInterval) {
+    lhs = lhs + rhs
+}
+
+public func -= (inout lhs: NSDate, rhs: TimeInterval) {
+    lhs = lhs - rhs
+}
+
+public func + (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
+    let timeInterval = TimeInterval()
+    [lhs, rhs].each { item in
+        timeInterval.seconds += item.seconds
+        timeInterval.minutes += item.minutes
+        timeInterval.hours   += item.hours
+        timeInterval.days    += item.days
+        timeInterval.months  += item.months
+        timeInterval.years   += item.years
+    }
+    return timeInterval
+}
+
+public func - (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
+    let timeInterval = TimeInterval()
+    [lhs, rhs].each { item in
+        timeInterval.seconds -= item.seconds
+        timeInterval.minutes -= item.minutes
+        timeInterval.hours   -= item.hours
+        timeInterval.days    -= item.days
+        timeInterval.months  -= item.months
+        timeInterval.years   -= item.years
+    }
+    return timeInterval
+}
+
+public func += (inout lhs: TimeInterval, rhs: TimeInterval) {
+    lhs = lhs + rhs
+}
+
+public func -= (inout lhs: TimeInterval, rhs: TimeInterval) {
+    lhs = lhs - rhs
+}
+
+public func == (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+    return lhs.inSeconds == rhs.inSeconds
+}
+
+public func > (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+    return lhs.inSeconds > rhs.inSeconds
+}
+
+public func < (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+    return lhs.inSeconds < rhs.inSeconds
+}
+
+public func >= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+    return lhs.inSeconds >= rhs.inSeconds
+}
+
+public func <= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+    return lhs.inSeconds <= rhs.inSeconds
+}
+
+// MARK: - Int Extension
+
+extension Int {
+    ///Create a TimeInterval with specified second
+    public var second : TimeInterval { return TimeInterval(seconds: self) }
+    ///Create a TimeInterval with specified seconds
+    public var seconds: TimeInterval { return second }
+    ///Create a TimeInterval with specified minute
+    public var minute : TimeInterval { return TimeInterval(minutes: self) }
+    ///Create a TimeInterval with specified minutes
+    public var minutes: TimeInterval { return minute }
+    ///Create a TimeInterval with specified hour
+    public var hour   : TimeInterval { return TimeInterval(hours: self) }
+    ///Create a TimeInterval with specified hours
+    public var hours  : TimeInterval { return hour }
+    ///Create a TimeInterval with specified day
+    public var day    : TimeInterval { return TimeInterval(days: self) }
+    ///Create a TimeInterval with specified days
+    public var days   : TimeInterval { return day }
+    ///Create a TimeInterval with specified month
+    public var month  : TimeInterval { return TimeInterval(months: self) }
+    ///Create a TimeInterval with specified months
+    public var months : TimeInterval { return month }
+    ///Create a TimeInterval with specified year
+    public var year   : TimeInterval { return TimeInterval(years: self) }
+    ///Create a TimeInterval with specified years
+    public var years  : TimeInterval { return year }
+    
+    ///Create a NSDate with the specified day of january in the current year
+    public var january  : NSDate { return dateWithDayAndMonth(self, 1) }
+    ///Create a NSDate with the specified day of febuary in the current year
+    public var febuary  : NSDate { return dateWithDayAndMonth(self, 2) }
+    ///Create a NSDate with the specified day of march in the current year
+    public var march    : NSDate { return dateWithDayAndMonth(self, 3) }
+    ///Create a NSDate with the specified day of april in the current year
+    public var april    : NSDate { return dateWithDayAndMonth(self, 4) }
+    ///Create a NSDate with the specified day of may in the current year
+    public var may      : NSDate { return dateWithDayAndMonth(self, 5) }
+    ///Create a NSDate with the specified day of june in the current year
+    public var june     : NSDate { return dateWithDayAndMonth(self, 6) }
+    ///Create a NSDate with the specified day of july in the current year
+    public var july     : NSDate { return dateWithDayAndMonth(self, 7) }
+    ///Create a NSDate with the specified day of august in the current year
+    public var august   : NSDate { return dateWithDayAndMonth(self, 8) }
+    ///Create a NSDate with the specified day of september in the current year
+    public var september: NSDate { return dateWithDayAndMonth(self, 9) }
+    ///Create a NSDate with the specified day of october in the current year
+    public var october  : NSDate { return dateWithDayAndMonth(self, 10) }
+    ///Create a NSDate with the specified day of november in the current year
+    public var november : NSDate { return dateWithDayAndMonth(self, 11) }
+    ///Create a NSDate with the specified day of december in the current year
+    public var december : NSDate { return dateWithDayAndMonth(self, 12) }
+}
+
+// MARK: - Date Extension
+
+extension NSDate {
+    ///Create a new date representing the middle of the day (12:00 PM)
+    ///
+    ///:returns: A new NSDate representing the middle of the day
+    public var midday: NSDate {
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.hour = 12
+        comps.minute = 0
+        comps.second = 0
+        return self
+    }
+    
+    ///Create a new date representing the end of the current hour
+    ///
+    ///:returns: A new NSDate representing the end of the current hour
+    public var endOfHour: NSDate {
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.minute = 59
+        comps.second = 59
+        return self
+    }
+    
+    ///Create a new date representing the nearest day/month of the current
+    ///
+    ///For exemple:
+    /// let dateOfBirth = 16.october.of(1986)
+    /// let nextBirthday = dateOfBirth.next
+    ///
+    ///:returns: A new NSDate representing the nearest day/month
+    public var next: NSDate {
+        if self > NSDate() {
+            return self
+        }
+        let nowComps = CurrentCalendar.components(NSCalendarUnit.YearCalendarUnit, fromDate: NSDate())
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.year = nowComps.year + 1
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///Create a new date 7 days later than the current
+    ///
+    ///:returns: A new NSDate by adding 7 days
+    public var nextWeek: NSDate {
+        if self > NSDate() {
+            return self
+        }
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.day += 7
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///Create a new date at the beginning of the day
+    ///
+    ///:returns: A NSDate with hour, minute and second set to 0
+    public var beginningOfDay: NSDate {
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.hour = 0
+        comps.minute = 0
+        comps.second = 0
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///Create a new date at the end of the day
+    ///
+    ///:returns: A NSDate with hour, minute and second set to 23:59:59
+    public var endOfDay: NSDate {
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.hour = 23
+        comps.minute = 59
+        comps.second = 59
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///Check if the current date is in today time range
+    ///
+    ///:returns: True is the date is in today range
+    public var isToday: Bool {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.EraCalendarUnit | .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit, fromDate: NSDate())
+        let otherComponents = calendar.components(.EraCalendarUnit | .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit, fromDate: self)
+        if let today = calendar.dateFromComponents(components) {
+            if let other = calendar.dateFromComponents(otherComponents) {
+                return today.isEqualToDate(other)
+            }
+        }
+        return false
+    }
+    
+    ///Create a date with the specified year
+    ///
+    ///:param: year The year the new date should be of
+    ///
+    ///:returns: A NSDate with the newly specifed year
+    public func of(year: Int) -> NSDate {
+        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
+        comps.year = year
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return NSDate()
+    }
+    
+    ///The number of days between the current and provided date
+    ///
+    ///:param: the date to compare
+    ///
+    ///:returns: The number of days
+    public func numberOfDays(nextDate: NSDate) -> Int? {
+        let calendar = NSCalendar.currentCalendar()
+        
+        var fromDate: NSDate?
+        var toDate: NSDate?
+        
+        calendar.rangeOfUnit(.DayCalendarUnit, startDate: &fromDate, interval: nil, forDate: self)
+        calendar.rangeOfUnit(.DayCalendarUnit, startDate: &toDate, interval: nil, forDate: nextDate)
+    
+        if let fd = fromDate {
+            if let td = toDate {
+                let components = calendar.components(.DayCalendarUnit, fromDate: fd, toDate: td, options: nil)
+                return components.day
+            }
+        }
+        
+        return nil
+    }
+    
+}
