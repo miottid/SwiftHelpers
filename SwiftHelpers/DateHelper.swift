@@ -235,27 +235,23 @@ public func -= (inout lhs: NSDate, rhs: TimeInterval) {
 
 public func + (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
     let timeInterval = TimeInterval()
-    [lhs, rhs].each { item in
-        timeInterval.seconds += item.seconds
-        timeInterval.minutes += item.minutes
-        timeInterval.hours   += item.hours
-        timeInterval.days    += item.days
-        timeInterval.months  += item.months
-        timeInterval.years   += item.years
-    }
+    timeInterval.seconds = lhs.seconds + rhs.seconds
+    timeInterval.minutes = lhs.minutes + rhs.minutes
+    timeInterval.hours   = lhs.hours + rhs.hours
+    timeInterval.days    = lhs.days + rhs.days
+    timeInterval.months  = lhs.months + rhs.months
+    timeInterval.years   = lhs.years + rhs.years
     return timeInterval
 }
 
 public func - (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
     let timeInterval = TimeInterval()
-    [lhs, rhs].each { item in
-        timeInterval.seconds -= item.seconds
-        timeInterval.minutes -= item.minutes
-        timeInterval.hours   -= item.hours
-        timeInterval.days    -= item.days
-        timeInterval.months  -= item.months
-        timeInterval.years   -= item.years
-    }
+    timeInterval.seconds = lhs.seconds - rhs.seconds
+    timeInterval.minutes = lhs.minutes - rhs.minutes
+    timeInterval.hours   = lhs.hours - rhs.hours
+    timeInterval.days    = lhs.days - rhs.days
+    timeInterval.months  = lhs.months - rhs.months
+    timeInterval.years   = lhs.years - rhs.years
     return timeInterval
 }
 
@@ -458,6 +454,8 @@ extension NSDate {
     }
     
     ///The number of days between the current and provided date
+    ///This method return the number of real days between the current
+    ///date and the provided one. It does not use 24 hours period to check.
     ///
     ///:param: the date to compare
     ///

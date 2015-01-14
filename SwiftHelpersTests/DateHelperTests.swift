@@ -327,7 +327,7 @@ class DateHelperTests: XCTestCase {
         XCTAssert(anotherInterval.days == -10, "anotherInterval.days == -10")
         XCTAssert(anotherInterval.hours == -3, "anotherInterval.hours == -3")
         XCTAssert(anotherInterval.minutes == -37, "anotherInterval.minutes == -37")
-        XCTAssert(anotherInterval.seconds == -20, "anotherInterval.seconds == -20")
+        XCTAssert(anotherInterval.seconds == -30, "anotherInterval.seconds == -30")
     }
     
 }
