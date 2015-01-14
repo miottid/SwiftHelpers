@@ -35,8 +35,8 @@ _Everything is documented, check it out_
 ```swift
 import SwiftHelpers
 
-let date1 = ...
-let date2 = ...
+let date1 = NSDate()
+let date2 = date1.dateByAddingTimeInterval(10) // 10 seconds later
 
 if date1 > date2 {
   println("date1 > date2")
@@ -49,22 +49,35 @@ if date1 < date2 {
 if date1 <= date2 {
   println("date1 <= date2")
 }
-
 ....
 ```
 
 ## NSDate like ActiveRecord
 
 ```swift
+import SwiftHelpers
+
 let yesterday = 1.day.ago
 let lastWeek = 1.week.ago
 let firstJanuary = 1.january
 let inTwoDays = NSDate() + 2.days
+let bornDate = 16.october.of(1986)
+let nextBirthDay = bornDate.next
+let tenSecondsLater = 10.seconds.fromNow
+let laterOn = NSDate() + 1.month + 1.day + 10.seconds
+each([1, 5]) { item in
+  let number = item as Int
+  ...
+}
+10.each { number in
+  let nextNumber = number + 3
+}
 ...
 ```
 
 ## Various helpers
 
-```
+```swift
 NSLocalizedString(a, b) -> L(a)
+let dateFormatter = NSDateFormatter(dateFormat: "d EEEE MMMM yyyy")
 ```

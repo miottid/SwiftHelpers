@@ -31,6 +31,8 @@ public func P(string: String) {
     #endif
 }
 
+///Loop through each item of the provided array
+///:params: array, the Array to loop from
 public func each(array: NSArray, fn: ((AnyObject) -> ())) {
     for item in array {
         fn(item)
@@ -38,6 +40,7 @@ public func each(array: NSArray, fn: ((AnyObject) -> ())) {
 }
 
 ///Get the current version of the app
+///:returns: A string representing the version of the app {CFBundleShortVersionString}.{CFBundleVersion}
 public func appVersion() -> String {
     let mainBundle = NSBundle.mainBundle()
     if let bundleDictionary = mainBundle.infoDictionary {
