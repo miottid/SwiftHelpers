@@ -44,6 +44,14 @@ extension NSTimer {
         return timer
     }
     
+    public class func scheduledTimerWithTimeInterval(interval: NSTimeInterval, repeats: Bool, handler: NSTimer! -> Void) -> NSTimer {
+        let fireDate = interval + CFAbsoluteTimeGetCurrent()
+        let repeatInterval = repeats ? interval : 0
+        let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, repeatInterval, 0, 0, handler)
+        CFRunLoopAddTimer(CFRunLoopGetCurrent(), timer, kCFRunLoopCommonModes)
+        return timer
+    }
+    
 }
 
 extension NSTimeInterval {
