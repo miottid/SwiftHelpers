@@ -16,6 +16,12 @@
 
 ## Installation
 
+> Cocoapods 0.36.0.beta.1 (a pre-release version) now support Swift frameworks, thus allows you to add SwiftHelpers to your project:
+
+```
+pod 'SwiftHelpers', :git => "https://github.com/dmiotti/SwiftHelpers.git"
+```
+
 > For application targets that do not support embedded frameworks, such as iOS 7, SwiftHelpers can be integrated by including the `SwiftHelpers` folder directly, wrapping the top-level types in `struct SwiftHelpers` to simulate a namespace. Yes, this sucks.
 
 _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependency management, using SwiftHelpers in your project requires the following steps:_
