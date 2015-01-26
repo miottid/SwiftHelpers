@@ -367,4 +367,23 @@ class NSDateExtensionTests: XCTestCase {
         XCTAssert(comps.second == 59, "comps.second == 59")
     }
     
+    func testNextHour() {
+        let testedDate = NSDate()
+        let nextHour = testedDate.nextHour
+        let unitFlags =
+            NSCalendarUnit.CalendarUnitEra      |
+            NSCalendarUnit.CalendarUnitYear     |
+            NSCalendarUnit.CalendarUnitMonth    |
+            NSCalendarUnit.CalendarUnitDay      |
+            NSCalendarUnit.CalendarUnitHour     |
+            NSCalendarUnit.CalendarUnitMinute   |
+            NSCalendarUnit.CalendarUnitSecond   |
+            NSCalendarUnit.CalendarUnitCalendar |
+            NSCalendarUnit.CalendarUnitTimeZone
+        let calendar = NSCalendar.currentCalendar()
+        let testedComps = calendar.components(unitFlags, fromDate: testedDate)
+        let nextHourComps = calendar.components(unitFlags, fromDate: nextHour)
+        XCTAssertEqual(testedComps.hour + 1, nextHourComps.hour, "(testedComps.hour + 1) == nextHourComps.hour")
+    }
+    
 }

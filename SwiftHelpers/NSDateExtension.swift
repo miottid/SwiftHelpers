@@ -381,7 +381,7 @@ extension NSDate {
         return NSDate()
     }
     
-    ///Create a new date 7 days later than the current
+    ///Create a new date 7 days later than the current, in the current calendar
     ///
     ///:returns: A new NSDate by adding 7 days
     public var nextWeek: NSDate {
@@ -396,7 +396,7 @@ extension NSDate {
         return NSDate()
     }
     
-    ///Create a new date at the beginning of the day
+    ///Create a new date at the beginning of the day, in the current calendar
     ///
     ///:returns: A NSDate with hour, minute and second set to 0
     public var beginningOfDay: NSDate {
@@ -410,7 +410,7 @@ extension NSDate {
         return NSDate()
     }
     
-    ///Create a new date at the end of the day
+    ///Create a new date at the end of the day, in the current calendar
     ///
     ///:returns: A NSDate with hour, minute and second set to 23:59:59
     public var endOfDay: NSDate {
@@ -422,6 +422,25 @@ extension NSDate {
             return date
         }
         return NSDate()
+    }
+    
+    ///Create a new NSDate at the next hour, in the current calendar (ceil)
+    ///
+    ///:returns: The new created date with 0 minutes and 0 seconds, returns the same date if a fail occur
+    public var nextHour: NSDate {
+        let unitFlags =
+            NSCalendarUnit.CalendarUnitEra      |
+            NSCalendarUnit.CalendarUnitYear     |
+            NSCalendarUnit.CalendarUnitMonth    |
+            NSCalendarUnit.CalendarUnitDay      |
+            NSCalendarUnit.CalendarUnitHour
+        let calendar = NSCalendar.currentCalendar()
+        let comps = calendar.components(unitFlags, fromDate: self)
+        comps.hour += 1
+        if let date = calendar.dateFromComponents(comps) {
+            return date
+        }
+        return self
     }
     
     ///Check if the current date is in today time range
@@ -439,7 +458,7 @@ extension NSDate {
         return false
     }
     
-    ///Create a date with the specified year
+    ///Create a date with the specified year, in the current calendar
     ///
     ///:param: year The year the new date should be of
     ///
