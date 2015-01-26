@@ -21,11 +21,15 @@ public func UIColorFromHex(rgbValue: UInt32) -> UIColor {
 
 extension UIColor {
     
-    convenience init(rgbValue: UInt32) {
+    public convenience init(rgbValue: UInt32) {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         self.init(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
+    public convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+        self.init(red:r/255.0, green:g/255.0, blue:b/255.0, alpha:a)
     }
     
     public func blendWithColor(color: UIColor, alpha: Float) -> UIColor {

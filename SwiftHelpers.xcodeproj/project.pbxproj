@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
+		B066D6861A7646900069C258 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		B075FF6E1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
 		B075FF6F1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
 		B075FF711A6D10D200ACD798 /* ComparisonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
+		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelper.swift; sourceTree = "<group>"; };
 		B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelperTests.swift; sourceTree = "<group>"; };
 		B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */,
 				B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */,
 				B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */,
+				B066D6851A7646900069C258 /* UIColorExtensionTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
@@ -295,6 +298,7 @@
 				B0BF99371A66C1440085ADA4 /* UIColorExtension.swift in Sources */,
 				B0BF992B1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */,
 				B0BF99251A66C00B0085ADA4 /* NSTimerExtension.swift in Sources */,
+				B066D6861A7646900069C258 /* UIColorExtensionTests.swift in Sources */,
 				B0BF98F31A667CFA0085ADA4 /* NSDateExtensionTests.swift in Sources */,
 				B0BF99311A66C1060085ADA4 /* IntExtension.swift in Sources */,
 			);
