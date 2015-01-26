@@ -19,5 +19,13 @@ class IntExtensionTests: XCTestCase {
         5.each(closure)
         XCTAssert(executeTimes == number, "executeTimes == number")
     }
+    
+    func testRandom () {
+        for i in -100...100 {
+            let number = Int.random(lower: i, upper: i+5)
+            XCTAssertLessThanOrEqual(number, i+5, "Random number less than higher boundary")
+            XCTAssertGreaterThanOrEqual(number, i, "Random number greater than lesser boundary")
+        }
+    }
 
 }
