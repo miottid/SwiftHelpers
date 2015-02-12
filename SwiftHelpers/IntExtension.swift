@@ -22,7 +22,9 @@ extension Int {
     ///:param: upper The higher boundary
     ///
     ///:returns: A Random Int between lower and upper
-    public static func random (#lower: Int , upper: Int) -> Int {
-        return lower + Int(arc4random_uniform(upper - lower + 1))
+    public static func random (#lower: Int, upper: Int) -> Int {
+        let value = upper - lower + 1
+        let rand = Int(arc4random_uniform(UInt32(value)))
+        return lower + rand
     }
 }
