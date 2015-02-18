@@ -10,25 +10,19 @@ import UIKit
 
 extension UIImage {
     func tintWithColor(color:UIColor) -> UIImage {
-        UIGraphicsBeginImageContext(self.size)
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
-        
-        // flip the image
+        CGContextTranslateCTM(context, 0, self.size.height)
         CGContextScaleCTM(context, 1.0, -1.0)
-        CGContextTranslateCTM(context, 0.0, -self.size.height)
-        
-        // multiply blend mode
-        CGContextSetBlendMode(context, kCGBlendModeMultiply)
-        
+        CGContextSetBlendMode(context, kCGBlendModeNormal)
         let rect = CGRectMake(0, 0, self.size.width, self.size.height)
         CGContextClipToMask(context, rect, self.CGImage)
         color.setFill()
         CGContextFillRect(context, rect)
         
-        // create uiimage
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage
+        UIGraphicsEndImageContext();
+        return newImage;
     }
 }
