@@ -351,6 +351,14 @@ extension NSDate {
         return self
     }
     
+    ///Get the weekday
+    ///
+    ///:returns: The day index of the week, 1 = Sunday
+    public var weekday: Int {
+        let comps = CurrentCalendar.components(.WeekdayCalendarUnit, fromDate: self)
+        return comps.weekday
+    }
+    
     ///Create a new date representing the end of the current hour
     ///
     ///:returns: A new NSDate representing the end of the current hour
