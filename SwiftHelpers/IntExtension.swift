@@ -16,6 +16,15 @@ extension Int {
         }
     }
     
+    ///Loop from 0 to self and apply the function passed in parameter
+    public func map(fn: (Int) -> AnyObject) -> [AnyObject] {
+        var objects = [AnyObject]()
+        for item in 0..<self {
+            objects.append(fn(item))
+        }
+        return objects
+    }
+    
     ///Create a random num Int
     ///
     ///:param: lower The lower boundary

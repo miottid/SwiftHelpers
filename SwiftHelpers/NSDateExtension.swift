@@ -383,7 +383,7 @@ extension NSDate {
     
     ///Create a new date 7 days later than the current, in the current calendar
     ///
-    ///:returns: A new NSDate by adding 7 days
+    ///:returns: A new NSDate by adding 7 days.
     public var nextWeek: NSDate {
         if self > NSDate() {
             return self
@@ -393,7 +393,7 @@ extension NSDate {
         if let date = CurrentCalendar.dateFromComponents(comps) {
             return date
         }
-        return NSDate()
+        return self
     }
     
     ///Create a new date at the beginning of the day, in the current calendar
@@ -407,7 +407,19 @@ extension NSDate {
         if let date = CurrentCalendar.dateFromComponents(comps) {
             return date
         }
-        return NSDate()
+        return self
+    }
+    
+    ///Create a new at the begining of the month, in the current calendar
+    ///
+    ///:returns: A NSDate with day to 1 and hour, minute, second set to 0. If it fail, return the current date
+    public var beginningOfMonth: NSDate {
+        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        comps.day = 1
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return self
     }
     
     ///Create a new date at the end of the day, in the current calendar
