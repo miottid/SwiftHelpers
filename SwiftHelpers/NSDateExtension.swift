@@ -422,6 +422,12 @@ extension NSDate {
         return self
     }
     
+    ///Returns the number of days in the current month
+    public var numberOfDaysInMonth: Int {
+        let days = CurrentCalendar.rangeOfUnit(.DayCalendarUnit, inUnit: .MonthCalendarUnit, forDate: self)
+        return days.length
+    }
+    
     ///Create a new date at the end of the day, in the current calendar
     ///
     ///:returns: A NSDate with hour, minute and second set to 23:59:59
