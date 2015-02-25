@@ -445,6 +445,12 @@ extension NSDate {
         return self
     }
     
+    ///Returns the day in the current month, using the current calendar
+    public var day: Int {
+        let comps = CurrentCalendar.components(.DayCalendarUnit, fromDate: self)
+        return comps.day
+    }
+    
     ///Returns the number of days in the current month
     public var numberOfDaysInMonth: Int {
         let days = CurrentCalendar.rangeOfUnit(.DayCalendarUnit, inUnit: .MonthCalendarUnit, forDate: self)
