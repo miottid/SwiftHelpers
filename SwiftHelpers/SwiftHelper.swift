@@ -28,7 +28,7 @@ public func appVersion() -> String {
     if let bundleDictionary = mainBundle.infoDictionary {
         if let shortVersion = bundleDictionary["CFBundleShortVersionString"] as? String {
             if let bundleVersion = bundleDictionary["CFBundleVersion"] as? String {
-                return NSString(format: "%@.%@", shortVersion, bundleVersion)
+                return NSString(format: "%@.%@", shortVersion, bundleVersion) as String
             }
         }
     }

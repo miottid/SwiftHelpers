@@ -22,7 +22,7 @@ private class TimerBlock {
 
 extension NSTimer {
     
-    public convenience init(_ timeInterval: NSTimeInterval, block: () -> ()) {
+    public convenience init(forTimeInterval timeInterval: NSTimeInterval, block: () -> ()) {
         let timerBlock = TimerBlock(block: block)
         self.init(timeInterval: timeInterval, target: timerBlock, selector: "execute", userInfo: nil, repeats: false)
     }
@@ -33,13 +33,13 @@ extension NSTimer {
     }
     
     public class func schedule(timeInterval: NSTimeInterval, block: () -> ()) -> NSTimer {
-        let timer = NSTimer(timeInterval, block)
+        let timer = NSTimer(forTimeInterval: timeInterval, block: block)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
         return timer
     }
     
     public class func schedule(every timeInterval: NSTimeInterval, block: () -> ()) -> NSTimer {
-        let timer = NSTimer(every: timeInterval, block)
+        let timer = NSTimer(every: timeInterval, block: block)
         NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
         return timer
     }

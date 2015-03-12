@@ -351,6 +351,14 @@ extension NSDate {
         return self
     }
     
+    ///Get the weekday
+    ///
+    ///:returns: The day index of the week, 1 = Sunday
+    public var weekday: Int {
+        let comps = CurrentCalendar.components(.WeekdayCalendarUnit, fromDate: self)
+        return comps.weekday
+    }
+    
     ///Create a new date representing the end of the current hour
     ///
     ///:returns: A new NSDate representing the end of the current hour
@@ -383,7 +391,7 @@ extension NSDate {
     
     ///Create a new date 7 days later than the current, in the current calendar
     ///
-    ///:returns: A new NSDate by adding 7 days
+    ///:returns: A new NSDate by adding 7 days.
     public var nextWeek: NSDate {
         if self > NSDate() {
             return self
@@ -393,7 +401,7 @@ extension NSDate {
         if let date = CurrentCalendar.dateFromComponents(comps) {
             return date
         }
-        return NSDate()
+        return self
     }
     
     ///Create a new date at the beginning of the day, in the current calendar
@@ -407,7 +415,52 @@ extension NSDate {
         if let date = CurrentCalendar.dateFromComponents(comps) {
             return date
         }
-        return NSDate()
+        return self
+    }
+    
+    ///Create a new at the begining of the month, in the current calendar
+    ///
+    ///:returns: A NSDate with day to 1 and hour, minute, second set to 0. If it fail, return the current date
+    public var beginningOfMonth: NSDate {
+        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        comps.day = 1
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return self
+    }
+    
+    ///Create a new at the end of the month, in the current calendar
+    ///
+    ///:returns: A NSDate with day to last day in month and hour, minute, second set to 23:59:59. If it fail, return the current date
+    public var endOfMonth: NSDate {
+        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        comps.day = self.numberOfDaysInMonth
+        comps.hour = 23
+        comps.minute = 59
+        comps.second = 59
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return self
+    }
+    
+    ///Returns the day in the current month, using the current calendar
+    public var day: Int {
+        let comps = CurrentCalendar.components(.DayCalendarUnit, fromDate: self)
+        return comps.day
+    }
+    
+    ///Returns the hour in the current day, using the current calendar
+    public var hour: Int {
+        let comps = CurrentCalendar.components(.HourCalendarUnit, fromDate: self)
+        return comps.hour
+    }
+    
+    ///Returns the number of days in the current month
+    public var numberOfDaysInMonth: Int {
+        let days = CurrentCalendar.rangeOfUnit(.DayCalendarUnit, inUnit: .MonthCalendarUnit, forDate: self)
+        return days.length
     }
     
     ///Create a new date at the end of the day, in the current calendar
