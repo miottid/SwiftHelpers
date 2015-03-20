@@ -9,6 +9,15 @@
 import UIKit
 
 extension UIImage {
+    convenience init?(localizedName:String) {
+        let lang = NSLocale.preferredLanguages()[0] as String
+        var imageName = localizedName + "-" + lang
+        if UIImage(named: imageName) == nil {
+            imageName = localizedName + "-" + "en"
+        }
+        self.init(named:imageName)
+    }
+    
     func tintWithColor(color:UIColor) -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
@@ -25,4 +34,5 @@ extension UIImage {
         UIGraphicsEndImageContext();
         return newImage;
     }
+    
 }
