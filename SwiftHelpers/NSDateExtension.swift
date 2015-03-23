@@ -430,6 +430,33 @@ extension NSDate {
         return self
     }
     
+    ///Create a new at the end of the month, in the current calendar
+    ///
+    ///:returns: A NSDate with day to last day in month and hour, minute, second set to 23:59:59. If it fail, return the current date
+    public var endOfMonth: NSDate {
+        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        comps.day = self.numberOfDaysInMonth
+        comps.hour = 23
+        comps.minute = 59
+        comps.second = 59
+        if let date = CurrentCalendar.dateFromComponents(comps) {
+            return date
+        }
+        return self
+    }
+    
+    ///Returns the day in the current month, using the current calendar
+    public var day: Int {
+        let comps = CurrentCalendar.components(.DayCalendarUnit, fromDate: self)
+        return comps.day
+    }
+    
+    ///Returns the hour in the current day, using the current calendar
+    public var hour: Int {
+        let comps = CurrentCalendar.components(.HourCalendarUnit, fromDate: self)
+        return comps.hour
+    }
+    
     ///Returns the number of days in the current month
     public var numberOfDaysInMonth: Int {
         let days = CurrentCalendar.rangeOfUnit(.DayCalendarUnit, inUnit: .MonthCalendarUnit, forDate: self)
