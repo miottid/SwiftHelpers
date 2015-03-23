@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0452C051AC063D300F857E1 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B066D6861A7646900069C258 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		B075FF6E1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelper.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				B0BF99351A66C1440085ADA4 /* UIColorExtension.swift */,
 				B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */,
 				B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */,
+				B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BF992D1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */,
+				B0452C051AC063D300F857E1 /* UITextFieldExtension.swift in Sources */,
 				B0BF98FE1A667D6C0085ADA4 /* NSDateExtension.swift in Sources */,
 				B0BF99331A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */,
 				B0BF99301A66C1060085ADA4 /* IntExtension.swift in Sources */,
