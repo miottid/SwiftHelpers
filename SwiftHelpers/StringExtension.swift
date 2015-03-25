@@ -38,4 +38,12 @@ public extension String {
     public var floatValue: Float {
         return (self as NSString).floatValue
     }
+    
+    func isNumeric() -> Bool {
+        if let n = self.toInt() {
+            return true
+        } else {
+            return false
+        }
+    }
 }
