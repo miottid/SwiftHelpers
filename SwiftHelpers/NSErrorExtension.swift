@@ -10,10 +10,10 @@ import UIKit
 
 public extension NSError {
     public func show(inController controller: UIViewController) {
-        let controller = UIAlertController(
+        let alertController = UIAlertController(
             title: self.localizedDescription,
             message: self.localizedRecoverySuggestion,
             preferredStyle: .Alert)
-        controller.presentViewController(controller, animated: true, completion: nil)
+        controller.presentViewController(alertController, animated: true, completion: nil)
     }
 }
