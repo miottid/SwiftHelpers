@@ -14,6 +14,7 @@
 		B075FF6E1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
 		B075FF6F1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
 		B075FF711A6D10D200ACD798 /* ComparisonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */; };
+		B08B70631AC3665200B5F9A2 /* NSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08B70621AC3665200B5F9A2 /* NSErrorExtension.swift */; };
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0BF98EC1A667CFA0085ADA4 /* SwiftHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */; };
 		B0BF98F31A667CFA0085ADA4 /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
@@ -57,6 +58,7 @@
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelper.swift; sourceTree = "<group>"; };
 		B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelperTests.swift; sourceTree = "<group>"; };
+		B08B70621AC3665200B5F9A2 /* NSErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSErrorExtension.swift; sourceTree = "<group>"; };
 		B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftHelpers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BF98E41A667CFA0085ADA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftHelpers.h; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				B0BF99381A66C2620085ADA4 /* UIScreenExtension.swift */,
 				B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */,
 				B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */,
+				B08B70621AC3665200B5F9A2 /* NSErrorExtension.swift */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
@@ -289,6 +292,7 @@
 				B0BF98FF1A667D6C0085ADA4 /* SwiftHelper.swift in Sources */,
 				B0BF992A1A66C0CA0085ADA4 /* NSDateFormatterExtension.swift in Sources */,
 				B0BF99271A66C0880085ADA4 /* ArrayExtension.swift in Sources */,
+				B08B70631AC3665200B5F9A2 /* NSErrorExtension.swift in Sources */,
 				B0DDDB4B1AC06E87009E49B5 /* StringExtension.swift in Sources */,
 				B0BF99391A66C2620085ADA4 /* UIScreenExtension.swift in Sources */,
 			);
