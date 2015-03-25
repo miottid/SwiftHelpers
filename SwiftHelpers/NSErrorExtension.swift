@@ -9,11 +9,11 @@
 import UIKit
 
 public extension NSError {
-    public func show() {
-        UIAlertView(
+    public func show(inController controller: UIViewController) {
+        let controller = UIAlertController(
             title: self.localizedDescription,
             message: self.localizedRecoverySuggestion,
-            delegate: nil,
-            cancelButtonTitle: "OK").show()
+            preferredStyle: .Alert)
+        controller.presentViewController(controller, animated: true, completion: nil)
     }
 }
