@@ -285,7 +285,7 @@ public func <= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
 
 // MARK: - Int Extension
 
-extension Int {
+public extension Int {
     ///Create a TimeInterval with specified second
     public var second : TimeInterval { return TimeInterval(seconds: self) }
     ///Create a TimeInterval with specified seconds
@@ -339,7 +339,7 @@ extension Int {
 
 // MARK: - Date Extension
 
-extension NSDate {
+public extension NSDate {
     ///Create a new date representing the middle of the day (12:00 PM)
     ///
     ///:returns: A new NSDate representing the middle of the day

@@ -13,7 +13,7 @@ public func delay(timeInterval: NSTimeInterval, closure:()->()) {
     return timeInterval.delay(closure)
 }
 
-extension NSTimeInterval {
+public extension NSTimeInterval {
     ///Perform the given block after a delay
     public func delay(closure:()->()) {
         dispatch_after(

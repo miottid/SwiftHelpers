@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
     public func addAnimationType(type: String, duration: NSTimeInterval) -> CATransition {
         let transition = CATransition()

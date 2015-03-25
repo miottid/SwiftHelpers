@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension Int {
+public extension Int {
     ///Create a loop and run the provided block `self` times
     public func each(fn: (Int) -> ()) {
         for item in 0..<self {

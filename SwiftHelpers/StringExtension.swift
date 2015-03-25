@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension NSAttributedString {
-    func replaceHTMLTag(tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {
+public extension NSAttributedString {
+    public func replaceHTMLTag(tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {
         let openTag = "<\(tag)>"
         let closeTag = "</\(tag)>"
         let resultingText: NSMutableAttributedString = self.mutableCopy() as NSMutableAttributedString
@@ -34,8 +34,8 @@ extension NSAttributedString {
     }
 }
 
-extension String {
-    var floatValue: Float {
+public extension String {
+    public var floatValue: Float {
         return (self as NSString).floatValue
     }
 }

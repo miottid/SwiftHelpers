@@ -20,7 +20,7 @@ private class TimerBlock {
     }
 }
 
-extension NSTimer {
+public extension NSTimer {
     
     public convenience init(forTimeInterval timeInterval: NSTimeInterval, block: () -> ()) {
         let timerBlock = TimerBlock(block: block)
@@ -54,13 +54,13 @@ extension NSTimer {
     
 }
 
-extension NSTimeInterval {
+public extension NSTimeInterval {
     public func every(fn: () -> ()) -> NSTimer {
         return NSTimer.schedule(every: self, block: fn)
     }
 }
 
-extension Int {
+public extension Int {
     public func every(fn: () -> ()) -> NSTimer {
         return NSTimer.schedule(every: NSTimeInterval(self), block: fn)
     }

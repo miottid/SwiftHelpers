@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UITextField {
-    func selectTextAtRange(range: NSRange) {
+public extension UITextField {
+    public func selectTextAtRange(range: NSRange) {
         if let start = positionFromPosition(beginningOfDocument, offset: range.location) {
             if let end = positionFromPosition(start, offset: range.length) {
                 selectedTextRange = textRangeFromPosition(start, toPosition: end)

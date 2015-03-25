@@ -19,7 +19,7 @@ public func UIColorFromHex(rgbValue: UInt32) -> UIColor {
     return UIColor(rgbValue: rgbValue)
 }
 
-extension UIColor {
+public extension UIColor {
     
     public convenience init(rgbValue: UInt32) {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0

@@ -22,7 +22,7 @@ public func deviceResolution() -> DeviceResolution {
     return UIScreen.mainScreen().deviceResolution()
 }
 
-extension UIScreen {
+public extension UIScreen {
     
     public func deviceResolution() -> DeviceResolution {
         var resolution: DeviceResolution = .Unknown
