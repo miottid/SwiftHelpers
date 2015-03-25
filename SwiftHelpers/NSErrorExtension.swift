@@ -14,6 +14,8 @@ public extension NSError {
             title: self.localizedDescription,
             message: self.localizedRecoverySuggestion,
             preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
         controller.presentViewController(alertController, animated: true, completion: nil)
     }
 }
