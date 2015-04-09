@@ -10,6 +10,8 @@
 		B0452C051AC063D300F857E1 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B053A0081AC353D700278644 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
+		B0553C991AD6A973002C585C /* IBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0553C981AD6A973002C585C /* IBInspectableExtension.swift */; };
+		B0553C9A1AD6A973002C585C /* IBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0553C981AD6A973002C585C /* IBInspectableExtension.swift */; };
 		B066D6861A7646900069C258 /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		B075FF6E1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
 		B075FF6F1A6D103800ACD798 /* ComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */; };
@@ -59,6 +61,7 @@
 		B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		B0553C981AD6A973002C585C /* IBInspectableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBInspectableExtension.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
 		B075FF6D1A6D103800ACD798 /* ComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelper.swift; sourceTree = "<group>"; };
 		B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparisonHelperTests.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 				B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */,
 				B08B70621AC3665200B5F9A2 /* NSErrorExtension.swift */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
+				B0553C981AD6A973002C585C /* IBInspectableExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -304,6 +308,7 @@
 				B0BF99271A66C0880085ADA4 /* ArrayExtension.swift in Sources */,
 				B08B70631AC3665200B5F9A2 /* NSErrorExtension.swift in Sources */,
 				B0DDDB4B1AC06E87009E49B5 /* StringExtension.swift in Sources */,
+				B0553C991AD6A973002C585C /* IBInspectableExtension.swift in Sources */,
 				B0BF99391A66C2620085ADA4 /* UIScreenExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +322,7 @@
 				B0CD3BDF1AD6856100ED7F76 /* UINavigationBarExtension.swift in Sources */,
 				B0BF993A1A66C2620085ADA4 /* UIScreenExtension.swift in Sources */,
 				B0BF99341A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */,
+				B0553C9A1AD6A973002C585C /* IBInspectableExtension.swift in Sources */,
 				B0BF99411A66C4510085ADA4 /* IntExtensionTests.swift in Sources */,
 				B075FF711A6D10D200ACD798 /* ComparisonHelperTests.swift in Sources */,
 				B0BF993F1A66C3660085ADA4 /* ArrayExtensionTests.swift in Sources */,
