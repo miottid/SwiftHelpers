@@ -355,7 +355,7 @@ public extension NSDate {
     ///
     ///:returns: The day index of the week, 1 = Sunday
     public var weekday: Int {
-        let comps = CurrentCalendar.components(.WeekdayCalendarUnit, fromDate: self)
+        let comps = CurrentCalendar.components(.CalendarUnitWeekday, fromDate: self)
         return comps.weekday
     }
     
@@ -380,7 +380,7 @@ public extension NSDate {
         if self > NSDate() {
             return self
         }
-        let nowComps = CurrentCalendar.components(NSCalendarUnit.YearCalendarUnit, fromDate: NSDate())
+        let nowComps = CurrentCalendar.components(.CalendarUnitYear, fromDate: NSDate())
         let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: self)
         comps.year = nowComps.year + 1
         if let date = CurrentCalendar.dateFromComponents(comps) {
@@ -422,7 +422,7 @@ public extension NSDate {
     ///
     ///:returns: A NSDate with day to 1 and hour, minute, second set to 0. If it fail, return the current date
     public var beginningOfMonth: NSDate {
-        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        let comps = CurrentCalendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: self)
         comps.day = 1
         if let date = CurrentCalendar.dateFromComponents(comps) {
             return date
@@ -434,7 +434,7 @@ public extension NSDate {
     ///
     ///:returns: A NSDate with day to last day in month and hour, minute, second set to 23:59:59. If it fail, return the current date
     public var endOfMonth: NSDate {
-        let comps = CurrentCalendar.components(.MonthCalendarUnit | .YearCalendarUnit, fromDate: self)
+        let comps = CurrentCalendar.components(.CalendarUnitMonth | .CalendarUnitYear, fromDate: self)
         comps.day = self.numberOfDaysInMonth
         comps.hour = 23
         comps.minute = 59
@@ -447,19 +447,19 @@ public extension NSDate {
     
     ///Returns the day in the current month, using the current calendar
     public var day: Int {
-        let comps = CurrentCalendar.components(.DayCalendarUnit, fromDate: self)
+        let comps = CurrentCalendar.components(.CalendarUnitDay, fromDate: self)
         return comps.day
     }
     
     ///Returns the hour in the current day, using the current calendar
     public var hour: Int {
-        let comps = CurrentCalendar.components(.HourCalendarUnit, fromDate: self)
+        let comps = CurrentCalendar.components(.CalendarUnitHour, fromDate: self)
         return comps.hour
     }
     
     ///Returns the number of days in the current month
     public var numberOfDaysInMonth: Int {
-        let days = CurrentCalendar.rangeOfUnit(.DayCalendarUnit, inUnit: .MonthCalendarUnit, forDate: self)
+        let days = CurrentCalendar.rangeOfUnit(.CalendarUnitDay, inUnit: .CalendarUnitMonth, forDate: self)
         return days.length
     }
     
@@ -501,8 +501,8 @@ public extension NSDate {
     ///:returns: True is the date is in today range
     public var isToday: Bool {
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.EraCalendarUnit | .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit, fromDate: NSDate())
-        let otherComponents = calendar.components(.EraCalendarUnit | .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit, fromDate: self)
+        let components = calendar.components(.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: NSDate())
+        let otherComponents = calendar.components(.CalendarUnitEra | .CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
         if let today = calendar.dateFromComponents(components) {
             if let other = calendar.dateFromComponents(otherComponents) {
                 return today.isEqualToDate(other)
@@ -538,12 +538,12 @@ public extension NSDate {
         var fromDate: NSDate?
         var toDate: NSDate?
         
-        calendar.rangeOfUnit(.DayCalendarUnit, startDate: &fromDate, interval: nil, forDate: self)
-        calendar.rangeOfUnit(.DayCalendarUnit, startDate: &toDate, interval: nil, forDate: nextDate)
+        calendar.rangeOfUnit(.CalendarUnitDay, startDate: &fromDate, interval: nil, forDate: self)
+        calendar.rangeOfUnit(.CalendarUnitDay, startDate: &toDate, interval: nil, forDate: nextDate)
     
         if let fd = fromDate {
             if let td = toDate {
-                let components = calendar.components(.DayCalendarUnit, fromDate: fd, toDate: td, options: nil)
+                let components = calendar.components(.CalendarUnitDay, fromDate: fd, toDate: td, options: nil)
                 return components.day
             }
         }
