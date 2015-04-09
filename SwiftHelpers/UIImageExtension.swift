@@ -10,7 +10,7 @@ import UIKit
 
 extension UIImage {
     convenience init?(localizedName:String) {
-        let lang = NSLocale.preferredLanguages()[0] as String
+        let lang = NSLocale.preferredLanguages()[0] as! String
         var imageName = localizedName + "-" + lang
         if UIImage(named: imageName) == nil {
             imageName = localizedName + "-" + "en"
