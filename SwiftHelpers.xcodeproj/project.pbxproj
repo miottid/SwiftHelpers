@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00EBC381AD7C799006F414D /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EBC371AD7C799006F414D /* UIViewControllerExtension.swift */; };
 		B0452C051AC063D300F857E1 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B053A0081AC353D700278644 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B00EBC371AD7C799006F414D /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
@@ -149,8 +151,9 @@
 				B0BF992C1A66C0E90085ADA4 /* UIViewExtension.swift */,
 				B0452C041AC063D300F857E1 /* UITextFieldExtension.swift */,
 				B08B70621AC3665200B5F9A2 /* NSErrorExtension.swift */,
-				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 				B0553C981AD6A973002C585C /* IBInspectableExtension.swift */,
+				B00EBC371AD7C799006F414D /* UIViewControllerExtension.swift */,
+				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			files = (
 				B0BF992D1A66C0E90085ADA4 /* UIViewExtension.swift in Sources */,
 				B0452C051AC063D300F857E1 /* UITextFieldExtension.swift in Sources */,
+				B00EBC381AD7C799006F414D /* UIViewControllerExtension.swift in Sources */,
 				B0BF98FE1A667D6C0085ADA4 /* NSDateExtension.swift in Sources */,
 				B0BF99331A66C12D0085ADA4 /* NSTimeIntervalExtension.swift in Sources */,
 				B0BF99301A66C1060085ADA4 /* IntExtension.swift in Sources */,
