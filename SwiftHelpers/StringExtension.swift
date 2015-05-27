@@ -39,11 +39,15 @@ public extension String {
         return (self as NSString).floatValue
     }
     
-    func isNumeric() -> Bool {
+    public func isNumeric() -> Bool {
         if let n = self.toInt() {
             return true
         } else {
             return false
         }
+    }
+    
+    public func rangeString(string: String) -> NSRange {
+        return NSString(string: string).rangeOfString(string)
     }
 }

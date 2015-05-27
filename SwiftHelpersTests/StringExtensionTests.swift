@@ -11,18 +11,16 @@ import XCTest
 
 class StringExtensionTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testFloatValue() {
-        var str = "1.4"
+        let str = "1.4"
         XCTAssert(str.floatValue == 1.4, "\"1.4\".floatValue should be equal to 1.4")
     }
+    
+    func testRangeOfString() {
+        let str = "Hi, my name is David"
+        let range = str.rangeString("David")
+        XCTAssert(range.location == 14, "range location must be 14")
+        XCTAssert(range.length == 5, "range length must be 5")
+    }
+    
 }
