@@ -19,7 +19,7 @@ class StringExtensionTests: XCTestCase {
     func testRangeOfString() {
         let str = "Hi, my name is David"
         let range = str.rangeString("David")
-        XCTAssert(range.location == 14, "range location must be 14")
+        XCTAssert(range.location == 15, "range location must be 15")
         XCTAssert(range.length == 5, "range length must be 5")
     }
     

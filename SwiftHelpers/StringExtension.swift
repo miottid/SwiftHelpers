@@ -48,6 +48,6 @@ public extension String {
     }
     
     public func rangeString(string: String) -> NSRange {
-        return NSString(string: string).rangeOfString(string)
+        return NSString(string: self).rangeOfString(string)
     }
 }
