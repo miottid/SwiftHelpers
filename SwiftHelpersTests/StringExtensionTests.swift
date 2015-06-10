@@ -23,4 +23,11 @@ class StringExtensionTests: XCTestCase {
         XCTAssert(range.length == 5, "range length must be 5")
     }
     
+    func testCreateColorFromHex() {
+        let hex = "#000099"
+        var color = hex.UIColor
+        let hexValue = color.hexRGB
+        XCTAssert(hexValue == hex, "hex must be the same")
+    }
+    
 }
