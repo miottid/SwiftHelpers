@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
 	s.authors = { 'David Miotti' => 'david.miotti@gmail.com' }
 	s.source = { :git => 'https://github.com/dmiotti/SwiftHelpers.git', :tag => s.version }
 
-	s.ios.deployment_target = '8.0'
+	s.ios.deployment_target = '7.1'
 	s.osx.deployment_target = '10.10'
 
 	s.source_files = 'SwiftHelpers/*.swift'
