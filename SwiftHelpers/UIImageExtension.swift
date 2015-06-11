@@ -17,6 +17,14 @@ extension UIImage {
         }
         self.init(named:imageName)
     }
+
+    convenience init?(localizedName:String, ofLang lang: String) {
+        var imageName = localizedName + "-" + lang
+        if UIImage(named: imageName) == nil {
+            imageName = localizedName + "-" + "en"
+        }
+        self.init(named:imageName)
+    }
     
     func tintWithColor(color:UIColor) -> UIImage {
         
