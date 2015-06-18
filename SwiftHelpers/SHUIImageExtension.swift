@@ -43,4 +43,22 @@ extension UIImage {
         return newImage;
     }
     
+    class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(origin: CGPoint.zeroPoint, size: size)
+        
+        UIGraphicsBeginImageContext(rect.size)
+        
+        let context = UIGraphicsGetCurrentContext()
+        
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextFillRect(context, rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image
+
+    }
+    
 }
