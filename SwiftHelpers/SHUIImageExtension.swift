@@ -8,8 +8,8 @@
 
 import UIKit
 
-extension UIImage {
-    convenience init?(localizedName:String) {
+public extension UIImage {
+    public convenience init?(localizedName:String) {
         let lang = NSLocale.preferredLanguages()[0] as! String
         var imageName = localizedName + "-" + lang
         if UIImage(named: imageName) == nil {
@@ -18,7 +18,7 @@ extension UIImage {
         self.init(named:imageName)
     }
 
-    convenience init?(localizedName:String, ofLang lang: String) {
+    public convenience init?(localizedName:String, ofLang lang: String) {
         var imageName = localizedName + "-" + lang
         if UIImage(named: imageName) == nil {
             imageName = localizedName + "-" + "en"
@@ -26,7 +26,7 @@ extension UIImage {
         self.init(named:imageName)
     }
     
-    func tintWithColor(color:UIColor) -> UIImage {
+    public func tintWithColor(color:UIColor) -> UIImage {
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
@@ -43,7 +43,7 @@ extension UIImage {
         return newImage;
     }
     
-    class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+    public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
         let rect = CGRect(origin: CGPoint.zeroPoint, size: size)
         
         UIGraphicsBeginImageContext(rect.size)
