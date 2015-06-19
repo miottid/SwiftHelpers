@@ -15,6 +15,7 @@ public extension UIView {
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = type
+        layer.addAnimation(transition, forKey: NSUUID().UUIDString)
         return transition
     }
 }
