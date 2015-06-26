@@ -75,8 +75,8 @@ private func dateWithDayAndMonth(day: Int, month: Int) -> NSDate {
 // MARK: - TimeInterval Class
 
 ///A TimeInterval is an abstract representation of a period
-///Because month and year can be express directly in seconds
-public class TimeInterval {
+///Because month and year can't be represented directly in seconds
+public class SHTimeInterval {
     public var seconds: Int = 0
     public var minutes: Int = 0
     public var hours  : Int = 0
@@ -217,24 +217,24 @@ public func -= (inout lhs: NSDate, rhs: NSTimeInterval) {
 }
 
 // Allow operation between NSDate and TimeInterval
-public func + (lhs: NSDate, rhs: TimeInterval) -> NSDate {
+public func + (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
     return lhs + rhs.inSeconds
 }
 
-public func - (lhs: NSDate, rhs: TimeInterval) -> NSDate {
+public func - (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
     return lhs - rhs.inSeconds
 }
 
-public func += (inout lhs: NSDate, rhs: TimeInterval) {
+public func += (inout lhs: NSDate, rhs: SHTimeInterval) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: NSDate, rhs: TimeInterval) {
+public func -= (inout lhs: NSDate, rhs: SHTimeInterval) {
     lhs = lhs - rhs
 }
 
-public func + (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
-    let timeInterval = TimeInterval()
+public func + (lhs: SHTimeInterval, rhs: SHTimeInterval) -> SHTimeInterval {
+    let timeInterval = SHTimeInterval()
     timeInterval.seconds = lhs.seconds + rhs.seconds
     timeInterval.minutes = lhs.minutes + rhs.minutes
     timeInterval.hours   = lhs.hours + rhs.hours
@@ -244,8 +244,8 @@ public func + (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
     return timeInterval
 }
 
-public func - (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
-    let timeInterval = TimeInterval()
+public func - (lhs: SHTimeInterval, rhs: SHTimeInterval) -> SHTimeInterval {
+    let timeInterval = SHTimeInterval()
     timeInterval.seconds = lhs.seconds - rhs.seconds
     timeInterval.minutes = lhs.minutes - rhs.minutes
     timeInterval.hours   = lhs.hours - rhs.hours
@@ -255,31 +255,31 @@ public func - (lhs: TimeInterval, rhs: TimeInterval) -> TimeInterval {
     return timeInterval
 }
 
-public func += (inout lhs: TimeInterval, rhs: TimeInterval) {
+public func += (inout lhs: SHTimeInterval, rhs: SHTimeInterval) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: TimeInterval, rhs: TimeInterval) {
+public func -= (inout lhs: SHTimeInterval, rhs: SHTimeInterval) {
     lhs = lhs - rhs
 }
 
-public func == (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+public func == (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds == rhs.inSeconds
 }
 
-public func > (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+public func > (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds > rhs.inSeconds
 }
 
-public func < (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+public func < (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds < rhs.inSeconds
 }
 
-public func >= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+public func >= (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds >= rhs.inSeconds
 }
 
-public func <= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
+public func <= (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds <= rhs.inSeconds
 }
 
@@ -287,29 +287,29 @@ public func <= (lhs: TimeInterval, rhs: TimeInterval) -> Bool {
 
 public extension Int {
     ///Create a TimeInterval with specified second
-    public var second : TimeInterval { return TimeInterval(seconds: self) }
+    public var second : SHTimeInterval { return SHTimeInterval(seconds: self) }
     ///Create a TimeInterval with specified seconds
-    public var seconds: TimeInterval { return second }
+    public var seconds: SHTimeInterval { return second }
     ///Create a TimeInterval with specified minute
-    public var minute : TimeInterval { return TimeInterval(minutes: self) }
+    public var minute : SHTimeInterval { return SHTimeInterval(minutes: self) }
     ///Create a TimeInterval with specified minutes
-    public var minutes: TimeInterval { return minute }
+    public var minutes: SHTimeInterval { return minute }
     ///Create a TimeInterval with specified hour
-    public var hour   : TimeInterval { return TimeInterval(hours: self) }
+    public var hour   : SHTimeInterval { return SHTimeInterval(hours: self) }
     ///Create a TimeInterval with specified hours
-    public var hours  : TimeInterval { return hour }
+    public var hours  : SHTimeInterval { return hour }
     ///Create a TimeInterval with specified day
-    public var day    : TimeInterval { return TimeInterval(days: self) }
+    public var day    : SHTimeInterval { return SHTimeInterval(days: self) }
     ///Create a TimeInterval with specified days
-    public var days   : TimeInterval { return day }
+    public var days   : SHTimeInterval { return day }
     ///Create a TimeInterval with specified month
-    public var month  : TimeInterval { return TimeInterval(months: self) }
+    public var month  : SHTimeInterval { return SHTimeInterval(months: self) }
     ///Create a TimeInterval with specified months
-    public var months : TimeInterval { return month }
+    public var months : SHTimeInterval { return month }
     ///Create a TimeInterval with specified year
-    public var year   : TimeInterval { return TimeInterval(years: self) }
+    public var year   : SHTimeInterval { return SHTimeInterval(years: self) }
     ///Create a TimeInterval with specified years
-    public var years  : TimeInterval { return year }
+    public var years  : SHTimeInterval { return year }
     
     ///Create a NSDate with the specified day of january in the current year
     public var january  : NSDate { return dateWithDayAndMonth(self, 1) }
