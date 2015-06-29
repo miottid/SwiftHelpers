@@ -55,19 +55,7 @@ public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
     return .Other;
 }
 
-public class SHShortDateFormatter: NSDateFormatter {
-    static let sharedInstance = SHShortDateFormatter()
-    override init() {
-        super.init()
-        timeStyle = .ShortStyle
-    }
-    required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        timeStyle = .ShortStyle
-    }
-}
-
-public var shortDateFormatter: NSDateFormatter {
+public var SHShortTimeFormatter: NSDateFormatter {
     struct Static {
         static var onceToken: dispatch_once_t = 0
         static var instance: NSDateFormatter? = nil
@@ -79,7 +67,7 @@ public var shortDateFormatter: NSDateFormatter {
     return Static.instance!
 }
 
-public var dayOfWeekDateFormatter: NSDateFormatter {
+public var SHDayOfWeekDateFormatter: NSDateFormatter {
     struct Static {
         static var onceToken: dispatch_once_t = 0
         static var instance: NSDateFormatter? = nil
@@ -91,7 +79,7 @@ public var dayOfWeekDateFormatter: NSDateFormatter {
     return Static.instance!
 }
 
-public var relativeDateFormatter: NSDateFormatter {
+public var SHRelativeDateFormatter: NSDateFormatter {
     struct Static {
         static var onceToken: dispatch_once_t = 0
         static var instance: NSDateFormatter? = nil
@@ -104,7 +92,7 @@ public var relativeDateFormatter: NSDateFormatter {
     return Static.instance!
 }
 
-public var thisYearDateFormatter: NSDateFormatter {
+public var SHThisYearDateFormatter: NSDateFormatter {
     struct Static {
         static var onceToken: dispatch_once_t = 0
         static var instance: NSDateFormatter? = nil
@@ -116,7 +104,7 @@ public var thisYearDateFormatter: NSDateFormatter {
     return Static.instance!
 }
 
-public var defaultDateFormatter: NSDateFormatter {
+public var SHDefaultDateFormatter: NSDateFormatter {
     struct Static {
         static var onceToken: dispatch_once_t = 0
         static var instance: NSDateFormatter? = nil
