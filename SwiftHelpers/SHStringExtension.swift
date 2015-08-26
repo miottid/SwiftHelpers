@@ -102,14 +102,21 @@ public extension String {
     }
 }
 
-private extension String {
+public extension String {
     
-    func repeat (count: Int) -> String {
+    public func repeat (count: Int) -> String {
         return "".stringByPaddingToLength((self as NSString).length * count, withString: self, startingAtIndex:0)
+    }
+}
+
+public extension String {
+    
+    subscript (i: Int) -> Character {
+        return self[advance(self.startIndex, i)]
     }
     
     subscript (i: Int) -> String {
-        return String(Array(self)[i])
+        return String(self[i] as Character)
     }
     
     subscript (r: Range<Int>) -> String {
