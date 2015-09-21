@@ -10,11 +10,9 @@ import UIKit
 
 public extension UITextField {
     public func selectTextAtRange(range: NSRange) {
-        if let begin = beginningOfDocument {
-            if let start = positionFromPosition(begin, offset: range.location) {
-                if let end = positionFromPosition(start, offset: range.length) {
-                    selectedTextRange = textRangeFromPosition(start, toPosition: end)
-                }
+        if let start = positionFromPosition(beginningOfDocument, offset: range.location) {
+            if let end = positionFromPosition(start, offset: range.length) {
+                selectedTextRange = textRangeFromPosition(start, toPosition: end)
             }
         }
     }

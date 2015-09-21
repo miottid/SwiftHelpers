@@ -47,7 +47,7 @@ extension UINavigationBar {
             return (view as! UIImageView)
         }
         
-        let subviews = (view.subviews as! [UIView])
+        let subviews = (view.subviews )
         for subview: UIView in subviews {
             if let imageView = hairlineImageViewInNavigationBar(subview) {
                 return imageView
@@ -58,10 +58,7 @@ extension UINavigationBar {
     }
     
     private func backgroundImageViewInNavigationBar(view: UIView) -> UIView? {
-        
-        let subviews = (view.subviews as! [UIView])
-        var i = 0
-        return subviews[0] as UIView
+        return view.subviews.first
     }
     
 }

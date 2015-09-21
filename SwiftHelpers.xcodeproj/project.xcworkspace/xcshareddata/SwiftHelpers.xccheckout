@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8CAA0F7A-31B6-40BC-A961-D980E8138DEA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftHelpers</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EB85351B15D3DD54D225318A7297989BF5E8D0A6</key>
+		<string>github.com:dmiotti/SwiftHelpers.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftHelpers.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EB85351B15D3DD54D225318A7297989BF5E8D0A6</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:dmiotti/SwiftHelpers.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EB85351B15D3DD54D225318A7297989BF5E8D0A6</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EB85351B15D3DD54D225318A7297989BF5E8D0A6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftHelpers</string>
+		</dict>
+	</array>
+</dict>
+</plist>

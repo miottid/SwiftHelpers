@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIImage {
     public convenience init?(localizedName:String) {
-        let lang = NSLocale.preferredLanguages()[0] as! String
+        let lang = NSLocale.preferredLanguages()[0] 
         var imageName = localizedName + "-" + lang
         if UIImage(named: imageName) == nil {
             imageName = localizedName + "-" + "en"
@@ -32,7 +32,7 @@ public extension UIImage {
         let context = UIGraphicsGetCurrentContext()
         CGContextTranslateCTM(context, 0, self.size.height)
         CGContextScaleCTM(context, 1.0, -1.0)
-        CGContextSetBlendMode(context, kCGBlendModeNormal)
+        CGContextSetBlendMode(context, CGBlendMode.Normal)
         let rect = CGRectMake(0, 0, self.size.width, self.size.height)
         CGContextClipToMask(context, rect, self.CGImage)
         color.setFill()
@@ -44,7 +44,7 @@ public extension UIImage {
     }
     
     public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        let rect = CGRect(origin: CGPoint.zeroPoint, size: size)
+        let rect = CGRect(origin: CGPoint.zero, size: size)
         
         UIGraphicsBeginImageContext(rect.size)
         

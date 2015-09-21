@@ -17,12 +17,12 @@ public func L(key: String) -> String {
 public func P(string: String) {
     #if RELEASE
     #else
-        println(string)
+        print(string)
     #endif
 }
 
 ///Get the current version of the app
-///:returns: A string representing the version of the app {CFBundleShortVersionString}.{CFBundleVersion}
+///- returns: A string representing the version of the app {CFBundleShortVersionString}.{CFBundleVersion}
 public func appVersion() -> String {
     let mainBundle = NSBundle.mainBundle()
     if let bundleDictionary = mainBundle.infoDictionary {

@@ -10,7 +10,7 @@ import UIKit
 
 extension Array {
     ///Loop through each item
-    func each(fn: (T) -> ()) {
+    func each(fn: (Element) -> ()) {
         for item in self {
             fn(item)
         }

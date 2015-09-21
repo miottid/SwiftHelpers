@@ -18,7 +18,7 @@ public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
     
     let calendar = NSCalendar.currentCalendar()
     let now = NSDate()
-    let calendarUnits: NSCalendarUnit = .CalendarUnitEra | .CalendarUnitYear | .CalendarUnitWeekOfMonth | .CalendarUnitMonth | .CalendarUnitDay
+    let calendarUnits: NSCalendarUnit = [.Era, .Year, .WeekOfMonth, .Month, .Day]
     let dateComponents = calendar.components(calendarUnits, fromDate: date)
     let todayComponents = calendar.components(calendarUnits, fromDate: now)
     if dateComponents.day == todayComponents.day &&
@@ -30,7 +30,7 @@ public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
     
     let componentsToYesterDay = NSDateComponents()
     componentsToYesterDay.day = -1
-    if let yesterday = calendar.dateByAddingComponents(componentsToYesterDay, toDate: now, options: .allZeros) {
+    if let yesterday = calendar.dateByAddingComponents(componentsToYesterDay, toDate: now, options: []) {
         let yesterdayComponents = calendar.components(calendarUnits, fromDate: yesterday)
         if dateComponents.day == yesterdayComponents.day &&
             dateComponents.month == yesterdayComponents.month &&

@@ -22,9 +22,9 @@ public extension NSAttributedString {
             
             let affectedLocation = openTagRange.location + openTagRange.length
             
-            var searchRange = NSMakeRange(affectedLocation, plainString.length - affectedLocation)
+            let searchRange = NSMakeRange(affectedLocation, plainString.length - affectedLocation)
             
-            let closeTagRange = plainString.rangeOfString(closeTag, options: NSStringCompareOptions(0), range: searchRange)
+            let closeTagRange = plainString.rangeOfString(closeTag, options: NSStringCompareOptions(rawValue: 0), range: searchRange)
             
             resultingText.setAttributes(attributes, range: NSMakeRange(affectedLocation, closeTagRange.location - affectedLocation))
             resultingText.deleteCharactersInRange(closeTagRange)
@@ -40,11 +40,7 @@ public extension String {
     }
     
     public func isNumeric() -> Bool {
-        if let n = self.toInt() {
-            return true
-        } else {
-            return false
-        }
+        return Int(self) != nil
     }
     
     public func rangeString(string: String) -> NSRange {
@@ -73,18 +69,18 @@ public extension String {
             hex = hex.substringFromIndex(hex.startIndex.successor())
         }
         
-        switch count(hex) {
+        switch hex.characters.count {
         case 1: // Turn "f" into "ffffff"
-            hex = hex.repeat(6)
+            hex = hex.`repeat`(6)
         case 2: // Turn "ff" into "ffffff"
-            hex = hex.repeat(3)
+            hex = hex.`repeat`(3)
         case 3: // Turn "123" into "112233"
-            hex = hex[0].repeat(2) + hex[1].repeat(2) + hex[2].repeat(2)
+            hex = hex[0].`repeat`(2) + hex[1].`repeat`(2) + hex[2].`repeat`(2)
         default:
             break
         }
         
-        assert(count(hex) == 6, "Invalid hex value")
+        assert(hex.characters.count == 6, "Invalid hex value")
         
         var r: UInt32 = 0
         var g: UInt32 = 0
@@ -104,7 +100,7 @@ public extension String {
 
 public extension String {
     
-    public func repeat (count: Int) -> String {
+    public func `repeat` (count: Int) -> String {
         return "".stringByPaddingToLength((self as NSString).length * count, withString: self, startingAtIndex:0)
     }
 }
@@ -112,7 +108,7 @@ public extension String {
 public extension String {
     
     subscript (i: Int) -> Character {
-        return self[advance(self.startIndex, i)]
+        return self[self.startIndex.advancedBy(i)]
     }
     
     subscript (i: Int) -> String {
@@ -120,6 +116,6 @@ public extension String {
     }
     
     subscript (r: Range<Int>) -> String {
-        return substringWithRange(Range(start: advance(startIndex, r.startIndex), end: advance(startIndex, r.endIndex)))
+        return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
     }
 }

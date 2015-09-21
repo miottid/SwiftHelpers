@@ -11,7 +11,7 @@ import UIKit
 public extension UIViewController {
     public func isFirstInNavigationController() -> Bool {
         if let nav = navigationController {
-            if let first = nav.viewControllers.first as? UIViewController {
+            if let first = nav.viewControllers.first {
                 return first == self
             }
         }
