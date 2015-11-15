@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B09F59761B42082A00EB9220 /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */,
 				B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */,
 				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
+				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
@@ -323,6 +326,7 @@
 				B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */,
 				B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */,
 				B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */,
+				583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */,
 				B0C540CE1B31A79E007A377A /* SHIntExtension.swift in Sources */,
 				B0C540CD1B31A79E007A377A /* SHIBInspectableExtension.swift in Sources */,
 				B0C540D11B31A79E007A377A /* SHNSErrorExtension.swift in Sources */,
