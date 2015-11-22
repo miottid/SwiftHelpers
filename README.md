@@ -40,6 +40,13 @@ _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Sw
 
 _Everything is documented, check it out_
 
+### Common Init Views
+
+#### UIView
+
+You can subclass `SHCommonInitView` and override `commonInit()`. This function will be called not matter if the view was created programmaticaly like `SHCommonInitView()` or in Storyboard.
+The same apply with `SHCommonInitTableViewCell` and `SHCommonInitCollectionViewCell`.
+
 ### NSDate comparison operators
 
 ```swift
