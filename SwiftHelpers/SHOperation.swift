@@ -46,11 +46,11 @@ public class SHOperation: NSOperation {
         execute()
     }
     
-    func execute() {
+    public func execute() {
         fatalError("You must override this")
     }
     
-    func finish() {
+    public func finish() {
         _executing = false
         _finished = true
     }
