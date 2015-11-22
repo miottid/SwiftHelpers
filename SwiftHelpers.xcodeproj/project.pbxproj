@@ -11,6 +11,7 @@
 		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
+		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B09F59761B42082A00EB9220 /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
@@ -73,6 +74,7 @@
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
+		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -135,7 +137,6 @@
 				B0BF991B1A6686F00085ADA4 /* README.md */,
 				B045E7E01A695EA700046449 /* SwiftHelpers.podspec */,
 				B0BF98E21A667CFA0085ADA4 /* SwiftHelpers */,
-				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E11A667CFA0085ADA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -176,6 +177,8 @@
 				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
 				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
 				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
+				58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */,
+				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
@@ -203,7 +206,7 @@
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		B0BF98F01A667CFA0085ADA4 /* Supporting Files */ = {
 			isa = PBXGroup;
@@ -344,6 +347,7 @@
 				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
+				58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */,
 				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,
 				B0C540D21B31A79E007A377A /* SHNSTimeIntervalExtension.swift in Sources */,
 			);
