@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
+		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
 		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
+		58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
 		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
 				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
 				58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */,
+				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
@@ -332,6 +335,7 @@
 				B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
+				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
 				B0C540D81B31A79E007A377A /* SHUIFontExtension.swift in Sources */,
 				B0C540D31B31A79E007A377A /* SHNSTimerExtension.swift in Sources */,
 				B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */,
