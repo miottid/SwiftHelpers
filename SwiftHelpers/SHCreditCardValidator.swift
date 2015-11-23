@@ -8,11 +8,7 @@
 
 import UIKit
 
-public func ==(lhs: CreditCardValidationType, rhs: CreditCardValidationType) -> Bool {
-    return lhs.name == rhs.name
-}
-
-public struct CreditCardValidationType: Equatable {
+public struct SHCreditCardValidationType: Equatable {
     
     public var name: String
     
@@ -34,12 +30,16 @@ public struct CreditCardValidationType: Equatable {
     
 }
 
+public func ==(lhs: SHCreditCardValidationType, rhs: SHCreditCardValidationType) -> Bool {
+    return lhs.name == rhs.name
+}
+
 public class SHCreditCardValidator {
     
-    public lazy var types: [CreditCardValidationType] = {
-        var types = [CreditCardValidationType]()
+    public lazy var types: [SHCreditCardValidationType] = {
+        var types = [SHCreditCardValidationType]()
         for object in SHCreditCardValidator.types {
-            types.append(CreditCardValidationType(dict: object))
+            types.append(SHCreditCardValidationType(dict: object))
         }
         return types
     }()
@@ -53,7 +53,7 @@ public class SHCreditCardValidator {
      
      - returns: CreditCardValidationType structure
      */
-    public func typeFromString(string: String) -> CreditCardValidationType? {
+    public func typeFromString(string: String) -> SHCreditCardValidationType? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
             let numbersString = self.onlyNumbersFromString(string)
@@ -109,7 +109,7 @@ public class SHCreditCardValidator {
      
      - returns: true or false
      */
-    public func validateString(string: String, forType type: CreditCardValidationType) -> Bool {
+    public func validateString(string: String, forType type: SHCreditCardValidationType) -> Bool {
         return typeFromString(string) == type
     }
     
