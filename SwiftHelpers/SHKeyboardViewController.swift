@@ -16,7 +16,7 @@ public class SHKeyboardViewController: UIViewController {
     
     private var scrollableView: UIScrollView?
 
-    public func registerKeyboardNotificationForScrollableView(view: UIScrollView) {
+    public func registerKeyboardNotificationsForScrollableView(view: UIScrollView) {
         scrollableView = view
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
