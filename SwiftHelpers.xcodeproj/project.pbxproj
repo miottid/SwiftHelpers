@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
 		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
 		58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */; };
@@ -73,6 +74,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
 		58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCreditCardValidator.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
+				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
 				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
 				B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */,
 				B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */,
@@ -352,6 +355,7 @@
 				B0C540DD1B31A79E007A377A /* SHUIViewControllerExtension.swift in Sources */,
 				B0C540D01B31A79E007A377A /* SHNSDateFormatterExtension.swift in Sources */,
 				B0C540D71B31A79E007A377A /* SHUIColorExtension.swift in Sources */,
+				5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */,
 				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
