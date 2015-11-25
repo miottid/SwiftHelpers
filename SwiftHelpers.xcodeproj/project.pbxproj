@@ -15,6 +15,7 @@
 		58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
 		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
+		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B09F59761B42082A00EB9220 /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
@@ -81,6 +82,7 @@
 		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
+		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */,
 				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
 				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
+				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
@@ -341,6 +344,7 @@
 				B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
+				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
 				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
 				B0C540D81B31A79E007A377A /* SHUIFontExtension.swift in Sources */,
 				B0C540D31B31A79E007A377A /* SHNSTimerExtension.swift in Sources */,
