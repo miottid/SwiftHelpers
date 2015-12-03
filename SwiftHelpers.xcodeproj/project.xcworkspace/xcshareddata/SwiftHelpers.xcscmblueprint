@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB85351B15D3DD54D225318A7297989BF5E8D0A6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EB85351B15D3DD54D225318A7297989BF5E8D0A6" : 0,
+    "93BFA620BDFB4CEBD86892A9D7810D272F27BDEE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8CAA0F7A-31B6-40BC-A961-D980E8138DEA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EB85351B15D3DD54D225318A7297989BF5E8D0A6" : "SwiftHelpers",
+    "93BFA620BDFB4CEBD86892A9D7810D272F27BDEE" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftHelpers",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SwiftHelpers.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:boddy-io\/client-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "93BFA620BDFB4CEBD86892A9D7810D272F27BDEE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dmiotti\/SwiftHelpers.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB85351B15D3DD54D225318A7297989BF5E8D0A6"
+    }
+  ]
+}
