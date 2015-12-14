@@ -16,6 +16,7 @@
 		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
 		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
 		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
+		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
@@ -84,6 +85,7 @@
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
 		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
+		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
 				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
 				58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */,
+				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
@@ -351,6 +354,7 @@
 				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
 				B0C540D81B31A79E007A377A /* SHUIFontExtension.swift in Sources */,
 				B0C540D31B31A79E007A377A /* SHNSTimerExtension.swift in Sources */,
+				58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */,
 				B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */,
 				B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */,
 				B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */,
