@@ -17,6 +17,8 @@
 		58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
 		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
+		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
+		58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */; };
 		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
 		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
@@ -88,6 +90,8 @@
 		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
+		58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestCURLTests.swift; sourceTree = "<group>"; };
+		58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestExtension.swift; sourceTree = "<group>"; };
 		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
 		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
 				586C82DF1C241B3900590E17 /* SHImageExtension.swift */,
 				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
+				58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
@@ -228,6 +233,7 @@
 				B09F59741B4204AB00EB9220 /* DateProximityTests.swift */,
 				58854D391C01E19900B3F303 /* CommonInitTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
+				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
 			);
 			path = SwiftHelpersTests;
 			sourceTree = SOURCE_ROOT;
@@ -377,6 +383,7 @@
 				5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */,
 				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
+				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
 				58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */,
@@ -390,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */,
+				58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */,
 				B0C540DF1B31A7CC007A377A /* SHArrayExtension.swift in Sources */,
 				B0C540E01B31A7CC007A377A /* SHComparisonHelper.swift in Sources */,
 				B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */,

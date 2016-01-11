@@ -10,6 +10,8 @@
 	<string>SwiftHelpers</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>585B71D82DA78556F772F7595CB431715C680119</key>
+		<string>github.com:boddy-io/client-ios.git</string>
 		<key>EB85351B15D3DD54D225318A7297989BF5E8D0A6</key>
 		<string>github.com:dmiotti/SwiftHelpers.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>SwiftHelpers.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>585B71D82DA78556F772F7595CB431715C680119</key>
+		<string>../../../..</string>
 		<key>EB85351B15D3DD54D225318A7297989BF5E8D0A6</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>EB85351B15D3DD54D225318A7297989BF5E8D0A6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>585B71D82DA78556F772F7595CB431715C680119</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

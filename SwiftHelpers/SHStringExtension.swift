@@ -49,6 +49,12 @@ public extension String {
 }
 
 public extension String {
+    public func stringByReplacingOccurenceOfString(target: String, withString string: String) -> String {
+        return NSString(string: self).stringByReplacingOccurrencesOfString(target, withString: string)
+    }
+}
+
+public extension String {
     
     public var CGColor: CGColorRef {
         return self.CGColor(1)
