@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SHStatusBarNavigationController: UINavigationController {
+public class SHStatusBarNavigationController: UINavigationController {
     
     var preferedStatusBarStyle: UIStatusBarStyle = .LightContent {
         didSet {
@@ -18,13 +18,13 @@ class SHStatusBarNavigationController: UINavigationController {
     
     var navigationBarStyle: UIBarStyle = .BlackTranslucent
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.barStyle = navigationBarStyle
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override public func preferredStatusBarStyle() -> UIStatusBarStyle {
         return preferedStatusBarStyle
     }
 
