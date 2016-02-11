@@ -57,7 +57,7 @@ class NSDateExtensionTests: XCTestCase {
     // MARK: - Test TimeInterval Class
     
     func testTimeIntervalInitSeconds() {
-        let interval = TimeInterval(seconds: 10)
+        let interval = SHTimeInterval(seconds: 10)
         XCTAssert(interval.seconds == 10, "interval.seconds = 10")
         XCTAssert(interval.minutes == 0, "interval.minutes = 0")
         XCTAssert(interval.hours == 0, "interval.hours = 0")
@@ -67,7 +67,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitMinutes() {
-        let interval = TimeInterval(minutes: 10)
+        let interval = SHTimeInterval(minutes: 10)
         XCTAssert(interval.seconds == 0, "interval.seconds = 0")
         XCTAssert(interval.minutes == 10, "interval.minutes = 10")
         XCTAssert(interval.hours == 0, "interval.hours = 0")
@@ -77,7 +77,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitHours() {
-        let interval = TimeInterval(hours: 10)
+        let interval = SHTimeInterval(hours: 10)
         XCTAssert(interval.seconds == 0, "interval.seconds = 0")
         XCTAssert(interval.minutes == 0, "interval.minutes = 0")
         XCTAssert(interval.hours == 10, "interval.hours = 10")
@@ -87,7 +87,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitDays() {
-        let interval = TimeInterval(days: 10)
+        let interval = SHTimeInterval(days: 10)
         XCTAssert(interval.seconds == 0, "interval.seconds = 0")
         XCTAssert(interval.minutes == 0, "interval.minutes = 0")
         XCTAssert(interval.hours == 0, "interval.hours = 0")
@@ -97,7 +97,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitMonths() {
-        let interval = TimeInterval(months: 10)
+        let interval = SHTimeInterval(months: 10)
         XCTAssert(interval.seconds == 0, "interval.seconds = 0")
         XCTAssert(interval.minutes == 0, "interval.minutes = 0")
         XCTAssert(interval.hours == 0, "interval.hours = 0")
@@ -107,7 +107,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitYears() {
-        let interval = TimeInterval(years: 10)
+        let interval = SHTimeInterval(years: 10)
         XCTAssert(interval.seconds == 0, "interval.seconds = 0")
         XCTAssert(interval.minutes == 0, "interval.minutes = 0")
         XCTAssert(interval.hours == 0, "interval.hours = 0")
@@ -117,7 +117,7 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     func testTimeIntervalInitCustom() {
-        let interval = TimeInterval()
+        let interval = SHTimeInterval()
         interval.seconds = 1
         interval.minutes = 2
         interval.hours = 3
@@ -322,16 +322,7 @@ class NSDateExtensionTests: XCTestCase {
     private var CurrentCalendar = NSCalendar.currentCalendar()
     
     ///Use this var when copying dates from components
-    private let CalendarAllUnits =
-        NSCalendarUnit.CalendarUnitEra      |
-        NSCalendarUnit.CalendarUnitYear     |
-        NSCalendarUnit.CalendarUnitMonth    |
-        NSCalendarUnit.CalendarUnitDay      |
-        NSCalendarUnit.CalendarUnitHour     |
-        NSCalendarUnit.CalendarUnitMinute   |
-        NSCalendarUnit.CalendarUnitSecond   |
-        NSCalendarUnit.CalendarUnitCalendar |
-        NSCalendarUnit.CalendarUnitTimeZone
+    private let CalendarAllUnits: NSCalendarUnit = [.Era, .Year, .Month, .Day, .Hour, .Minute, .Second, .Calendar, .TimeZone]
     
     func testDateOfYear() {
         let date = 16.october.of(1986)
@@ -370,20 +361,38 @@ class NSDateExtensionTests: XCTestCase {
     func testNextHour() {
         let testedDate = NSDate()
         let nextHour = testedDate.nextHour
-        let unitFlags =
-            NSCalendarUnit.CalendarUnitEra      |
-            NSCalendarUnit.CalendarUnitYear     |
-            NSCalendarUnit.CalendarUnitMonth    |
-            NSCalendarUnit.CalendarUnitDay      |
-            NSCalendarUnit.CalendarUnitHour     |
-            NSCalendarUnit.CalendarUnitMinute   |
-            NSCalendarUnit.CalendarUnitSecond   |
-            NSCalendarUnit.CalendarUnitCalendar |
-            NSCalendarUnit.CalendarUnitTimeZone
         let calendar = NSCalendar.currentCalendar()
-        let testedComps = calendar.components(unitFlags, fromDate: testedDate)
-        let nextHourComps = calendar.components(unitFlags, fromDate: nextHour)
+        let testedComps = calendar.components(CalendarAllUnits, fromDate: testedDate)
+        let nextHourComps = calendar.components(CalendarAllUnits, fromDate: nextHour)
         XCTAssertEqual(testedComps.hour + 1, nextHourComps.hour, "(testedComps.hour + 1) == nextHourComps.hour")
+    }
+    
+    func testAddingTimeIntervalToDate() {
+        let testedDate = NSDate()
+        let testedComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: testedDate)
+        
+        let interval = 2.months
+        let newDate = testedDate + interval
+        let newComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: newDate)
+        
+        XCTAssert(testedComponents.year == newComponents.year, "year should match")
+        XCTAssert(testedComponents.month + 2 == newComponents.month, "month should have 2 more than the other")
+        XCTAssert(testedComponents.second == newComponents.second, "second should match")
+        XCTAssert(testedComponents.day == newComponents.day, "day should match")
+    }
+    
+    func testRemovingTimeIntervalToDate() {
+        let testedDate = NSDate()
+        let testedComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: testedDate)
+        
+        let interval = 1.year
+        let newDate = testedDate - interval
+        let newComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: newDate)
+        
+        XCTAssert(testedComponents.year - 1 == newComponents.year, "year should match")
+        XCTAssert(testedComponents.month == newComponents.month, "month should have 2 more than the other")
+        XCTAssert(testedComponents.second == newComponents.second, "second should match")
+        XCTAssert(testedComponents.day == newComponents.day, "day should match")
     }
     
 }

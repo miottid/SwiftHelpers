@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+import SwiftHelpers
 
 class DateProximityTests: XCTestCase {
     func testToday() {

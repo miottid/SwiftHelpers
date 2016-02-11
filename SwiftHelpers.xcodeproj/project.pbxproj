@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */; };
+		58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */; };
+		58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */; };
+		58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
+		58272EA61C6CF22300D7A3BF /* ComparisonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */; };
+		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
+		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
 		586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82DF1C241B3900590E17 /* SHImageExtension.swift */; };
 		586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */; };
 		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
 		58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */; };
 		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
-		58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
-		58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D391C01E19900B3F303 /* CommonInitTests.swift */; };
 		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
 		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
 		58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */; };
@@ -24,7 +28,6 @@
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
-		B09F59761B42082A00EB9220 /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0BF98EC1A667CFA0085ADA4 /* SwiftHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */; };
 		B0C540CB1B31A79E007A377A /* SHArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B71B31A79E007A377A /* SHArrayExtension.swift */; };
@@ -47,26 +50,6 @@
 		B0C540DC1B31A79E007A377A /* SHUITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */; };
 		B0C540DD1B31A79E007A377A /* SHUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */; };
 		B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */; };
-		B0C540DF1B31A7CC007A377A /* SHArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B71B31A79E007A377A /* SHArrayExtension.swift */; };
-		B0C540E01B31A7CC007A377A /* SHComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */; };
-		B0C540E11B31A7CC007A377A /* SHIBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */; };
-		B0C540E21B31A7CC007A377A /* SHIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BA1B31A79E007A377A /* SHIntExtension.swift */; };
-		B0C540E31B31A7CC007A377A /* SHNSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BB1B31A79E007A377A /* SHNSDateExtension.swift */; };
-		B0C540E41B31A7CC007A377A /* SHNSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BC1B31A79E007A377A /* SHNSDateFormatterExtension.swift */; };
-		B0C540E51B31A7CC007A377A /* SHNSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BD1B31A79E007A377A /* SHNSErrorExtension.swift */; };
-		B0C540E61B31A7CC007A377A /* SHNSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BE1B31A79E007A377A /* SHNSTimeIntervalExtension.swift */; };
-		B0C540E71B31A7CC007A377A /* SHNSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BF1B31A79E007A377A /* SHNSTimerExtension.swift */; };
-		B0C540E81B31A7CC007A377A /* SHStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C01B31A79E007A377A /* SHStringExtension.swift */; };
-		B0C540E91B31A7CC007A377A /* SHSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */; };
-		B0C540EA1B31A7CC007A377A /* SHUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C21B31A79E007A377A /* SHUIButtonExtension.swift */; };
-		B0C540EB1B31A7CC007A377A /* SHUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C31B31A79E007A377A /* SHUIColorExtension.swift */; };
-		B0C540EC1B31A7CC007A377A /* SHUIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C41B31A79E007A377A /* SHUIFontExtension.swift */; };
-		B0C540ED1B31A7CC007A377A /* SHUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */; };
-		B0C540EE1B31A7CC007A377A /* SHUINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */; };
-		B0C540EF1B31A7CC007A377A /* SHUIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */; };
-		B0C540F01B31A7CC007A377A /* SHUITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */; };
-		B0C540F11B31A7CC007A377A /* SHUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */; };
-		B0C540F21B31A7CC007A377A /* SHUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */; };
 		B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
 /* End PBXBuildFile section */
 
@@ -232,8 +215,8 @@
 				B053A0071AC353D700278644 /* StringExtensionTests.swift */,
 				B09F59741B4204AB00EB9220 /* DateProximityTests.swift */,
 				58854D391C01E19900B3F303 /* CommonInitTests.swift */,
-				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
+				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
 			sourceTree = SOURCE_ROOT;
@@ -396,31 +379,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58854D381C01E0F500B3F303 /* SHCommonInitView.swift in Sources */,
 				58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */,
-				B0C540DF1B31A7CC007A377A /* SHArrayExtension.swift in Sources */,
-				B0C540E01B31A7CC007A377A /* SHComparisonHelper.swift in Sources */,
+				58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */,
+				58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */,
+				58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */,
+				58272EA61C6CF22300D7A3BF /* ComparisonHelperTests.swift in Sources */,
+				58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */,
+				58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */,
 				B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */,
-				B0C540E11B31A7CC007A377A /* SHIBInspectableExtension.swift in Sources */,
-				B0C540E21B31A7CC007A377A /* SHIntExtension.swift in Sources */,
-				B0C540E31B31A7CC007A377A /* SHNSDateExtension.swift in Sources */,
-				B09F59761B42082A00EB9220 /* SHDateFormatterProximity.swift in Sources */,
-				58854D3A1C01E19900B3F303 /* CommonInitTests.swift in Sources */,
-				B0C540E41B31A7CC007A377A /* SHNSDateFormatterExtension.swift in Sources */,
-				B0C540E51B31A7CC007A377A /* SHNSErrorExtension.swift in Sources */,
-				B0C540E61B31A7CC007A377A /* SHNSTimeIntervalExtension.swift in Sources */,
-				B0C540E71B31A7CC007A377A /* SHNSTimerExtension.swift in Sources */,
-				B0C540E81B31A7CC007A377A /* SHStringExtension.swift in Sources */,
-				B0C540E91B31A7CC007A377A /* SHSwiftHelper.swift in Sources */,
-				B0C540EA1B31A7CC007A377A /* SHUIButtonExtension.swift in Sources */,
-				B0C540EB1B31A7CC007A377A /* SHUIColorExtension.swift in Sources */,
-				B0C540EC1B31A7CC007A377A /* SHUIFontExtension.swift in Sources */,
-				B0C540ED1B31A7CC007A377A /* SHUIImageExtension.swift in Sources */,
-				B0C540EE1B31A7CC007A377A /* SHUINavigationBarExtension.swift in Sources */,
-				B0C540EF1B31A7CC007A377A /* SHUIScreenExtension.swift in Sources */,
-				B0C540F01B31A7CC007A377A /* SHUITextFieldExtension.swift in Sources */,
-				B0C540F11B31A7CC007A377A /* SHUIViewControllerExtension.swift in Sources */,
-				B0C540F21B31A7CC007A377A /* SHUIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

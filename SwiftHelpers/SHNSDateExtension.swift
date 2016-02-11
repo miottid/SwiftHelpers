@@ -210,11 +210,25 @@ public func -= (inout lhs: NSDate, rhs: NSTimeInterval) {
 
 // Allow operation between NSDate and TimeInterval
 public func + (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
-    return lhs + rhs.inSeconds
+    let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: lhs)
+    comps.year   += rhs.years
+    comps.day    += rhs.days
+    comps.month  += rhs.months
+    comps.hour   += rhs.hours
+    comps.minute += rhs.minutes
+    comps.second += rhs.seconds
+    return comps.date!
 }
 
 public func - (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
-    return lhs - rhs.inSeconds
+    let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: lhs)
+    comps.year   -= rhs.years
+    comps.day    -= rhs.days
+    comps.month  -= rhs.months
+    comps.hour   -= rhs.hours
+    comps.minute -= rhs.minutes
+    comps.second -= rhs.seconds
+    return comps.date!
 }
 
 public func += (inout lhs: NSDate, rhs: SHTimeInterval) {

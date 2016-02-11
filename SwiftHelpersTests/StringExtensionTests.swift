@@ -25,7 +25,7 @@ class StringExtensionTests: XCTestCase {
     
     func testCreateColorFromHex() {
         let hex = "#000099"
-        var color = hex.UIColor
+        let color = hex.UIColor
         let hexValue = color.hexRGB
         XCTAssert(hexValue == hex, "hex must be the same")
     }

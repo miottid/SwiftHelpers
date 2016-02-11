@@ -12,13 +12,13 @@ import SwiftHelpers
 
 class ArrayExtensionTests: XCTestCase {
     
-    func testEach() {
-        let array = [1, 2, 3, 4]
-        var executeTimes = 0
-        var expectedExecuteTimes = array.count
-        var closure: (Int) -> () = { i in executeTimes += 1 }
-        [1, 2, 3, 4].each(closure)
-        XCTAssert(executeTimes == expectedExecuteTimes, "executeTimes == expectedExecuteTimes")
-    }
+//    func testEach() {
+//        let array = [1, 2, 3, 4]
+//        var executeTimes = 0
+//        var expectedExecuteTimes = array.count
+//        var closure: (Int) -> () = { i in executeTimes += 1 }
+//        [1, 2, 3, 4].each(closure)
+//        XCTAssert(executeTimes == expectedExecuteTimes, "executeTimes == expectedExecuteTimes")
+//    }
 
 }
