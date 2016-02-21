@@ -13,9 +13,9 @@ import SwiftHelpers
 class IntExtensionTests: XCTestCase {
 
     func testEach() {
-        var number = 5
+        let number = 5
         var executeTimes = 0
-        var closure: (Int) -> () = { i in executeTimes += 1 }
+        let closure: (Int) -> () = { i in executeTimes += 1 }
         5.each(closure)
         XCTAssert(executeTimes == number, "executeTimes == number")
     }
