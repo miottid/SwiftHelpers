@@ -68,7 +68,7 @@ private func dateWithDayAndMonth(day: Int, month: Int) -> NSDate {
 
 ///A TimeInterval is an abstract representation of a period
 ///Because month and year can't be represented directly in seconds
-public class SHTimeInterval {
+public class SHTimeInterval: Comparable, CustomStringConvertible {
     public var seconds: Int = 0
     public var minutes: Int = 0
     public var hours  : Int = 0
@@ -96,6 +96,11 @@ public class SHTimeInterval {
     
     ///Create a TimeInterval with the specified years
     public init(years: Int) { self.years = years }
+    
+    ///Prints a user friendly description of an SHTimeInterval
+    public var description: String {
+        return "\(self.years) years, \(self.months) months, \(self.days) days, \(self.hours) hours, \(self.minutes) minutes, \(self.seconds) seconds"
+    }
     
     ///Create a new date by applying the TimeInterval
     ///
