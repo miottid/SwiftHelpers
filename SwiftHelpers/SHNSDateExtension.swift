@@ -206,11 +206,11 @@ public func - (lhs: NSDate, rhs: NSTimeInterval) -> NSDate {
 }
 
 public func += (inout lhs: NSDate, rhs: NSTimeInterval) {
-    lhs = NSDate(timeIntervalSince1970: lhs.timeIntervalSince1970 + rhs)
+    lhs = lhs + rhs
 }
 
 public func -= (inout lhs: NSDate, rhs: NSTimeInterval) {
-    lhs = NSDate(timeIntervalSince1970: lhs.timeIntervalSince1970 - rhs)
+    lhs = lhs - rhs
 }
 
 // Allow operation between NSDate and TimeInterval
