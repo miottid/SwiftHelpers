@@ -15,6 +15,7 @@
 		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
+		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
 		586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82DF1C241B3900590E17 /* SHImageExtension.swift */; };
 		586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */; };
 		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
@@ -66,6 +67,7 @@
 /* Begin PBXFileReference section */
 		5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
+		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
 		586C82DF1C241B3900590E17 /* SHImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHImageExtension.swift; sourceTree = "<group>"; };
 		586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNavigationControllerExtention.swift; sourceTree = "<group>"; };
 		58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				B09F59741B4204AB00EB9220 /* DateProximityTests.swift */,
 				58854D391C01E19900B3F303 /* CommonInitTests.swift */,
 				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
+				586B734E1C83A90500934192 /* SHOperationTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */,
+				586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */,
 				58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */,
 				58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */,
 				58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */,
@@ -532,6 +536,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SwiftHelpersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wopata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -542,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = SwiftHelpersTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wopata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

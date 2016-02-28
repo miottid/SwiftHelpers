@@ -10,6 +10,18 @@ import Foundation
 
 public class SHOperation: NSOperation {
     
+    private var internalCompletionBlock: ((SHOperation) -> Void)?
+    
+    public convenience init(completionBlock: ((SHOperation) -> Void)?) {
+        self.init()
+        internalCompletionBlock = completionBlock
+        self.completionBlock = {
+            if let block = self.internalCompletionBlock {
+                block(self)
+            }
+        }
+    }
+    
     override public var asynchronous: Bool {
         return true
     }
