@@ -66,6 +66,14 @@ extension UIView {
             layer.shadowRadius = newValue
         }
     }
+    @IBInspectable var layerMasksToBounds: Bool {
+        get {
+            return layer.masksToBounds
+        }
+        set {
+            layer.masksToBounds = newValue
+        }
+    }
 }
 
 extension UILabel {
