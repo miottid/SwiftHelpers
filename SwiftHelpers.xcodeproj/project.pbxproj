@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */; };
+		581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */; };
 		58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */; };
 		58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */; };
 		58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
+		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
 		586C82DF1C241B3900590E17 /* SHImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHImageExtension.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
+				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
 				58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */,
+				581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */,
 				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,
 				B0C540D21B31A79E007A377A /* SHNSTimeIntervalExtension.swift in Sources */,
 			);
