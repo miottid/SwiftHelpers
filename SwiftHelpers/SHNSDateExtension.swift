@@ -518,6 +518,16 @@ public extension NSDate {
         return false
     }
     
+    ///Get the day of the beginning of the week starting from Monday
+    ///
+    ///- returns: The new date representing the first day of the date week
+    public var beginningOfWeek: NSDate {
+        let calendar = NSCalendar.currentCalendar()
+        let comps = calendar.components([.YearForWeekOfYear, .Year, .Month, .WeekOfYear, .Weekday], fromDate: self)
+        comps.weekday = 2
+        return calendar.dateFromComponents(comps)!
+    }
+    
     ///Create a date with the specified year, in the current calendar
     ///
     ///- parameter year: The year the new date should be of
