@@ -13,23 +13,19 @@ public func blendColor(firstColor: UIColor, secondColor: UIColor, alpha: Float) 
     return firstColor.blendWithColor(secondColor, alpha: alpha)
 }
 
-///Create a color from hexa
-///- returns: UIColor created with the hexa
-public func UIColorFromHex(rgbValue: UInt32) -> UIColor {
-    return UIColor(rgbValue: rgbValue)
-}
-
 public extension UIColor {
     
-    public convenience init(rgba: String) {
+    ///Create a color from hexa
+    ///- returns: UIColor created based on the hexa
+    public convenience init(hex: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue:  CGFloat = 0.0
         var alpha: CGFloat = 1.0
         
-        if rgba.hasPrefix("#") {
-            let index   = rgba.startIndex.advancedBy(1)
-            let hex     = rgba.substringFromIndex(index)
+        if hex.hasPrefix("#") {
+            let index   = hex.startIndex.advancedBy(1)
+            let hex     = hex.substringFromIndex(index)
             let scanner = NSScanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
             if scanner.scanHexLongLong(&hexValue) {
