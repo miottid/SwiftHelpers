@@ -24,12 +24,12 @@ public extension NSTimer {
     
     public convenience init(forTimeInterval timeInterval: NSTimeInterval, block: () -> ()) {
         let timerBlock = TimerBlock(block: block)
-        self.init(timeInterval: timeInterval, target: timerBlock, selector: "execute", userInfo: nil, repeats: false)
+        self.init(timeInterval: timeInterval, target: timerBlock, selector: #selector(TimerBlock.execute), userInfo: nil, repeats: false)
     }
     
     public convenience init(every timeInterval: NSTimeInterval, block: () -> ()) {
         let timerBlock = TimerBlock(block: block)
-        self.init(timeInterval: timeInterval, target: timerBlock, selector: "execute", userInfo: nil, repeats: true)
+        self.init(timeInterval: timeInterval, target: timerBlock, selector: #selector(TimerBlock.execute), userInfo: nil, repeats: true)
     }
     
     public class func schedule(timeInterval: NSTimeInterval, block: () -> ()) -> NSTimer {

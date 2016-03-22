@@ -78,7 +78,7 @@ public class SHCreditCardValidator {
         }
         
         var reversedString = ""
-        let range = Range<String.Index>(start: numbers.startIndex, end: numbers.endIndex)
+        let range = Range<String.Index>(numbers.startIndex..<numbers.endIndex)
         
         numbers.enumerateSubstringsInRange(range, options: [NSStringEnumerationOptions.Reverse, NSStringEnumerationOptions.ByComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
             reversedString += substring!
@@ -92,7 +92,8 @@ public class SHCreditCardValidator {
             
             let digit = Int(String(s))!
             
-            if i++ % 2 == 0 {
+            i += 1
+            if i % 2 == 0 {
                 evenSum += digit
             } else {
                 oddSum += digit / 5 + (2 * digit) % 10
