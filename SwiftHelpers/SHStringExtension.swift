@@ -102,6 +102,12 @@ public extension String {
         
         return UIKit.UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    public var firstLetterCapitalization: String {
+        var str = self
+        str.replaceRange(str.startIndex...str.startIndex, with: String(str[str.startIndex]).capitalizedString)
+        return str
+    }
 }
 
 public extension String {
