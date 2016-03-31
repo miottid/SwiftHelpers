@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    func centerLabelVerticallyWithPadding(spacing:CGFloat) {
+    public func centerLabelVerticallyWithPadding(spacing:CGFloat) {
         // update positioning of image and title
         let imageSize = self.imageView!.frame.size
         self.titleEdgeInsets = UIEdgeInsets(top:0,
