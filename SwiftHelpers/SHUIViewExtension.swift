@@ -19,4 +19,13 @@ public extension UIView {
         layer.addAnimation(transition, forKey: NSUUID().UUIDString)
         return transition
     }
+    
+    // Helper to add rounded corners to any side you want and with a specified radius
+    func addRound(toCorners corners:UIRectCorner, withRadius radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.CGPath
+        self.layer.mask = mask
+    }
+    
 }
