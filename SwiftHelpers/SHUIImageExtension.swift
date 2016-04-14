@@ -58,7 +58,22 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return image
-
+    }
+    
+    // Pick color from a 1x1 pixel at a given location
+    public func pickColor(atLocation point: CGPoint) -> UIColor {
+        let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
+        let data = CFDataGetBytePtr(pixelData)
+        
+        let bytesPerRow = 4
+        let pixelInfo: Int = ((Int(size.width * scale) * Int(point.y * scale)) + Int(point.x * scale)) * bytesPerRow
+        
+        let red = CGFloat(data[pixelInfo]) / 255.0
+        let green = CGFloat(data[pixelInfo + 1]) / 255.0
+        let blue = CGFloat(data[pixelInfo + 2]) / 255.0
+        let alpha = CGFloat(data[pixelInfo + 3]) / 255.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
 }

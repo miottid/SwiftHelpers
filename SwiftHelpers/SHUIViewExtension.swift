@@ -21,11 +21,33 @@ public extension UIView {
     }
     
     // Helper to add rounded corners to any side you want and with a specified radius
-    func addRound(toCorners corners:UIRectCorner, withRadius radius: CGFloat) {
+    public func addRound(toCorners corners:UIRectCorner, withRadius radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.CGPath
         self.layer.mask = mask
+    }
+    
+    // Pick color from a 1x1 pixel at a given location
+    public func pickColor(atPoint point: CGPoint) -> UIColor {
+        var pixel: [CUnsignedChar] = [0, 0, 0, 0]
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitsPerComponent = 8
+        let bytesPerRow = 4
+        let context = CGBitmapContextCreate(&pixel, 1, 1, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo.rawValue)
+        
+        CGContextTranslateCTM(context, -point.x, -point.y)
+        
+        self.layer.renderInContext(context!)
+        
+        let red = CGFloat(pixel[0]) / 255.0
+        let green = CGFloat(pixel[1]) / 255.0
+        let blue = CGFloat(pixel[2]) / 255.0
+        let alpha = CGFloat(pixel[3]) / 255.0
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
 }
