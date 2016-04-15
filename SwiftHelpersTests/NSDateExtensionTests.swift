@@ -401,4 +401,15 @@ class NSDateExtensionTests: XCTestCase {
         XCTAssert(testedComponents.day == newComponents.day, "day should match")
     }
     
+    func testSameDay() {
+        let date = NSDate().beginningOfDay
+        let nextDate = date.dateByAddingTimeInterval(5000)
+        let isSameDay = date.isSameDay(nextDate)
+        XCTAssert(isSameDay == true, "should be the same day")
+        
+        let previousDate = date.dateByAddingTimeInterval(-5000)
+        let prevIsSameDay = date.isSameDay(previousDate)
+        XCTAssert(prevIsSameDay == false, "should not be the same day")
+    }
+    
 }

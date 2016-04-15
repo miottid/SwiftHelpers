@@ -568,4 +568,14 @@ public extension NSDate {
         return nil
     }
     
+    ///Check if the provided day is a date in the same day of the current date
+    ///This method return true if it's the same day
+    ///
+    ///- parameter the: date to compare
+    ///
+    ///- returns: true if it's the same day otherwise returns false
+    public func isSameDay(nextDate: NSDate) -> Bool {
+        return numberOfDays(nextDate) == 0
+    }
+    
 }

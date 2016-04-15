@@ -196,10 +196,10 @@
 				586C82DF1C241B3900590E17 /* SHImageExtension.swift */,
 				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
 				58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */,
-				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
-				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
 				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
+				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
+				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
