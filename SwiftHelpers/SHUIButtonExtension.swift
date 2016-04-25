@@ -32,4 +32,9 @@ extension UIButton {
             bottom:heightDelta/2.0,
             right:widthDelta/2.0)
     }
+    
+    public func setBackgroundColor(color: UIColor, forState state: UIControlState) {
+        setBackgroundImage(UIImage.imageWithColor(color), forState: state)
+    }
+    
 }
