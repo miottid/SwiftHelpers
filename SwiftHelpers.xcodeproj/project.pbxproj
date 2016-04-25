@@ -17,6 +17,7 @@
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
 		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
+		58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */; };
 		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
 		586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82DF1C241B3900590E17 /* SHImageExtension.swift */; };
 		586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */; };
@@ -72,6 +73,7 @@
 		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
+		58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDispatchExtension.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
 		586C82DF1C241B3900590E17 /* SHImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHImageExtension.swift; sourceTree = "<group>"; };
 		586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNavigationControllerExtention.swift; sourceTree = "<group>"; };
@@ -200,9 +202,10 @@
 				58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */,
 				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
 				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
+				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
+				58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
-				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
+				58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */,
 				58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */,
 				581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */,
 				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,
