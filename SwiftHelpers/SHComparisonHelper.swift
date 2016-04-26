@@ -79,7 +79,7 @@ public func * (lhs: Float, rhs: Int) -> Float {
 }
 
 public func / (lhs: Int, rhs: Float) -> Float {
-    return lhs / Float(rhs)
+    return Float(lhs) / rhs
 }
 
 /// Double - Float operations
@@ -153,7 +153,7 @@ public func * (lhs: Double, rhs: Float) -> Double {
 }
 
 public func / (lhs: Float, rhs: Double) -> Double {
-    return lhs / Double(rhs)
+    return Double(lhs) / rhs
 }
 
 /// Int - Double operations
@@ -227,7 +227,7 @@ public func * (lhs: Double, rhs: Int) -> Double {
 }
 
 public func / (lhs: Int, rhs: Double) -> Double {
-    return lhs / Double(rhs)
+    return Double(lhs) / rhs
 }
 
 /// Int - CGFloat
@@ -301,5 +301,5 @@ public func * (lhs: CGFloat, rhs: Int) -> CGFloat {
 }
 
 public func / (lhs: Int, rhs: CGFloat) -> CGFloat {
-    return lhs / CGFloat(rhs)
+    return CGFloat(lhs) / rhs
 }
