@@ -11,7 +11,7 @@
 import UIKit
 
 public enum SHDateProximity {
-    case Today, Yesterday, Week, Year, Other
+    case Today, Yesterday, TwoDaysAgo, Week, Year, Other
 }
 
 public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
@@ -37,6 +37,18 @@ public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
             dateComponents.year == yesterdayComponents.year &&
             dateComponents.era == yesterdayComponents.era {
                 return .Yesterday
+        }
+    }
+    
+    let componentsToTwoDaysAgo = NSDateComponents()
+    componentsToTwoDaysAgo.day = -2
+    if let yesterday = calendar.dateByAddingComponents(componentsToTwoDaysAgo, toDate: now, options: []) {
+        let twoDaysAgoComponents = calendar.components(calendarUnits, fromDate: yesterday)
+        if dateComponents.day == twoDaysAgoComponents.day &&
+            dateComponents.month == twoDaysAgoComponents.month &&
+            dateComponents.year == twoDaysAgoComponents.year &&
+            dateComponents.era == twoDaysAgoComponents.era {
+            return .TwoDaysAgo
         }
     }
     
