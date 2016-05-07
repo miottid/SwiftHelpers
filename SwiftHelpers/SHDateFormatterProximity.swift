@@ -40,14 +40,14 @@ public func SHDateProximityToDate(date: NSDate) -> SHDateProximity {
         }
     }
     
-    let componentsToYesterDay = NSDateComponents()
-    componentsToYesterDay.day = 1
-    if let yesterday = calendar.dateByAddingComponents(componentsToYesterDay, toDate: now, options: []) {
-        let yesterdayComponents = calendar.components(calendarUnits, fromDate: yesterday)
-        if dateComponents.day == yesterdayComponents.day &&
-            dateComponents.month == yesterdayComponents.month &&
-            dateComponents.year == yesterdayComponents.year &&
-            dateComponents.era == yesterdayComponents.era {
+    let componentsToTomorrow = NSDateComponents()
+    componentsToTomorrow.day = 1
+    if let tomorrow = calendar.dateByAddingComponents(componentsToTomorrow, toDate: now, options: []) {
+        let tomorrowComponents = calendar.components(calendarUnits, fromDate: tomorrow)
+        if dateComponents.day == tomorrowComponents.day &&
+            dateComponents.month == tomorrowComponents.month &&
+            dateComponents.year == tomorrowComponents.year &&
+            dateComponents.era == tomorrowComponents.era {
             return .Tomorrow
         }
     }
