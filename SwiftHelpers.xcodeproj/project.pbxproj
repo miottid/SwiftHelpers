@@ -16,6 +16,7 @@
 		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
+		586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586642811CE20F4E00ABA68D /* SHNumberExtension.swift */; };
 		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
 		58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */; };
 		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
@@ -72,6 +73,7 @@
 		5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
 		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
+		586642811CE20F4E00ABA68D /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
 		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
 		58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDispatchExtension.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
 				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
 				58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */,
+				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
@@ -383,6 +386,7 @@
 				5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */,
 				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
+				586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */,
 				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
