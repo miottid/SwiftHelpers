@@ -300,6 +300,10 @@ public func * (lhs: CGFloat, rhs: Int) -> CGFloat {
     return lhs * CGFloat(rhs)
 }
 
+public func * (lhs: Int, rhs: CGFloat) -> CGFloat {
+    return rhs * lhs
+}
+
 public func / (lhs: Int, rhs: CGFloat) -> CGFloat {
     return CGFloat(lhs) / rhs
 }
