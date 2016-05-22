@@ -25,7 +25,6 @@
 		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
 		58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */; };
 		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
-		58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */; };
 		58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */; };
 		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
 		58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */; };
@@ -83,7 +82,6 @@
 		58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCreditCardValidator.swift; sourceTree = "<group>"; };
 		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
-		58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
 		58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCALayerExtension.swift; sourceTree = "<group>"; };
 		58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestCURLTests.swift; sourceTree = "<group>"; };
 		58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestExtension.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
 				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
 				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
-				58854D3B1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift */,
 				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
 				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
 				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
@@ -391,7 +388,6 @@
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
 				58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */,
-				58854D3C1C01E3F300B3F303 /* SHManagedObjectContext+CascadeSave.swift in Sources */,
 				581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */,
 				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,
 				B0C540D21B31A79E007A377A /* SHNSTimeIntervalExtension.swift in Sources */,
