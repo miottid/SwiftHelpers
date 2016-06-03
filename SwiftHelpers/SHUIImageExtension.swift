@@ -43,23 +43,6 @@ public extension UIImage {
         return newImage;
     }
     
-    public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
-        let rect = CGRect(origin: CGPoint.zero, size: size)
-        
-        UIGraphicsBeginImageContext(rect.size)
-        
-        let context = UIGraphicsGetCurrentContext()
-        
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
-        
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-        
-        return image
-    }
-    
     // Pick color from a 1x1 pixel at a given location
     public func pickColor(atLocation point: CGPoint) -> UIColor {
         let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
