@@ -133,6 +133,25 @@ public extension String {
 }
 
 public extension String {
+    public func fontSizeThatFits(font: UIFont, attributes: [String: AnyObject]?, size: CGSize) -> UIFont {
+        let txt = NSString(string: self)
+        var fntSize = font.pointSize + 1
+        var width = CGFloat(Float.infinity)
+        var height = CGFloat(Float.infinity)
+        repeat {
+            fntSize -= 1
+            let fnt = UIFont(name: font.fontName, size: fntSize)
+            var attrs = attributes ?? [String: AnyObject]()
+            attrs[NSFontAttributeName] = fnt
+            let size = txt.sizeWithAttributes(attrs)
+            width = size.width
+            height = size.height
+        } while ((width > size.width || height > size.height) && fntSize > 0)
+        return UIFont(name: font.fontName, size: fntSize)!
+    }
+}
+
+public extension String {
 
     public init(numerator: Int, denominator: Int) {
         var result = ""
