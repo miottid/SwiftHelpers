@@ -29,6 +29,14 @@ public struct DeviceType {
     public static let IS_IPHONE_6          = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
     public static let IS_IPHONE_6P         = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
     public static let IS_IPAD              = UIDevice.currentDevice().userInterfaceIdiom == .Pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
+
+    public static var isSimulator: Bool {
+        var isSim = false
+        #if arch(i386) || arch(x86_64)
+            isSim = true
+        #endif
+        return isSim
+    }
 }
 
 #endif
