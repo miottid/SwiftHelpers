@@ -148,14 +148,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		581714041D1BE32E004B0788 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
 		B0BF98D61A667CF90085ADA4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +170,6 @@
 		B0BF98E21A667CFA0085ADA4 /* SwiftHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				581714041D1BE32E004B0788 /* UI */,
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
 				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
 				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
@@ -218,6 +209,7 @@
 				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
 				58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */,
 				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
+				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 			);
