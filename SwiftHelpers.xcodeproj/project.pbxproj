@@ -17,6 +17,7 @@
 		58272EA61C6CF22300D7A3BF /* ComparisonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */; };
 		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
+		583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
 		586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586642811CE20F4E00ABA68D /* SHNumberExtension.swift */; };
 		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
@@ -75,6 +76,7 @@
 		58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDegreesToRadiansExtension.swift; sourceTree = "<group>"; };
 		581714051D1BE33C004B0788 /* SHPagedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHPagedScrollView.swift; sourceTree = "<group>"; };
 		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
+		583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDataExtension.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
 		586642811CE20F4E00ABA68D /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
 		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
+				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				B0C540CB1B31A79E007A377A /* SHArrayExtension.swift in Sources */,
 				B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */,
 				58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */,
+				583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
 				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
