@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public extension NSError {
@@ -19,3 +21,5 @@ public extension NSError {
         controller.presentViewController(alertController, animated: true, completion: nil)
     }
 }
+
+#endif

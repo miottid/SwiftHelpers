@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 ///dispatch_after with seconds
 public func delay(timeInterval: NSTimeInterval, closure:()->()) {

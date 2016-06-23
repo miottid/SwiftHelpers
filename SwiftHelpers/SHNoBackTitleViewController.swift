@@ -6,6 +6,8 @@
 //  Copyright © 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public class SHNoBackButtonTitleViewController: UIViewController {
@@ -27,3 +29,5 @@ public class SHNoBackButtonTitleTableViewController: UITableViewController {
     }
     
 }
+
+#endif

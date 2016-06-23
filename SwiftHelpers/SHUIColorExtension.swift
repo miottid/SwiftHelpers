@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 ///Mix two colors
@@ -110,7 +112,7 @@ public extension UIColor {
     
     var rgbComponents:RGBComponents {
         var c:RGBComponents = (0,0,0,0)
-        
+
         if getRed(&c.red, green: &c.green, blue: &c.blue, alpha: &c.alpha) {
             return c
         }
@@ -138,3 +140,5 @@ public extension UIColor {
         return (0,0,0,0)
     }
 }
+
+#endif

@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 import XCTest
 
@@ -27,3 +29,5 @@ class UIColorExtensionTests: XCTestCase {
     }
 
 }
+
+#endif

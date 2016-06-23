@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension NSAttributedString {
     public func replaceHTMLTag(tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {

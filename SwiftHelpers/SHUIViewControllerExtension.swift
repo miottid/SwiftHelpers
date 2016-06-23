@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public extension UIViewController {
@@ -18,3 +20,5 @@ public extension UIViewController {
         return false
     }
 }
+
+#endif

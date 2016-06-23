@@ -6,7 +6,7 @@
 //  Copyright © 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public struct SHCreditCardValidationType: Equatable {
     

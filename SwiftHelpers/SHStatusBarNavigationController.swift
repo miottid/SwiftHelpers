@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public class SHStatusBarNavigationController: UINavigationController {
@@ -29,3 +31,5 @@ public class SHStatusBarNavigationController: UINavigationController {
     }
 
 }
+
+#endif

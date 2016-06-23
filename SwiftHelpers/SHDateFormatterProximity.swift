@@ -8,7 +8,7 @@
 
 // Inspired from Atlas-iOS
 
-import UIKit
+import Foundation
 
 public enum SHDateProximity {
     case Tomorrow, Today, Yesterday, TwoDaysAgo, Week, Year, Other

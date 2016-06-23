@@ -6,6 +6,8 @@
 //  Copyright © 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public class SHTextField: UITextField {
@@ -22,3 +24,5 @@ public class SHTextField: UITextField {
     }
 
 }
+
+#endif

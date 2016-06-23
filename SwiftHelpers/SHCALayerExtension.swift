@@ -6,6 +6,8 @@
 //  Copyright © 2016 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 extension CAShapeLayer {
@@ -55,3 +57,5 @@ extension UIBezierPath {
         closePath()
     }
 }
+
+#endif

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension Int {
     ///Create a loop and run the provided block `self` times

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public func dispatch_on_main(block: Void -> Void) {
     dispatch_async(dispatch_get_main_queue(), block)

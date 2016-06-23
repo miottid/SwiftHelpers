@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// Int - Float operations
 
@@ -306,4 +306,10 @@ public func * (lhs: Int, rhs: CGFloat) -> CGFloat {
 
 public func / (lhs: Int, rhs: CGFloat) -> CGFloat {
     return CGFloat(lhs) / rhs
+}
+
+public extension Comparable {
+    public func rangedBetween(min minValue: Self, max maxValue: Self) -> Self {
+        return max(minValue, min(maxValue, self))
+    }
 }

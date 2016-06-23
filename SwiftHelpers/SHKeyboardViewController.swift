@@ -6,6 +6,8 @@
 //  Copyright © 2015 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 public class SHKeyboardViewController: UIViewController {
@@ -50,3 +52,5 @@ public class SHKeyboardViewController: UIViewController {
     }
 
 }
+
+#endif

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Wopata. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 ///Returns a localized string, using the main bundle if one is not specified.
 public func L(key: String) -> String {
