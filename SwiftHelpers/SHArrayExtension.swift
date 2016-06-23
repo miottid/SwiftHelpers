@@ -23,34 +23,12 @@ public func each(array: Array<AnyObject>, fn: ((AnyObject) -> ())) {
     array.each(fn)
 }
 
-
-public extension Array {
-    public var shuffle: [Element] {
-        var elements = self
-        for index in indices.dropLast() {
-            guard
-                case let swapIndex = Int(arc4random_uniform(UInt32(count - index))) + index
-                where swapIndex != index else { continue }
-            swap(&elements[index], &elements[swapIndex])
-        }
-        return elements
-    }
-    
-    public mutating func shuffled() {
-        for index in indices.dropLast() {
-            guard
-                case let swapIndex = Int(arc4random_uniform(UInt32(count - index))) + index
-                where swapIndex != index
-                else { continue }
-            swap(&self[index], &self[swapIndex])
+public func uniq<S : SequenceType, T : Equatable where S.Generator.Element == T>(source: S) -> [T] {
+    var buffer = [T]()
+    for elem in source {
+        if !buffer.contains(elem) {
+            buffer.append(elem)
         }
     }
-    
-    public var chooseOne: Element {
-        return self[Int(arc4random_uniform(UInt32(count)))]
-    }
-    
-    public func choose(n: Int) -> [Element] {
-        return Array(shuffle.prefix(n))
-    }
+    return buffer
 }
