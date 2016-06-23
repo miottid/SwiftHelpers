@@ -13,7 +13,7 @@ import UIKit
 /**
  *  A data source for a PagedScrollView
  */
-public protocol SHPagedScrollViewDataSource {
+@objc public protocol SHPagedScrollViewDataSource {
 
     /**
      Should return the number of items in a paged scroll view
@@ -30,6 +30,13 @@ public protocol SHPagedScrollViewDataSource {
      - returns: The view that should be displayed
      */
     func pagedScrollView(pagedScrollView: SHPagedScrollView, viewAtIndex index: Int) -> UIView
+
+    /**
+     Called when a user taps a view
+     - parameter pagedScrollView: The paged scroll view in question
+     - parameter index:           The index of the view that was tapped
+     */
+    optional func pagedScrollView(pagedScrollView: SHPagedScrollView, tappedViewAtIndex index: Int)
 
 }
 
@@ -73,6 +80,11 @@ public class SHPagedScrollView: UIScrollView {
     private func commonInit() {
         clipsToBounds = false
         pagingEnabled = true
+    }
+
+    func viewWasTapped(gestureRecognizer: UITapGestureRecognizer) {
+        guard let view = gestureRecognizer.view, index = views.indexOf(view) else { return }
+        datasource?.pagedScrollView?(self, tappedViewAtIndex: index)
     }
 
 }
@@ -179,6 +191,10 @@ public extension SHPagedScrollView /* Building the view */ {
         containerView.addConstraints(viewConstraints)
 
         views.append(containerView)
+
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(viewWasTapped(_:)))
+        containerView.addGestureRecognizer(gestureRecognizer)
+
         return containerView
     }
 
