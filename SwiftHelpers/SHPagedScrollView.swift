@@ -13,14 +13,14 @@ import UIKit
 /**
  *  A data source for a PagedScrollView
  */
-protocol PagedScrollViewDataSource {
+public protocol SHPagedScrollViewDataSource {
 
     /**
      Should return the number of items in a paged scroll view
      - parameter pagedScrollView: The paged scroll view in question
      - returns: The number of items that the paged scroll view should display
      */
-    func numberOfItemsInPagedScrollView(pagedScrollView: PagedScrollView) -> Int
+    func numberOfItemsInPagedScrollView(pagedScrollView: SHPagedScrollView) -> Int
 
     /**
      Should return a view that should be displayed at a given index
@@ -29,29 +29,29 @@ protocol PagedScrollViewDataSource {
      - parameter index:           The index of the view to display
      - returns: The view that should be displayed
      */
-    func pagedScrollView(pagedScrollView: PagedScrollView, viewAtIndex index: Int) -> UIView
+    func pagedScrollView(pagedScrollView: SHPagedScrollView, viewAtIndex index: Int) -> UIView
 
 }
 
-class PagedScrollView: UIScrollView {
+public class SHPagedScrollView: UIScrollView {
 
     /// The spacing between cells
-    @IBInspectable var interitemSpacing: CGFloat = 0
+    @IBInspectable public var interitemSpacing: CGFloat = 0
 
     /// The number of items to preload after the currently displayed cell
-    @IBInspectable var numberOfItemsToPreload: Int = 5
+    @IBInspectable public var numberOfItemsToPreload: Int = 5
 
     /// The datasource of the PagedScrollView
-    var datasource: PagedScrollViewDataSource?
+    public var datasource: SHPagedScrollViewDataSource?
 
     /// The number of cells that are currently in the paged scroll view
-    var preloadedCount: Int {
+    public var preloadedCount: Int {
         return views.count
     }
 
     /// Should be called by the delegate of
     /// the scrollview, to generate more cells as you scroll
-    func pagedScrollViewDidScroll() {
+    public func pagedScrollViewDidScroll() {
         let nextIndex = getScrollingInformationsFromCurrentContentOffset().nextIndex
         if nextIndex == preloadedCount - 1 {
             loadViewsUntilIndex(nextIndex + numberOfItemsToPreload)
@@ -60,12 +60,12 @@ class PagedScrollView: UIScrollView {
 
     private var views = [UIView]()
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
@@ -77,12 +77,12 @@ class PagedScrollView: UIScrollView {
 
 }
 
-extension PagedScrollView /* Public methods */ {
+public extension SHPagedScrollView /* Public methods */ {
 
     /**
      Reloads all the views in the paged scroll view
      */
-    func reloadData() {
+    public func reloadData() {
         guard let datasource = datasource else { return }
 
         views.forEach { $0.removeFromSuperview() }
@@ -97,7 +97,7 @@ extension PagedScrollView /* Public methods */ {
      - parameter index:    The index of the item to scroll to
      - parameter animated: Whether the scroll should be animated or not
      */
-    func scrollToItemAtIndex(index: Int, animated: Bool = true) {
+    public func scrollToItemAtIndex(index: Int, animated: Bool = true) {
         loadViewsUntilIndex(index)
         let pageWidth = bounds.size.width
         let pageOffset = CGPoint(x: pageWidth * CGFloat(index), y: 0)
@@ -109,7 +109,7 @@ extension PagedScrollView /* Public methods */ {
      - parameter idx: The index of the view to get
      - returns: The displayed view
      */
-    func viewAtIndex(idx: Int) -> UIView? {
+    public func viewAtIndex(idx: Int) -> UIView? {
         guard idx >= 0 && idx < views.count else {
             print("Can't get view in PagedScrollView at index \(idx). Index should be contained between in 0..<\(views.count)")
             return nil
@@ -126,7 +126,7 @@ extension PagedScrollView /* Public methods */ {
      If currentIndex and nextIndex are the same; it means that the user is bouncing the scrollview.
      - returns: A tuple with the currently displayed index, the next index, and an iterpolation between the two.
      */
-    func getScrollingInformationsFromCurrentContentOffset() -> (currentIndex: Int, nextIndex: Int, interpolation: Float) {
+    public func getScrollingInformationsFromCurrentContentOffset() -> (currentIndex: Int, nextIndex: Int, interpolation: Float) {
         let pageWidth = bounds.width
         guard preloadedCount > 0 && pageWidth > 0 else { return (0, 0, 0) }
 
@@ -139,7 +139,7 @@ extension PagedScrollView /* Public methods */ {
     }
 }
 
-extension PagedScrollView /* Building the view */ {
+public extension SHPagedScrollView /* Building the view */ {
 
     private func addView(view: UIView, atIndex idx: Int, ignoreLastConstraint: Bool) {
         guard idx >= 0 && idx <= views.count else {
