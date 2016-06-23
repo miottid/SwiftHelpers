@@ -237,7 +237,7 @@ public extension SHPagedScrollView /* Building the view */ {
         guard rangedIndex > views.count else { return }
 
         for idx in views.count..<rangedIndex {
-            let isLast = (idx == rangedIndex)
+            let isLast = (idx == rangedIndex - 1)
             let view = datasource.pagedScrollView(self, viewAtIndex: idx)
             addView(view, atIndex: idx, ignoreLastConstraint: !isLast)
         }
