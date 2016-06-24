@@ -105,7 +105,7 @@ public extension String {
     
     public var firstLetterCapitalization: String {
         var str = self
-        str.replaceRange(str.startIndex...str.startIndex, with: String(str[str.startIndex]))
+        str.replaceRange(str.startIndex...str.startIndex, with: String(str[str.startIndex]).uppercaseString)
         return str
     }
 }

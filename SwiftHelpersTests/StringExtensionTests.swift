@@ -29,5 +29,12 @@ class StringExtensionTests: XCTestCase {
         let hexValue = color.hexRGB
         XCTAssert(hexValue == hex, "hex must be the same")
     }
+
+    func testFirstLetterCapitalisation() {
+        let source = "hello worlD!"
+        let expected = "Hello worlD!"
+        let transformed = source.firstLetterCapitalization
+        XCTAssertEqual(expected, transformed)
+    }
     
 }
