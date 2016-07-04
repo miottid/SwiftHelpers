@@ -6,6 +6,8 @@
 //  Copyright © 2016 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 /// A UIButton subclass that puts the button's `imageView` on the right instead of the left.
@@ -33,3 +35,5 @@ class RightImageButton: UIButton {
     }
     
 }
+
+#endif

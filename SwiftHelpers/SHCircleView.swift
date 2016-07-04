@@ -6,6 +6,8 @@
 //  Copyright © 2016 Wopata. All rights reserved.
 //
 
+#if os(iOS)
+
 import UIKit
 
 /// A UIView subclass that updates its corner radius on layoutSubviews to make it look like a circle
@@ -43,3 +45,5 @@ class SHCircleButton: UIButton {
     }
     
 }
+
+#endif
