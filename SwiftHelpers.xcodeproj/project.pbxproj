@@ -34,6 +34,7 @@
 		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
 		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
+		9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */; };
 		9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */; };
 		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
@@ -96,6 +97,7 @@
 		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
 		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
+		9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScrollViewExtension.swift; sourceTree = "<group>"; };
 		9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtension.swift; sourceTree = "<group>"; };
 		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */,
 				B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */,
 				B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */,
+				9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */,
 				9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */,
 				B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */,
 				B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */,
@@ -403,6 +406,7 @@
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
 				586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */,
 				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
+				9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
 				58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */,
