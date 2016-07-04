@@ -36,6 +36,7 @@
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
 		9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */; };
 		9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */; };
+		9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */; };
 		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
@@ -99,6 +100,7 @@
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
 		9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScrollViewExtension.swift; sourceTree = "<group>"; };
 		9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtension.swift; sourceTree = "<group>"; };
+		9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttributedLabel.swift; sourceTree = "<group>"; };
 		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
 				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
 				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
+				9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */,
 				B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */,
 				58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */,
 				B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */,
@@ -380,6 +383,7 @@
 				583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */,
 				9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
+				9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
 				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
 				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
