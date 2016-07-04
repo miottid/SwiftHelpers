@@ -39,6 +39,7 @@
 		9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */; };
 		9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */; };
 		9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */; };
+		9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */; };
 		9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */; };
 		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
@@ -106,6 +107,7 @@
 		9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttributedLabel.swift; sourceTree = "<group>"; };
 		9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCircleView.swift; sourceTree = "<group>"; };
 		9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGradientView.swift; sourceTree = "<group>"; };
+		9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRightImageButton.swift; sourceTree = "<group>"; };
 		9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSeparatorView.swift; sourceTree = "<group>"; };
 		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */,
 				9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */,
 				9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */,
+				9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */,
 				9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */,
 				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
 				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
@@ -393,6 +396,7 @@
 				9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
 				9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */,
+				9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */,
 				9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
 				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
