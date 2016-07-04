@@ -11,6 +11,30 @@
 import UIKit
 
 public extension UIView {
+
+    /**
+     Layouts the received if needed, animated and with an optional completion closure
+
+     - parameter duration:   The duration of the animation layout. A duration of 0 or less calls layoutIfNeeded()
+     - parameter completion: The closure to execute after the animation has ended. Will be called even if duration <= 0
+     */
+    func layoutIfNeeded(
+        animationDuration duration: NSTimeInterval,
+                          delay: NSTimeInterval = 0,
+                          options: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: 0),
+                          completion: ((Bool) -> Void)? = nil) {
+
+        guard duration > 0 else {
+            layoutIfNeeded()
+            completion?(true)
+            return
+        }
+
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            self.layoutIfNeeded()
+        }, completion: completion)
+    }
+
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
     public func addAnimationType(type: String, subType: String?, duration: NSTimeInterval) -> CATransition {
         let transition = CATransition()
