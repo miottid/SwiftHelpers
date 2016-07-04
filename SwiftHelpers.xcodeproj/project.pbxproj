@@ -34,6 +34,14 @@
 		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
 		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
+		9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */; };
+		9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */; };
+		9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */; };
+		9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */; };
+		9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */; };
+		9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */; };
+		9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */; };
+		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -94,6 +102,14 @@
 		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
 		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
+		9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScrollViewExtension.swift; sourceTree = "<group>"; };
+		9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtension.swift; sourceTree = "<group>"; };
+		9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttributedLabel.swift; sourceTree = "<group>"; };
+		9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCircleView.swift; sourceTree = "<group>"; };
+		9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGradientView.swift; sourceTree = "<group>"; };
+		9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRightImageButton.swift; sourceTree = "<group>"; };
+		9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSeparatorView.swift; sourceTree = "<group>"; };
+		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -175,6 +191,7 @@
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
 				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
 				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
+				9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */,
 				B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */,
 				58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */,
 				B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */,
@@ -192,9 +209,15 @@
 				B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */,
 				B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */,
 				B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */,
+				9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */,
+				9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */,
 				B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */,
 				B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */,
 				B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */,
+				9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */,
+				9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */,
+				9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */,
+				9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */,
 				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
 				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
 				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
@@ -240,6 +263,7 @@
 				58854D391C01E19900B3F303 /* CommonInitTests.swift */,
 				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
 				586B734E1C83A90500934192 /* SHOperationTests.swift */,
+				9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
 			);
 			path = SwiftHelpersTests;
@@ -369,7 +393,11 @@
 				B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */,
 				58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */,
 				583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */,
+				9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */,
 				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
+				9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */,
+				9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */,
+				9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */,
 				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
 				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
 				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
@@ -378,8 +406,10 @@
 				58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */,
 				B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */,
 				B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */,
+				9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */,
 				586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */,
 				58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */,
+				9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */,
 				B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */,
 				58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */,
 				583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */,
@@ -396,6 +426,7 @@
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
 				586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */,
 				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
+				9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
 				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
 				58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */,
@@ -414,6 +445,7 @@
 				586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */,
 				58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */,
 				58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */,
+				9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */,
 				58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */,
 				58272EA61C6CF22300D7A3BF /* ComparisonHelperTests.swift in Sources */,
 				58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */,

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'SwiftHelpers'
-	s.version = '1.0.6'
+	s.version = '1.0.7'
 	s.license = 'MIT'
 	s.summary = 'A collection of Swift extensions'
 	s.homepage = 'https://github.com/dmiotti/SwiftHelpers'

@@ -108,5 +108,24 @@ extension UITextField {
         }
     }
 }
-
+extension UIBarItem {
+    @IBInspectable var localizedText: String {
+        set(key) {
+            title = NSLocalizedString(key, comment: "")
+        }
+        get {
+            return title!
+        }
+    }
+}
+extension UIViewController {
+    @IBInspectable var localizedTitle: String {
+        set(key) {
+            title = NSLocalizedString(key, comment: "")
+        }
+        get {
+            return title!
+        }
+    }
+}
 #endif
