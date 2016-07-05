@@ -9,8 +9,22 @@
 import Foundation
 
 ///Returns a localized string, using the main bundle if one is not specified.
-public func L(key: String) -> String {
-    return NSLocalizedString(key, comment: "")
+public func L(key: String, nb: Int? = nil) -> String {
+    guard let nb = nb else {
+        return NSLocalizedString(key, comment: key)
+    }
+
+    let prefix: String
+    if nb == 0 {
+        prefix = "zero"
+    } else if nb == 1 {
+        prefix = "one"
+    } else {
+        prefix = "other"
+    }
+
+    let localized = NSLocalizedString("\(key)_\(prefix)", comment: "")
+    return String(format: localized, nb)
 }
 
 ///Helper for `println` function with a filter for use in debug mode only
