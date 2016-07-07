@@ -64,4 +64,22 @@ public class SHCommonInitCollectionViewCell: UICollectionViewCell {
     
 }
 
+public class SHCommonInitControl: UIControl {
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+
+    public func commonInit() {
+
+    }
+
+}
+
 #endif
