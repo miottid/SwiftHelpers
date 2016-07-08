@@ -105,9 +105,10 @@ public class SHTimeInterval: Comparable, CustomStringConvertible {
     ///Create a new date by applying the TimeInterval
     ///
     ///- parameter fromNow: false when you want to remove the time interval from current, true otherwise
+    ///- parameter date: the date you want to apply the time interval to. Defaults to the current time and date.
     ///
     ///- returns: A new NSDate by applying the time offset
-    private func offsetDate(fromNow: Bool) -> NSDate {
+    private func offsetDate(fromNow: Bool, date: NSDate = NSDate()) -> NSDate {
         let coef = fromNow ? 1 : -1
         let offsetComponents = NSDateComponents()
         offsetComponents.second = coef * seconds
@@ -116,7 +117,7 @@ public class SHTimeInterval: Comparable, CustomStringConvertible {
         offsetComponents.day    = coef * days
         offsetComponents.month  = coef * months
         offsetComponents.year   = coef * years
-        if let date = CurrentCalendar.dateByAddingComponents(offsetComponents, toDate: NSDate(), options: NSCalendarOptions(rawValue: 0)) {
+        if let date = CurrentCalendar.dateByAddingComponents(offsetComponents, toDate: date, options: NSCalendarOptions(rawValue: 0)) {
             return date
         }
         return NSDate()
@@ -215,25 +216,11 @@ public func -= (inout lhs: NSDate, rhs: NSTimeInterval) {
 
 // Allow operation between NSDate and TimeInterval
 public func + (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
-    let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: lhs)
-    comps.year   += rhs.years
-    comps.day    += rhs.days
-    comps.month  += rhs.months
-    comps.hour   += rhs.hours
-    comps.minute += rhs.minutes
-    comps.second += rhs.seconds
-    return comps.date!
+    return rhs.offsetDate(true, date: lhs)
 }
 
 public func - (lhs: NSDate, rhs: SHTimeInterval) -> NSDate {
-    let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: lhs)
-    comps.year   -= rhs.years
-    comps.day    -= rhs.days
-    comps.month  -= rhs.months
-    comps.hour   -= rhs.hours
-    comps.minute -= rhs.minutes
-    comps.second -= rhs.seconds
-    return comps.date!
+    return rhs.offsetDate(false, date: lhs)
 }
 
 public func += (inout lhs: NSDate, rhs: SHTimeInterval) {
