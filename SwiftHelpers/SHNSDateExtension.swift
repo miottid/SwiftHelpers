@@ -294,6 +294,10 @@ public func <= (lhs: SHTimeInterval, rhs: SHTimeInterval) -> Bool {
     return lhs.inSeconds <= rhs.inSeconds
 }
 
+public func * (lhs: Int, rhs: SHTimeInterval) -> SHTimeInterval {
+    return (lhs * Int(rhs.inSeconds)).seconds
+}
+
 // MARK: - Int Extension
 
 public extension Int {
