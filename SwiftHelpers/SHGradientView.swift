@@ -14,22 +14,22 @@ import UIKit
  A class that allows to easily add gradients (and from Interface Builder too)
  It will create a gradient from the view's background colour to a clear colour
  */
-@IBDesignable class GradientView: UIView {
+@IBDesignable public class SHGradientView: UIView {
 
     /// Wether or not the view has a gradient at the top of the view
-    @IBInspectable var hasTopGradient: Bool = true
+    @IBInspectable public var hasTopGradient: Bool = true
     /// The height of the top gradient, expressed as a ratio of the total view height
-    @IBInspectable var topGradientHeightRatio: CGFloat = 0.3
+    @IBInspectable public  var topGradientHeightRatio: CGFloat = 0.3
 
     /// Wether or not the view has a gradient at the bottom of the view
-    @IBInspectable var hasBottomGradient: Bool = true
+    @IBInspectable public  var hasBottomGradient: Bool = true
     /// The height of the bottom gradient, expressed as a ratio of the total view height
-    @IBInspectable var bottomGradientHeightRatio: CGFloat = 0.3
+    @IBInspectable public var bottomGradientHeightRatio: CGFloat = 0.3
 
     /// If true, the gradient will be horizontal (if so, top = left, right = bottom).
-    @IBInspectable var horizontal: Bool = false
+    @IBInspectable public var horizontal: Bool = false
 
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         addMaskWithLocations(locationForGradient(), colors: colorsForGradient())
     }
