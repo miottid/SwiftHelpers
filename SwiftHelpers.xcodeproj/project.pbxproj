@@ -19,6 +19,7 @@
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */; };
 		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
+		5840FD6D1D34E60500EDE37B /* SHGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840FD6C1D34E60500EDE37B /* SHGif.swift */; };
 		586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586642811CE20F4E00ABA68D /* SHNumberExtension.swift */; };
 		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
 		58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */; };
@@ -86,6 +87,7 @@
 		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
 		583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDataExtension.swift; sourceTree = "<group>"; };
 		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
+		5840FD6C1D34E60500EDE37B /* SHGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGif.swift; sourceTree = "<group>"; };
 		586642811CE20F4E00ABA68D /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
 		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
 		58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDispatchExtension.swift; sourceTree = "<group>"; };
@@ -235,9 +237,10 @@
 				58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */,
 				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
 				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
+				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
+				5840FD6C1D34E60500EDE37B /* SHGif.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
-				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */,
 				58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */,
 				9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */,
+				5840FD6D1D34E60500EDE37B /* SHGif.swift in Sources */,
 				B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */,
 				58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */,
 				583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */,
