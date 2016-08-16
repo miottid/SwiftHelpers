@@ -44,6 +44,7 @@
 		9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */; };
 		9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */; };
 		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
+		9C6B88131D630D7F00AF5004 /* SHDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -114,6 +115,7 @@
 		9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRightImageButton.swift; sourceTree = "<group>"; };
 		9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSeparatorView.swift; sourceTree = "<group>"; };
 		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
+		9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDatePickerController.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				584150A71D61F51200866210 /* SHCoreDataStack.swift */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
+				9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */,
 				9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */,
 				586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */,
+				9C6B88131D630D7F00AF5004 /* SHDatePickerController.swift in Sources */,
 				58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */,
 				9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */,
 				5840FD6D1D34E60500EDE37B /* SHGif.swift in Sources */,
