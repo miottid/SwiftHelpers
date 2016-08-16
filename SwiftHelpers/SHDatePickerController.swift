@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 /*
 ** A view controller responsible for presenting a date picker to the user
 ** and pass back the selected date.
