@@ -119,10 +119,10 @@ public class SHDatePickerViewController: UIViewController {
 /// A class used to animate the transition of a SHDatePickerViewController
 public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    private let isPresenting: Bool
+    public var presenting: Bool
 
-    init(forPresentation isPresenting: Bool) {
-        self.isPresenting = isPresenting
+    init(forPresentation presenting: Bool) {
+        self.presenting = presenting
     }
 
     public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
@@ -130,7 +130,7 @@ public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedT
     }
 
     public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
-        if isPresenting {
+        if presenting {
             animatePresentation(transitionContext)
         } else {
             animateDismissal(transitionContext)
