@@ -123,7 +123,7 @@ public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedT
 
     public var presenting: Bool
 
-    init(forPresentation presenting: Bool) {
+    public init(forPresentation presenting: Bool) {
         self.presenting = presenting
     }
 
