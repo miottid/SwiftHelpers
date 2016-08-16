@@ -8,6 +8,8 @@
 
 import UIKit
 
+#if os(iOS)
+
 /*
 ** A view controller responsible for presenting a date picker to the user
 ** and pass back the selected date.
@@ -195,3 +197,5 @@ public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedT
     }
     
 }
+
+#endif
