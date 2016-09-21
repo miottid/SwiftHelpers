@@ -62,11 +62,11 @@ public func + (lhs: Int, rhs: Float) -> Float {
     return Float(lhs) + rhs
 }
 
-public func += (inout lhs: Float, rhs: Int) {
+public func += (lhs: inout Float, rhs: Int) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: Float, rhs: Int) {
+public func -= (lhs: inout Float, rhs: Int) {
     lhs = lhs - rhs
 }
 
@@ -136,11 +136,11 @@ public func + (lhs: Float, rhs: Double) -> Double {
     return Double(lhs) + rhs
 }
 
-public func += (inout lhs: Double, rhs: Float) {
+public func += (lhs: inout Double, rhs: Float) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: Double, rhs: Float) {
+public func -= (lhs: inout Double, rhs: Float) {
     lhs = lhs - rhs
 }
 
@@ -210,11 +210,11 @@ public func + (lhs: Int, rhs: Double) -> Double {
     return Double(lhs) + rhs
 }
 
-public func += (inout lhs: Double, rhs: Int) {
+public func += (lhs: inout Double, rhs: Int) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: Double, rhs: Int) {
+public func -= (lhs: inout Double, rhs: Int) {
     lhs = lhs - rhs
 }
 
@@ -284,11 +284,11 @@ public func + (lhs: Int, rhs: CGFloat) -> CGFloat {
     return CGFloat(lhs) + rhs
 }
 
-public func += (inout lhs: CGFloat, rhs: Int) {
+public func += (lhs: inout CGFloat, rhs: Int) {
     lhs = lhs + rhs
 }
 
-public func -= (inout lhs: CGFloat, rhs: Int) {
+public func -= (lhs: inout CGFloat, rhs: Int) {
     lhs = lhs - rhs
 }
 

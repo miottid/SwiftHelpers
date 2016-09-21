@@ -22,11 +22,12 @@ class NSURLRequestCURLTests: XCTestCase {
     }
     
     func testcURL() {
-        let req = NSMutableURLRequest(URL: NSURL(string: "http://google.fr")!)
-        req.HTTPMethod = "POST"
+        var req = URLRequest(url: URL(string: "http://google.fr")!)
+        req.httpMethod = "POST"
         let params = [ "email": "david.miotti@wopata.com", "password": "atapow" ]
-        let json = try! NSJSONSerialization.dataWithJSONObject(params, options: .PrettyPrinted)
-        req.HTTPBody = json
+
+        let json = try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+        req.httpBody = json
         req.setValue("Boddy", forHTTPHeaderField: "Authorization")
         
         let cURL = req.cURL()

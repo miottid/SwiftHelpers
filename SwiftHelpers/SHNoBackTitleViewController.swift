@@ -10,22 +10,22 @@
 
 import UIKit
 
-public class SHNoBackButtonTitleViewController: UIViewController {
+open class SHNoBackButtonTitleViewController: UIViewController {
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
 }
 
-public class SHNoBackButtonTitleTableViewController: UITableViewController {
+open class SHNoBackButtonTitleTableViewController: UITableViewController {
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
 }

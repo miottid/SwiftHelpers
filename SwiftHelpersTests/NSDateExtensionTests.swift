@@ -15,42 +15,42 @@ class NSDateExtensionTests: XCTestCase {
     // MARK: - Test NSDate comparisons
     
     func testGreaterThan() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(10)
-        XCTAssert(a < b, "a < b")
+        let a = Date()
+        let b = a.addingTimeInterval(10)
+        XCTAssert(b >= a, "a < b")
     }
     
     func testLessThan() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(-10)
-        XCTAssert(b < a, "b < a")
+        let a = Date()
+        let b = a.addingTimeInterval(-10)
+        XCTAssert(a >= b, "b < a")
     }
     
     func testEqual() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(0)
-        XCTAssert(a == b, "a == b")
+        let a = Date()
+        let b = a.addingTimeInterval(0)
+        XCTAssert(a.compare(b) == .orderedSame, "a == b")
     }
     
     func testNotEqual() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(1)
+        let a = Date()
+        let b = a.addingTimeInterval(1)
         XCTAssert(a != b, "a != b")
     }
     
     func testGreaterThanOrEqual() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(0)
+        let a = Date()
+        let b = a.addingTimeInterval(0)
         XCTAssert(a >= b, "a >= b")
-        let c = a.dateByAddingTimeInterval(10)
+        let c = a.addingTimeInterval(10)
         XCTAssert(c >= a, "c >= a")
     }
     
     func testLessThanOrEqual() {
-        let a = NSDate()
-        let b = a.dateByAddingTimeInterval(0)
+        let a = Date()
+        let b = a.addingTimeInterval(0)
         XCTAssert(a <= b, "a <= b")
-        let c = a.dateByAddingTimeInterval(-10)
+        let c = a.addingTimeInterval(-10)
         XCTAssert(c <= a, "c <= a")
     }
     
@@ -136,38 +136,38 @@ class NSDateExtensionTests: XCTestCase {
         //seconds
         let fiftyNineSeconds = 59.seconds
         let secondsInSeconds = fiftyNineSeconds.inSeconds
-        let expectedSecondsInSeconds = NSTimeInterval(59)
+        let expectedSecondsInSeconds = TimeInterval(59)
         XCTAssert(secondsInSeconds == expectedSecondsInSeconds, "secondsInSeconds == expectedSecondsInSeconds")
         
         //minutes
         let twentyFourMinutes = 24.minutes
         let minutesInSeconds = twentyFourMinutes.inSeconds
-        let expectedMinutesInSeconds = NSTimeInterval(24 * 60)
+        let expectedMinutesInSeconds = TimeInterval(24 * 60)
         XCTAssert(minutesInSeconds == expectedMinutesInSeconds, "minutesInSeconds == expectedMinutesInSeconds")
         
         //hours
         let tenHours = 10.hours
         let hoursInSeconds = tenHours.inSeconds
-        let expectedHoursInSeconds = NSTimeInterval(10 * 60 * 60)
+        let expectedHoursInSeconds = TimeInterval(10 * 60 * 60)
         XCTAssert(hoursInSeconds == expectedHoursInSeconds, "hoursInSeconds == expectedHoursInSeconds")
         
         //days
         let tenDays = 10.days
         let daysInSeconds = tenDays.inSeconds
-        let expectedDaysInSeconds = NSTimeInterval(10 * 24 * 60 * 60)
+        let expectedDaysInSeconds = TimeInterval(10 * 24 * 60 * 60)
         XCTAssert(daysInSeconds == expectedDaysInSeconds, "daysInSeconds == expectedDaysInSeconds")
         
         //months
         let oneMonth = 1.month
         let monthInSeconds = oneMonth.inSeconds
         // here we consider there is 31 days in a month
-        let expectedMonthInSeconds = NSTimeInterval(1 * 31 * 24 * 60 * 60)
+        let expectedMonthInSeconds = TimeInterval(1 * 31 * 24 * 60 * 60)
         XCTAssert(monthInSeconds == expectedMonthInSeconds, "monthInSeconds == expectedMonthInSeconds")
         
         //years
         let twelveYears = 13.years
         let yearsInSeconds = twelveYears.inSeconds
-        let expectedYearsInSeconds = NSTimeInterval(13 * 12 * 31 * 24 * 60 * 60)
+        let expectedYearsInSeconds = TimeInterval(13 * 12 * 31 * 24 * 60 * 60)
         XCTAssert(yearsInSeconds == expectedYearsInSeconds, "yearsInSeconds == expectedYearsInSeconds")
     }
     
@@ -175,38 +175,38 @@ class NSDateExtensionTests: XCTestCase {
         //seconds
         let fiftyNineSeconds = 59.seconds
         let secondsInMinutes = fiftyNineSeconds.inMinutes
-        let expectedSecondsInMinutes = NSTimeInterval(59.0 / 60.0)
+        let expectedSecondsInMinutes = TimeInterval(59.0 / 60.0)
         XCTAssert(secondsInMinutes == expectedSecondsInMinutes, "secondsInMinutes == expectedSecondsInMinutes")
         
         //minutes
         let twentyFourMinutes = 24.minutes
         let minutesInMinutes = twentyFourMinutes.inMinutes
-        let expectedMinutesInMinutes = NSTimeInterval(24)
+        let expectedMinutesInMinutes = TimeInterval(24)
         XCTAssert(minutesInMinutes == expectedMinutesInMinutes, "minutesInMinutes == expectedMinutesInMinutes")
         
         //hours
         let tenHours = 10.hours
         let hoursInMinutes = tenHours.inMinutes
-        let expectedHoursInMinutes = NSTimeInterval(10 * 60)
+        let expectedHoursInMinutes = TimeInterval(10 * 60)
         XCTAssert(hoursInMinutes == expectedHoursInMinutes, "hoursInMinutes == expectedHoursInMinutes")
         
         //days
         let tenDays = 10.days
         let daysInMinutes = tenDays.inMinutes
-        let expectedDaysInMinutes = NSTimeInterval(10 * 24 * 60)
+        let expectedDaysInMinutes = TimeInterval(10 * 24 * 60)
         XCTAssert(daysInMinutes == expectedDaysInMinutes, "daysInMinutes == expectedDaysInMinutes")
         
         //months
         let oneMonth = 1.month
         let monthInMinutes = oneMonth.inMinutes
         // here we consider there is 31 days in a month
-        let expectedMonthInMinutes = NSTimeInterval(1 * 31 * 24 * 60)
+        let expectedMonthInMinutes = TimeInterval(1 * 31 * 24 * 60)
         XCTAssert(monthInMinutes == expectedMonthInMinutes, "monthInMinues == expectedMonthMinues")
         
         //years
         let twelveYears = 13.years
         let yearsInMinutes = twelveYears.inMinutes
-        let expectedYearsInMinutes = NSTimeInterval(13 * 12 * 31 * 24 * 60)
+        let expectedYearsInMinutes = TimeInterval(13 * 12 * 31 * 24 * 60)
         XCTAssert(yearsInMinutes == expectedYearsInMinutes, "yearsInMinues == expectedYearsInMinues")
     }
     
@@ -214,38 +214,38 @@ class NSDateExtensionTests: XCTestCase {
         //seconds
         let fiftyNineSeconds = 59.seconds
         let secondsInHours = fiftyNineSeconds.inHours
-        let expectedSecondsInHours = NSTimeInterval(59.0 / 60.0 / 60.0)
+        let expectedSecondsInHours = TimeInterval(59.0 / 60.0 / 60.0)
         XCTAssert(secondsInHours == expectedSecondsInHours, "secondsInHours == expectedSecondsInHours")
         
         //minutes
         let twentyFourMinutes = 24.minutes
         let minutesInHours = twentyFourMinutes.inHours
-        let expectedMinutesInHours = NSTimeInterval(24.0 / 60.0)
+        let expectedMinutesInHours = TimeInterval(24.0 / 60.0)
         XCTAssert(minutesInHours == expectedMinutesInHours, "minutesInHours == expectedMinutesInHours")
         
         //hours
         let tenHours = 10.hours
         let hoursInHours = tenHours.inHours
-        let expectedHoursInHours = NSTimeInterval(10)
+        let expectedHoursInHours = TimeInterval(10)
         XCTAssert(hoursInHours == expectedHoursInHours, "hoursInHours == expectedHoursInHours")
         
         //days
         let tenDays = 10.days
         let daysInHours = tenDays.inHours
-        let expectedDaysInHours = NSTimeInterval(10 * 24)
+        let expectedDaysInHours = TimeInterval(10 * 24)
         XCTAssert(daysInHours == expectedDaysInHours, "daysInHours == expectedDaysInHours")
         
         //months
         let oneMonth = 1.month
         let monthInHours = oneMonth.inHours
         // here we consider there is 31 days in a month
-        let expectedMonthInHours = NSTimeInterval(1 * 31 * 24)
+        let expectedMonthInHours = TimeInterval(1 * 31 * 24)
         XCTAssert(monthInHours == expectedMonthInHours, "monthInHours == expectedMonthInHours")
         
         //years
         let twelveYears = 13.years
         let yearsInHours = twelveYears.inHours
-        let expectedYearsInHours = NSTimeInterval(13 * 12 * 31 * 24)
+        let expectedYearsInHours = TimeInterval(13 * 12 * 31 * 24)
         XCTAssert(yearsInHours == expectedYearsInHours, "yearsInHours == expectedYearsInHours")
     }
     
@@ -253,38 +253,38 @@ class NSDateExtensionTests: XCTestCase {
         //seconds
         let fiftyNineSeconds = 59.seconds
         let secondsInDays = fiftyNineSeconds.inDays
-        let expectedSecondsInDays = NSTimeInterval(59.0 / 60.0 / 60.0 / 24.0)
+        let expectedSecondsInDays = TimeInterval(59.0 / 60.0 / 60.0 / 24.0)
         XCTAssert(secondsInDays == expectedSecondsInDays, "secondsInDays == expectedSecondsInDays")
         
         //minutes
         let twentyFourMinutes = 24.minutes
         let minutesInDays = twentyFourMinutes.inDays
-        let expectedMinutesInDays = NSTimeInterval(24.0 / 60.0 / 24.0)
+        let expectedMinutesInDays = TimeInterval(24.0 / 60.0 / 24.0)
         XCTAssert(minutesInDays == expectedMinutesInDays, "minutesInDays == expectedMinutesInDays")
         
         //hours
         let tenHours = 10.hours
         let hoursInDays = tenHours.inDays
-        let expectedHoursInDays = NSTimeInterval(10.0 / 24.0)
+        let expectedHoursInDays = TimeInterval(10.0 / 24.0)
         XCTAssert(hoursInDays == expectedHoursInDays, "hoursInDays == expectedHoursInDays")
         
         //days
         let tenDays = 10.days
         let daysInDays = tenDays.inDays
-        let expectedDaysInDays = NSTimeInterval(10.0)
+        let expectedDaysInDays = TimeInterval(10.0)
         XCTAssert(daysInDays == expectedDaysInDays, "daysInDays == expectedDaysInDays")
         
         //months
         let oneMonth = 1.month
         let monthInDays = oneMonth.inDays
         // here we consider there is 31 days in a month
-        let expectedMonthInDays = NSTimeInterval(31.0)
+        let expectedMonthInDays = TimeInterval(31.0)
         XCTAssert(monthInDays == expectedMonthInDays, "monthInDays == expectedMonthInDays")
         
         //years
         let twelveYears = 13.years
         let yearsInDays = twelveYears.inDays
-        let expectedYearsInDays = NSTimeInterval(13 * 12 * 31)
+        let expectedYearsInDays = TimeInterval(13 * 12 * 31)
         XCTAssert(yearsInDays == expectedYearsInDays, "yearsInDays == expectedYearsInDays")
     }
     
@@ -319,95 +319,95 @@ class NSDateExtensionTests: XCTestCase {
     }
     
     ///This whole thing is using this calendar, use `setDateHelperCalendar:`
-    private var CurrentCalendar = NSCalendar.currentCalendar()
+    fileprivate var CurrentCalendar = Calendar.current
     
     ///Use this var when copying dates from components
-    private let CalendarAllUnits: NSCalendarUnit = [.Era, .Year, .Month, .Day, .Hour, .Minute, .Second, .Calendar, .TimeZone]
+    fileprivate let CalendarAllUnits: Set<Calendar.Component> = Set<Calendar.Component>([.era, .year, .month, .day, .hour, .minute, .second, .calendar, .timeZone])
     
     func testDateOfYear() {
         let date = 16.october.of(1986)
-        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: date)
+        let comps = CurrentCalendar.dateComponents(CalendarAllUnits, from: date)
         XCTAssert(comps.day == 16, "comps.day == 16")
         XCTAssert(comps.month == 10, "comps.month == 10")
         XCTAssert(comps.year == 1986, "comps.year == 1986")
         let of2014 = date.of(2014)
-        let compsOf2014 = CurrentCalendar.components(CalendarAllUnits, fromDate: of2014)
+        let compsOf2014 = CurrentCalendar.dateComponents(CalendarAllUnits, from: of2014)
         XCTAssert(compsOf2014.year == 2014, "comps.year == 2014")
     }
     
     func testIsToday() {
-        let now = NSDate()
+        let now = Date()
         XCTAssert(now.isToday, "now.isToday")
     }
     
     func testBeginningOfDay() {
-        let now = NSDate()
+        let now = Date()
         let begin = now.beginningOfDay
-        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: begin)
+        let comps = CurrentCalendar.dateComponents(CalendarAllUnits, from: begin)
         XCTAssert(comps.hour == 0, "\(comps.hour) == 0")
         XCTAssert(comps.minute == 0, "\(comps.minute) == 0")
         XCTAssert(comps.second == 0, "\(comps.second) == 0")
     }
     
     func testEndOfDay() {
-        let now = NSDate()
+        let now = Date()
         let begin = now.endOfDay
-        let comps = CurrentCalendar.components(CalendarAllUnits, fromDate: begin)
+        let comps = CurrentCalendar.dateComponents(CalendarAllUnits, from: begin)
         XCTAssert(comps.hour == 23, "\(comps.hour) = 23")
         XCTAssert(comps.minute == 59, "\(comps.minute) == 59")
         XCTAssert(comps.second == 59, "\(comps.second) == 59")
     }
     
     func testNextHour() {
-        let testedDate = NSDate()
+        let testedDate = Date()
         let nextHour = testedDate.nextHour
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = Calendar.current
         
-        let testedComps = calendar.components(CalendarAllUnits, fromDate: testedDate)
-        testedComps.hour += 1
+        var testedComps = calendar.dateComponents(CalendarAllUnits, from: testedDate)
+        testedComps.hour = testedComps.hour ?? 0 + 1
         testedComps.minute = 0
         testedComps.second = 0
         
-        let nextHourComps = calendar.components(CalendarAllUnits, fromDate: nextHour)
+        let nextHourComps = calendar.dateComponents(CalendarAllUnits, from: nextHour)
         
         XCTAssertTrue(testedComps.date == nextHourComps.date, "(\(testedComps.date)) == \(nextHourComps.date)")
     }
     
     func testAddingTimeIntervalToDate() {
-        let testedDate = NSDate()
-        let testedComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: testedDate)
+        let testedDate = Date()
+        let testedComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: testedDate)
         
         let interval = 2.months
         let newDate = testedDate + interval
-        let newComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: newDate)
+        let newComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: newDate)
         
         XCTAssert(testedComponents.year == newComponents.year, "year should match")
-        XCTAssert(testedComponents.month + 2 == newComponents.month, "month should have 2 more than the other")
+        XCTAssert(testedComponents.month ?? 0 + 2 == newComponents.month, "month should have 2 more than the other")
         XCTAssert(testedComponents.second == newComponents.second, "second should match")
         XCTAssert(testedComponents.day == newComponents.day, "day should match")
     }
     
     func testRemovingTimeIntervalToDate() {
-        let testedDate = NSDate()
-        let testedComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: testedDate)
+        let testedDate = Date()
+        let testedComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: testedDate)
         
         let interval = 1.year
         let newDate = testedDate - interval
-        let newComponents = CurrentCalendar.components(CalendarAllUnits, fromDate: newDate)
+        let newComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: newDate)
         
-        XCTAssert(testedComponents.year - 1 == newComponents.year, "year should match")
+        XCTAssert(testedComponents.year ?? 0 - 1 == newComponents.year, "year should match")
         XCTAssert(testedComponents.month == newComponents.month, "month should have 2 more than the other")
         XCTAssert(testedComponents.second == newComponents.second, "second should match")
         XCTAssert(testedComponents.day == newComponents.day, "day should match")
     }
     
     func testSameDay() {
-        let date = NSDate().beginningOfDay
-        let nextDate = date.dateByAddingTimeInterval(5000)
+        let date = Date().beginningOfDay
+        let nextDate = date.addingTimeInterval(5000)
         let isSameDay = date.isSameDay(nextDate)
         XCTAssert(isSameDay == true, "should be the same day")
         
-        let previousDate = date.dateByAddingTimeInterval(-5000)
+        let previousDate = date.addingTimeInterval(-5000)
         let prevIsSameDay = date.isSameDay(previousDate)
         XCTAssert(prevIsSameDay == false, "should not be the same day")
     }

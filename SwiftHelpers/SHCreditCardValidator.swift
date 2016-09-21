@@ -34,12 +34,12 @@ public func ==(lhs: SHCreditCardValidationType, rhs: SHCreditCardValidationType)
     return lhs.name == rhs.name
 }
 
-public class SHCreditCardValidator {
+open class SHCreditCardValidator {
     
-    public lazy var types: [SHCreditCardValidationType] = {
+    open lazy var types: [SHCreditCardValidationType] = {
         var types = [SHCreditCardValidationType]()
         for object in SHCreditCardValidator.types {
-            types.append(SHCreditCardValidationType(dict: object))
+            types.append(SHCreditCardValidationType(dict: object as [String : AnyObject]))
         }
         return types
     }()
@@ -53,11 +53,11 @@ public class SHCreditCardValidator {
      
      - returns: CreditCardValidationType structure
      */
-    public func typeFromString(string: String) -> SHCreditCardValidationType? {
+    open func typeFromString(_ string: String) -> SHCreditCardValidationType? {
         for type in types {
             let predicate = NSPredicate(format: "SELF MATCHES %@", type.regex)
             let numbersString = self.onlyNumbersFromString(string)
-            if predicate.evaluateWithObject(numbersString) {
+            if predicate.evaluate(with: numbersString) {
                 return type
             }
         }
@@ -71,7 +71,7 @@ public class SHCreditCardValidator {
      
      - returns: true or false
      */
-    public func validateString(string: String) -> Bool {
+    open func validateString(_ string: String) -> Bool {
         let numbers = self.onlyNumbersFromString(string)
         if numbers.characters.count < 9 {
             return false
@@ -79,8 +79,7 @@ public class SHCreditCardValidator {
         
         var reversedString = ""
         let range = Range<String.Index>(numbers.startIndex..<numbers.endIndex)
-        
-        numbers.enumerateSubstringsInRange(range, options: [NSStringEnumerationOptions.Reverse, NSStringEnumerationOptions.ByComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
+        numbers.enumerateSubstrings(in: range, options: [NSString.EnumerationOptions.reverse, NSString.EnumerationOptions.byComposedCharacterSequences]) { (substring, substringRange, enclosingRange, stop) -> () in
             reversedString += substring!
         }
         
@@ -110,19 +109,19 @@ public class SHCreditCardValidator {
      
      - returns: true or false
      */
-    public func validateString(string: String, forType type: SHCreditCardValidationType) -> Bool {
+    open func validateString(_ string: String, forType type: SHCreditCardValidationType) -> Bool {
         return typeFromString(string) == type
     }
     
-    public func onlyNumbersFromString(string: String) -> String {
-        let set = NSCharacterSet.decimalDigitCharacterSet().invertedSet
-        let numbers = string.componentsSeparatedByCharactersInSet(set)
-        return numbers.joinWithSeparator("")
+    open func onlyNumbersFromString(_ string: String) -> String {
+        let set = CharacterSet.decimalDigits.inverted
+        let numbers = string.components(separatedBy: set)
+        return numbers.joined(separator: "")
     }
     
     // MARK: - Loading data
     
-    private static let types = [
+    fileprivate static let types = [
         [
             "name": "Amex",
             "regex": "^3[47][0-9]{5,}$"

@@ -11,7 +11,7 @@
 import UIKit
 
 ///Mix two colors
-public func blendColor(firstColor: UIColor, secondColor: UIColor, alpha: Float) -> UIColor {
+public func blendColor(_ firstColor: UIColor, secondColor: UIColor, alpha: Float) -> UIColor {
     return firstColor.blendWithColor(secondColor, alpha: alpha)
 }
 
@@ -26,11 +26,11 @@ public extension UIColor {
         var alpha: CGFloat = 1.0
         
         if hex.hasPrefix("#") {
-            let index   = hex.startIndex.advancedBy(1)
-            let hex     = hex.substringFromIndex(index)
-            let scanner = NSScanner(string: hex)
+            let index   = hex.characters.index(hex.startIndex, offsetBy: 1)
+            let hex     = hex.substring(from: index)
+            let scanner = Scanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
-            if scanner.scanHexLongLong(&hexValue) {
+            if scanner.scanHexInt64(&hexValue) {
                 switch (hex.characters.count) {
                 case 3:
                     red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
@@ -73,7 +73,7 @@ public extension UIColor {
         self.init(red:r/255.0, green:g/255.0, blue:b/255.0, alpha:a)
     }
     
-    public func blendWithColor(color: UIColor, alpha: Float) -> UIColor {
+    public func blendWithColor(_ color: UIColor, alpha: Float) -> UIColor {
         let boundAlpha = min(1.0, max(0.0, alpha))
         let beta = 1.0 - boundAlpha
         var r1: CGFloat = 0; var g1: CGFloat = 0; var b1: CGFloat = 0; var a1: CGFloat = 0
@@ -86,7 +86,7 @@ public extension UIColor {
         return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1.0)
     }
     
-    public func matchWithColor(color: UIColor, withTolerance tolerance: CGFloat = 0.0) -> Bool {
+    public func matchWithColor(_ color: UIColor, withTolerance tolerance: CGFloat = 0.0) -> Bool {
         
         var r1 : CGFloat = 0
         var g1 : CGFloat = 0

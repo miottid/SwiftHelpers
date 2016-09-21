@@ -14,27 +14,27 @@ import UIKit
  A class that allows to easily add gradients (and from Interface Builder too)
  It will create a gradient from the view's background colour to a clear colour
  */
-@IBDesignable public class SHGradientView: UIView {
+@IBDesignable open class SHGradientView: UIView {
 
     /// Wether or not the view has a gradient at the top of the view
-    @IBInspectable public var hasTopGradient: Bool = true
+    @IBInspectable open var hasTopGradient: Bool = true
     /// The height of the top gradient, expressed as a ratio of the total view height
-    @IBInspectable public  var topGradientHeightRatio: CGFloat = 0.3
+    @IBInspectable open  var topGradientHeightRatio: CGFloat = 0.3
 
     /// Wether or not the view has a gradient at the bottom of the view
-    @IBInspectable public  var hasBottomGradient: Bool = true
+    @IBInspectable open  var hasBottomGradient: Bool = true
     /// The height of the bottom gradient, expressed as a ratio of the total view height
-    @IBInspectable public var bottomGradientHeightRatio: CGFloat = 0.3
+    @IBInspectable open var bottomGradientHeightRatio: CGFloat = 0.3
 
     /// If true, the gradient will be horizontal (if so, top = left, right = bottom).
-    @IBInspectable public var horizontal: Bool = false
+    @IBInspectable open var horizontal: Bool = false
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         addMaskWithLocations(locationForGradient(), colors: colorsForGradient())
     }
 
-    private func locationForGradient() -> [NSNumber] {
+    fileprivate func locationForGradient() -> [CGFloat] {
         if hasTopGradient && hasBottomGradient {
             return [0, topGradientHeightRatio, 1 - bottomGradientHeightRatio, 1]
         } else if hasTopGradient {
@@ -45,9 +45,9 @@ import UIKit
         return []
     }
 
-    private func colorsForGradient() -> [CGColor] {
-        let outerColor = UIColor(white: 1, alpha: 1).CGColor
-        let innerColor = UIColor(white: 1, alpha: 0).CGColor
+    fileprivate func colorsForGradient() -> [CGColor] {
+        let outerColor = UIColor(white: 1, alpha: 1).cgColor
+        let innerColor = UIColor(white: 1, alpha: 0).cgColor
 
         if hasTopGradient && hasBottomGradient {
             return [outerColor, innerColor, innerColor, outerColor]
@@ -59,9 +59,12 @@ import UIKit
         return []
     }
 
-    private func addMaskWithLocations(locations: [NSNumber], colors: [CGColor]) {
+    fileprivate func addMaskWithLocations(_ locations: [CGFloat], colors: [CGColor]) {
         let maskLayer = CAGradientLayer()
-        maskLayer.locations = locations
+        maskLayer.locations = locations.flatMap {
+            let d = Double($0)
+            return NSNumber(floatLiteral: d)
+        }
         maskLayer.colors = colors
         maskLayer.bounds = bounds
         maskLayer.anchorPoint = CGPoint.zero

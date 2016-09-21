@@ -22,16 +22,16 @@ extension UINavigationBar {
         background?.alpha = 1
     }
 
-    public func setBackgroundImageViewAlpha(alpha:CGFloat) {
+    public func setBackgroundImageViewAlpha(_ alpha:CGFloat) {
         let background = backgroundImageViewInNavigationBar(self)
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             background!.alpha = alpha
         })
     }
     
-    public func setBottomHairLineAlpha(alpha:CGFloat) {
+    public func setBottomHairLineAlpha(_ alpha:CGFloat) {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
-        UIView.animateWithDuration(0.2, animations: { () -> Void in
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
             navigationBarImageView!.alpha = alpha
         })
     }
@@ -46,8 +46,8 @@ extension UINavigationBar {
         navigationBarImageView?.alpha = 0.5
     }
     
-    private func hairlineImageViewInNavigationBar(view: UIView) -> UIImageView? {
-        if view.isKindOfClass(UIImageView) && view.bounds.height <= 1.0 {
+    fileprivate func hairlineImageViewInNavigationBar(_ view: UIView) -> UIImageView? {
+        if view.isKind(of: UIImageView.self) && view.bounds.height <= 1.0 {
             return (view as! UIImageView)
         }
         
@@ -61,7 +61,7 @@ extension UINavigationBar {
         return nil
     }
     
-    private func backgroundImageViewInNavigationBar(view: UIView) -> UIView? {
+    fileprivate func backgroundImageViewInNavigationBar(_ view: UIView) -> UIView? {
         return view.subviews.first
     }
     

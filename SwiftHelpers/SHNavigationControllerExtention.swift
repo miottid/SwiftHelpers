@@ -8,11 +8,11 @@
 
 import Foundation
 
-public class PreferredStatusBarNavigationController: UINavigationController {
-    public override func preferredStatusBarStyle() -> UIStatusBarStyle {
+open class PreferredStatusBarNavigationController: UINavigationController {
+    open override var preferredStatusBarStyle : UIStatusBarStyle {
         if let top = self.topViewController {
-            return top.preferredStatusBarStyle()
+            return top.preferredStatusBarStyle
         }
-        return super.preferredStatusBarStyle()
+        return super.preferredStatusBarStyle
     }
 }

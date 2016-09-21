@@ -20,7 +20,7 @@ import UIKit
      - parameter pagedScrollView: The paged scroll view in question
      - returns: The number of items that the paged scroll view should display
      */
-    func numberOfItemsInPagedScrollView(pagedScrollView: SHPagedScrollView) -> Int
+    func numberOfItemsInPagedScrollView(_ pagedScrollView: SHPagedScrollView) -> Int
 
     /**
      Should return a view that should be displayed at a given index
@@ -29,43 +29,43 @@ import UIKit
      - parameter index:           The index of the view to display
      - returns: The view that should be displayed
      */
-    func pagedScrollView(pagedScrollView: SHPagedScrollView, viewAtIndex index: Int) -> UIView
+    func pagedScrollView(_ pagedScrollView: SHPagedScrollView, viewAtIndex index: Int) -> UIView
 
     /**
      Called when a user taps a view
      - parameter pagedScrollView: The paged scroll view in question
      - parameter index:           The index of the view that was tapped
      */
-    optional func pagedScrollView(pagedScrollView: SHPagedScrollView, tappedViewAtIndex index: Int)
+    @objc optional func pagedScrollView(_ pagedScrollView: SHPagedScrollView, tappedViewAtIndex index: Int)
 
 }
 
-public class SHPagedScrollView: UIScrollView {
+open class SHPagedScrollView: UIScrollView {
 
     /// The spacing between cells
-    @IBInspectable public var interitemSpacing: CGFloat = 0
+    @IBInspectable open var interitemSpacing: CGFloat = 0
 
     /// The number of items to preload after the currently displayed cell
-    @IBInspectable public var numberOfItemsToPreload: Int = 5
+    @IBInspectable open var numberOfItemsToPreload: Int = 5
 
     /// The datasource of the PagedScrollView
-    public var datasource: SHPagedScrollViewDataSource?
+    open var datasource: SHPagedScrollViewDataSource?
 
     /// The number of cells that are currently in the paged scroll view
-    public var preloadedCount: Int {
+    open var preloadedCount: Int {
         return views.count
     }
 
     /// Should be called by the delegate of
     /// the scrollview, to generate more cells as you scroll
-    public func pagedScrollViewDidScroll() {
+    open func pagedScrollViewDidScroll() {
         let nextIndex = getScrollingInformationsFromCurrentContentOffset().nextIndex
         if nextIndex == preloadedCount - 1 {
             loadViewsUntilIndex(nextIndex + numberOfItemsToPreload)
         }
     }
 
-    private var views = [UIView]()
+    fileprivate var views = [UIView]()
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,13 +77,13 @@ public class SHPagedScrollView: UIScrollView {
         commonInit()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         clipsToBounds = false
-        pagingEnabled = true
+        isPagingEnabled = true
     }
 
-    func viewWasTapped(gestureRecognizer: UITapGestureRecognizer) {
-        guard let view = gestureRecognizer.view, index = views.indexOf(view) else { return }
+    func viewWasTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let view = gestureRecognizer.view, let index = views.index(of: view) else { return }
         datasource?.pagedScrollView?(self, tappedViewAtIndex: index)
     }
 
@@ -109,7 +109,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter index:    The index of the item to scroll to
      - parameter animated: Whether the scroll should be animated or not
      */
-    public func scrollToItemAtIndex(index: Int, animated: Bool = true) {
+    public func scrollToItemAtIndex(_ index: Int, animated: Bool = true) {
         loadViewsUntilIndex(index)
         let pageWidth = bounds.size.width
         let pageOffset = CGPoint(x: pageWidth * CGFloat(index), y: 0)
@@ -121,7 +121,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter idx: The index of the view to get
      - returns: The displayed view
      */
-    public func viewAtIndex(idx: Int) -> UIView? {
+    public func viewAtIndex(_ idx: Int) -> UIView? {
         guard idx >= 0 && idx < views.count else {
             print("Can't get view in PagedScrollView at index \(idx). Index should be contained between in 0..<\(views.count)")
             return nil
@@ -153,7 +153,7 @@ public extension SHPagedScrollView /* Public methods */ {
 
 public extension SHPagedScrollView /* Building the view */ {
 
-    private func addView(view: UIView, atIndex idx: Int, ignoreLastConstraint: Bool) {
+    fileprivate func addView(_ view: UIView, atIndex idx: Int, ignoreLastConstraint: Bool) {
         guard idx >= 0 && idx <= views.count else {
             fatalError("Can't add a view in PagedScrollView at index \(idx). Index should be contained between in 0...\(views.count)")
         }
@@ -169,24 +169,24 @@ public extension SHPagedScrollView /* Building the view */ {
         }
     }
 
-    private func addView(view: UIView) -> UIView {
+    fileprivate func addView(_ view: UIView) -> UIView {
         let containerView = UIView()
 
         addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        let containerWidth = NSLayoutConstraint(item: containerView, attribute: .Width, relatedBy: .Equal, toItem: self, attribute: .Width, multiplier: 1, constant: 0)
-        let containerHeight = NSLayoutConstraint(item: containerView, attribute: .Height, relatedBy: .Equal, toItem: self, attribute: .Height, multiplier: 1, constant: 0)
-        let containerTop = NSLayoutConstraint(item: containerView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
-        let containerBottom = NSLayoutConstraint(item: containerView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        let containerWidth = NSLayoutConstraint(item: containerView, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: 1, constant: 0)
+        let containerHeight = NSLayoutConstraint(item: containerView, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
+        let containerTop = NSLayoutConstraint(item: containerView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+        let containerBottom = NSLayoutConstraint(item: containerView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
         let containerConstraints = [containerWidth, containerHeight, containerTop, containerBottom]
         addConstraints(containerConstraints)
 
         containerView.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
-        let viewTop = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: containerView, attribute: .Top, multiplier: 1, constant: 0)
-        let viewBottom = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: containerView, attribute: .Bottom, multiplier: 1, constant: 0)
-        let viewLeft = NSLayoutConstraint(item: view, attribute: .Left, relatedBy: .Equal, toItem: containerView, attribute: .Left, multiplier: 1, constant: interitemSpacing / 2)
-        let viewRight = NSLayoutConstraint(item: view, attribute: .Right, relatedBy: .Equal, toItem: containerView, attribute: .Right, multiplier: 1, constant: -interitemSpacing / 2)
+        let viewTop = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: containerView, attribute: .top, multiplier: 1, constant: 0)
+        let viewBottom = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: containerView, attribute: .bottom, multiplier: 1, constant: 0)
+        let viewLeft = NSLayoutConstraint(item: view, attribute: .left, relatedBy: .equal, toItem: containerView, attribute: .left, multiplier: 1, constant: interitemSpacing / 2)
+        let viewRight = NSLayoutConstraint(item: view, attribute: .right, relatedBy: .equal, toItem: containerView, attribute: .right, multiplier: 1, constant: -interitemSpacing / 2)
         let viewConstraints = [viewTop, viewBottom, viewLeft, viewRight]
         containerView.addConstraints(viewConstraints)
 
@@ -198,45 +198,45 @@ public extension SHPagedScrollView /* Building the view */ {
         return containerView
     }
 
-    private func addConstraintBetweenPrevious(previousView previous: UIView?, andView view: UIView) {
+    fileprivate func addConstraintBetweenPrevious(previousView previous: UIView?, andView view: UIView) {
         let constraint: NSLayoutConstraint
         if let previous = previous {
-            constraint = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: previous, attribute: .Trailing, multiplier: 1, constant: 0)
+            constraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: previous, attribute: .trailing, multiplier: 1, constant: 0)
         } else {
-            constraint = NSLayoutConstraint(item: view, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1, constant: 0)
+            constraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1, constant: 0)
         }
         view.superview?.addConstraint(constraint)
     }
 
-    private func addConstraintBetweenView(view: UIView, andNextView next: UIView?) {
+    fileprivate func addConstraintBetweenView(_ view: UIView, andNextView next: UIView?) {
         // we don't need a constraint between the view and the next, we already have
         // the previous one covering that. we only need to add one at the end of the
         // scrollview
         if next == nil {
-            let constraint = NSLayoutConstraint(item: view, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1, constant: 0)
+            let constraint = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1, constant: 0)
             view.superview?.addConstraint(constraint)
         }
     }
 
-    private func removeConstraintsBetweenViews(previousView previous: UIView?, nextView next: UIView?) {
+    fileprivate func removeConstraintsBetweenViews(previousView previous: UIView?, nextView next: UIView?) {
         let constraintsToRemove: [NSLayoutConstraint]
 
-        if let previous = previous, next = next {
+        if let previous = previous, let next = next {
             constraintsToRemove = constraints.filter { // we're adding it before another view, remove the trailing constraints to the next view's leading
-                let isPreviousViewTrailing = ($0.firstItem as? UIView) == previous && $0.firstAttribute == .Trailing
-                let isNextViewLeading = ($0.secondItem as? UIView) == next && $0.secondAttribute == .Leading
+                let isPreviousViewTrailing = ($0.firstItem as? UIView) == previous && $0.firstAttribute == .trailing
+                let isNextViewLeading = ($0.secondItem as? UIView) == next && $0.secondAttribute == .leading
                 return (isPreviousViewTrailing && isNextViewLeading)
             }
         } else if let previous = previous { // we're adding it at the last position, remove the trailing constraints to self
             constraintsToRemove = constraints.filter {
-                let isPreviousViewTrailing = ($0.firstItem as? UIView) == previous && $0.firstAttribute == .Trailing
-                let isSelfTrailing = ($0.secondItem as? UIView) == self && $0.secondAttribute == .Trailing
+                let isPreviousViewTrailing = ($0.firstItem as? UIView) == previous && $0.firstAttribute == .trailing
+                let isSelfTrailing = ($0.secondItem as? UIView) == self && $0.secondAttribute == .trailing
                 return isPreviousViewTrailing && isSelfTrailing
             }
         } else if let next = next { // we're adding it at the first position, remove the leading constraints to self
             constraintsToRemove = constraints.filter {
-                let isNextViewLeading = ($0.firstItem as? UIView) == next && $0.firstAttribute == .Leading
-                let isSelfLeading = ($0.secondItem as? UIView) == self && $0.secondAttribute == .Leading
+                let isNextViewLeading = ($0.firstItem as? UIView) == next && $0.firstAttribute == .leading
+                let isSelfLeading = ($0.secondItem as? UIView) == self && $0.secondAttribute == .leading
                 return isNextViewLeading && isSelfLeading
             }
         } else {
@@ -246,7 +246,7 @@ public extension SHPagedScrollView /* Building the view */ {
         removeConstraints(constraintsToRemove)
     }
 
-    private func loadViewsUntilIndex(index: Int) {
+    fileprivate func loadViewsUntilIndex(_ index: Int) {
         guard let datasource = datasource else { return }
 
         let rangedIndex = min(index, datasource.numberOfItemsInPagedScrollView(self))

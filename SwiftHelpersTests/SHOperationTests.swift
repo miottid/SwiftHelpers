@@ -23,30 +23,30 @@ final class TestOperation: SHOperation {
 class SHOperationTests: XCTestCase {
     
     func testInitWithCompletionBlock() {
-        let queue = NSOperationQueue()
-        let expectation = expectationWithDescription("Test completion block on SHOperation")
+        let queue = OperationQueue()
+        let exp = expectation(description: "Test completion block on SHOperation")
         let testOp = TestOperation { op in
             XCTAssertTrue(op is TestOperation, "\(op) is TestOperation")
             let op = op as! TestOperation
             let hello = op.sayHello()
             XCTAssertEqual(hello, kTestOperationSayHello, "\(hello) == \(kTestOperationSayHello)")
-            expectation.fulfill()
+            exp.fulfill()
         }
         queue.addOperation(testOp)
-        waitForExpectationsWithTimeout(10) { error in
+        waitForExpectations(timeout: 10) { error in
             print("Expectation timeout: \(error)")
         }
     }
     
     func testInit() {
-        let queue = NSOperationQueue()
-        let expectation = expectationWithDescription("Test init SHOperation")
+        let queue = OperationQueue()
+        let exp = expectation(description: "Test init SHOperation")
         let testOp = TestOperation()
         testOp.completionBlock = {
-            expectation.fulfill()
+            exp.fulfill()
         }
         queue.addOperation(testOp)
-        waitForExpectationsWithTimeout(10) { error in
+        waitForExpectations(timeout: 10) { error in
             print("Expectation timeout: \(error)")
         }
     }

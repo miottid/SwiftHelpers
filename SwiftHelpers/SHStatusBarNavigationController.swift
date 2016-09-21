@@ -10,23 +10,23 @@
 
 import UIKit
 
-public class SHStatusBarNavigationController: UINavigationController {
+open class SHStatusBarNavigationController: UINavigationController {
     
-    public var statusBarStyle: UIStatusBarStyle = .LightContent {
+    open var statusBarStyle: UIStatusBarStyle = .lightContent {
         didSet {
             setNeedsStatusBarAppearanceUpdate()
         }
     }
     
-    public var navigationBarStyle: UIBarStyle = .BlackTranslucent
+    open var navigationBarStyle: UIBarStyle = .blackTranslucent
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         navigationBar.barStyle = navigationBarStyle
     }
     
-    override public func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override open var preferredStatusBarStyle : UIStatusBarStyle {
         return statusBarStyle
     }
 

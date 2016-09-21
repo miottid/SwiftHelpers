@@ -10,7 +10,7 @@ import Foundation
 
 public extension Array {
     ///Loop through each item
-    public func each(fn: (Element) -> ()) {
+    public func each(_ fn: (Element) -> ()) {
         for item in self {
             fn(item)
         }
@@ -19,11 +19,11 @@ public extension Array {
 
 ///Loop through each item of the provided array
 ///:params: array, the Array to loop from
-public func each(array: Array<AnyObject>, fn: ((AnyObject) -> ())) {
+public func each(_ array: Array<AnyObject>, fn: ((AnyObject) -> ())) {
     array.each(fn)
 }
 
-public func uniq<S : SequenceType, T : Equatable where S.Generator.Element == T>(source: S) -> [T] {
+public func uniq<S : Sequence, T : Equatable>(_ source: S) -> [T] where S.Iterator.Element == T {
     var buffer = [T]()
     for elem in source {
         if !buffer.contains(elem) {
@@ -33,7 +33,7 @@ public func uniq<S : SequenceType, T : Equatable where S.Generator.Element == T>
     return buffer
 }
 
-func uniq<S : SequenceType, T : Hashable where S.Generator.Element == T>(source: S) -> [T] {
+func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Element == T {
     var buffer = [T]()
     var added = Set<T>()
     for elem in source {

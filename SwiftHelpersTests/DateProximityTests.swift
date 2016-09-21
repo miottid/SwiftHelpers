@@ -12,8 +12,7 @@ import SwiftHelpers
 
 class DateProximityTests: XCTestCase {
     func testToday() {
-        let now = NSDate()
-        let date = SHDateProximityToDate(now)
-        XCTAssert(date == .Today, "date must be today")
+        let prox = SHDateProximityToDate(Date())
+        XCTAssert(prox == .today, "date must be today")
     }
 }

@@ -11,7 +11,7 @@
 import UIKit
 
 extension UIButton {
-    public func centerLabelVerticallyWithPadding(spacing:CGFloat) {
+    public func centerLabelVerticallyWithPadding(_ spacing:CGFloat) {
         // update positioning of image and title
         let imageSize = self.imageView!.frame.size
         self.titleEdgeInsets = UIEdgeInsets(top:0,
@@ -25,8 +25,8 @@ extension UIButton {
             right:-titleSize.width)
         
         // reset contentInset, so intrinsicContentSize() is still accurate
-        let trueContentSize = CGRectUnion(self.titleLabel!.frame, self.imageView!.frame).size
-        let oldContentSize = self.intrinsicContentSize()
+        let trueContentSize = self.titleLabel!.frame.union(self.imageView!.frame).size
+        let oldContentSize = self.intrinsicContentSize
         let heightDelta = trueContentSize.height - oldContentSize.height
         let widthDelta = trueContentSize.width - oldContentSize.width
         self.contentEdgeInsets = UIEdgeInsets(top:heightDelta/2.0,
@@ -35,8 +35,8 @@ extension UIButton {
             right:widthDelta/2.0)
     }
     
-    public func setBackgroundColor(color: UIColor, forState state: UIControlState) {
-        setBackgroundImage(UIImage.imageWithColor(color), forState: state)
+    public func setBackgroundColor(_ color: UIColor, forState state: UIControlState) {
+        setBackgroundImage(UIImage.imageWithColor(color), for: state)
     }
     
 }

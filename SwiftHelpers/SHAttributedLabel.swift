@@ -44,11 +44,11 @@ import UIKit
         refreshAttributes()
     }
 
-    private func refreshAttributes() {
+    fileprivate func refreshAttributes() {
         var attributes: [String: AnyObject] = [:]
         attributes[NSFontAttributeName] = font
         if kerning > 0 {
-            attributes[NSKernAttributeName] = kerning
+            attributes[NSKernAttributeName] = kerning as AnyObject?
         }
         if interlineSpacing > 0 {
             let paragraphStyle = NSMutableParagraphStyle()

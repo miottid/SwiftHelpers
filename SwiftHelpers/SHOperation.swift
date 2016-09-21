@@ -8,9 +8,9 @@
 
 import Foundation
 
-public class SHOperation: NSOperation {
+open class SHOperation: Operation {
     
-    private var internalCompletionBlock: ((SHOperation) -> Void)?
+    fileprivate var internalCompletionBlock: ((SHOperation) -> Void)?
     
     public convenience init(completionBlock: ((SHOperation) -> Void)?) {
         self.init()
@@ -22,47 +22,47 @@ public class SHOperation: NSOperation {
         }
     }
     
-    override public var asynchronous: Bool {
+    override open var isAsynchronous: Bool {
         return true
     }
     
-    private var _executing = false {
+    fileprivate var _executing = false {
         willSet {
-            willChangeValueForKey("isExecuting")
+            willChangeValue(forKey: "isExecuting")
         }
         didSet {
-            didChangeValueForKey("isExecuting")
+            didChangeValue(forKey: "isExecuting")
         }
     }
     
-    override public var executing: Bool {
+    override open var isExecuting: Bool {
         return _executing
     }
     
-    private var _finished = false {
+    fileprivate var _finished = false {
         willSet {
-            willChangeValueForKey("isFinished")
+            willChangeValue(forKey: "isFinished")
         }
         
         didSet {
-            didChangeValueForKey("isFinished")
+            didChangeValue(forKey: "isFinished")
         }
     }
     
-    override public var finished: Bool {
+    override open var isFinished: Bool {
         return _finished
     }
     
-    override public func start() {
+    override open func start() {
         _executing = true
         execute()
     }
     
-    public func execute() {
+    open func execute() {
         fatalError("You must override this")
     }
     
-    public func finish() {
+    open func finish() {
         _executing = false
         _finished = true
     }

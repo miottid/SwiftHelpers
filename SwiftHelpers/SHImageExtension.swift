@@ -10,31 +10,31 @@ import Foundation
 
 public extension UIImage {
     public func grayScale() -> UIImage {
-        let imageRect = CGRectMake(0, 0, self.size.width, self.size.height)
+        let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
         let colorSpace = CGColorSpaceCreateDeviceGray();
         
         let width = Int(self.size.width)
         let height = Int(self.size.height)
-        let context = CGBitmapContextCreate(nil, width, height, 8, 0, colorSpace, .allZeros);
-        CGContextDrawImage(context, imageRect, CGImage)
+        let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros);
+        context?.draw(cgImage!, in: imageRect)
         
-        if let imageRef = CGBitmapContextCreateImage(context) {
-            let newImage = UIImage(CGImage: imageRef)
+        if let imageRef = context?.makeImage() {
+            let newImage = UIImage(cgImage: imageRef)
             return newImage
         }
         return self
     }
     
-    public static func imageWithColor(color: UIColor) -> UIImage {
-        let rect = CGRectMake(0.0, 0.0, 1.0, 1.0)
+    public static func imageWithColor(_ color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
         
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
         
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
 }
