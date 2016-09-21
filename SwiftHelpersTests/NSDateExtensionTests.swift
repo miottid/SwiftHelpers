@@ -12,48 +12,6 @@ import SwiftHelpers
 
 class NSDateExtensionTests: XCTestCase {
     
-    // MARK: - Test NSDate comparisons
-    
-    func testGreaterThan() {
-        let a = Date()
-        let b = a.addingTimeInterval(10)
-        XCTAssert(b >= a, "a < b")
-    }
-    
-    func testLessThan() {
-        let a = Date()
-        let b = a.addingTimeInterval(-10)
-        XCTAssert(a >= b, "b < a")
-    }
-    
-    func testEqual() {
-        let a = Date()
-        let b = a.addingTimeInterval(0)
-        XCTAssert(a.compare(b) == .orderedSame, "a == b")
-    }
-    
-    func testNotEqual() {
-        let a = Date()
-        let b = a.addingTimeInterval(1)
-        XCTAssert(a != b, "a != b")
-    }
-    
-    func testGreaterThanOrEqual() {
-        let a = Date()
-        let b = a.addingTimeInterval(0)
-        XCTAssert(a >= b, "a >= b")
-        let c = a.addingTimeInterval(10)
-        XCTAssert(c >= a, "c >= a")
-    }
-    
-    func testLessThanOrEqual() {
-        let a = Date()
-        let b = a.addingTimeInterval(0)
-        XCTAssert(a <= b, "a <= b")
-        let c = a.addingTimeInterval(-10)
-        XCTAssert(c <= a, "c <= a")
-    }
-    
     // MARK: - Test TimeInterval Class
     
     func testTimeIntervalInitSeconds() {

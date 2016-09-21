@@ -8,24 +8,6 @@
 
 import Foundation
 
-// MARK: - NSDate comparison
-
-public func > (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) == .orderedDescending
-}
-
-public func < (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) == .orderedAscending
-}
-
-public func == (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) == .orderedSame
-}
-
-public func != (lhs: Date, rhs: Date) -> Bool {
-    return lhs.compare(rhs) != .orderedSame
-}
-
 // MARK: - Global vars
 
 ///This whole thing is using this calendar, use `setDateHelperCalendar:`
