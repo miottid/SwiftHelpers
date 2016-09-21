@@ -364,7 +364,7 @@ class NSDateExtensionTests: XCTestCase {
         let calendar = Calendar.current
         
         var testedComps = calendar.dateComponents(CalendarAllUnits, from: testedDate)
-        testedComps.hour = testedComps.hour ?? 0 + 1
+        testedComps.hour = (testedComps.hour ?? 0) + 1
         testedComps.minute = 0
         testedComps.second = 0
         
@@ -382,7 +382,7 @@ class NSDateExtensionTests: XCTestCase {
         let newComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: newDate)
         
         XCTAssert(testedComponents.year == newComponents.year, "year should match")
-        XCTAssert(testedComponents.month ?? 0 + 2 == newComponents.month, "month should have 2 more than the other")
+        XCTAssert((testedComponents.month ?? 0) + 2 == newComponents.month, "month should have 2 more than the other")
         XCTAssert(testedComponents.second == newComponents.second, "second should match")
         XCTAssert(testedComponents.day == newComponents.day, "day should match")
     }
@@ -395,7 +395,7 @@ class NSDateExtensionTests: XCTestCase {
         let newDate = testedDate - interval
         let newComponents = CurrentCalendar.dateComponents(CalendarAllUnits, from: newDate)
         
-        XCTAssert(testedComponents.year ?? 0 - 1 == newComponents.year, "year should match")
+        XCTAssert((testedComponents.year ?? 0) - 1 == newComponents.year, "year should match")
         XCTAssert(testedComponents.month == newComponents.month, "month should have 2 more than the other")
         XCTAssert(testedComponents.second == newComponents.second, "second should match")
         XCTAssert(testedComponents.day == newComponents.day, "day should match")
