@@ -15,10 +15,10 @@ public extension NSError {
         let alertController = UIAlertController(
             title: self.localizedDescription,
             message: self.localizedRecoverySuggestion,
-            preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okAction)
-        controller.presentViewController(alertController, animated: true, completion: nil)
+        controller.present(alertController, animated: true, completion: nil)
     }
 }
 

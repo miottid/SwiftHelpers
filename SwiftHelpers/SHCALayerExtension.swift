@@ -11,8 +11,8 @@
 import UIKit
 
 extension CAShapeLayer {
-    func addRoundedCornerRadius(topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, inFrame frame: CGRect) {
-        path = UIBezierPath(rect: frame, topLeft: topLeft, topRight: topRight, bottomLeft: bottomLeft, bottomRight: bottomRight).CGPath
+    func addRoundedCornerRadius(_ topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, inFrame frame: CGRect) {
+        path = UIBezierPath(rect: frame, topLeft: topLeft, topRight: topRight, bottomLeft: bottomLeft, bottomRight: bottomRight).cgPath
     }
 }
 
@@ -27,34 +27,34 @@ extension UIBezierPath {
             CGPoint(x: rect.size.width - bottomRight, y: rect.size.height - bottomRight)
         )
         
-        let middleLeft = CGPointMake(0, rect.size.height / 2.0)
-        moveToPoint(middleLeft)
+        let middleLeft = CGPoint(x: 0, y: rect.size.height / 2.0)
+        move(to: middleLeft)
         
-        addArcWithCenter(circleCenters.topLeft,
+        addArc(withCenter: circleCenters.topLeft,
                          radius: topLeft,
                          startAngle: CGFloat(M_PI),
                          endAngle: CGFloat(3.0 * M_PI / 2.0),
                          clockwise: true)
         
-        addArcWithCenter(circleCenters.topRight,
+        addArc(withCenter: circleCenters.topRight,
                          radius: topRight,
                          startAngle: CGFloat(3.0 * M_PI / 2.0),
                          endAngle: CGFloat(2.0 * M_PI),
                          clockwise: true)
         
-        addArcWithCenter(circleCenters.bottomRight,
+        addArc(withCenter: circleCenters.bottomRight,
                          radius: bottomRight,
                          startAngle: CGFloat(2.0 * M_PI),
                          endAngle: CGFloat(M_PI / 2.0),
                          clockwise: true)
         
-        addArcWithCenter(circleCenters.bottomLeft,
+        addArc(withCenter: circleCenters.bottomLeft,
                          radius: bottomLeft,
                          startAngle: CGFloat(M_PI / 2.0),
                          endAngle: CGFloat(M_PI),
                          clockwise: true)
         
-        closePath()
+        close()
     }
 }
 

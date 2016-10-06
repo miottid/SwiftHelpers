@@ -22,11 +22,11 @@ class SeparatorView: UIView {
 
         let constraintsToEdit = constraints.filter { theCompilerFailsToDetectThisAsAnNSLayoutConstraint in
             let constraint = theCompilerFailsToDetectThisAsAnNSLayoutConstraint as NSLayoutConstraint
-            return (constraint.firstAttribute == .Height || constraint.firstAttribute == .Width) && constraint.constant == 1
+            return (constraint.firstAttribute == .height || constraint.firstAttribute == .width) && constraint.constant == 1
         }
 
         for constraint in constraintsToEdit {
-            constraint.constant = 1 / UIScreen.mainScreen().scale
+            constraint.constant = 1 / UIScreen.main.scale
         }
     }
     

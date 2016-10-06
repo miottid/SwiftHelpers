@@ -9,7 +9,7 @@
 import Foundation
 
 ///Returns a localized string, using the main bundle if one is not specified.
-public func L(key: String, nb: Int? = nil) -> String {
+public func L(_ key: String, nb: Int? = nil) -> String {
     guard let nb = nb else {
         return NSLocalizedString(key, comment: key)
     }
@@ -28,7 +28,7 @@ public func L(key: String, nb: Int? = nil) -> String {
 }
 
 ///Helper for `println` function with a filter for use in debug mode only
-public func P(string: String) {
+public func P(_ string: String) {
     #if RELEASE
     #else
         print(string)
@@ -38,7 +38,7 @@ public func P(string: String) {
 ///Get the current version of the app
 ///- returns: A string representing the version of the app {CFBundleShortVersionString}.{CFBundleVersion}
 public func appVersion() -> String {
-    let mainBundle = NSBundle.mainBundle()
+    let mainBundle = Bundle.main
     if let bundleDictionary = mainBundle.infoDictionary {
         if let shortVersion = bundleDictionary["CFBundleShortVersionString"] as? String {
             if let bundleVersion = bundleDictionary["CFBundleVersion"] as? String {

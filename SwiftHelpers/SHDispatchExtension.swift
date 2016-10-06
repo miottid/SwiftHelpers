@@ -8,14 +8,14 @@
 
 import Foundation
 
-public func dispatch_on_main(block: Void -> Void) {
-    dispatch_async(dispatch_get_main_queue(), block)
+public func dispatch_on_main(_ block: @escaping (Void) -> Void) {
+    DispatchQueue.main.async(execute: block)
 }
 
-public func dispatch_on(queue: dispatch_queue_t, block: Void -> Void) {
-    dispatch_async(queue, block)
+public func dispatch_on(_ queue: DispatchQueue, block: @escaping (Void) -> Void) {
+    queue.async(execute: block)
 }
 
-public func dispatch_on_background(block: Void -> Void) {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), block)
+public func dispatch_on_background(_ block: @escaping (Void) -> Void) {
+    DispatchQueue.global().async(execute: block)
 }

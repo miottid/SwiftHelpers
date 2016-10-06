@@ -15,21 +15,21 @@ import UIKit
 ** and pass back the selected date.
 ** Should be used along with the `DatePickerAnimatedTransition` custom presentation / dismissal.
 */
-public class SHDatePickerViewController: UIViewController {
+open class SHDatePickerViewController: UIViewController {
 
     /// The date picker of the controller. Can be used to customize the mode, for example.
-    public let datePicker = UIDatePicker()
+    open let datePicker = UIDatePicker()
 
     /// The background view that overlays the presenter's content. Default background is black @ 50%
-    public let background = UIView()
+    open let background = UIView()
 
     /// Called whenenver the view controller is dismissed. Date is `nil` unless the confirm button is tapped.
-    public var completion: (NSDate? -> Void)? = nil
+    open var completion: ((Date?) -> Void)? = nil
 
-    private let toolbar = UIToolbar()
-    private var bottomView = UIView()
+    fileprivate let toolbar = UIToolbar()
+    fileprivate var bottomView = UIView()
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
 
         setupBackground()
@@ -38,80 +38,80 @@ public class SHDatePickerViewController: UIViewController {
         setupToolbar()
     }
 
-    private func setupBackground() {
+    fileprivate func setupBackground() {
         view.addSubview(background)
         background.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
-        background.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.5)
+        background.backgroundColor = UIColor.black.withAlphaComponent(0.5)
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedBackgroundView(_:)))
         background.addGestureRecognizer(tapGestureRecognizer)
 
         let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipedBackgroundView(_:)))
-        swipeGestureRecognizer.direction = .Down
+        swipeGestureRecognizer.direction = .down
         background.addGestureRecognizer(swipeGestureRecognizer)
     }
 
-    private func setupBottomView() {
+    fileprivate func setupBottomView() {
         view.addSubview(bottomView)
         bottomView.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
-        bottomView.backgroundColor = .whiteColor()
+        bottomView.backgroundColor = .white
     }
 
-    private func setupDatePicker() {
+    fileprivate func setupDatePicker() {
         bottomView.addSubview(datePicker)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
     }
 
-    private func setupToolbar() {
+    fileprivate func setupToolbar() {
         bottomView.addSubview(toolbar)
         toolbar.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[toolbar]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar])
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[toolbar][datePicker]", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar, "datePicker": datePicker])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolbar]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[toolbar][datePicker]", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar, "datePicker": datePicker])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
-        let leftSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
+        let leftSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         leftSpace.width = 10
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(tappedCancelButton(_:)))
-        let centerSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        let confirmButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(tappedDoneButton(_:)))
-        let rightSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(tappedCancelButton(_:)))
+        let centerSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let confirmButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(tappedDoneButton(_:)))
+        let rightSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         rightSpace.width = 10
         toolbar.items = [leftSpace, cancelButton, centerSpace, confirmButton, rightSpace]
     }
 
-    func tappedDoneButton(button: UIBarButtonItem) {
+    func tappedDoneButton(_ button: UIBarButtonItem) {
         dismissWithDate(datePicker.date)
     }
 
-    func tappedCancelButton(button: UIBarButtonItem) {
+    func tappedCancelButton(_ button: UIBarButtonItem) {
         dismissWithDate(nil)
     }
 
-    func tappedBackgroundView(gestureRecognizer: UITapGestureRecognizer) {
+    func tappedBackgroundView(_ gestureRecognizer: UITapGestureRecognizer) {
         dismissWithDate(nil)
     }
 
-    func swipedBackgroundView(gestureRecognizer: UISwipeGestureRecognizer) {
+    func swipedBackgroundView(_ gestureRecognizer: UISwipeGestureRecognizer) {
         dismissWithDate(nil)
     }
 
-    private func dismissWithDate(date: NSDate?) {
-        dismissViewControllerAnimated(true) {
+    fileprivate func dismissWithDate(_ date: Date?) {
+        dismiss(animated: true) {
             self.completion?(date)
         }
     }
@@ -119,19 +119,19 @@ public class SHDatePickerViewController: UIViewController {
 }
 
 /// A class used to animate the transition of a SHDatePickerViewController
-public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
+open class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
-    public var presenting: Bool
+    open var presenting: Bool
 
     public init(forPresentation presenting: Bool) {
         self.presenting = presenting
     }
 
-    public func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    open func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.4
     }
 
-    public func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    open func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if presenting {
             animatePresentation(transitionContext)
         } else {
@@ -139,58 +139,60 @@ public class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedT
         }
     }
 
-    private func animatePresentation(transitionContext: UIViewControllerContextTransitioning) {
-        guard let container = transitionContext.containerView(),
-            datePickerController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as? SHDatePickerViewController else {
+    fileprivate func animatePresentation(_ transitionContext: UIViewControllerContextTransitioning) {
+        let container = transitionContext.containerView
+        guard
+            let datePickerController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) as? SHDatePickerViewController,
+            let datePickerView = datePickerController.view else {
                 transitionContext.completeTransition(false)
                 return
         }
 
-        let duration = transitionDuration(transitionContext)
+        let duration = transitionDuration(using: transitionContext)
 
-        let datePickerView = datePickerController.view
         container.addSubview(datePickerView)
-        let hConstraints = NSLayoutConstraint.constraintsWithVisualFormat("H:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
-        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
+
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
         let constraints = hConstraints + vConstraints
         container.addConstraints(constraints)
         container.layoutIfNeeded()
 
         let bottomView = datePickerController.bottomView
-        bottomView.transform = CGAffineTransformMakeTranslation(0, bottomView.bounds.height)
+        bottomView.transform = CGAffineTransform(translationX: 0, y: bottomView.bounds.height)
 
         let background = datePickerController.background
         background.alpha = 0
 
-        UIView.animateWithDuration(duration / 3, delay: 0, options: [.CurveEaseInOut], animations: {
+        UIView.animate(withDuration: duration / 3, delay: 0, options: UIViewAnimationOptions(), animations: {
             background.alpha = 1
             }, completion: { _ in
-                UIView.animateWithDuration(duration / 3 * 2, delay: 0, options: [.CurveEaseInOut], animations: {
-                    bottomView.transform = CGAffineTransformIdentity
+                UIView.animate(withDuration: duration / 3 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
+                    bottomView.transform = CGAffineTransform.identity
                     }, completion: { _ in
                         transitionContext.completeTransition(true)
                 })
         })
     }
 
-    private func animateDismissal(transitionContext: UIViewControllerContextTransitioning) {
-        guard let datePickerController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as? SHDatePickerViewController else {
+    fileprivate func animateDismissal(_ transitionContext: UIViewControllerContextTransitioning) {
+        guard let datePickerController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) as? SHDatePickerViewController else {
             transitionContext.completeTransition(false)
             return
         }
 
-        let duration = transitionDuration(transitionContext)
+        let duration = transitionDuration(using: transitionContext)
         let datePickerView = datePickerController.view
         let bottomView = datePickerController.bottomView
         let background = datePickerController.background
 
-        UIView.animateWithDuration(duration / 3 * 2, delay: 0, options: [.CurveEaseInOut], animations: {
-            bottomView.transform = CGAffineTransformMakeTranslation(0, bottomView.bounds.height)
+        UIView.animate(withDuration: duration / 3 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
+            bottomView.transform = CGAffineTransform(translationX: 0, y: bottomView.bounds.height)
             }, completion: { _ in
-                UIView.animateWithDuration(duration / 3, delay: 0, options: [.CurveEaseInOut], animations: {
+                UIView.animate(withDuration: duration / 3, delay: 0, options: UIViewAnimationOptions(), animations: {
                     background.alpha = 0
                     }, completion: { _ in
-                        datePickerView.removeFromSuperview()
+                        datePickerView?.removeFromSuperview()
                         transitionContext.completeTransition(true)
                 })
         })

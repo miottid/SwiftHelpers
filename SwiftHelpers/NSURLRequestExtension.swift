@@ -9,16 +9,16 @@
 import Foundation
 
 /// cURL extension
-public extension NSURLRequest {
-    private func escapeQuotesInString(string: String) -> String {
-        return string.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+public extension URLRequest {
+    fileprivate func escapeQuotesInString(_ string: String) -> String {
+        return string.replacingOccurrences(of: "\"", with: "\\\"")
     }
     
     public func cURL() -> String {
         var cURLString = "curl -i"
         let newLine = " \\\n\t"
         
-        if let method = HTTPMethod {
+        if let method = httpMethod {
             cURLString += "\(newLine) -X \(method)"
         }
         
@@ -32,12 +32,12 @@ public extension NSURLRequest {
             }
         }
         
-        if let HTTPBody = HTTPBody, bodyString = String(data: HTTPBody, encoding: NSUTF8StringEncoding) where bodyString.characters.count > 0 {
-            let sanitize = bodyString.stringByReplacingOccurrencesOfString("\n", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "")
+        if let HTTPBody = httpBody, let bodyString = String(data: HTTPBody, encoding: String.Encoding.utf8) , bodyString.characters.count > 0 {
+            let sanitize = bodyString.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
             cURLString += "\(newLine) -d '\(sanitize)'"
         }
         
-        if let absolute = URL?.absoluteString {
+        if let absolute = url?.absoluteString {
             cURLString += "\(newLine) '\(absolute)'"
         }
         

@@ -10,16 +10,16 @@
 
 import UIKit
 
-public class SHTextField: UITextField {
+open class SHTextField: UITextField {
     
-    var placeholderInsets: UIEdgeInsets = UIEdgeInsetsZero
-    var textInsets: UIEdgeInsets = UIEdgeInsetsZero
+    var placeholderInsets: UIEdgeInsets = UIEdgeInsets.zero
+    var textInsets: UIEdgeInsets = UIEdgeInsets.zero
     
-    override public func textRectForBounds(bounds: CGRect) -> CGRect {
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, placeholderInsets)
     }
     
-    override public func editingRectForBounds(bounds: CGRect) -> CGRect {
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, textInsets)
     }
 

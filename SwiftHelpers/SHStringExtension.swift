@@ -9,13 +9,13 @@
 import Foundation
 
 public extension NSAttributedString {
-    public func replaceHTMLTag(tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {
+    public func replaceHTMLTag(_ tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {
         let openTag = "<\(tag)>"
         let closeTag = "</\(tag)>"
         let resultingText: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
         while true {
             let plainString = resultingText.string as NSString
-            let openTagRange = plainString.rangeOfString(openTag)
+            let openTagRange = plainString.range(of: openTag)
             if openTagRange.length == 0 {
                 break
             }
@@ -24,11 +24,11 @@ public extension NSAttributedString {
             
             let searchRange = NSMakeRange(affectedLocation, plainString.length - affectedLocation)
             
-            let closeTagRange = plainString.rangeOfString(closeTag, options: NSStringCompareOptions(rawValue: 0), range: searchRange)
+            let closeTagRange = plainString.range(of: closeTag, options: NSString.CompareOptions(rawValue: 0), range: searchRange)
             
             resultingText.setAttributes(attributes, range: NSMakeRange(affectedLocation, closeTagRange.location - affectedLocation))
-            resultingText.deleteCharactersInRange(closeTagRange)
-            resultingText.deleteCharactersInRange(openTagRange)
+            resultingText.deleteCharacters(in: closeTagRange)
+            resultingText.deleteCharacters(in: openTagRange)
         }
         return resultingText as NSAttributedString
     }
@@ -43,20 +43,20 @@ public extension String {
         return Int(self) != nil
     }
     
-    public func rangeString(string: String) -> NSRange {
-        return NSString(string: self).rangeOfString(string)
+    public func rangeString(_ string: String) -> NSRange {
+        return NSString(string: self).range(of: string)
     }
 }
 
 public extension String {
-    public func stringByReplacingOccurenceOfString(target: String, withString string: String) -> String {
-        return NSString(string: self).stringByReplacingOccurrencesOfString(target, withString: string)
+    public func stringByReplacingOccurenceOfString(_ target: String, withString string: String) -> String {
+        return NSString(string: self).replacingOccurrences(of: target, with: string)
     }
 }
 
 public extension String {
     
-    public var CGColor: CGColorRef {
+    public var CGColor: CGColor {
         return self.CGColor(1)
     }
     
@@ -64,15 +64,15 @@ public extension String {
         return self.UIColor(1)
     }
     
-    public func CGColor (alpha: CGFloat) -> CGColorRef {
-        return self.UIColor(alpha).CGColor
+    public func CGColor (_ alpha: CGFloat) -> CGColor {
+        return self.UIColor(alpha).cgColor
     }
     
-    public func UIColor (alpha: CGFloat) -> UIKit.UIColor {
+    public func UIColor (_ alpha: CGFloat) -> UIKit.UIColor {
         var hex = self
         
         if hex.hasPrefix("#") { // Strip leading "#" if it exists
-            hex = hex.substringFromIndex(hex.startIndex.successor())
+            hex = hex.substring(from: hex.characters.index(after: hex.startIndex))
         }
         
         switch hex.characters.count {
@@ -91,10 +91,16 @@ public extension String {
         var r: UInt32 = 0
         var g: UInt32 = 0
         var b: UInt32 = 0
-        
-        NSScanner(string: "0x" + hex[0...1]).scanHexInt(&r)
-        NSScanner(string: "0x" + hex[2...3]).scanHexInt(&g)
-        NSScanner(string: "0x" + hex[4...5]).scanHexInt(&b)
+
+        let h = NSString(string: hex)
+
+        let R = h.substring(with: NSRange(location: 0, length: 2))
+        let G = h.substring(with: NSRange(location: 2, length: 2))
+        let B = h.substring(with: NSRange(location: 4, length: 2))
+
+        Scanner(string: "0x\(R)").scanHexInt32(&r)
+        Scanner(string: "0x\(G)").scanHexInt32(&g)
+        Scanner(string: "0x\(B)").scanHexInt32(&b)
         
         let red = CGFloat(Int(r)) / CGFloat(255.0)
         let green = CGFloat(Int(g)) / CGFloat(255.0)
@@ -105,22 +111,22 @@ public extension String {
     
     public var firstLetterCapitalization: String {
         var str = self
-        str.replaceRange(str.startIndex...str.startIndex, with: String(str[str.startIndex]).uppercaseString)
+        str.replaceSubrange(str.startIndex...str.startIndex, with: String(str[str.startIndex]).uppercased())
         return str
     }
 }
 
 public extension String {
     
-    public func `repeat` (count: Int) -> String {
-        return "".stringByPaddingToLength((self as NSString).length * count, withString: self, startingAtIndex:0)
+    public func `repeat` (_ count: Int) -> String {
+        return "".padding(toLength: (self as NSString).length * count, withPad: self, startingAt:0)
     }
 }
 
 public extension String {
     
     subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+        return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
     
     subscript (i: Int) -> String {
@@ -128,12 +134,12 @@ public extension String {
     }
     
     subscript (r: Range<Int>) -> String {
-        return substringWithRange(Range(startIndex.advancedBy(r.startIndex)..<startIndex.advancedBy(r.endIndex)))
+        return substring(with: Range(characters.index(startIndex, offsetBy: r.lowerBound)..<characters.index(startIndex, offsetBy: r.upperBound)))
     }
 }
 
 public extension String {
-    public func fontSizeThatFits(font: UIFont, attributes: [String: AnyObject]?, size: CGSize) -> UIFont {
+    public func fontSizeThatFits(_ font: UIFont, attributes: [String: AnyObject]?, size: CGSize) -> UIFont {
         let txt = NSString(string: self)
         var fntSize = font.pointSize + 1
         var width = CGFloat(Float.infinity)
@@ -143,7 +149,7 @@ public extension String {
             let fnt = UIFont(name: font.fontName, size: fntSize)
             var attrs = attributes ?? [String: AnyObject]()
             attrs[NSFontAttributeName] = fnt
-            let size = txt.sizeWithAttributes(attrs)
+            let size = txt.size(attributes: attrs)
             width = size.width
             height = size.height
         } while ((width > size.width || height > size.height) && fntSize > 0)
@@ -153,31 +159,31 @@ public extension String {
 
 public extension String {
 
-    public init(numerator: Int, denominator: Int) {
+    public init?(numerator: Int, denominator: Int) {
         var result = ""
         
         // build numerator
         let one = "\(numerator)"
         for char in one.characters {
-            if let num = Int(String(char)), val = superscriptFromInt(num) {
-                result.appendContentsOf(val)
+            if let num = Int(String(char)), let val = superscriptFromInt(num) {
+                result.append(val)
             }
         }
         
         // build denominator
         let two = "\(denominator)"
-        result.appendContentsOf("/")
+        result.append("/")
         for char in two.characters {
-            if let num = Int(String(char)), val = subscriptFromInt(num) {
-                result.appendContentsOf(val)
+            if let num = Int(String(char)), let val = subscriptFromInt(num) {
+                result.append(val)
             }
         }
-        
+
         self.init(result)
     }
 }
 
-private func superscriptFromInt(num: Int) -> String? {
+private func superscriptFromInt(_ num: Int) -> String? {
     let superscriptDigits: [Int: String] = [
         0: "\u{2070}",
         1: "\u{00B9}",
@@ -192,7 +198,7 @@ private func superscriptFromInt(num: Int) -> String? {
     return superscriptDigits[num]
 }
 
-private func subscriptFromInt(num: Int) -> String? {
+private func subscriptFromInt(_ num: Int) -> String? {
     let subscriptDigits: [Int: String] = [
         0: "\u{2080}",
         1: "\u{2081}",

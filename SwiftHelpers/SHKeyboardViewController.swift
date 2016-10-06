@@ -10,29 +10,29 @@
 
 import UIKit
 
-public class SHKeyboardViewController: UIViewController {
+open class SHKeyboardViewController: UIViewController {
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    private var scrollableView: UIScrollView?
+    fileprivate var scrollableView: UIScrollView?
 
-    public func registerKeyboardNotificationsForScrollableView(view: UIScrollView) {
+    open func registerKeyboardNotificationsForScrollableView(_ view: UIScrollView) {
         scrollableView = view
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: Notification) {
         if let scrollableView = scrollableView {
-            let scrollViewRect = view.convertRect(scrollableView.frame, fromView: scrollableView.superview)
+            let scrollViewRect = view.convert(scrollableView.frame, from: scrollableView.superview)
             
-            if let rectValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
-                let kbRect = view.convertRect(rectValue.CGRectValue(), fromView: nil)
+            if let rectValue = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+                let kbRect = view.convert(rectValue.cgRectValue, from: nil)
                 
-                let hiddenScrollViewRect = CGRectIntersection(scrollViewRect, kbRect)
-                if !CGRectIsNull(hiddenScrollViewRect) {
+                let hiddenScrollViewRect = scrollViewRect.intersection(kbRect)
+                if !hiddenScrollViewRect.isNull {
                     var contentInsets = scrollableView.contentInset
                     contentInsets.bottom = hiddenScrollViewRect.size.height
                     scrollableView.contentInset = contentInsets
@@ -42,7 +42,7 @@ public class SHKeyboardViewController: UIViewController {
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: Notification) {
         if let scrollableView = scrollableView {
             var contentInsets = scrollableView.contentInset
             contentInsets.bottom = 0

@@ -17,7 +17,7 @@ extension NSObject {
      UITableViewCell.className returns "UITableViewCell"
      */
     public class var className: String {
-        return NSStringFromClass(self).componentsSeparatedByString(".").last!
+        return NSStringFromClass(self).components(separatedBy: ".").last!
     }
 
     /**

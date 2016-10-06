@@ -10,7 +10,7 @@
 
 import UIKit
 
-public class SHCommonInitView: UIView {
+open class SHCommonInitView: UIView {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,13 +22,13 @@ public class SHCommonInitView: UIView {
         commonInit()
     }
     
-    public func commonInit() {
+    open func commonInit() {
         
     }
 
 }
 
-public class SHCommonInitTableViewCell: UITableViewCell {
+open class SHCommonInitTableViewCell: UITableViewCell {
     
     public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,13 +40,13 @@ public class SHCommonInitTableViewCell: UITableViewCell {
         commonInit()
     }
     
-    public func commonInit() {
+    open func commonInit() {
         
     }
     
 }
 
-public class SHCommonInitCollectionViewCell: UICollectionViewCell {
+open class SHCommonInitCollectionViewCell: UICollectionViewCell {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,13 +58,13 @@ public class SHCommonInitCollectionViewCell: UICollectionViewCell {
         commonInit()
     }
     
-    public func commonInit() {
+    open func commonInit() {
         
     }
     
 }
 
-public class SHCommonInitControl: UIControl {
+open class SHCommonInitControl: UIControl {
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -76,7 +76,7 @@ public class SHCommonInitControl: UIControl {
         commonInit()
     }
 
-    public func commonInit() {
+    open func commonInit() {
 
     }
 

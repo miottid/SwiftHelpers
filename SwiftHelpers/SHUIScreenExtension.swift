@@ -11,40 +11,40 @@
 import UIKit
 
 public enum DeviceResolution {
-    case Unknown //Handle future iOS screen devices
-    case PhoneStandard
-    case PhoneRetina4
-    case PhoneRetina5
-    case PadStandard
-    case PadRetina
+    case unknown //Handle future iOS screen devices
+    case phoneStandard
+    case phoneRetina4
+    case phoneRetina5
+    case padStandard
+    case padRetina
 }
 
 ///Helper for accessing the device resolution, it may also help checking the kind of device
 public func deviceResolution() -> DeviceResolution {
-    return UIScreen.mainScreen().deviceResolution()
+    return UIScreen.main.deviceResolution()
 }
 
 public extension UIScreen {
     
     public func deviceResolution() -> DeviceResolution {
-        var resolution: DeviceResolution = .Unknown
+        var resolution: DeviceResolution = .unknown
         let scale = self.scale
-        let pixelHeight = CGRectGetHeight(self.bounds) * scale
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+        let pixelHeight = self.bounds.height * scale
+        if UIDevice.current.userInterfaceIdiom == .phone {
             if scale == 2.0 {
                 if pixelHeight == 960.0 {
-                    resolution = .PhoneRetina4
+                    resolution = .phoneRetina4
                 } else if pixelHeight == 1136.0 {
-                    resolution = .PhoneRetina5
+                    resolution = .phoneRetina5
                 }
             } else if scale == 1.0 && pixelHeight == 480.0 {
-                resolution = .PhoneStandard
+                resolution = .phoneStandard
             }
         } else {
             if scale == 2.0 && pixelHeight == 2048.0 {
-                resolution = .PadRetina
+                resolution = .padRetina
             } else {
-                resolution = .PadStandard
+                resolution = .padStandard
             }
         }
         return resolution

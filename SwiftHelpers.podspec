@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'SwiftHelpers'
-	s.version = '1.0.7'
+	s.version = '3.0.0'
 	s.license = 'MIT'
 	s.summary = 'A collection of Swift extensions'
 	s.homepage = 'https://github.com/dmiotti/SwiftHelpers'
@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
 	s.source_files = 'SwiftHelpers/*.swift'
 
 	s.requires_arc = true
+    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 end

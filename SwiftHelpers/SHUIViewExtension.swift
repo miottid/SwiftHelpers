@@ -19,8 +19,8 @@ public extension UIView {
      - parameter completion: The closure to execute after the animation has ended. Will be called even if duration <= 0
      */
     func layoutIfNeeded(
-        animationDuration duration: NSTimeInterval,
-                          delay: NSTimeInterval = 0,
+        animationDuration duration: TimeInterval,
+                          delay: TimeInterval = 0,
                           options: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: 0),
                           completion: ((Bool) -> Void)? = nil) {
 
@@ -30,19 +30,19 @@ public extension UIView {
             return
         }
 
-        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+        UIView.animate(withDuration: duration, delay: delay, options: options, animations: {
             self.layoutIfNeeded()
         }, completion: completion)
     }
 
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
-    public func addAnimationType(type: String, subType: String?, duration: NSTimeInterval) -> CATransition {
+    public func addAnimationType(_ type: String, subType: String?, duration: TimeInterval) -> CATransition {
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = type
         transition.subtype = subType
-        layer.addAnimation(transition, forKey: NSUUID().UUIDString)
+        layer.add(transition, forKey: UUID().uuidString)
         return transition
     }
     
@@ -50,7 +50,7 @@ public extension UIView {
     public func addRound(toCorners corners:UIRectCorner, withRadius radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
-        mask.path = path.CGPath
+        mask.path = path.cgPath
         self.layer.mask = mask
     }
     
@@ -59,14 +59,14 @@ public extension UIView {
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
         let bitsPerComponent = 8
         let bytesPerRow = 4
-        let context = CGBitmapContextCreate(&pixel, 1, 1, bitsPerComponent, bytesPerRow, colorSpace, bitmapInfo.rawValue)
+        let context = CGContext(data: &pixel, width: 1, height: 1, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
         
-        CGContextTranslateCTM(context, -point.x, -point.y)
+        context?.translateBy(x: -point.x, y: -point.y)
         
-        self.layer.renderInContext(context!)
+        self.layer.render(in: context!)
         
         let red = CGFloat(pixel[0]) / 255.0
         let green = CGFloat(pixel[1]) / 255.0

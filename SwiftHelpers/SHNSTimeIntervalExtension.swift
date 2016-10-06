@@ -9,18 +9,14 @@
 import Foundation
 
 ///dispatch_after with seconds
-public func delay(timeInterval: NSTimeInterval, closure:()->()) {
+public func delay(_ timeInterval: TimeInterval, closure:@escaping ()->()) {
     return timeInterval.delay(closure)
 }
 
-public extension NSTimeInterval {
+public extension TimeInterval {
     ///Perform the given block after a delay
-    public func delay(closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(self * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
+    public func delay(_ closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(self * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
 }

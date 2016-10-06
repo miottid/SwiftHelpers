@@ -9,7 +9,7 @@
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8CAA0F7A-31B6-40BC-A961-D980E8138DEA",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "EB85351B15D3DD54D225318A7297989BF5E8D0A6" : "SwiftHelpers",
+    "EB85351B15D3DD54D225318A7297989BF5E8D0A6" : "SwiftHelpers\/",
     "585B71D82DA78556F772F7595CB431715C680119" : ".."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SwiftHelpers",

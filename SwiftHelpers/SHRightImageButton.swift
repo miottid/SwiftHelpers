@@ -25,13 +25,13 @@ class RightImageButton: UIButton {
         reverseImage()
     }
 
-    private func reverseImage() {
+    fileprivate func reverseImage() {
         // Reverse the button. The label is on the left, the image on the right but they are shown as if you look a mirror.
-        transform = CGAffineTransformMakeScale(-1.0, 1.0)
+        transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         // Reverse back the titleLabel and the imageView.
         // They stay at the same place and look nice again. TADA 🎉
-        titleLabel?.transform = CGAffineTransformMakeScale(-1.0, 1.0)
-        imageView?.transform = CGAffineTransformMakeScale(-1.0, 1.0)
+        titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
+        imageView?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
     }
     
 }

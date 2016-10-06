@@ -30,18 +30,18 @@ extension UIView {
     }
     @IBInspectable var borderColor: UIColor {
         get {
-            return UIColor(CGColor: layer.borderColor!)
+            return UIColor(cgColor: layer.borderColor!)
         }
         set {
-            layer.borderColor = newValue.CGColor
+            layer.borderColor = newValue.cgColor
         }
     }
     @IBInspectable var shadowColor: UIColor {
         get {
-            return UIColor(CGColor: layer.shadowColor!)
+            return UIColor(cgColor: layer.shadowColor!)
         }
         set {
-            layer.shadowColor = newValue.CGColor
+            layer.shadowColor = newValue.cgColor
         }
     }
     @IBInspectable var shadowOpacity: Float {
@@ -91,10 +91,10 @@ extension UILabel {
 extension UIButton {
     @IBInspectable var localizedText: String {
         set (key) {
-            setTitle(NSLocalizedString(key, comment: ""), forState: .Normal)
+            setTitle(NSLocalizedString(key, comment: ""), for: UIControlState())
         }
         get {
-            return titleForState(.Normal)!
+            return title(for: UIControlState())!
         }
     }
 }

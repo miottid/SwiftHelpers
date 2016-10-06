@@ -16,7 +16,7 @@ extension UIScrollView {
      Scrolls to the bottom of the scrollview.
      - parameter animated: Whether the scroll should be animated or not
      */
-    func scrollToBottom(animated animated: Bool) {
+    func scrollToBottom(animated: Bool) {
         var bottomContentOffset = contentOffset
         bottomContentOffset.y = contentSize.height - bounds.height + contentInset.bottom
         setContentOffset(bottomContentOffset, animated: animated)
