@@ -75,6 +75,15 @@ public extension UIView {
         
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
+
+    /// Allows to instantiate a view from a nib name
+    /// Can be used like this :
+    /// let view: MyView = .fromNib(named: "MyView")
+    /// If the nib name is the same as the classe's name, it can be ommited.
+    public class func fromNib<T : UIView>(named name: String? = nil) -> T {
+        let name = (name ?? T.className)
+        return Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as! T
+    }
     
 }
 
