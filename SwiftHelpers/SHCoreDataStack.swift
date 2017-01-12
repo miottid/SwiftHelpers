@@ -30,14 +30,20 @@ public let kCoreDataStackStoreDidChange = "CoreDataStackStoreDidChange"
 
 private var momdFilename: String!
 private var SQLLiteFilename: String!
+private var persistantStoreOptions: [AnyHashable : Any]!
 
 public final class CoreDataStack: NSObject {
 
     public static let shared = CoreDataStack()
 
-    public class func initializeWithMomd(_ momd: String, sql: String) {
+    public class func initializeWithMomd(_ momd: String, sql: String, persistantStoreOptions opts: [AnyHashable : Any]? = nil) {
         momdFilename = momd
         SQLLiteFilename = sql
+        persistantStoreOptions = opts ?? [
+            NSMigratePersistentStoresAutomaticallyOption: true,
+            NSInferMappingModelAutomaticallyOption: true,
+            NSPersistentStoreFileProtectionKey: FileProtectionType.completeUntilFirstUserAuthentication
+        ]
     }
 
     override init() {
@@ -51,7 +57,7 @@ public final class CoreDataStack: NSObject {
     }
 
     public lazy var applicationDocumentsDirectory: URL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.wopata.Dependn" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.wopata.xxx" in the application's documents Application Support directory.
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
@@ -59,7 +65,7 @@ public final class CoreDataStack: NSObject {
     public lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         guard let modelURL = Bundle.main.url(forResource: momdFilename, withExtension: "momd") else {
-            fatalError("Couldn't find model for name : \(SQLLiteFilename) in bundle.")
+            fatalError("Couldn't find model for name : \(momdFilename) in bundle.")
         }
 
         guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
@@ -75,14 +81,7 @@ public final class CoreDataStack: NSObject {
         let url = self.applicationDocumentsDirectory.appendingPathComponent(SQLLiteFilename)
         var failureReason = "There was an error creating or loading the application's saved data."
         do {
-            var opts = [String: AnyObject]()
-            opts[NSMigratePersistentStoresAutomaticallyOption] = true as AnyObject?
-            opts[NSInferMappingModelAutomaticallyOption] = true as AnyObject?
-            if !DeviceType.isSimulator {
-                opts[NSPersistentStoreUbiquitousContentNameKey] = "Dependn" as AnyObject?
-            }
-            opts[NSPersistentStoreFileProtectionKey] = FileProtectionType.completeUntilFirstUserAuthentication as AnyObject?
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: opts)
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: persistantStoreOptions)
         } catch {
             // Report any error we got.
             var dict = [String: AnyObject]()
