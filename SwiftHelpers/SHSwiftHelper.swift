@@ -9,22 +9,23 @@
 import Foundation
 
 ///Returns a localized string, using the main bundle if one is not specified.
-public func L(_ key: String, nb: Int? = nil) -> String {
-    guard let nb = nb else {
-        return NSLocalizedString(key, comment: key)
-    }
+public func L(_ key: String, nb: Int? = nil, bundle: Bundle = Bundle.main) -> String {
+    guard let nb = nb else { return NSLocalizedString(key, bundle: bundle, comment: "") }
+
+    let key = pluralize(key, count: nb as NSNumber)
+    return String(format: NSLocalizedString(key, bundle: bundle, comment: ""), nb)
+}
+
+private func pluralize(_ key: String, count: NSNumber?) -> String {
+    guard let count = count else { return key }
 
     let prefix: String
-    if nb == 0 {
-        prefix = "zero"
-    } else if nb == 1 {
-        prefix = "one"
-    } else {
-        prefix = "other"
+    switch count.doubleValue {
+    case 0: prefix = "zero"
+    case 1: prefix = "one"
+    default: prefix = "other"
     }
-
-    let localized = NSLocalizedString("\(key)_\(prefix)", comment: "")
-    return String(format: localized, nb)
+    return "\(key)_\(prefix)"
 }
 
 ///Get the current version of the app
@@ -40,4 +41,15 @@ public func appVersion() -> String {
     }
     
     return ""
+}
+
+extension String {
+    func localize(arguments: [String: Any] = [:], bundle: Bundle = Bundle.main) -> String {
+        let key = pluralize(self, count: arguments["count"] as? NSNumber)
+        var str = NSLocalizedString(key, bundle: bundle, comment: "")
+        arguments.forEach { key, val in
+            str = str.replacingOccurrences(of: "{\(key)}", with: "\(val)")
+        }
+        return str
+    }
 }

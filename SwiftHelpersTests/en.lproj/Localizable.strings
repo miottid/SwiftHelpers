@@ -1,0 +1,25 @@
+/* 
+  LocalizedString.strings
+  SwiftHelpers
+
+  Created by Guillaume Bellue on 18/01/2017.
+  Copyright © 2017 Wopata. All rights reserved.
+*/
+
+"args-no-count" = "text without count";
+
+"args-with-count_zero" = "text with count {count} zero";
+"args-with-count_one" = "text with count {count} one";
+"args-with-count_other" = "text with count {count} other";
+
+"args-with-args" = "text with args {arg2} {arg1}";
+
+"args-with-args-count_zero" = "text with foo no bars";
+"args-with-args-count_one" = "text with foo 1 bar";
+"args-with-args-count_other" = "text with foo {count} bars";
+
+"simple-no-count" = "text without count";
+
+"simple-with-count_zero" = "text with count %d zero";
+"simple-with-count_one" = "text with count %d one";
+"simple-with-count_other" = "text with count %d other";

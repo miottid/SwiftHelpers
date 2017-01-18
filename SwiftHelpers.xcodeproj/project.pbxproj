@@ -70,6 +70,9 @@
 		B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */; };
 		B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
 		F013D7F81E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */; };
+		F013D7FA1E2F81CF006437AB /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D7F91E2F81CF006437AB /* LocalizationTests.swift */; };
+		F013D7FB1E2F82D9006437AB /* SHSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */; };
+		F013D7FE1E2F8577006437AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F013D8001E2F8577006437AB /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +154,8 @@
 		B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIViewExtension.swift; sourceTree = "<group>"; };
 		B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDateFormatterProximity.swift; sourceTree = "<group>"; };
 		F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
+		F013D7F91E2F81CF006437AB /* LocalizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
+		F013D7FF1E2F8577006437AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,21 +199,45 @@
 		B0BF98E21A667CFA0085ADA4 /* SwiftHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
-				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
 				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
 				9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */,
+				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
+				9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */,
+				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
 				B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */,
+				584150A71D61F51200866210 /* SHCoreDataStack.swift */,
+				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
+				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
+				9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */,
 				58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */,
+				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
+				5840FD6C1D34E60500EDE37B /* SHGif.swift */,
+				9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */,
 				B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */,
 				B0C540BA1B31A79E007A377A /* SHIntExtension.swift */,
+				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
+				F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */,
+				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
+				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
+				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
+				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
 				B0C540BB1B31A79E007A377A /* SHNSDateExtension.swift */,
 				B0C540BC1B31A79E007A377A /* SHNSDateFormatterExtension.swift */,
 				B0C540BD1B31A79E007A377A /* SHNSErrorExtension.swift */,
+				9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */,
 				B0C540BE1B31A79E007A377A /* SHNSTimeIntervalExtension.swift */,
 				B0C540BF1B31A79E007A377A /* SHNSTimerExtension.swift */,
+				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
+				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
+				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
+				9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */,
+				9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */,
+				585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */,
+				58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */,
 				B0C540C01B31A79E007A377A /* SHStringExtension.swift */,
 				B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */,
+				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
+				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
 				B0C540C21B31A79E007A377A /* SHUIButtonExtension.swift */,
 				B0C540C31B31A79E007A377A /* SHUIColorExtension.swift */,
 				B0C540C41B31A79E007A377A /* SHUIFontExtension.swift */,
@@ -216,37 +245,13 @@
 				B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */,
 				B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */,
 				9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */,
-				9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */,
 				B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */,
 				B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */,
 				B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */,
-				9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */,
-				9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */,
-				9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */,
-				9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */,
-				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
-				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
-				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
-				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
-				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
-				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
-				58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */,
-				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
-				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
-				58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */,
-				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
-				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
-				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
-				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
-				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
-				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
-				5840FD6C1D34E60500EDE37B /* SHGif.swift */,
-				584150A71D61F51200866210 /* SHCoreDataStack.swift */,
-				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
-				9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */,
-				585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */,
-				F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */,
+				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
+				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
+				58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				586B734E1C83A90500934192 /* SHOperationTests.swift */,
 				9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */,
 				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
+				F013D7F91E2F81CF006437AB /* LocalizationTests.swift */,
 			);
 			path = SwiftHelpersTests;
 			sourceTree = SOURCE_ROOT;
@@ -282,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				B0BF98F11A667CFA0085ADA4 /* Info.plist */,
+				F013D8001E2F8577006437AB /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -389,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F013D7FE1E2F8577006437AB /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +466,9 @@
 			files = (
 				58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */,
 				586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */,
+				F013D7FB1E2F82D9006437AB /* SHSwiftHelper.swift in Sources */,
 				58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */,
+				F013D7FA1E2F81CF006437AB /* LocalizationTests.swift in Sources */,
 				58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */,
 				9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */,
 				58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */,
@@ -478,6 +488,17 @@
 			targetProxy = B0BF98ED1A667CFA0085ADA4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F013D8001E2F8577006437AB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F013D7FF1E2F8577006437AB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B0BF98F41A667CFA0085ADA4 /* Debug */ = {
