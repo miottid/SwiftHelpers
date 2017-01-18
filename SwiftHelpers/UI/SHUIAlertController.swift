@@ -12,7 +12,7 @@ public extension UIAlertController {
     
     public class func presentAlert(title: String?, message: String?, in controller: UIViewController, completionHandler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: L("OK"), style: .default, handler: completionHandler)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: completionHandler)
         alert.addAction(okAction)
         controller.present(alert, animated: true, completion: nil)
     }

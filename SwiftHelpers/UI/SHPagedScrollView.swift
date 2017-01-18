@@ -142,7 +142,7 @@ public extension SHPagedScrollView /* Public methods */ {
         let pageWidth = bounds.width
         guard preloadedCount > 0 && pageWidth > 0 else { return (0, 0, 0) }
 
-        let currentXOffset = contentOffset.x.ranged(between: 0, and: contentSize.width)
+        let currentXOffset = min(contentSize.width, max(0, contentOffset.x))
 
         let currentPage = Int(floor(currentXOffset / pageWidth))
         let interpolation = (currentXOffset - (CGFloat(currentPage) * pageWidth)) / pageWidth

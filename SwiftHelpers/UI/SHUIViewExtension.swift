@@ -81,7 +81,8 @@ public extension UIView {
     /// let view: MyView = .fromNib(named: "MyView")
     /// If the nib name is the same as the classe's name, it can be ommited.
     public class func fromNib<T : UIView>(named name: String? = nil) -> T {
-        let name = (name ?? T.className)
+        let className = NSStringFromClass(self).components(separatedBy: ".").last!
+        let name = (name ?? className)
         return Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as! T
     }
     

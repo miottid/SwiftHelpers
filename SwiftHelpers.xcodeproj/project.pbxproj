@@ -7,72 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */; };
-		58137C071D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */; };
-		581714061D1BE33C004B0788 /* SHPagedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581714051D1BE33C004B0788 /* SHPagedScrollView.swift */; };
-		581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */; };
 		58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */; };
 		58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */; };
 		58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
 		58272EA61C6CF22300D7A3BF /* ComparisonHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */; };
 		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
-		583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */; };
-		583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583EC3E51BF90EAA00AC47EE /* SHOperation.swift */; };
-		5840FD6D1D34E60500EDE37B /* SHGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5840FD6C1D34E60500EDE37B /* SHGif.swift */; };
-		584150A81D61F51200866210 /* SHCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584150A71D61F51200866210 /* SHCoreDataStack.swift */; };
-		585B41951DD1D51300F7A338 /* SHSKProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */; };
-		586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586642811CE20F4E00ABA68D /* SHNumberExtension.swift */; };
-		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
 		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
-		586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */; };
-		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
-		58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */; };
-		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
-		58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */; };
 		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
-		58C2EF2C1C43FD1F006E7866 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */; };
-		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
-		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
-		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
-		9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */; };
-		9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */; };
-		9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */; };
-		9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */; };
-		9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */; };
-		9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */; };
-		9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */; };
 		9C3D7BD01D2A67FB0017B3D6 /* SHNSObjectExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */; };
-		9C6B88131D630D7F00AF5004 /* SHDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */; };
 		B045E7E11A695EA700046449 /* SwiftHelpers.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B045E7E01A695EA700046449 /* SwiftHelpers.podspec */; };
 		B09F59751B4204AB00EB9220 /* DateProximityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F59741B4204AB00EB9220 /* DateProximityTests.swift */; };
 		B0BF98E61A667CFA0085ADA4 /* SwiftHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0BF98EC1A667CFA0085ADA4 /* SwiftHelpers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BF98E01A667CFA0085ADA4 /* SwiftHelpers.framework */; };
-		B0C540CB1B31A79E007A377A /* SHArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B71B31A79E007A377A /* SHArrayExtension.swift */; };
-		B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */; };
-		B0C540CD1B31A79E007A377A /* SHIBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */; };
-		B0C540CE1B31A79E007A377A /* SHIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BA1B31A79E007A377A /* SHIntExtension.swift */; };
-		B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BB1B31A79E007A377A /* SHNSDateExtension.swift */; };
-		B0C540D01B31A79E007A377A /* SHNSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BC1B31A79E007A377A /* SHNSDateFormatterExtension.swift */; };
-		B0C540D11B31A79E007A377A /* SHNSErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BD1B31A79E007A377A /* SHNSErrorExtension.swift */; };
-		B0C540D21B31A79E007A377A /* SHNSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BE1B31A79E007A377A /* SHNSTimeIntervalExtension.swift */; };
-		B0C540D31B31A79E007A377A /* SHNSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540BF1B31A79E007A377A /* SHNSTimerExtension.swift */; };
-		B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C01B31A79E007A377A /* SHStringExtension.swift */; };
-		B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */; };
-		B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C21B31A79E007A377A /* SHUIButtonExtension.swift */; };
-		B0C540D71B31A79E007A377A /* SHUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C31B31A79E007A377A /* SHUIColorExtension.swift */; };
-		B0C540D81B31A79E007A377A /* SHUIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C41B31A79E007A377A /* SHUIFontExtension.swift */; };
-		B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */; };
-		B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */; };
-		B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */; };
-		B0C540DC1B31A79E007A377A /* SHUITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */; };
-		B0C540DD1B31A79E007A377A /* SHUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */; };
-		B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */; };
-		B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */; };
-		F013D7F81E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */; };
 		F013D7FA1E2F81CF006437AB /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D7F91E2F81CF006437AB /* LocalizationTests.swift */; };
-		F013D7FB1E2F82D9006437AB /* SHSwiftHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */; };
 		F013D7FE1E2F8577006437AB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F013D8001E2F8577006437AB /* Localizable.strings */; };
+		F013D89E1E2FA21D006437AB /* SHArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8691E2FA21D006437AB /* SHArrayExtension.swift */; };
+		F013D89F1E2FA21D006437AB /* SHComparisonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86A1E2FA21D006437AB /* SHComparisonHelper.swift */; };
+		F013D8A01E2FA21D006437AB /* SHDegreesToRadiansExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86B1E2FA21D006437AB /* SHDegreesToRadiansExtension.swift */; };
+		F013D8A11E2FA21D006437AB /* SHDeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86C1E2FA21D006437AB /* SHDeviceType.swift */; };
+		F013D8A21E2FA21D006437AB /* SHIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86D1E2FA21D006437AB /* SHIntExtension.swift */; };
+		F013D8A31E2FA21D006437AB /* SHNSDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86E1E2FA21D006437AB /* SHNSDataExtension.swift */; };
+		F013D8A41E2FA21D006437AB /* SHNSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D86F1E2FA21D006437AB /* SHNSObjectExtension.swift */; };
+		F013D8A51E2FA21D006437AB /* SHNSTimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8701E2FA21D006437AB /* SHNSTimerExtension.swift */; };
+		F013D8A61E2FA21D006437AB /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8711E2FA21D006437AB /* SHNumberExtension.swift */; };
+		F013D8A71E2FA21D006437AB /* SHOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8721E2FA21D006437AB /* SHOperation.swift */; };
+		F013D8A81E2FA21D006437AB /* SHStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8731E2FA21D006437AB /* SHStringExtension.swift */; };
+		F013D8A91E2FA21D006437AB /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8741E2FA21D006437AB /* URLRequestExtension.swift */; };
+		F013D8AA1E2FA21D006437AB /* SHCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8761E2FA21D006437AB /* SHCoreDataStack.swift */; };
+		F013D8AB1E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8771E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift */; };
+		F013D8AC1E2FA21D006437AB /* SHDateFormatterProximity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8791E2FA21D006437AB /* SHDateFormatterProximity.swift */; };
+		F013D8AD1E2FA21D006437AB /* SHNSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D87A1E2FA21D006437AB /* SHNSDateExtension.swift */; };
+		F013D8AE1E2FA21D006437AB /* SHNSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D87B1E2FA21D006437AB /* SHNSDateFormatterExtension.swift */; };
+		F013D8AF1E2FA21D006437AB /* SHNSTimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D87C1E2FA21D006437AB /* SHNSTimeIntervalExtension.swift */; };
+		F013D8B01E2FA21D006437AB /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D87E1E2FA21D006437AB /* SHCreditCardValidator.swift */; };
+		F013D8B11E2FA21D006437AB /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D87F1E2FA21D006437AB /* SHKeyboardViewController.swift */; };
+		F013D8B21E2FA21D006437AB /* SHLocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8801E2FA21D006437AB /* SHLocalizationHelper.swift */; };
+		F013D8B31E2FA21D006437AB /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8811E2FA21D006437AB /* SHNotificationExtension.swift */; };
+		F013D8B41E2FA21D006437AB /* SHSKProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8821E2FA21D006437AB /* SHSKProductExtension.swift */; };
+		F013D8B51E2FA21D006437AB /* SHAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8841E2FA21D006437AB /* SHAttributedLabel.swift */; };
+		F013D8B61E2FA21D006437AB /* SHCALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8851E2FA21D006437AB /* SHCALayerExtension.swift */; };
+		F013D8B71E2FA21D006437AB /* SHCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8861E2FA21D006437AB /* SHCircleView.swift */; };
+		F013D8B81E2FA21D006437AB /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8871E2FA21D006437AB /* SHCommonInitView.swift */; };
+		F013D8B91E2FA21D006437AB /* SHDatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8881E2FA21D006437AB /* SHDatePickerController.swift */; };
+		F013D8BA1E2FA21D006437AB /* SHGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8891E2FA21D006437AB /* SHGif.swift */; };
+		F013D8BB1E2FA21D006437AB /* SHGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88A1E2FA21D006437AB /* SHGradientView.swift */; };
+		F013D8BC1E2FA21D006437AB /* SHIBInspectableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88B1E2FA21D006437AB /* SHIBInspectableExtension.swift */; };
+		F013D8BD1E2FA21D006437AB /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88C1E2FA21D006437AB /* SHNavigationControllerExtention.swift */; };
+		F013D8BE1E2FA21D006437AB /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88D1E2FA21D006437AB /* SHNoBackTitleViewController.swift */; };
+		F013D8BF1E2FA21D006437AB /* SHPagedScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88E1E2FA21D006437AB /* SHPagedScrollView.swift */; };
+		F013D8C01E2FA21D006437AB /* SHRightImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D88F1E2FA21D006437AB /* SHRightImageButton.swift */; };
+		F013D8C11E2FA21D006437AB /* SHSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8901E2FA21D006437AB /* SHSeparatorView.swift */; };
+		F013D8C21E2FA21D006437AB /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8911E2FA21D006437AB /* SHStatusBarNavigationController.swift */; };
+		F013D8C31E2FA21D006437AB /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8921E2FA21D006437AB /* SHTextField.swift */; };
+		F013D8C41E2FA21D006437AB /* SHUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8931E2FA21D006437AB /* SHUIAlertController.swift */; };
+		F013D8C51E2FA21D006437AB /* SHUIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8941E2FA21D006437AB /* SHUIButtonExtension.swift */; };
+		F013D8C61E2FA21D006437AB /* SHUIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8951E2FA21D006437AB /* SHUIColorExtension.swift */; };
+		F013D8C71E2FA21D006437AB /* SHUIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8961E2FA21D006437AB /* SHUIFontExtension.swift */; };
+		F013D8C81E2FA21D006437AB /* SHUIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8971E2FA21D006437AB /* SHUIImageExtension.swift */; };
+		F013D8C91E2FA21D006437AB /* SHUINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8981E2FA21D006437AB /* SHUINavigationBarExtension.swift */; };
+		F013D8CA1E2FA21D006437AB /* SHUIScreenExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D8991E2FA21D006437AB /* SHUIScreenExtension.swift */; };
+		F013D8CB1E2FA21D006437AB /* SHUIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D89A1E2FA21D006437AB /* SHUIScrollViewExtension.swift */; };
+		F013D8CC1E2FA21D006437AB /* SHUITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D89B1E2FA21D006437AB /* SHUITextFieldExtension.swift */; };
+		F013D8CD1E2FA21D006437AB /* SHUIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D89C1E2FA21D006437AB /* SHUIViewControllerExtension.swift */; };
+		F013D8CE1E2FA21D006437AB /* SHUIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013D89D1E2FA21D006437AB /* SHUIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,38 +84,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
-		58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDegreesToRadiansExtension.swift; sourceTree = "<group>"; };
-		581714051D1BE33C004B0788 /* SHPagedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHPagedScrollView.swift; sourceTree = "<group>"; };
-		581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
-		583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDataExtension.swift; sourceTree = "<group>"; };
-		583EC3E51BF90EAA00AC47EE /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
-		5840FD6C1D34E60500EDE37B /* SHGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGif.swift; sourceTree = "<group>"; };
-		584150A71D61F51200866210 /* SHCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCoreDataStack.swift; sourceTree = "<group>"; };
-		585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSKProductExtension.swift; sourceTree = "<group>"; };
-		586642811CE20F4E00ABA68D /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
-		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
-		586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNavigationControllerExtention.swift; sourceTree = "<group>"; };
-		58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
-		58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCreditCardValidator.swift; sourceTree = "<group>"; };
-		58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
-		58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCALayerExtension.swift; sourceTree = "<group>"; };
 		58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestCURLTests.swift; sourceTree = "<group>"; };
-		58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
-		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
-		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
-		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
-		9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScrollViewExtension.swift; sourceTree = "<group>"; };
-		9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtension.swift; sourceTree = "<group>"; };
-		9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttributedLabel.swift; sourceTree = "<group>"; };
-		9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCircleView.swift; sourceTree = "<group>"; };
-		9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGradientView.swift; sourceTree = "<group>"; };
-		9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRightImageButton.swift; sourceTree = "<group>"; };
-		9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSeparatorView.swift; sourceTree = "<group>"; };
 		9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtensionTests.swift; sourceTree = "<group>"; };
-		9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDatePickerController.swift; sourceTree = "<group>"; };
 		B045E7E01A695EA700046449 /* SwiftHelpers.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftHelpers.podspec; sourceTree = "<group>"; };
 		B053A0071AC353D700278644 /* StringExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
 		B066D6851A7646900069C258 /* UIColorExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionTests.swift; sourceTree = "<group>"; };
@@ -132,30 +102,57 @@
 		B0BF991B1A6686F00085ADA4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionTests.swift; sourceTree = "<group>"; };
 		B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensionTests.swift; sourceTree = "<group>"; };
-		B0C540B71B31A79E007A377A /* SHArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHArrayExtension.swift; sourceTree = "<group>"; };
-		B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHComparisonHelper.swift; sourceTree = "<group>"; };
-		B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHIBInspectableExtension.swift; sourceTree = "<group>"; };
-		B0C540BA1B31A79E007A377A /* SHIntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHIntExtension.swift; sourceTree = "<group>"; };
-		B0C540BB1B31A79E007A377A /* SHNSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDateExtension.swift; sourceTree = "<group>"; };
-		B0C540BC1B31A79E007A377A /* SHNSDateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDateFormatterExtension.swift; sourceTree = "<group>"; };
-		B0C540BD1B31A79E007A377A /* SHNSErrorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSErrorExtension.swift; sourceTree = "<group>"; };
-		B0C540BE1B31A79E007A377A /* SHNSTimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSTimeIntervalExtension.swift; sourceTree = "<group>"; };
-		B0C540BF1B31A79E007A377A /* SHNSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSTimerExtension.swift; sourceTree = "<group>"; };
-		B0C540C01B31A79E007A377A /* SHStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStringExtension.swift; sourceTree = "<group>"; };
-		B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSwiftHelper.swift; sourceTree = "<group>"; };
-		B0C540C21B31A79E007A377A /* SHUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIButtonExtension.swift; sourceTree = "<group>"; };
-		B0C540C31B31A79E007A377A /* SHUIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIColorExtension.swift; sourceTree = "<group>"; };
-		B0C540C41B31A79E007A377A /* SHUIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIFontExtension.swift; sourceTree = "<group>"; };
-		B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIImageExtension.swift; sourceTree = "<group>"; };
-		B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUINavigationBarExtension.swift; sourceTree = "<group>"; };
-		B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScreenExtension.swift; sourceTree = "<group>"; };
-		B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUITextFieldExtension.swift; sourceTree = "<group>"; };
-		B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIViewControllerExtension.swift; sourceTree = "<group>"; };
-		B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIViewExtension.swift; sourceTree = "<group>"; };
-		B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDateFormatterProximity.swift; sourceTree = "<group>"; };
-		F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
 		F013D7F91E2F81CF006437AB /* LocalizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
 		F013D7FF1E2F8577006437AB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F013D8691E2FA21D006437AB /* SHArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHArrayExtension.swift; sourceTree = "<group>"; };
+		F013D86A1E2FA21D006437AB /* SHComparisonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHComparisonHelper.swift; sourceTree = "<group>"; };
+		F013D86B1E2FA21D006437AB /* SHDegreesToRadiansExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDegreesToRadiansExtension.swift; sourceTree = "<group>"; };
+		F013D86C1E2FA21D006437AB /* SHDeviceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDeviceType.swift; sourceTree = "<group>"; };
+		F013D86D1E2FA21D006437AB /* SHIntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHIntExtension.swift; sourceTree = "<group>"; };
+		F013D86E1E2FA21D006437AB /* SHNSDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDataExtension.swift; sourceTree = "<group>"; };
+		F013D86F1E2FA21D006437AB /* SHNSObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSObjectExtension.swift; sourceTree = "<group>"; };
+		F013D8701E2FA21D006437AB /* SHNSTimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSTimerExtension.swift; sourceTree = "<group>"; };
+		F013D8711E2FA21D006437AB /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
+		F013D8721E2FA21D006437AB /* SHOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperation.swift; sourceTree = "<group>"; };
+		F013D8731E2FA21D006437AB /* SHStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStringExtension.swift; sourceTree = "<group>"; };
+		F013D8741E2FA21D006437AB /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
+		F013D8761E2FA21D006437AB /* SHCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCoreDataStack.swift; sourceTree = "<group>"; };
+		F013D8771E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SHManagedObjectContext+CascadeSave.swift"; sourceTree = "<group>"; };
+		F013D8791E2FA21D006437AB /* SHDateFormatterProximity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDateFormatterProximity.swift; sourceTree = "<group>"; };
+		F013D87A1E2FA21D006437AB /* SHNSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDateExtension.swift; sourceTree = "<group>"; };
+		F013D87B1E2FA21D006437AB /* SHNSDateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSDateFormatterExtension.swift; sourceTree = "<group>"; };
+		F013D87C1E2FA21D006437AB /* SHNSTimeIntervalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNSTimeIntervalExtension.swift; sourceTree = "<group>"; };
+		F013D87E1E2FA21D006437AB /* SHCreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCreditCardValidator.swift; sourceTree = "<group>"; };
+		F013D87F1E2FA21D006437AB /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
+		F013D8801E2FA21D006437AB /* SHLocalizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHLocalizationHelper.swift; sourceTree = "<group>"; };
+		F013D8811E2FA21D006437AB /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
+		F013D8821E2FA21D006437AB /* SHSKProductExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSKProductExtension.swift; sourceTree = "<group>"; };
+		F013D8841E2FA21D006437AB /* SHAttributedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttributedLabel.swift; sourceTree = "<group>"; };
+		F013D8851E2FA21D006437AB /* SHCALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCALayerExtension.swift; sourceTree = "<group>"; };
+		F013D8861E2FA21D006437AB /* SHCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCircleView.swift; sourceTree = "<group>"; };
+		F013D8871E2FA21D006437AB /* SHCommonInitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCommonInitView.swift; sourceTree = "<group>"; };
+		F013D8881E2FA21D006437AB /* SHDatePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDatePickerController.swift; sourceTree = "<group>"; };
+		F013D8891E2FA21D006437AB /* SHGif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGif.swift; sourceTree = "<group>"; };
+		F013D88A1E2FA21D006437AB /* SHGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHGradientView.swift; sourceTree = "<group>"; };
+		F013D88B1E2FA21D006437AB /* SHIBInspectableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHIBInspectableExtension.swift; sourceTree = "<group>"; };
+		F013D88C1E2FA21D006437AB /* SHNavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNavigationControllerExtention.swift; sourceTree = "<group>"; };
+		F013D88D1E2FA21D006437AB /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
+		F013D88E1E2FA21D006437AB /* SHPagedScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHPagedScrollView.swift; sourceTree = "<group>"; };
+		F013D88F1E2FA21D006437AB /* SHRightImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRightImageButton.swift; sourceTree = "<group>"; };
+		F013D8901E2FA21D006437AB /* SHSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSeparatorView.swift; sourceTree = "<group>"; };
+		F013D8911E2FA21D006437AB /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
+		F013D8921E2FA21D006437AB /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
+		F013D8931E2FA21D006437AB /* SHUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIAlertController.swift; sourceTree = "<group>"; };
+		F013D8941E2FA21D006437AB /* SHUIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIButtonExtension.swift; sourceTree = "<group>"; };
+		F013D8951E2FA21D006437AB /* SHUIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIColorExtension.swift; sourceTree = "<group>"; };
+		F013D8961E2FA21D006437AB /* SHUIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIFontExtension.swift; sourceTree = "<group>"; };
+		F013D8971E2FA21D006437AB /* SHUIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIImageExtension.swift; sourceTree = "<group>"; };
+		F013D8981E2FA21D006437AB /* SHUINavigationBarExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUINavigationBarExtension.swift; sourceTree = "<group>"; };
+		F013D8991E2FA21D006437AB /* SHUIScreenExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScreenExtension.swift; sourceTree = "<group>"; };
+		F013D89A1E2FA21D006437AB /* SHUIScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIScrollViewExtension.swift; sourceTree = "<group>"; };
+		F013D89B1E2FA21D006437AB /* SHUITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUITextFieldExtension.swift; sourceTree = "<group>"; };
+		F013D89C1E2FA21D006437AB /* SHUIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIViewControllerExtension.swift; sourceTree = "<group>"; };
+		F013D89D1E2FA21D006437AB /* SHUIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHUIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,59 +196,14 @@
 		B0BF98E21A667CFA0085ADA4 /* SwiftHelpers */ = {
 			isa = PBXGroup;
 			children = (
-				B0C540B71B31A79E007A377A /* SHArrayExtension.swift */,
-				9C3D7BC21D2A62EC0017B3D6 /* SHAttributedLabel.swift */,
-				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
-				9C3D7BC41D2A63940017B3D6 /* SHCircleView.swift */,
-				58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */,
-				B0C540B81B31A79E007A377A /* SHComparisonHelper.swift */,
-				584150A71D61F51200866210 /* SHCoreDataStack.swift */,
-				58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */,
-				B0DBC97C1B41FB340097E59E /* SHDateFormatterProximity.swift */,
-				9C6B88121D630D7F00AF5004 /* SHDatePickerController.swift */,
-				58137C061D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift */,
-				5800C82F1C04A0D000FDC7C7 /* SHDeviceType.swift */,
-				5840FD6C1D34E60500EDE37B /* SHGif.swift */,
-				9C3D7BC61D2A640E0017B3D6 /* SHGradientView.swift */,
-				B0C540B91B31A79E007A377A /* SHIBInspectableExtension.swift */,
-				B0C540BA1B31A79E007A377A /* SHIntExtension.swift */,
-				58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */,
-				F013D7F71E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift */,
-				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
-				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
-				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
-				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
-				B0C540BB1B31A79E007A377A /* SHNSDateExtension.swift */,
-				B0C540BC1B31A79E007A377A /* SHNSDateFormatterExtension.swift */,
-				B0C540BD1B31A79E007A377A /* SHNSErrorExtension.swift */,
-				9C3D7BC01D2A61F20017B3D6 /* SHNSObjectExtension.swift */,
-				B0C540BE1B31A79E007A377A /* SHNSTimeIntervalExtension.swift */,
-				B0C540BF1B31A79E007A377A /* SHNSTimerExtension.swift */,
-				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
-				583EC3E51BF90EAA00AC47EE /* SHOperation.swift */,
-				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
-				9C3D7BC81D2A64C40017B3D6 /* SHRightImageButton.swift */,
-				9C3D7BCA1D2A65370017B3D6 /* SHSeparatorView.swift */,
-				585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */,
-				58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */,
-				B0C540C01B31A79E007A377A /* SHStringExtension.swift */,
-				B0C540C11B31A79E007A377A /* SHSwiftHelper.swift */,
-				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
-				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
-				B0C540C21B31A79E007A377A /* SHUIButtonExtension.swift */,
-				B0C540C31B31A79E007A377A /* SHUIColorExtension.swift */,
-				B0C540C41B31A79E007A377A /* SHUIFontExtension.swift */,
-				B0C540C51B31A79E007A377A /* SHUIImageExtension.swift */,
-				B0C540C61B31A79E007A377A /* SHUINavigationBarExtension.swift */,
-				B0C540C71B31A79E007A377A /* SHUIScreenExtension.swift */,
-				9C3D7BBE1D2A60650017B3D6 /* SHUIScrollViewExtension.swift */,
-				B0C540C81B31A79E007A377A /* SHUITextFieldExtension.swift */,
-				B0C540C91B31A79E007A377A /* SHUIViewControllerExtension.swift */,
-				B0C540CA1B31A79E007A377A /* SHUIViewExtension.swift */,
+				F013D8681E2FA21D006437AB /* Core */,
+				F013D8751E2FA21D006437AB /* CoreData */,
+				F013D8781E2FA21D006437AB /* Date-Time */,
+				F013D87D1E2FA21D006437AB /* Misc */,
+				F013D8831E2FA21D006437AB /* UI */,
 				B0BF98E31A667CFA0085ADA4 /* Supporting Files */,
 				B0BF98E51A667CFA0085ADA4 /* SwiftHelpers.h */,
 				B0BF98EF1A667CFA0085ADA4 /* SwiftHelpersTests */,
-				58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */,
 			);
 			path = SwiftHelpers;
 			sourceTree = "<group>";
@@ -268,18 +220,18 @@
 			isa = PBXGroup;
 			children = (
 				B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */,
-				B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */,
-				B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */,
-				B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */,
-				B066D6851A7646900069C258 /* UIColorExtensionTests.swift */,
-				B053A0071AC353D700278644 /* StringExtensionTests.swift */,
-				B09F59741B4204AB00EB9220 /* DateProximityTests.swift */,
 				58854D391C01E19900B3F303 /* CommonInitTests.swift */,
-				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
-				586B734E1C83A90500934192 /* SHOperationTests.swift */,
-				9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */,
-				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
+				B075FF701A6D10D200ACD798 /* ComparisonHelperTests.swift */,
+				B09F59741B4204AB00EB9220 /* DateProximityTests.swift */,
+				B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */,
 				F013D7F91E2F81CF006437AB /* LocalizationTests.swift */,
+				B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */,
+				58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */,
+				9C3D7BCE1D2A66DE0017B3D6 /* SHNSObjectExtensionTests.swift */,
+				586B734E1C83A90500934192 /* SHOperationTests.swift */,
+				B053A0071AC353D700278644 /* StringExtensionTests.swift */,
+				B0BF98F01A667CFA0085ADA4 /* Supporting Files */,
+				B066D6851A7646900069C258 /* UIColorExtensionTests.swift */,
 			);
 			path = SwiftHelpersTests;
 			sourceTree = SOURCE_ROOT;
@@ -291,6 +243,90 @@
 				F013D8001E2F8577006437AB /* Localizable.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F013D8681E2FA21D006437AB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F013D8691E2FA21D006437AB /* SHArrayExtension.swift */,
+				F013D86A1E2FA21D006437AB /* SHComparisonHelper.swift */,
+				F013D86B1E2FA21D006437AB /* SHDegreesToRadiansExtension.swift */,
+				F013D86C1E2FA21D006437AB /* SHDeviceType.swift */,
+				F013D86D1E2FA21D006437AB /* SHIntExtension.swift */,
+				F013D86E1E2FA21D006437AB /* SHNSDataExtension.swift */,
+				F013D86F1E2FA21D006437AB /* SHNSObjectExtension.swift */,
+				F013D8701E2FA21D006437AB /* SHNSTimerExtension.swift */,
+				F013D8711E2FA21D006437AB /* SHNumberExtension.swift */,
+				F013D8721E2FA21D006437AB /* SHOperation.swift */,
+				F013D8731E2FA21D006437AB /* SHStringExtension.swift */,
+				F013D8741E2FA21D006437AB /* URLRequestExtension.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F013D8751E2FA21D006437AB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F013D8761E2FA21D006437AB /* SHCoreDataStack.swift */,
+				F013D8771E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F013D8781E2FA21D006437AB /* Date-Time */ = {
+			isa = PBXGroup;
+			children = (
+				F013D8791E2FA21D006437AB /* SHDateFormatterProximity.swift */,
+				F013D87A1E2FA21D006437AB /* SHNSDateExtension.swift */,
+				F013D87B1E2FA21D006437AB /* SHNSDateFormatterExtension.swift */,
+				F013D87C1E2FA21D006437AB /* SHNSTimeIntervalExtension.swift */,
+			);
+			path = "Date-Time";
+			sourceTree = "<group>";
+		};
+		F013D87D1E2FA21D006437AB /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				F013D87E1E2FA21D006437AB /* SHCreditCardValidator.swift */,
+				F013D87F1E2FA21D006437AB /* SHKeyboardViewController.swift */,
+				F013D8801E2FA21D006437AB /* SHLocalizationHelper.swift */,
+				F013D8811E2FA21D006437AB /* SHNotificationExtension.swift */,
+				F013D8821E2FA21D006437AB /* SHSKProductExtension.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		F013D8831E2FA21D006437AB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F013D8841E2FA21D006437AB /* SHAttributedLabel.swift */,
+				F013D8851E2FA21D006437AB /* SHCALayerExtension.swift */,
+				F013D8861E2FA21D006437AB /* SHCircleView.swift */,
+				F013D8871E2FA21D006437AB /* SHCommonInitView.swift */,
+				F013D8881E2FA21D006437AB /* SHDatePickerController.swift */,
+				F013D8891E2FA21D006437AB /* SHGif.swift */,
+				F013D88A1E2FA21D006437AB /* SHGradientView.swift */,
+				F013D88B1E2FA21D006437AB /* SHIBInspectableExtension.swift */,
+				F013D88C1E2FA21D006437AB /* SHNavigationControllerExtention.swift */,
+				F013D88D1E2FA21D006437AB /* SHNoBackTitleViewController.swift */,
+				F013D88E1E2FA21D006437AB /* SHPagedScrollView.swift */,
+				F013D88F1E2FA21D006437AB /* SHRightImageButton.swift */,
+				F013D8901E2FA21D006437AB /* SHSeparatorView.swift */,
+				F013D8911E2FA21D006437AB /* SHStatusBarNavigationController.swift */,
+				F013D8921E2FA21D006437AB /* SHTextField.swift */,
+				F013D8931E2FA21D006437AB /* SHUIAlertController.swift */,
+				F013D8941E2FA21D006437AB /* SHUIButtonExtension.swift */,
+				F013D8951E2FA21D006437AB /* SHUIColorExtension.swift */,
+				F013D8961E2FA21D006437AB /* SHUIFontExtension.swift */,
+				F013D8971E2FA21D006437AB /* SHUIImageExtension.swift */,
+				F013D8981E2FA21D006437AB /* SHUINavigationBarExtension.swift */,
+				F013D8991E2FA21D006437AB /* SHUIScreenExtension.swift */,
+				F013D89A1E2FA21D006437AB /* SHUIScrollViewExtension.swift */,
+				F013D89B1E2FA21D006437AB /* SHUITextFieldExtension.swift */,
+				F013D89C1E2FA21D006437AB /* SHUIViewControllerExtension.swift */,
+				F013D89D1E2FA21D006437AB /* SHUIViewExtension.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,56 +443,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */,
-				B0C540DC1B31A79E007A377A /* SHUITextFieldExtension.swift in Sources */,
-				B0C540CB1B31A79E007A377A /* SHArrayExtension.swift in Sources */,
-				B0C540D41B31A79E007A377A /* SHStringExtension.swift in Sources */,
-				58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */,
-				583B13FE1D1C9E4800DFF974 /* SHNSDataExtension.swift in Sources */,
-				9C3D7BC11D2A61F20017B3D6 /* SHNSObjectExtension.swift in Sources */,
-				B0C540DE1B31A79E007A377A /* SHUIViewExtension.swift in Sources */,
-				584150A81D61F51200866210 /* SHCoreDataStack.swift in Sources */,
-				9C3D7BC31D2A62EC0017B3D6 /* SHAttributedLabel.swift in Sources */,
-				9C3D7BC91D2A64C40017B3D6 /* SHRightImageButton.swift in Sources */,
-				9C3D7BC51D2A63940017B3D6 /* SHCircleView.swift in Sources */,
-				B0C540D51B31A79E007A377A /* SHSwiftHelper.swift in Sources */,
-				58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */,
-				58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */,
-				B0C540D81B31A79E007A377A /* SHUIFontExtension.swift in Sources */,
-				B0C540D31B31A79E007A377A /* SHNSTimerExtension.swift in Sources */,
-				F013D7F81E2F6927006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */,
-				58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */,
-				B0C540D91B31A79E007A377A /* SHUIImageExtension.swift in Sources */,
-				B0DBC97D1B41FB340097E59E /* SHDateFormatterProximity.swift in Sources */,
-				9C3D7BC71D2A640E0017B3D6 /* SHGradientView.swift in Sources */,
-				586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */,
-				9C6B88131D630D7F00AF5004 /* SHDatePickerController.swift in Sources */,
-				58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */,
-				9C3D7BCB1D2A65370017B3D6 /* SHSeparatorView.swift in Sources */,
-				5840FD6D1D34E60500EDE37B /* SHGif.swift in Sources */,
-				B0C540CC1B31A79E007A377A /* SHComparisonHelper.swift in Sources */,
-				58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */,
-				583EC3E61BF90EAA00AC47EE /* SHOperation.swift in Sources */,
-				B0C540CE1B31A79E007A377A /* SHIntExtension.swift in Sources */,
-				B0C540CD1B31A79E007A377A /* SHIBInspectableExtension.swift in Sources */,
-				B0C540D11B31A79E007A377A /* SHNSErrorExtension.swift in Sources */,
-				B0C540DD1B31A79E007A377A /* SHUIViewControllerExtension.swift in Sources */,
-				B0C540D01B31A79E007A377A /* SHNSDateFormatterExtension.swift in Sources */,
-				58137C071D0174E7003CFE32 /* SHDegreesToRadiansExtension.swift in Sources */,
-				58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */,
-				B0C540D71B31A79E007A377A /* SHUIColorExtension.swift in Sources */,
-				5800C8301C04A0D000FDC7C7 /* SHDeviceType.swift in Sources */,
-				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
-				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
-				586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */,
-				58C2EF2C1C43FD1F006E7866 /* URLRequestExtension.swift in Sources */,
-				9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */,
-				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
-				585B41951DD1D51300F7A338 /* SHSKProductExtension.swift in Sources */,
-				581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */,
-				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,
-				581714061D1BE33C004B0788 /* SHPagedScrollView.swift in Sources */,
-				B0C540D21B31A79E007A377A /* SHNSTimeIntervalExtension.swift in Sources */,
+				F013D8A21E2FA21D006437AB /* SHIntExtension.swift in Sources */,
+				F013D8A61E2FA21D006437AB /* SHNumberExtension.swift in Sources */,
+				F013D8A01E2FA21D006437AB /* SHDegreesToRadiansExtension.swift in Sources */,
+				F013D8CD1E2FA21D006437AB /* SHUIViewControllerExtension.swift in Sources */,
+				F013D8BB1E2FA21D006437AB /* SHGradientView.swift in Sources */,
+				F013D89E1E2FA21D006437AB /* SHArrayExtension.swift in Sources */,
+				F013D8CC1E2FA21D006437AB /* SHUITextFieldExtension.swift in Sources */,
+				F013D8A31E2FA21D006437AB /* SHNSDataExtension.swift in Sources */,
+				F013D8AF1E2FA21D006437AB /* SHNSTimeIntervalExtension.swift in Sources */,
+				F013D8C11E2FA21D006437AB /* SHSeparatorView.swift in Sources */,
+				F013D8AE1E2FA21D006437AB /* SHNSDateFormatterExtension.swift in Sources */,
+				F013D8B81E2FA21D006437AB /* SHCommonInitView.swift in Sources */,
+				F013D8C31E2FA21D006437AB /* SHTextField.swift in Sources */,
+				F013D8B41E2FA21D006437AB /* SHSKProductExtension.swift in Sources */,
+				F013D8CB1E2FA21D006437AB /* SHUIScrollViewExtension.swift in Sources */,
+				F013D8C91E2FA21D006437AB /* SHUINavigationBarExtension.swift in Sources */,
+				F013D8A11E2FA21D006437AB /* SHDeviceType.swift in Sources */,
+				F013D8B91E2FA21D006437AB /* SHDatePickerController.swift in Sources */,
+				F013D8BF1E2FA21D006437AB /* SHPagedScrollView.swift in Sources */,
+				F013D8BC1E2FA21D006437AB /* SHIBInspectableExtension.swift in Sources */,
+				F013D8C41E2FA21D006437AB /* SHUIAlertController.swift in Sources */,
+				F013D8C21E2FA21D006437AB /* SHStatusBarNavigationController.swift in Sources */,
+				F013D8BD1E2FA21D006437AB /* SHNavigationControllerExtention.swift in Sources */,
+				F013D8A71E2FA21D006437AB /* SHOperation.swift in Sources */,
+				F013D8AC1E2FA21D006437AB /* SHDateFormatterProximity.swift in Sources */,
+				F013D8B01E2FA21D006437AB /* SHCreditCardValidator.swift in Sources */,
+				F013D8A51E2FA21D006437AB /* SHNSTimerExtension.swift in Sources */,
+				F013D8BE1E2FA21D006437AB /* SHNoBackTitleViewController.swift in Sources */,
+				F013D8CA1E2FA21D006437AB /* SHUIScreenExtension.swift in Sources */,
+				F013D8AD1E2FA21D006437AB /* SHNSDateExtension.swift in Sources */,
+				F013D8A81E2FA21D006437AB /* SHStringExtension.swift in Sources */,
+				F013D8AB1E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */,
+				F013D8AA1E2FA21D006437AB /* SHCoreDataStack.swift in Sources */,
+				F013D8CE1E2FA21D006437AB /* SHUIViewExtension.swift in Sources */,
+				F013D8B11E2FA21D006437AB /* SHKeyboardViewController.swift in Sources */,
+				F013D8B31E2FA21D006437AB /* SHNotificationExtension.swift in Sources */,
+				F013D8C51E2FA21D006437AB /* SHUIButtonExtension.swift in Sources */,
+				F013D8C71E2FA21D006437AB /* SHUIFontExtension.swift in Sources */,
+				F013D8A91E2FA21D006437AB /* URLRequestExtension.swift in Sources */,
+				F013D8B21E2FA21D006437AB /* SHLocalizationHelper.swift in Sources */,
+				F013D8C01E2FA21D006437AB /* SHRightImageButton.swift in Sources */,
+				F013D8BA1E2FA21D006437AB /* SHGif.swift in Sources */,
+				F013D8C81E2FA21D006437AB /* SHUIImageExtension.swift in Sources */,
+				F013D8C61E2FA21D006437AB /* SHUIColorExtension.swift in Sources */,
+				F013D8B71E2FA21D006437AB /* SHCircleView.swift in Sources */,
+				F013D8B51E2FA21D006437AB /* SHAttributedLabel.swift in Sources */,
+				F013D89F1E2FA21D006437AB /* SHComparisonHelper.swift in Sources */,
+				F013D8A41E2FA21D006437AB /* SHNSObjectExtension.swift in Sources */,
+				F013D8B61E2FA21D006437AB /* SHCALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +501,6 @@
 			files = (
 				58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */,
 				586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */,
-				F013D7FB1E2F82D9006437AB /* SHSwiftHelper.swift in Sources */,
 				58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */,
 				F013D7FA1E2F81CF006437AB /* LocalizationTests.swift in Sources */,
 				58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */,
@@ -638,6 +672,7 @@
 		B0BF98FA1A667CFA0085ADA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 659B2N7HE9;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -655,6 +690,7 @@
 		B0BF98FB1A667CFA0085ADA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 659B2N7HE9;
 				INFOPLIST_FILE = SwiftHelpersTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
