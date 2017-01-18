@@ -10,11 +10,11 @@ import Foundation
 
 /// cURL extension
 public extension URLRequest {
-    fileprivate func escapeQuotesInString(_ string: String) -> String {
+    fileprivate func escapeQuotes(in string: String) -> String {
         return string.replacingOccurrences(of: "\"", with: "\\\"")
     }
     
-    public func cURL() -> String {
+    public var cURLString: String {
         var cURLString = "curl -i"
         let newLine = " \\\n\t"
         
@@ -25,8 +25,8 @@ public extension URLRequest {
         if let headerFields = allHTTPHeaderFields {
             for key in headerFields.keys {
                 if let value = headerFields[key] {
-                    let headerKey = escapeQuotesInString(key)
-                    let headerValue = escapeQuotesInString(value)
+                    let headerKey = escapeQuotes(in: key)
+                    let headerValue = escapeQuotes(in: value)
                     cURLString += "\(newLine) -H '\(headerKey): \(headerValue)'"
                 }
             }

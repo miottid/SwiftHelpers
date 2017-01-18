@@ -27,14 +27,6 @@ public func L(_ key: String, nb: Int? = nil) -> String {
     return String(format: localized, nb)
 }
 
-///Helper for `println` function with a filter for use in debug mode only
-public func P(_ string: String) {
-    #if RELEASE
-    #else
-        print(string)
-    #endif
-}
-
 ///Get the current version of the app
 ///- returns: A string representing the version of the app {CFBundleShortVersionString}.{CFBundleVersion}
 public func appVersion() -> String {
@@ -42,7 +34,7 @@ public func appVersion() -> String {
     if let bundleDictionary = mainBundle.infoDictionary {
         if let shortVersion = bundleDictionary["CFBundleShortVersionString"] as? String {
             if let bundleVersion = bundleDictionary["CFBundleVersion"] as? String {
-                return NSString(format: "%@.%@", shortVersion, bundleVersion) as String
+                return NSString(format: "%@ (#%@)", shortVersion, bundleVersion) as String
             }
         }
     }

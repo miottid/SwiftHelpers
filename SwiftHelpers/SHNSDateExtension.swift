@@ -19,24 +19,28 @@ private let CalendarAllUnits: NSCalendar.Unit =
 
 // MARK: - Private helpers
 
-///Create a date with specified day and month in the current year
-///
-///- parameter day: The day number in the month
-///- parameter month: The month number starting from 1
-///
-///- returns: A NSDate starting at the beginning of the day
-private func dateWithDayAndMonth(_ day: Int, month: Int) -> Date {
-    var comps = (CurrentCalendar as NSCalendar).components(CalendarAllUnits, from: Date())
-    comps.month = month
-    comps.day = day
-    comps.hour = 0
-    comps.minute = 0
-    comps.second = 0
-    if let date = CurrentCalendar.date(from: comps) {
-        return date
+extension Date {
+    ///Create a date with specified day and month in the current year
+    ///
+    ///- parameter day: The day number in the month
+    ///- parameter month: The month number starting from 1
+    ///
+    ///- returns: A Date starting at the beginning of the day
+    init(day: Int, month: Int) {
+        self.init()
+        var comps = (CurrentCalendar as NSCalendar).components(CalendarAllUnits, from: self)
+        comps.month = month
+        comps.day = day
+        comps.hour = 0
+        comps.minute = 0
+        comps.second = 0
+        if let date = CurrentCalendar.date(from: comps) {
+            self = date
+        }
     }
-    return Date()
+
 }
+
 
 // MARK: - TimeInterval Class
 
@@ -82,7 +86,7 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
     ///- parameter date: the date you want to apply the time interval to. Defaults to the current time and date.
     ///
     ///- returns: A new NSDate by applying the time offset
-    fileprivate func offsetDate(_ fromNow: Bool, date: Date = Date()) -> Date {
+    fileprivate func offsetDate(fromNow: Bool, date: Date = Date()) -> Date {
         let coef = fromNow ? 1 : -1
         var offsetComponents = DateComponents()
         offsetComponents.second = coef * seconds
@@ -101,14 +105,14 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
     ///
     ///- returns: A new NSDate by applying the time offset
     open var ago: Date {
-        return offsetDate(false)
+        return offsetDate(fromNow: false)
     }
     
     ///Create a new date by applying the TimeInterval to now in the future
     ///
     ///- returns: A new NSDate by applying the time offset
     open var fromNow: Date {
-        return offsetDate(true)
+        return offsetDate(fromNow: true)
     }
     
     ///Translate the TimeInterval in seconds
@@ -182,11 +186,11 @@ public func - (lhs: Date, rhs: TimeInterval) -> Date {
 
 // Allow operation between NSDate and TimeInterval
 public func + (lhs: Date, rhs: SHTimeInterval) -> Date {
-    return rhs.offsetDate(true, date: lhs)
+    return rhs.offsetDate(fromNow: true, date: lhs)
 }
 
 public func - (lhs: Date, rhs: SHTimeInterval) -> Date {
-    return rhs.offsetDate(false, date: lhs)
+    return rhs.offsetDate(fromNow: false, date: lhs)
 }
 
 public func += (lhs: inout Date, rhs: SHTimeInterval) {
@@ -280,29 +284,29 @@ public extension Int {
     public var years  : SHTimeInterval { return year }
     
     ///Create a NSDate with the specified day of january in the current year
-    public var january  : Date { return dateWithDayAndMonth(self, month: 1) }
+    public var january  : Date { return Date(day: self, month: 1) }
     ///Create a NSDate with the specified day of febuary in the current year
-    public var febuary  : Date { return dateWithDayAndMonth(self, month: 2) }
+    public var febuary  : Date { return Date(day: self, month: 2) }
     ///Create a NSDate with the specified day of march in the current year
-    public var march    : Date { return dateWithDayAndMonth(self, month: 3) }
+    public var march    : Date { return Date(day: self, month: 3) }
     ///Create a NSDate with the specified day of april in the current year
-    public var april    : Date { return dateWithDayAndMonth(self, month: 4) }
+    public var april    : Date { return Date(day: self, month: 4) }
     ///Create a NSDate with the specified day of may in the current year
-    public var may      : Date { return dateWithDayAndMonth(self, month: 5) }
+    public var may      : Date { return Date(day: self, month: 5) }
     ///Create a NSDate with the specified day of june in the current year
-    public var june     : Date { return dateWithDayAndMonth(self, month: 6) }
+    public var june     : Date { return Date(day: self, month: 6) }
     ///Create a NSDate with the specified day of july in the current year
-    public var july     : Date { return dateWithDayAndMonth(self, month: 7) }
+    public var july     : Date { return Date(day: self, month: 7) }
     ///Create a NSDate with the specified day of august in the current year
-    public var august   : Date { return dateWithDayAndMonth(self, month: 8) }
+    public var august   : Date { return Date(day: self, month: 8) }
     ///Create a NSDate with the specified day of september in the current year
-    public var september: Date { return dateWithDayAndMonth(self, month: 9) }
+    public var september: Date { return Date(day: self, month: 9) }
     ///Create a NSDate with the specified day of october in the current year
-    public var october  : Date { return dateWithDayAndMonth(self, month: 10) }
+    public var october  : Date { return Date(day: self, month: 10) }
     ///Create a NSDate with the specified day of november in the current year
-    public var november : Date { return dateWithDayAndMonth(self, month: 11) }
+    public var november : Date { return Date(day: self, month: 11) }
     ///Create a NSDate with the specified day of december in the current year
-    public var december : Date { return dateWithDayAndMonth(self, month: 12) }
+    public var december : Date { return Date(day: self, month: 12) }
 }
 
 // MARK: - Date Extension
@@ -512,7 +516,7 @@ public extension Date {
     ///- parameter the: date to compare
     ///
     ///- returns: The number of days
-    public func numberOfDays(_ nextDate: Date) -> Int? {
+    public func numberOfDays(until nextDate: Date) -> Int? {
         let calendar = Calendar.current as NSCalendar
         
         var fromDate: NSDate?
@@ -538,7 +542,7 @@ public extension Date {
     ///
     ///- returns: true if it's the same day otherwise returns false
     public func isSameDay(_ nextDate: Date) -> Bool {
-        return numberOfDays(nextDate) == 0
+        return numberOfDays(until: nextDate) == 0
     }
     
 }

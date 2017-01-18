@@ -24,16 +24,14 @@
 		585B41951DD1D51300F7A338 /* SHSKProductExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */; };
 		586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586642811CE20F4E00ABA68D /* SHNumberExtension.swift */; };
 		58691B671CCE09E80056D78E /* SHNotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B661CCE09E80056D78E /* SHNotificationExtension.swift */; };
-		58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */; };
 		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
-		586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82DF1C241B3900590E17 /* SHImageExtension.swift */; };
 		586C82E41C2421BF00590E17 /* SHNavigationControllerExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */; };
 		58769C241C034DC20092BFA3 /* SHKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */; };
 		58769C5A1C035A5F0092BFA3 /* SHCreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */; };
 		58854D371C01E0EE00B3F303 /* SHCommonInitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58854D361C01E0EE00B3F303 /* SHCommonInitView.swift */; };
 		58B6468D1CBFD93D00FE6543 /* SHCALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */; };
 		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
-		58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */; };
+		58C2EF2C1C43FD1F006E7866 /* URLRequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */; };
 		58E46F1A1C10552700165748 /* SHStatusBarNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */; };
 		58F2AFD41C1EEB7700048902 /* SHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AFD31C1EEB7700048902 /* SHTextField.swift */; };
 		58F77FF71C0635C20058A87B /* SHNoBackTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */; };
@@ -96,9 +94,7 @@
 		585B41941DD1D51300F7A338 /* SHSKProductExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSKProductExtension.swift; sourceTree = "<group>"; };
 		586642811CE20F4E00ABA68D /* SHNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNumberExtension.swift; sourceTree = "<group>"; };
 		58691B661CCE09E80056D78E /* SHNotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNotificationExtension.swift; sourceTree = "<group>"; };
-		58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHDispatchExtension.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
-		586C82DF1C241B3900590E17 /* SHImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHImageExtension.swift; sourceTree = "<group>"; };
 		586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNavigationControllerExtention.swift; sourceTree = "<group>"; };
 		58769C231C034DC20092BFA3 /* SHKeyboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHKeyboardViewController.swift; sourceTree = "<group>"; };
 		58769C591C035A5F0092BFA3 /* SHCreditCardValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCreditCardValidator.swift; sourceTree = "<group>"; };
@@ -106,7 +102,7 @@
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHCALayerExtension.swift; sourceTree = "<group>"; };
 		58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestCURLTests.swift; sourceTree = "<group>"; };
-		58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestExtension.swift; sourceTree = "<group>"; };
+		58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestExtension.swift; sourceTree = "<group>"; };
 		58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHStatusBarNavigationController.swift; sourceTree = "<group>"; };
 		58F2AFD31C1EEB7700048902 /* SHTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHTextField.swift; sourceTree = "<group>"; };
 		58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNoBackTitleViewController.swift; sourceTree = "<group>"; };
@@ -236,13 +232,11 @@
 				58F77FF61C0635C20058A87B /* SHNoBackTitleViewController.swift */,
 				58E46F191C10552700165748 /* SHStatusBarNavigationController.swift */,
 				58F2AFD31C1EEB7700048902 /* SHTextField.swift */,
-				586C82DF1C241B3900590E17 /* SHImageExtension.swift */,
 				586C82E31C2421BF00590E17 /* SHNavigationControllerExtention.swift */,
-				58C2EF2B1C43FD1F006E7866 /* NSURLRequestExtension.swift */,
+				58C2EF2B1C43FD1F006E7866 /* URLRequestExtension.swift */,
 				581DC5E21C8B4404006DE551 /* SHUIAlertController.swift */,
 				58B6468C1CBFD93D00FE6543 /* SHCALayerExtension.swift */,
 				58691B661CCE09E80056D78E /* SHNotificationExtension.swift */,
-				58691B6C1CCE0DFF0056D78E /* SHDispatchExtension.swift */,
 				586642811CE20F4E00ABA68D /* SHNumberExtension.swift */,
 				581714051D1BE33C004B0788 /* SHPagedScrollView.swift */,
 				583B13FD1D1C9E4800DFF974 /* SHNSDataExtension.swift */,
@@ -447,11 +441,9 @@
 				B0C540DA1B31A79E007A377A /* SHUINavigationBarExtension.swift in Sources */,
 				B0C540CF1B31A79E007A377A /* SHNSDateExtension.swift in Sources */,
 				586642821CE20F4E00ABA68D /* SHNumberExtension.swift in Sources */,
-				58C2EF2C1C43FD1F006E7866 /* NSURLRequestExtension.swift in Sources */,
+				58C2EF2C1C43FD1F006E7866 /* URLRequestExtension.swift in Sources */,
 				9C3D7BBF1D2A60650017B3D6 /* SHUIScrollViewExtension.swift in Sources */,
 				B0C540DB1B31A79E007A377A /* SHUIScreenExtension.swift in Sources */,
-				586C82E01C241B3900590E17 /* SHImageExtension.swift in Sources */,
-				58691B6D1CCE0DFF0056D78E /* SHDispatchExtension.swift in Sources */,
 				585B41951DD1D51300F7A338 /* SHSKProductExtension.swift in Sources */,
 				581DC5E31C8B4404006DE551 /* SHUIAlertController.swift in Sources */,
 				B0C540D61B31A79E007A377A /* SHUIButtonExtension.swift in Sources */,

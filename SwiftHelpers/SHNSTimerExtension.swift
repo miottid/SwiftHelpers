@@ -22,7 +22,7 @@ private class TimerBlock {
 
 public extension Timer {
     
-    public convenience init(forTimeInterval timeInterval: TimeInterval, block: @escaping () -> ()) {
+    public convenience init(for timeInterval: TimeInterval, block: @escaping () -> ()) {
         let timerBlock = TimerBlock(block: block)
         self.init(timeInterval: timeInterval, target: timerBlock, selector: #selector(TimerBlock.execute), userInfo: nil, repeats: false)
     }
@@ -33,7 +33,7 @@ public extension Timer {
     }
     
     public class func schedule(_ timeInterval: TimeInterval, block: @escaping () -> ()) -> Timer {
-        let timer = Timer(forTimeInterval: timeInterval, block: block)
+        let timer = Timer(for: timeInterval, block: block)
         RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
         return timer
     }
@@ -44,7 +44,7 @@ public extension Timer {
         return timer
     }
     
-    public class func scheduledTimerWithTimeInterval(_ interval: TimeInterval, repeats: Bool, handler: @escaping (Timer?) -> Void) -> Timer? {
+    public class func scheduled(with interval: TimeInterval, repeats: Bool, handler: @escaping (Timer?) -> Void) -> Timer? {
         let fireDate = interval + CFAbsoluteTimeGetCurrent()
         let repeatInterval = repeats ? interval : 0
         if let timer = CFRunLoopTimerCreateWithHandler(kCFAllocatorDefault, fireDate, repeatInterval, 0, 0, handler) {

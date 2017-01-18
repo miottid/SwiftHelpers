@@ -11,7 +11,7 @@
 import UIKit
 
 extension CAShapeLayer {
-    func addRoundedCornerRadius(_ topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, inFrame frame: CGRect) {
+    func addRoundedCornerRadius(topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, in frame: CGRect) {
         path = UIBezierPath(rect: frame, topLeft: topLeft, topRight: topRight, bottomLeft: bottomLeft, bottomRight: bottomRight).cgPath
     }
 }

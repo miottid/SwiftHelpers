@@ -11,7 +11,7 @@
 import UIKit
 
 public extension NSError {
-    public func show(inController controller: UIViewController) {
+    public func show(in controller: UIViewController) {
         let alertController = UIAlertController(
             title: self.localizedDescription,
             message: self.localizedRecoverySuggestion,

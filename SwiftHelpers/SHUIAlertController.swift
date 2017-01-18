@@ -10,15 +10,21 @@ import Foundation
 
 public extension UIAlertController {
     
-    public class func presentAlertWithTitle(_ title: String?, message: String?, inController controller: UIViewController, completionHandler: ((UIAlertAction) -> Void)? = nil) {
+    public class func presentAlert(title: String?, message: String?, in controller: UIViewController, completionHandler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: L("OK"), style: .default, handler: completionHandler)
         alert.addAction(okAction)
         controller.present(alert, animated: true, completion: nil)
     }
     
-    public class func presentError(_ error: NSError, inController controller: UIViewController) {
-        presentAlertWithTitle(error.localizedDescription, message: error.localizedRecoverySuggestion, inController: controller)
+    public class func present(error: NSError, in controller: UIViewController) {
+        presentAlert(title: error.localizedDescription, message: error.localizedRecoverySuggestion, in: controller)
     }
     
+}
+
+public extension NSError {
+    public func present(in controller: UIViewController) {
+        UIAlertController.present(error: self, in: controller)
+    }
 }

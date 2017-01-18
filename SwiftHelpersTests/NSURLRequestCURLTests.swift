@@ -30,7 +30,7 @@ class NSURLRequestCURLTests: XCTestCase {
         req.httpBody = json
         req.setValue("Boddy", forHTTPHeaderField: "Authorization")
         
-        let cURL = req.cURL()
+        let cURL = req.cURLString
 
         let rangeOfMethod = cURL.rangeString("-X POST")
         XCTAssert(rangeOfMethod.length > 0, "\(cURL) Should have a -X POST")

@@ -36,7 +36,7 @@ public extension UIView {
     }
 
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
-    public func addAnimationType(_ type: String, subType: String?, duration: TimeInterval) -> CATransition {
+    public func addAnimation(type: String, subType: String?, duration: TimeInterval) -> CATransition {
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -47,7 +47,7 @@ public extension UIView {
     }
     
     // Helper to add rounded corners to any side you want and with a specified radius
-    public func addRound(toCorners corners:UIRectCorner, withRadius radius: CGFloat) {
+    public func addRound(to corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -55,7 +55,7 @@ public extension UIView {
     }
     
     // Pick color from a 1x1 pixel at a given location
-    public func pickColor(atPoint point: CGPoint) -> UIColor {
+    public func pickColor(at point: CGPoint) -> UIColor {
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
