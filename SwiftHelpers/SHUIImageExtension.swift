@@ -29,7 +29,6 @@ public extension UIImage {
     }
     
     public func tintWithColor(_ color:UIColor) -> UIImage {
-        
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
         context?.translateBy(x: 0, y: self.size.height)
@@ -41,8 +40,23 @@ public extension UIImage {
         context?.fill(rect)
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
-        return newImage!;
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+
+    public class func imageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(origin: CGPoint.zero, size: size)
+
+        UIGraphicsBeginImageContext(rect.size)
+
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return image!
     }
     
     // Pick color from a 1x1 pixel at a given location
