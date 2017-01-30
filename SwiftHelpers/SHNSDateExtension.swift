@@ -38,6 +38,24 @@ private func dateWithDayAndMonth(_ day: Int, month: Int) -> Date {
     return Date()
 }
 
+public extension Date {
+    /// Convert a this Date object to an NSDate
+    ///
+    /// - Returns: the NSDate corresponding to the current Date instance
+    public func toNSDate() -> NSDate {
+        return NSDate(timeIntervalSince1970: timeIntervalSince1970)
+    }
+}
+
+public extension NSDate {
+    /// Convert a this NSDate object to an Date
+    ///
+    /// - Returns: the Date corresponding to the current NSDate instance
+    public func toDate() -> Date {
+        return Date(timeIntervalSince1970: timeIntervalSince1970)
+    }
+}
+
 // MARK: - TimeInterval Class
 
 ///A TimeInterval is an abstract representation of a period
