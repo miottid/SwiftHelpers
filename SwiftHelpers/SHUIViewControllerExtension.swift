@@ -19,6 +19,13 @@ public extension UIViewController {
         }
         return false
     }
+
+    public func showMessage(title: String, message: String? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 }
 
 #endif
