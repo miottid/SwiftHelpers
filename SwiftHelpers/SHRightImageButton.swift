@@ -11,7 +11,7 @@
 import UIKit
 
 /// A UIButton subclass that puts the button's `imageView` on the right instead of the left.
-class RightImageButton: UIButton {
+public class RightImageButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -19,7 +19,7 @@ class RightImageButton: UIButton {
         reverseImage()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         reverseImage()
