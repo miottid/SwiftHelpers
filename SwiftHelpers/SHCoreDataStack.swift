@@ -13,13 +13,9 @@ public let kCoreDataStackErrorDomain = "CoreDataStack"
 
 public protocol NamedEntity {
     static var entityName: String { get }
-    static func entityFetchRequest<T: NSFetchRequestResult> () -> NSFetchRequest<T>
 }
 
 public extension NamedEntity {
-    static func entityFetchRequest<T: NSFetchRequestResult> () -> NSFetchRequest<T> {
-        return NSFetchRequest<T>(entityName: entityName)
-    }
     static func insertEntity(inContext context: NSManagedObjectContext) -> Self {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Self
     }
