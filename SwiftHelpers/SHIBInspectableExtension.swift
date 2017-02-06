@@ -91,10 +91,10 @@ extension UILabel {
 extension UIButton {
     @IBInspectable var localizedText: String {
         set (key) {
-            setTitle(NSLocalizedString(key, comment: ""), for: UIControlState())
+            setTitle(NSLocalizedString(key, comment: ""), for: .normal)
         }
         get {
-            return title(for: UIControlState())!
+            return title(for: .normal)!
         }
     }
 }
