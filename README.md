@@ -108,3 +108,9 @@ let dateFormatter = NSDateFormatter(dateFormat: "d EEEE MMMM yyyy")
 ## Tests
 
 You can run Unit Tests using Xcode default behavior.
+
+## Contributors
+
+- David Miotti (dmiotti@me.com)
+- Guillaume Bellue (guillaume.bellue@gmail.com)
+- Maxime de Chalendar (maxime.dechalandar@gmail.com)
