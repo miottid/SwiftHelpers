@@ -1,13 +1,14 @@
 
 ## Features
 
-- [x] NSDate extension (like ActiveRecord)
-- [x] NSDateFormatter convenience
+- [x] Date extension (like ActiveRecord)
+- [x] DateFormatter convenience
 - [x] Array.each
 - [x] Int / NSTimeInterval `.every`, a block based for NSTimer
 - [x] UIColor helpers
 - [x] UIView helpers
 - [x] Various helpers
+- [x] Easy localization
 
 ## Requirements
 
@@ -16,10 +17,8 @@
 
 ## Installation
 
-> Cocoapods 0.36.0.beta.1 (a pre-release version) now support Swift frameworks, thus allows you to add SwiftHelpers to your project:
-
 ```
-pod 'SwiftHelpers', :git => "https://github.com/dmiotti/SwiftHelpers.git"
+pod 'SwiftHelpers'
 ```
 
 ### Available subspecs
