@@ -41,6 +41,23 @@ extension Date {
 
 }
 
+public extension Date {
+    /// Convert a this Date object to an NSDate
+    ///
+    /// - Returns: the NSDate corresponding to the current Date instance
+    public func toNSDate() -> NSDate {
+        return NSDate(timeIntervalSince1970: timeIntervalSince1970)
+    }
+}
+
+public extension NSDate {
+    /// Convert a this NSDate object to an Date
+    ///
+    /// - Returns: the Date corresponding to the current NSDate instance
+    public func toDate() -> Date {
+        return Date(timeIntervalSince1970: timeIntervalSince1970)
+    }
+}
 
 // MARK: - TimeInterval Class
 
@@ -53,33 +70,33 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
     open var months : Int = 0
     open var days   : Int = 0
     open var years  : Int = 0
-    
+
     ///Create an empty TimeInterval
     public init(){}
-    
+
     ///Create a TimeInterval with the specified seconds
     public init(seconds: Int) { self.seconds = seconds }
-    
+
     ///Create a TimeInterval with the specified minutes
     public init(minutes: Int) { self.minutes = minutes }
-    
+
     ///Create a TimeInterval with the specified hours
     public init(hours: Int) { self.hours = hours }
-    
+
     ///Create a TimeInterval with the specified days
     public init(days: Int) { self.days = days }
-    
+
     ///Create a TimeInterval with the specified months
     public init(months: Int) { self.months = months }
-    
+
     ///Create a TimeInterval with the specified years
     public init(years: Int) { self.years = years }
-    
+
     ///Prints a user friendly description of an SHTimeInterval
     open var description: String {
         return "\(self.years) years, \(self.months) months, \(self.days) days, \(self.hours) hours, \(self.minutes) minutes, \(self.seconds) seconds"
     }
-    
+
     ///Create a new date by applying the TimeInterval
     ///
     ///- parameter fromNow: false when you want to remove the time interval from current, true otherwise
@@ -100,21 +117,21 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
         }
         return Date()
     }
-    
+
     ///Create a new date by applying the TimeInterval to now in the past
     ///
     ///- returns: A new NSDate by applying the time offset
     open var ago: Date {
         return offsetDate(fromNow: false)
     }
-    
+
     ///Create a new date by applying the TimeInterval to now in the future
     ///
     ///- returns: A new NSDate by applying the time offset
     open var fromNow: Date {
         return offsetDate(fromNow: true)
     }
-    
+
     ///Translate the TimeInterval in seconds
     ///
     ///- returns: The total number of seconds this interval contains
@@ -128,7 +145,7 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
         interval += Double(years)   * 60.0 * 60.0 * 24.0 * 31.0 * 12.0
         return interval
     }
-    
+
     ///Translate the TimeInterval in minutes
     ///
     ///- returns: The total number of minutes this interval contains
@@ -142,7 +159,7 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
         interval += Double(years)   * 60.0 * 24.0 * 31.0 * 12.0
         return interval
     }
-    
+
     ///Translate the TimeInterval in hours
     ///
     ///- returns: The total number of hours this interval contains
@@ -156,7 +173,7 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
         interval += Double(years)   * 24.0 * 31.0 * 12.0
         return interval
     }
-    
+
     ///Translate the TimeInterval in hours
     ///
     ///- returns: The total number of days this interval contains
@@ -170,7 +187,7 @@ open class SHTimeInterval: Comparable, CustomStringConvertible {
         interval += Double(years)   * 31.0 * 12.0
         return interval
     }
-    
+
 }
 
 // MARK: TimeInterval Operators
@@ -282,7 +299,7 @@ public extension Int {
     public var year   : SHTimeInterval { return SHTimeInterval(years: self) }
     ///Create a TimeInterval with specified years
     public var years  : SHTimeInterval { return year }
-    
+
     ///Create a NSDate with the specified day of january in the current year
     public var january  : Date { return Date(day: self, month: 1) }
     ///Create a NSDate with the specified day of febuary in the current year
@@ -322,7 +339,7 @@ public extension Date {
         comps.second = 0
         return self
     }
-    
+
     ///Get the weekday
     ///
     ///- returns: The day index of the week, 1 = Sunday
@@ -330,7 +347,7 @@ public extension Date {
         let comps = (CurrentCalendar as NSCalendar).components(.weekday, from: self)
         return comps.weekday!
     }
-    
+
     ///Create a new date representing the end of the current hour
     ///
     ///- returns: A new NSDate representing the end of the current hour
@@ -340,7 +357,7 @@ public extension Date {
         comps.second = 59
         return self
     }
-    
+
     ///Create a new date representing the next day/month of the
     ///current date
     ///For exemple:
@@ -360,7 +377,7 @@ public extension Date {
         }
         return Date()
     }
-    
+
     ///Create a new date 7 days later than the current, in the current calendar
     ///
     ///- returns: A new NSDate by adding 7 days.
@@ -377,7 +394,7 @@ public extension Date {
         }
         return self
     }
-    
+
     ///Create a new date at the beginning of the day, in the current calendar
     ///
     ///- returns: A NSDate with hour, minute and second set to 0
@@ -391,7 +408,7 @@ public extension Date {
         }
         return self
     }
-    
+
     ///Create a new at the begining of the month, in the current calendar
     ///
     ///- returns: A NSDate with day to 1 and hour, minute, second set to 0. If it fail, return the current date
@@ -403,7 +420,7 @@ public extension Date {
         }
         return self
     }
-    
+
     ///Create a new at the end of the month, in the current calendar
     ///
     ///- returns: A NSDate with day to last day in month and hour, minute, second set to 23:59:59. If it fail, return the current date
@@ -418,25 +435,25 @@ public extension Date {
         }
         return self
     }
-    
+
     ///Returns the day in the current month, using the current calendar
     public var day: Int {
         let comps = (CurrentCalendar as NSCalendar).components(.day, from: self)
         return comps.day!
     }
-    
+
     ///Returns the hour in the current day, using the current calendar
     public var hour: Int {
         let comps = (CurrentCalendar as NSCalendar).components(.hour, from: self)
         return comps.hour!
     }
-    
+
     ///Returns the number of days in the current month
     public var numberOfDaysInMonth: Int {
         let days = (CurrentCalendar as NSCalendar).range(of: .day, in: .month, for: self)
         return days.length
     }
-    
+
     ///Create a new date at the end of the day, in the current calendar
     ///
     ///- returns: A NSDate with hour, minute and second set to 23:59:59
@@ -450,7 +467,7 @@ public extension Date {
         }
         return Date()
     }
-    
+
     ///Create a new NSDate at the next hour, in the current calendar (ceil)
     ///
     ///- returns: The new created date with 0 minutes and 0 seconds, returns the same date if a fail occur
@@ -469,7 +486,7 @@ public extension Date {
         }
         return self
     }
-    
+
     ///Check if the current date is in today time range
     ///
     ///- returns: True is the date is in today range
@@ -484,7 +501,7 @@ public extension Date {
         }
         return false
     }
-    
+
     ///Get the day of the beginning of the week starting from Monday
     ///
     ///- returns: The new date representing the first day of the date week
@@ -494,7 +511,7 @@ public extension Date {
         comps.weekday = 2
         return calendar.date(from: comps)!
     }
-    
+
     ///Create a date with the specified year, in the current calendar
     ///
     ///- parameter year: The year the new date should be of
@@ -508,7 +525,7 @@ public extension Date {
         }
         return Date()
     }
-    
+
     ///The number of days between the current and provided date
     ///This method return the number of real days between the current
     ///date and the provided one. It does not use 24 hours period to check.
@@ -518,7 +535,7 @@ public extension Date {
     ///- returns: The number of days
     public func numberOfDays(until nextDate: Date) -> Int? {
         let calendar = Calendar.current as NSCalendar
-        
+
         var fromDate: NSDate?
         var toDate: NSDate?
 
@@ -531,10 +548,10 @@ public extension Date {
             let comps = calendar.components(NSCalendar.Unit.day, from: fcomps, to: tcomps, options: [])
             return comps.day
         }
-        
+
         return nil
     }
-    
+
     ///Check if the provided day is a date in the same day of the current date
     ///This method return true if it's the same day
     ///
@@ -544,5 +561,5 @@ public extension Date {
     public func isSameDay(_ nextDate: Date) -> Bool {
         return numberOfDays(until: nextDate) == 0
     }
-    
+
 }
