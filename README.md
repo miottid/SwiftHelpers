@@ -22,6 +22,14 @@
 pod 'SwiftHelpers', :git => "https://github.com/dmiotti/SwiftHelpers.git"
 ```
 
+### Available subspecs
+- `pod 'SwiftHelpers/Basic'` contains localization helpers, as well as IBInspectable localization attributes
+- `pod 'SwiftHelpers/Core'` contains core types helpers (comparison, array extensions, timers, ...)
+- `pod 'SwiftHelpers/CoreData'` contains CoreData helpers
+- `pod 'SwiftHelpers/UI'` contains controllers and views
+- `pod 'SwiftHelpers/DateTime'` contains Date related helpers and formatters
+- `pod 'SwiftHelpers/Misc'` contains miscellanous helpers (credit card, keyboard, notifications...)
+
 > For application targets that do not support embedded frameworks, such as iOS 7, SwiftHelpers can be integrated by including the `SwiftHelpers` folder directly, wrapping the top-level types in `struct SwiftHelpers` to simulate a namespace. Yes, this sucks.
 
 _Due to the current lack of [proper infrastructure](http://cocoapods.org) for Swift dependency management, using SwiftHelpers in your project requires the following steps:_

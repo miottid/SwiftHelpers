@@ -11,15 +11,15 @@
 import UIKit
 
 extension UIButton {
-    public func centerLabelVerticallyWithPadding(_ spacing:CGFloat) {
+    public func centerLabelVertically(with padding:CGFloat) {
         // update positioning of image and title
         let imageSize = self.imageView!.frame.size
         self.titleEdgeInsets = UIEdgeInsets(top:0,
             left:-imageSize.width,
-            bottom:-(imageSize.height + spacing),
+            bottom:-(imageSize.height + padding),
             right:0)
         let titleSize = self.titleLabel!.frame.size
-        self.imageEdgeInsets = UIEdgeInsets(top:-(titleSize.height + spacing),
+        self.imageEdgeInsets = UIEdgeInsets(top:-(titleSize.height + padding),
             left:0,
             bottom: 0,
             right:-titleSize.width)
@@ -35,8 +35,9 @@ extension UIButton {
             right:widthDelta/2.0)
     }
     
-    public func setBackgroundColor(_ color: UIColor, forState state: UIControlState) {
-        setBackgroundImage(UIImage.imageWithColor(color), for: state)
+    public func setBackgroundColor(color: UIColor?, for state: UIControlState) {
+        guard let color = color else { return }
+        setBackgroundImage(UIImage(color: color), for: state)
     }
     
 }

@@ -31,7 +31,7 @@ import UIKit
 
     override open func layoutSubviews() {
         super.layoutSubviews()
-        addMaskWithLocations(locationForGradient(), colors: colorsForGradient())
+        addMask(locations: locationForGradient(), colors: colorsForGradient())
     }
 
     fileprivate func locationForGradient() -> [CGFloat] {
@@ -59,7 +59,7 @@ import UIKit
         return []
     }
 
-    fileprivate func addMaskWithLocations(_ locations: [CGFloat], colors: [CGColor]) {
+    fileprivate func addMask(locations: [CGFloat], colors: [CGColor]) {
         let maskLayer = CAGradientLayer()
         maskLayer.locations = locations.flatMap {
             let d = Double($0)

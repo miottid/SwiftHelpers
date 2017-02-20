@@ -51,3 +51,36 @@ func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Eleme
     }
     return buffer
 }
+
+extension Array {
+    public var shuffled: Array {
+        return shuffle()
+    }
+
+    func shuffle() -> Array {
+        var elements = self
+        for index in indices.dropLast() {
+            guard
+                case let swapIndex = Int(arc4random_uniform(UInt32(count - index))) + index,
+                swapIndex != index else { continue }
+            swap(&elements[index], &elements[swapIndex])
+        }
+        return elements
+    }
+
+    public var random: Element {
+        return chooseOne
+    }
+
+    func random(n: Int) -> [Element] {
+        return choose(n: n)
+    }
+
+    public var chooseOne: Element {
+        return self[Int(arc4random_uniform(UInt32(count)))]
+    }
+
+    func choose(n: Int) -> [Element] {
+        return Array(shuffled.prefix(n))
+    }
+}

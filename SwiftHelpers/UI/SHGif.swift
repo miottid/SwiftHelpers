@@ -24,7 +24,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 public extension UIImage {
 
-    public class func gifWithData(_ data: Data) -> UIImage? {
+    public class func gif(data: Data) -> UIImage? {
         // Create source from data
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
             print("SwiftGif: Source for the image does not exist")
@@ -34,24 +34,24 @@ public extension UIImage {
         return UIImage.animatedImageWithSource(source)
     }
 
-    public class func gifWithURL(_ gifUrl:String) -> UIImage? {
+    public class func gif(url: String) -> UIImage? {
         // Validate URL
-        guard let bundleURL = URL(string: gifUrl)
+        guard let bundleURL = URL(string: url)
             else {
-                print("SwiftGif: This image named \"\(gifUrl)\" does not exist")
+                print("SwiftGif: This image named \"\(url)\" does not exist")
                 return nil
         }
 
         // Validate data
         guard let imageData = try? Data(contentsOf: bundleURL) else {
-            print("SwiftGif: Cannot turn image named \"\(gifUrl)\" into NSData")
+            print("SwiftGif: Cannot turn image named \"\(url)\" into NSData")
             return nil
         }
 
-        return gifWithData(imageData)
+        return gif(data: imageData)
     }
 
-    public class func gifWithName(_ name: String) -> UIImage? {
+    public class func gif(name: String) -> UIImage? {
         // Check for existance of gif
         guard let bundleURL = Bundle.main
             .url(forResource: name, withExtension: "gif") else {
@@ -65,10 +65,12 @@ public extension UIImage {
             return nil
         }
 
-        return gifWithData(imageData)
+        return gif(data: imageData)
     }
 
-    class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
+    // MARK: private methods
+
+    private static func delayForImage(at index: Int, source: CGImageSource!) -> Double {
         var delay = 0.1
 
         // Get dictionaries
@@ -97,7 +99,7 @@ public extension UIImage {
         return delay
     }
 
-    class func gcdForPair(_ a: Int?, _ b: Int?) -> Int {
+    private static func gcd(_ a: Int?, _ b: Int?) -> Int {
         var a = a
         var b = b
         // Check if one of them is nil
@@ -132,21 +134,21 @@ public extension UIImage {
         }
     }
 
-    class func gcdForArray(_ array: Array<Int>) -> Int {
+    private static func gcdForArray(_ array: Array<Int>) -> Int {
         if array.isEmpty {
             return 1
         }
 
-        var gcd = array[0]
+        var denominator = array[0]
 
         for val in array {
-            gcd = UIImage.gcdForPair(val, gcd)
+            denominator = gcd(val, denominator)
         }
 
-        return gcd
+        return denominator
     }
 
-    class func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
+    private static func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
         let count = CGImageSourceGetCount(source)
         var images = [CGImage]()
         var delays = [Int]()
@@ -159,8 +161,7 @@ public extension UIImage {
             }
 
             // At it's delay in cs
-            let delaySeconds = UIImage.delayForImageAtIndex(Int(i),
-                                                            source: source)
+            let delaySeconds = UIImage.delayForImage(at: Int(i), source: source)
             delays.append(Int(delaySeconds * 1000.0)) // Seconds to ms
         }
 

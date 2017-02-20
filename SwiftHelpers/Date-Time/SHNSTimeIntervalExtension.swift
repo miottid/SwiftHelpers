@@ -16,7 +16,6 @@ public func delay(_ timeInterval: TimeInterval, closure:@escaping ()->()) {
 public extension TimeInterval {
     ///Perform the given block after a delay
     public func delay(_ closure:@escaping ()->()) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(self * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self, execute: closure)
     }
 }

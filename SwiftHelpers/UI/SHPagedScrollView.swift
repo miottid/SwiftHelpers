@@ -20,7 +20,7 @@ import UIKit
      - parameter pagedScrollView: The paged scroll view in question
      - returns: The number of items that the paged scroll view should display
      */
-    func numberOfItemsInPagedScrollView(_ pagedScrollView: SHPagedScrollView) -> Int
+    func numberOfItems(in pagedScrollView: SHPagedScrollView) -> Int
 
     /**
      Should return a view that should be displayed at a given index
@@ -29,14 +29,14 @@ import UIKit
      - parameter index:           The index of the view to display
      - returns: The view that should be displayed
      */
-    func pagedScrollView(_ pagedScrollView: SHPagedScrollView, viewAtIndex index: Int) -> UIView
+    func pagedScrollView(_ pagedScrollView: SHPagedScrollView, viewAt index: Int) -> UIView
 
     /**
      Called when a user taps a view
      - parameter pagedScrollView: The paged scroll view in question
      - parameter index:           The index of the view that was tapped
      */
-    @objc optional func pagedScrollView(_ pagedScrollView: SHPagedScrollView, tappedViewAtIndex index: Int)
+    @objc optional func pagedScrollView(_ pagedScrollView: SHPagedScrollView, tappedViewAt index: Int)
 
 }
 
@@ -84,7 +84,7 @@ open class SHPagedScrollView: UIScrollView {
 
     func viewWasTapped(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let view = gestureRecognizer.view, let index = views.index(of: view) else { return }
-        datasource?.pagedScrollView?(self, tappedViewAtIndex: index)
+        datasource?.pagedScrollView?(self, tappedViewAt: index)
     }
 
 }
@@ -100,7 +100,7 @@ public extension SHPagedScrollView /* Public methods */ {
         views.forEach { $0.removeFromSuperview() }
         views = []
 
-        let numberOfItemsToDisplay = min(numberOfItemsToPreload, datasource.numberOfItemsInPagedScrollView(self))
+        let numberOfItemsToDisplay = min(numberOfItemsToPreload, datasource.numberOfItems(in: self))
         loadViewsUntilIndex(numberOfItemsToDisplay)
     }
 
@@ -109,7 +109,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter index:    The index of the item to scroll to
      - parameter animated: Whether the scroll should be animated or not
      */
-    public func scrollToItemAtIndex(_ index: Int, animated: Bool = true) {
+    public func scrollToItem(at index: Int, animated: Bool = true) {
         loadViewsUntilIndex(index)
         let pageWidth = bounds.size.width
         let pageOffset = CGPoint(x: pageWidth * CGFloat(index), y: 0)
@@ -121,7 +121,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter idx: The index of the view to get
      - returns: The displayed view
      */
-    public func viewAtIndex(_ idx: Int) -> UIView? {
+    public func view(at idx: Int) -> UIView? {
         guard idx >= 0 && idx < views.count else {
             print("Can't get view in PagedScrollView at index \(idx). Index should be contained between in 0..<\(views.count)")
             return nil
@@ -142,7 +142,7 @@ public extension SHPagedScrollView /* Public methods */ {
         let pageWidth = bounds.width
         guard preloadedCount > 0 && pageWidth > 0 else { return (0, 0, 0) }
 
-        let currentXOffset = contentOffset.x.rangedBetween(min: 0, max: contentSize.width)
+        let currentXOffset = min(contentSize.width, max(0, contentOffset.x))
 
         let currentPage = Int(floor(currentXOffset / pageWidth))
         let interpolation = (currentXOffset - (CGFloat(currentPage) * pageWidth)) / pageWidth
@@ -153,7 +153,7 @@ public extension SHPagedScrollView /* Public methods */ {
 
 public extension SHPagedScrollView /* Building the view */ {
 
-    fileprivate func addView(_ view: UIView, atIndex idx: Int, ignoreLastConstraint: Bool) {
+    fileprivate func addView(_ view: UIView, at idx: Int, ignoreLastConstraint: Bool) {
         guard idx >= 0 && idx <= views.count else {
             fatalError("Can't add a view in PagedScrollView at index \(idx). Index should be contained between in 0...\(views.count)")
         }
@@ -249,13 +249,13 @@ public extension SHPagedScrollView /* Building the view */ {
     fileprivate func loadViewsUntilIndex(_ index: Int) {
         guard let datasource = datasource else { return }
 
-        let rangedIndex = min(index, datasource.numberOfItemsInPagedScrollView(self))
+        let rangedIndex = min(index, datasource.numberOfItems(in: self))
         guard rangedIndex > views.count else { return }
 
         for idx in views.count..<rangedIndex {
             let isLast = (idx == rangedIndex - 1)
-            let view = datasource.pagedScrollView(self, viewAtIndex: idx)
-            addView(view, atIndex: idx, ignoreLastConstraint: !isLast)
+            let view = datasource.pagedScrollView(self, viewAt: idx)
+            addView(view, at: idx, ignoreLastConstraint: !isLast)
         }
         layoutIfNeeded()
     }

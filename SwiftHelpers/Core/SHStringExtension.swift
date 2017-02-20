@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NSAttributedString {
-    public func replaceHTMLTag(_ tag: String, withAttributes attributes: [String: AnyObject]) -> NSAttributedString {
+    public func replace(HTMLTag tag: String, with attributes: [String: AnyObject]) -> NSAttributedString {
         let openTag = "<\(tag)>"
         let closeTag = "</\(tag)>"
         let resultingText: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
@@ -45,12 +45,6 @@ public extension String {
     
     public func rangeString(_ string: String) -> NSRange {
         return NSString(string: self).range(of: string)
-    }
-}
-
-public extension String {
-    public func stringByReplacingOccurenceOfString(_ target: String, withString string: String) -> String {
-        return NSString(string: self).replacingOccurrences(of: target, with: string)
     }
 }
 
@@ -165,7 +159,7 @@ public extension String {
         // build numerator
         let one = "\(numerator)"
         for char in one.characters {
-            if let num = Int(String(char)), let val = superscriptFromInt(num) {
+            if let num = Int(String(char)), let val = superScript(from: num) {
                 result.append(val)
             }
         }
@@ -174,7 +168,7 @@ public extension String {
         let two = "\(denominator)"
         result.append("/")
         for char in two.characters {
-            if let num = Int(String(char)), let val = subscriptFromInt(num) {
+            if let num = Int(String(char)), let val = subScript(from: num) {
                 result.append(val)
             }
         }
@@ -183,7 +177,7 @@ public extension String {
     }
 }
 
-private func superscriptFromInt(_ num: Int) -> String? {
+private func superScript(from num: Int) -> String? {
     let superscriptDigits: [Int: String] = [
         0: "\u{2070}",
         1: "\u{00B9}",
@@ -198,7 +192,7 @@ private func superscriptFromInt(_ num: Int) -> String? {
     return superscriptDigits[num]
 }
 
-private func subscriptFromInt(_ num: Int) -> String? {
+private func subScript(from num: Int) -> String? {
     let subscriptDigits: [Int: String] = [
         0: "\u{2080}",
         1: "\u{2081}",

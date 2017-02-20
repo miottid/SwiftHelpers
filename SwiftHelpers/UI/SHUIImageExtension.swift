@@ -28,8 +28,7 @@ public extension UIImage {
         self.init(named:imageName)
     }
     
-    public func tintWithColor(_ color:UIColor) -> UIImage {
-        
+    public func tint(with color:UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         let context = UIGraphicsGetCurrentContext()
         context?.translateBy(x: 0, y: self.size.height)
@@ -41,12 +40,40 @@ public extension UIImage {
         context?.fill(rect)
         
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
-        return newImage!;
+        UIGraphicsEndImageContext()
+        return newImage!
+    }
+
+    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        guard let cgImage = image?.cgImage else { return nil }
+        self.init(cgImage: cgImage)
+    }
+
+    public func grayScaled() -> UIImage {
+        let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        let colorSpace = CGColorSpaceCreateDeviceGray();
+
+        let width = Int(self.size.width)
+        let height = Int(self.size.height)
+        let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros);
+        context?.draw(cgImage!, in: imageRect)
+
+        if let imageRef = context?.makeImage() {
+            let newImage = UIImage(cgImage: imageRef)
+            return newImage
+        }
+        return self
     }
     
     // Pick color from a 1x1 pixel at a given location
-    public func pickColor(atLocation point: CGPoint) -> UIColor {
+    public func pickColor(at point: CGPoint) -> UIColor {
         let pixelData = self.cgImage?.dataProvider?.data
         let data = CFDataGetBytePtr(pixelData)
         
