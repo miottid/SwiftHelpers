@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import SwiftHelpers
 
 class LocalizationTests: XCTestCase {
     var bundle = Bundle.main

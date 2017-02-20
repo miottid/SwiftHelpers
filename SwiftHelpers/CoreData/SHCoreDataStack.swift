@@ -16,7 +16,7 @@ public protocol NamedEntity {
 }
 
 public extension NamedEntity {
-    static func insertEntity(inContext context: NSManagedObjectContext) -> Self {
+    public static func insertEntity(inContext context: NSManagedObjectContext) -> Self {
         return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Self
     }
 }
@@ -30,9 +30,9 @@ private var persistantStoreOptions: [AnyHashable : Any]!
 
 public final class CoreDataStack: NSObject {
 
-    public static let shared = CoreDataStack()
+    open static let shared = CoreDataStack()
 
-    public class func initializeWithMomd(_ momd: String, sql: String, persistantStoreOptions opts: [AnyHashable : Any]? = nil) {
+    open class func initializeWithMomd(_ momd: String, sql: String, persistantStoreOptions opts: [AnyHashable : Any]? = nil) {
         momdFilename = momd
         SQLLiteFilename = sql
         persistantStoreOptions = opts ?? [
@@ -52,13 +52,13 @@ public final class CoreDataStack: NSObject {
         NotificationCenter.default.removeObserver(self)
     }
 
-    public lazy var applicationDocumentsDirectory: URL = {
+    open lazy var applicationDocumentsDirectory: URL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.wopata.xxx" in the application's documents Application Support directory.
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
 
-    public lazy var managedObjectModel: NSManagedObjectModel = {
+    open lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         guard let modelURL = Bundle.main.url(forResource: momdFilename, withExtension: "momd") else {
             fatalError("Couldn't find model for name : \(momdFilename) in bundle.")
@@ -70,7 +70,7 @@ public final class CoreDataStack: NSObject {
         return mom
     }()
 
-    public lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+    open lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
         // Create the coordinator and store
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
@@ -94,7 +94,7 @@ public final class CoreDataStack: NSObject {
         return coordinator
     }()
 
-    public lazy var managedObjectContext: NSManagedObjectContext = {
+    open lazy var managedObjectContext: NSManagedObjectContext = {
         // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
@@ -105,7 +105,7 @@ public final class CoreDataStack: NSObject {
 
     // MARK: - Core Data Saving support
 
-    public func saveContext() {
+    open func saveContext() {
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()
@@ -120,7 +120,7 @@ public final class CoreDataStack: NSObject {
 
     // MARK: - Handle CoreData notifications
 
-    fileprivate func registerNotificationObservers() {
+    private func registerNotificationObservers() {
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(CoreDataStack.storesWillChange(_:)), name: NSNotification.Name.NSPersistentStoreCoordinatorStoresWillChange, object: nil)
         nc.addObserver(self, selector: #selector(CoreDataStack.storesDidChange(_:)), name: NSNotification.Name.NSPersistentStoreCoordinatorStoresDidChange, object: nil)

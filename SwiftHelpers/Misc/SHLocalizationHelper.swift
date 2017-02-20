@@ -43,8 +43,8 @@ public func appVersion() -> String {
     return ""
 }
 
-extension String {
-    func localize(arguments: [String: Any] = [:], bundle: Bundle = Bundle.main) -> String {
+public extension String {
+    public func localize(arguments: [String: Any] = [:], bundle: Bundle = Bundle.main) -> String {
         let key = pluralize(self, count: arguments["count"] as? NSNumber)
         var str = NSLocalizedString(key, bundle: bundle, comment: "")
         arguments.forEach { key, val in
