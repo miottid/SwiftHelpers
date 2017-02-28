@@ -10,13 +10,13 @@ import UIKit
 
 #if os(iOS)
 
-extension UIScrollView {
+public extension UIScrollView {
 
     /**
      Scrolls to the bottom of the scrollview.
      - parameter animated: Whether the scroll should be animated or not
      */
-    func scrollToBottom(animated: Bool) {
+    public func scrollToBottom(animated: Bool) {
         var bottomContentOffset = contentOffset
         bottomContentOffset.y = contentSize.height - bounds.height + contentInset.bottom
         setContentOffset(bottomContentOffset, animated: animated)
