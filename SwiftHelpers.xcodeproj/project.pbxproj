@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5815F19E1E87455A00FFAE40 /* NumbersConvertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5815F19D1E87455A00FFAE40 /* NumbersConvertion.swift */; };
 		58272EA31C6CF20B00D7A3BF /* ArrayExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF993E1A66C3660085ADA4 /* ArrayExtensionTests.swift */; };
 		58272EA41C6CF21300D7A3BF /* IntExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF99401A66C4510085ADA4 /* IntExtensionTests.swift */; };
 		58272EA51C6CF21A00D7A3BF /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BF98F21A667CFA0085ADA4 /* NSDateExtensionTests.swift */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5815F19D1E87455A00FFAE40 /* NumbersConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersConvertion.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLRequestCURLTests.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				F013D8721E2FA21D006437AB /* SHOperation.swift */,
 				F013D8731E2FA21D006437AB /* SHStringExtension.swift */,
 				F013D8741E2FA21D006437AB /* URLRequestExtension.swift */,
+				5815F19D1E87455A00FFAE40 /* NumbersConvertion.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				F013D8AB1E2FA21D006437AB /* SHManagedObjectContext+CascadeSave.swift in Sources */,
 				F013D8AA1E2FA21D006437AB /* SHCoreDataStack.swift in Sources */,
 				F013D8CE1E2FA21D006437AB /* SHUIViewExtension.swift in Sources */,
+				5815F19E1E87455A00FFAE40 /* NumbersConvertion.swift in Sources */,
 				F013D8B11E2FA21D006437AB /* SHKeyboardViewController.swift in Sources */,
 				F013D8B31E2FA21D006437AB /* SHNotificationExtension.swift in Sources */,
 				F013D8C51E2FA21D006437AB /* SHUIButtonExtension.swift in Sources */,
