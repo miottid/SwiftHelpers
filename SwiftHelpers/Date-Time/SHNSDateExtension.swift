@@ -19,14 +19,14 @@ private let CalendarAllUnits: NSCalendar.Unit =
 
 // MARK: - Private helpers
 
-extension Date {
+public extension Date {
     ///Create a date with specified day and month in the current year
     ///
     ///- parameter day: The day number in the month
     ///- parameter month: The month number starting from 1
     ///
     ///- returns: A Date starting at the beginning of the day
-    init(day: Int, month: Int) {
+    public init(day: Int, month: Int) {
         self.init()
         var comps = (CurrentCalendar as NSCalendar).components(CalendarAllUnits, from: self)
         comps.month = month
@@ -39,6 +39,18 @@ extension Date {
         }
     }
 
+}
+
+public extension Date {
+    public var startOfWeek: Date {
+        let date = Calendar.current.date(from: Calendar.current.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self))!
+        let dslTimeOffset = NSTimeZone.local.daylightSavingTimeOffset(for: date)
+        return date.addingTimeInterval(dslTimeOffset)
+    }
+    
+    public var endOfWeek: Date {
+        return Calendar.current.date(byAdding: .second, value: 604799, to: self.startOfWeek)!
+    }
 }
 
 public extension Date {
