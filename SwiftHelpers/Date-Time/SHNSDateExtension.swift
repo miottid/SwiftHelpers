@@ -542,7 +542,7 @@ public extension Date {
         calendar.range(of: .day, start: &fromDate, interval: nil, for: self)
         calendar.range(of: .day, start: &toDate, interval: nil, for: nextDate)
 
-        if let fd = fromDate as? Date, let td = toDate as? Date {
+        if let fd = fromDate as Date?, let td = toDate as Date? {
             let fcomps = calendar.components(CalendarAllUnits, from: fd)
             let tcomps = calendar.components(CalendarAllUnits, from: td)
             let comps = calendar.components(NSCalendar.Unit.day, from: fcomps, to: tcomps, options: [])

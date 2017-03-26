@@ -32,26 +32,26 @@ extension UIBezierPath {
         
         addArc(withCenter: circleCenters.topLeft,
                          radius: topLeft,
-                         startAngle: CGFloat(M_PI),
-                         endAngle: CGFloat(3.0 * M_PI / 2.0),
+                         startAngle: CGFloat(Double.pi),
+                         endAngle: CGFloat(3.0 * Double.pi / 2.0),
                          clockwise: true)
         
         addArc(withCenter: circleCenters.topRight,
                          radius: topRight,
-                         startAngle: CGFloat(3.0 * M_PI / 2.0),
-                         endAngle: CGFloat(2.0 * M_PI),
+                         startAngle: CGFloat(3.0 * Double.pi / 2.0),
+                         endAngle: CGFloat(2.0 * Double.pi),
                          clockwise: true)
         
         addArc(withCenter: circleCenters.bottomRight,
                          radius: bottomRight,
-                         startAngle: CGFloat(2.0 * M_PI),
-                         endAngle: CGFloat(M_PI / 2.0),
+                         startAngle: CGFloat(2.0 * Double.pi),
+                         endAngle: CGFloat(Double.pi / 2.0),
                          clockwise: true)
         
         addArc(withCenter: circleCenters.bottomLeft,
                          radius: bottomLeft,
-                         startAngle: CGFloat(M_PI / 2.0),
-                         endAngle: CGFloat(M_PI),
+                         startAngle: CGFloat(Double.pi / 2.0),
+                         endAngle: CGFloat(Double.pi),
                          clockwise: true)
         
         close()
