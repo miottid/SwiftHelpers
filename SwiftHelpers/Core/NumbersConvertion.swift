@@ -20,6 +20,10 @@ public extension TimeInterval {
     public var toCGFloat: CGFloat {
         return CGFloat(self)
     }
+    
+    public var number: NSNumber {
+        return NSNumber(value: self)
+    }
 }
 
 public extension Int {
@@ -33,6 +37,10 @@ public extension Int {
     
     public var toCGFloat: CGFloat {
         return CGFloat(self)
+    }
+    
+    public var number: NSNumber {
+        return NSNumber(value: self)
     }
 }
 
@@ -48,6 +56,10 @@ public extension Float {
     public var toCGFloat: CGFloat {
         return CGFloat(self)
     }
+    
+    public var number: NSNumber {
+        return NSNumber(value: self)
+    }
 }
 
 public extension CGFloat {
@@ -61,5 +73,15 @@ public extension CGFloat {
     
     public var toFloat: Float {
         return Float(self)
+    }
+    
+    public var number: NSNumber {
+        return NSNumber(value: self.toFloat)
+    }
+}
+
+public extension Bool {
+    public var number: NSNumber {
+        return NSNumber(value: self)
     }
 }
