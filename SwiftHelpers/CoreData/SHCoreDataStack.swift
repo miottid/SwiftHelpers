@@ -10,17 +10,6 @@ import UIKit
 import CoreData
 
 public let kCoreDataStackErrorDomain = "CoreDataStack"
-
-public protocol NamedEntity {
-    static var entityName: String { get }
-}
-
-public extension NamedEntity {
-    public static func insertEntity(inContext context: NSManagedObjectContext) -> Self {
-        return NSEntityDescription.insertNewObject(forEntityName: entityName, into: context) as! Self
-    }
-}
-
 public let kCoreDataStackStoreWillChange = "CoreDataStackStoreWillChange"
 public let kCoreDataStackStoreDidChange = "CoreDataStackStoreDidChange"
 
