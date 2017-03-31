@@ -8,12 +8,14 @@
 
 import Foundation
 import XCTest
+import SwiftHelpers
 
 class StringExtensionTests: XCTestCase {
     
     func testFloatValue() {
-        let str = "1.4"
-        XCTAssert(str.floatValue == 1.4, "\"1.4\".floatValue should be equal to 1.4")
+        let expected = 1.456
+        let str = "\(expected)"
+        XCTAssert(expected.description == str.floatValue.description, "\"\(str)\".floatValue should be equal to \(expected)")
     }
     
     func testRangeOfString() {
@@ -35,6 +37,25 @@ class StringExtensionTests: XCTestCase {
         let expected = "Hello worlD!"
         let transformed = source.firstLetterCapitalization
         XCTAssertEqual(expected, transformed)
+    }
+
+    func testRangesOfString() {
+        let source = "Hi you ! Is there something I can do for you ?"
+        let pattern = "you"
+
+        let ranges = source.ranges(of: pattern)
+
+        let expectations = [
+            NSRange(location: 3, length: 3),
+            NSRange(location: 41, length: 3)
+        ]
+
+        ranges.forEach { range in
+            let matched = expectations.contains {
+                range.location == $0.location && range.length == $0.length
+            }
+            XCTAssert(matched)
+        }
     }
     
 }

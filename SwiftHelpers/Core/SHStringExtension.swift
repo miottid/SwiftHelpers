@@ -46,6 +46,15 @@ public extension String {
     public func rangeString(_ string: String) -> NSRange {
         return NSString(string: self).range(of: string)
     }
+
+    public func ranges(of string: String) -> [NSRange] {
+        let pattern = NSRegularExpression.escapedPattern(for: string)
+        guard let re = try? NSRegularExpression(pattern: pattern, options: []) else {
+            return []
+        }
+        let range = NSRange(location: 0, length: self.characters.count)
+        return re.matches(in: self, options: [], range: range).flatMap { $0.range }
+    }
 }
 
 public extension String {
