@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension NSAttributedString {
     public func replace(HTMLTag tag: String, with attributes: [String: AnyObject]) -> NSAttributedString {

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public extension Int {
     public var degreesToRadians: Double { return Double(self) * Double.pi / 180 }
