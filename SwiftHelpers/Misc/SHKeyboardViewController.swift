@@ -24,7 +24,7 @@ open class SHKeyboardViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    open func keyboardWillShow(_ notification: Foundation.Notification) {
+    @objc open func keyboardWillShow(_ notification: Foundation.Notification) {
         if let scrollableView = scrollableView {
             let scrollViewRect = view.convert(scrollableView.frame, from: scrollableView.superview)
             
@@ -42,7 +42,7 @@ open class SHKeyboardViewController: UIViewController {
         }
     }
     
-    open func keyboardWillHide(_ notification: Foundation.Notification) {
+    @objc open func keyboardWillHide(_ notification: Foundation.Notification) {
         if let scrollableView = scrollableView {
             var contentInsets = scrollableView.contentInset
             contentInsets.bottom = 0

@@ -9,7 +9,7 @@
 import Foundation
 
 public extension NSAttributedString {
-    public func replace(HTMLTag tag: String, with attributes: [String: AnyObject]) -> NSAttributedString {
+    public func replace(HTMLTag tag: String, with attributes: [NSAttributedStringKey: Any]) -> NSAttributedString {
         let openTag = "<\(tag)>"
         let closeTag = "</\(tag)>"
         let resultingText: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
@@ -142,7 +142,7 @@ public extension String {
 }
 
 public extension String {
-    public func fontSizeThatFits(_ font: UIFont, attributes: [String: AnyObject]?, size: CGSize) -> UIFont {
+    public func fontSizeThatFits(_ font: UIFont, attributes: [NSAttributedStringKey: Any]?, size: CGSize) -> UIFont {
         let txt = NSString(string: self)
         var fntSize = font.pointSize + 1
         var width = CGFloat(Float.infinity)
@@ -150,9 +150,9 @@ public extension String {
         repeat {
             fntSize -= 1
             let fnt = UIFont(name: font.fontName, size: fntSize)
-            var attrs = attributes ?? [String: AnyObject]()
-            attrs[NSFontAttributeName] = fnt
-            let size = txt.size(attributes: attrs)
+            var attrs = attributes ?? [NSAttributedStringKey: Any]()
+            attrs[NSAttributedStringKey.font] = fnt
+            let size = txt.size(withAttributes: attrs)
             width = size.width
             height = size.height
         } while ((width > size.width || height > size.height) && fntSize > 0)

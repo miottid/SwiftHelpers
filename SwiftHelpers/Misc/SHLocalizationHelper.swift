@@ -47,7 +47,9 @@ public extension String {
     public func localize(arguments: [String: Any] = [:], bundle: Bundle = Bundle.main) -> String {
         let key = pluralize(self, count: arguments["count"] as? NSNumber)
         var str = NSLocalizedString(key, bundle: bundle, comment: "")
-        arguments.forEach { key, val in
+        arguments.forEach { (arg) in
+            
+            let (key, val) = arg
             str = str.replacingOccurrences(of: "{\(key)}", with: "\(val)")
         }
         return str

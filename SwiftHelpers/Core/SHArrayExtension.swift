@@ -15,7 +15,7 @@ public extension Array {
             fn(item)
         }
     }
-
+    
     public func split(forChunkSize chunkSize: Int) -> [[Element]] {
         return stride(from: 0, to: self.count, by: chunkSize).map({ (startIndex) -> [Element] in
             let endIndex = (startIndex.advanced(by: chunkSize) > self.count) ? self.count-startIndex : chunkSize
@@ -52,35 +52,35 @@ func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Eleme
     return buffer
 }
 
-extension Array {
-    public var shuffled: Array {
-        return shuffle()
-    }
-
-    func shuffle() -> Array {
-        var elements = self
-        for index in indices.dropLast() {
-            guard
-                case let swapIndex = Int(arc4random_uniform(UInt32(count - index))) + index,
-                swapIndex != index else { continue }
-            swap(&elements[index], &elements[swapIndex])
+extension MutableCollection where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffle() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in startIndex ..< endIndex - 1 {
+            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            swapAt(i, j)
         }
-        return elements
     }
+}
 
+extension Array {
     public var random: Element {
         return chooseOne
     }
-
+    
     func random(n: Int) -> [Element] {
         return choose(n: n)
     }
-
+    
     public var chooseOne: Element {
         return self[Int(arc4random_uniform(UInt32(count)))]
     }
-
+    
     func choose(n: Int) -> [Element] {
+        var shuffled = self
+        shuffled.shuffle()
         return Array(shuffled.prefix(n))
     }
 }
