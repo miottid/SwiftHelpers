@@ -103,7 +103,7 @@ public extension UIImage {
         }
 
         // Swap for modulo
-        if a < b {
+        if a! < b! {
             let c = a
             a = b
             b = c
