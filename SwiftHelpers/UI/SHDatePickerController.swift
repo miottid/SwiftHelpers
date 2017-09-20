@@ -167,7 +167,7 @@ open class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTra
         UIView.animate(withDuration: duration / 3, delay: 0, options: UIViewAnimationOptions(), animations: {
             background.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: duration / 3 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
+                UIView.animate(withDuration: duration / 3.0 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
                     bottomView.transform = CGAffineTransform.identity
                     }, completion: { _ in
                         transitionContext.completeTransition(true)
