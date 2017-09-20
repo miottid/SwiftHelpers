@@ -62,7 +62,7 @@ public extension UIImage {
 
         let width = Int(self.size.width)
         let height = Int(self.size.height)
-        let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: 0);
+        let context = CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: .allZeros);
         context?.draw(cgImage!, in: imageRect)
 
         if let imageRef = context?.makeImage() {
