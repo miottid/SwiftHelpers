@@ -94,19 +94,19 @@ open class SHDatePickerViewController: UIViewController {
         toolbar.items = [leftSpace, cancelButton, centerSpace, confirmButton, rightSpace]
     }
 
-    func tappedDoneButton(_ button: UIBarButtonItem) {
+    @objc func tappedDoneButton(_ button: UIBarButtonItem) {
         dismissWithDate(datePicker.date)
     }
 
-    func tappedCancelButton(_ button: UIBarButtonItem) {
+    @objc func tappedCancelButton(_ button: UIBarButtonItem) {
         dismissWithDate(nil)
     }
 
-    func tappedBackgroundView(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func tappedBackgroundView(_ gestureRecognizer: UITapGestureRecognizer) {
         dismissWithDate(nil)
     }
 
-    func swipedBackgroundView(_ gestureRecognizer: UISwipeGestureRecognizer) {
+    @objc func swipedBackgroundView(_ gestureRecognizer: UISwipeGestureRecognizer) {
         dismissWithDate(nil)
     }
 

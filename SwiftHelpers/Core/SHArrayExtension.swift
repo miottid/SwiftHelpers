@@ -63,7 +63,7 @@ extension Array {
             guard
                 case let swapIndex = Int(arc4random_uniform(UInt32(count - index))) + index,
                 swapIndex != index else { continue }
-            swap(&elements[index], &elements[swapIndex])
+            elements.swapAt(index, swapIndex)
         }
         return elements
     }

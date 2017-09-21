@@ -45,16 +45,16 @@ import UIKit
     }
 
     fileprivate func refreshAttributes() {
-        var attributes: [String: AnyObject] = [:]
-        attributes[NSFontAttributeName] = font
+        var attributes: [NSAttributedStringKey: AnyObject] = [:]
+        attributes[.font] = font
         if kerning > 0 {
-            attributes[NSKernAttributeName] = kerning as AnyObject?
+            attributes[.kern] = kerning as AnyObject?
         }
         if interlineSpacing > 0 {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = textAlignment
             paragraphStyle.lineSpacing = CGFloat(interlineSpacing)
-            attributes[NSParagraphStyleAttributeName] = paragraphStyle
+            attributes[.paragraphStyle] = paragraphStyle
         }
         attributedText = NSAttributedString(string: text ?? "", attributes: attributes)
     }

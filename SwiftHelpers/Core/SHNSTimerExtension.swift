@@ -15,7 +15,7 @@ private class TimerBlock {
         self.block = block
     }
     
-    dynamic func execute() {
+    @objc dynamic func execute() {
         block()
     }
 }

@@ -82,7 +82,7 @@ open class SHPagedScrollView: UIScrollView {
         isPagingEnabled = true
     }
 
-    func viewWasTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+    @objc func viewWasTapped(_ gestureRecognizer: UITapGestureRecognizer) {
         guard let view = gestureRecognizer.view, let index = views.index(of: view) else { return }
         datasource?.pagedScrollView?(self, tappedViewAt: index)
     }
