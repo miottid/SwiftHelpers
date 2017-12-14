@@ -12,8 +12,8 @@ import UIKit
 
 open class SHTextField: UITextField {
     
-    var placeholderInsets: UIEdgeInsets = UIEdgeInsets.zero
-    var textInsets: UIEdgeInsets = UIEdgeInsets.zero
+    open var placeholderInsets: UIEdgeInsets = UIEdgeInsets.zero
+    open var textInsets: UIEdgeInsets = UIEdgeInsets.zero
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, placeholderInsets)
