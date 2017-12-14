@@ -32,7 +32,7 @@ public extension URLRequest {
             }
         }
         
-        if let HTTPBody = httpBody, let bodyString = String(data: HTTPBody, encoding: String.Encoding.utf8) , bodyString.characters.count > 0 {
+        if let HTTPBody = httpBody, let bodyString = String(data: HTTPBody, encoding: String.Encoding.utf8) , bodyString.count > 0 {
             let sanitize = bodyString.replacingOccurrences(of: "\n", with: "").replacingOccurrences(of: " ", with: "")
             cURLString += "\(newLine) -d '\(sanitize)'"
         }

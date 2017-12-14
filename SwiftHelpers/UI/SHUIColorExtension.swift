@@ -26,12 +26,12 @@ public extension UIColor {
         var alpha: CGFloat = 1.0
         
         if hex.hasPrefix("#") {
-            let index   = hex.characters.index(hex.startIndex, offsetBy: 1)
+            let index   = hex.index(hex.startIndex, offsetBy: 1)
             let hex     = hex.substring(from: index)
             let scanner = Scanner(string: hex)
             var hexValue: CUnsignedLongLong = 0
             if scanner.scanHexInt64(&hexValue) {
-                switch (hex.characters.count) {
+                switch (hex.count) {
                 case 3:
                     red   = CGFloat((hexValue & 0xF00) >> 8)       / 15.0
                     green = CGFloat((hexValue & 0x0F0) >> 4)       / 15.0

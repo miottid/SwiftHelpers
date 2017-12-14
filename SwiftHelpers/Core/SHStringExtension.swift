@@ -53,7 +53,7 @@ public extension String {
         guard let re = try? NSRegularExpression(pattern: pattern, options: []) else {
             return []
         }
-        let range = NSRange(location: 0, length: self.characters.count)
+        let range = NSRange(location: 0, length: self.count)
         return re.matches(in: self, options: [], range: range).flatMap { $0.range }
     }
 }
@@ -76,10 +76,10 @@ public extension String {
         var hex = self
         
         if hex.hasPrefix("#") { // Strip leading "#" if it exists
-            hex = hex.substring(from: hex.characters.index(after: hex.startIndex))
+            hex = hex.substring(from: hex.index(after: hex.startIndex))
         }
         
-        switch hex.characters.count {
+        switch hex.count {
         case 1: // Turn "f" into "ffffff"
             hex = hex.`repeat`(6)
         case 2: // Turn "ff" into "ffffff"
@@ -90,7 +90,7 @@ public extension String {
             break
         }
         
-        assert(hex.characters.count == 6, "Invalid hex value")
+        assert(hex.count == 6, "Invalid hex value")
         
         var r: UInt32 = 0
         var g: UInt32 = 0
@@ -130,7 +130,7 @@ public extension String {
 public extension String {
     
     subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
     
     subscript (i: Int) -> String {
@@ -138,7 +138,7 @@ public extension String {
     }
     
     subscript (r: Range<Int>) -> String {
-        return substring(with: Range(characters.index(startIndex, offsetBy: r.lowerBound)..<characters.index(startIndex, offsetBy: r.upperBound)))
+        return substring(with: Range(index(startIndex, offsetBy: r.lowerBound)..<index(startIndex, offsetBy: r.upperBound)))
     }
 }
 
@@ -168,7 +168,7 @@ public extension String {
         
         // build numerator
         let one = "\(numerator)"
-        for char in one.characters {
+        for char in one {
             if let num = Int(String(char)), let val = superScript(from: num) {
                 result.append(val)
             }
@@ -177,7 +177,7 @@ public extension String {
         // build denominator
         let two = "\(denominator)"
         result.append("/")
-        for char in two.characters {
+        for char in two {
             if let num = Int(String(char)), let val = subScript(from: num) {
                 result.append(val)
             }
