@@ -302,18 +302,18 @@ class NSDateExtensionTests: XCTestCase {
         let now = Date()
         let begin = now.beginningOfDay
         let comps = CurrentCalendar.dateComponents(CalendarAllUnits, from: begin)
-        XCTAssert(comps.hour == 0, "\(comps.hour) == 0")
-        XCTAssert(comps.minute == 0, "\(comps.minute) == 0")
-        XCTAssert(comps.second == 0, "\(comps.second) == 0")
+        XCTAssert(comps.hour == 0, "\(String(describing: comps.hour)) == 0")
+        XCTAssert(comps.minute == 0, "\(String(describing: comps.minute)) == 0")
+        XCTAssert(comps.second == 0, "\(String(describing: comps.second)) == 0")
     }
     
     func testEndOfDay() {
         let now = Date()
         let begin = now.endOfDay
         let comps = CurrentCalendar.dateComponents(CalendarAllUnits, from: begin)
-        XCTAssert(comps.hour == 23, "\(comps.hour) = 23")
-        XCTAssert(comps.minute == 59, "\(comps.minute) == 59")
-        XCTAssert(comps.second == 59, "\(comps.second) == 59")
+        XCTAssert(comps.hour == 23, "\(String(describing: comps.hour)) = 23")
+        XCTAssert(comps.minute == 59, "\(String(describing: comps.minute)) == 59")
+        XCTAssert(comps.second == 59, "\(String(describing: comps.second)) == 59")
     }
     
     func testNextHour() {
@@ -328,7 +328,7 @@ class NSDateExtensionTests: XCTestCase {
         
         let nextHourComps = calendar.dateComponents(CalendarAllUnits, from: nextHour)
         
-        XCTAssertTrue(testedComps.date == nextHourComps.date, "(\(testedComps.date)) == \(nextHourComps.date)")
+        XCTAssertTrue(testedComps.date == nextHourComps.date, "(\(String(describing: testedComps.date)) == \(String(describing: nextHourComps.date))")
     }
     
     func testAddingTimeIntervalToDate() {

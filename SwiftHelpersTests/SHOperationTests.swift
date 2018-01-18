@@ -34,7 +34,7 @@ class SHOperationTests: XCTestCase {
         }
         queue.addOperation(testOp)
         waitForExpectations(timeout: 10) { error in
-            print("Expectation timeout: \(error)")
+            print("Expectation timeout: \(String(describing: error))")
         }
     }
     
@@ -47,7 +47,7 @@ class SHOperationTests: XCTestCase {
         }
         queue.addOperation(testOp)
         waitForExpectations(timeout: 10) { error in
-            print("Expectation timeout: \(error)")
+            print("Expectation timeout: \(String(describing: error))")
         }
     }
     

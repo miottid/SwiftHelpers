@@ -76,7 +76,7 @@ public extension String {
         var hex = self
         
         if hex.hasPrefix("#") { // Strip leading "#" if it exists
-            hex = hex.substring(from: hex.index(after: hex.startIndex))
+            hex = String(hex[hex.index(after: hex.startIndex)...])
         }
         
         switch hex.count {
@@ -138,7 +138,8 @@ public extension String {
     }
     
     subscript (r: Range<Int>) -> String {
-        return substring(with: Range(index(startIndex, offsetBy: r.lowerBound)..<index(startIndex, offsetBy: r.upperBound)))
+        let substring = self[index(startIndex, offsetBy: r.lowerBound)..<index(startIndex, offsetBy: r.upperBound)]
+        return String(substring)
     }
 }
 
