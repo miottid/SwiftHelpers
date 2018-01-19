@@ -228,7 +228,10 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
         guard let transitionContext = transitionContext else {
             return 0
         }
-        return transitionContext.isAnimated ? 0.35 : 0
+        
+        let percent = (frameOfPresentedViewInContainerView.height * 100 / presentingViewController.view.bounds.height)
+        let duration = min(0.35, TimeInterval(0.50 * percent / 100))
+        return transitionContext.isAnimated ? duration : 0
     }
     
     //| ----------------------------------------------------------------------------
