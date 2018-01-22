@@ -16,6 +16,7 @@
 		58272EA71C6CF22900D7A3BF /* UIColorExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066D6851A7646900069C258 /* UIColorExtensionTests.swift */; };
 		58272EA81C6CF23100D7A3BF /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B053A0071AC353D700278644 /* StringExtensionTests.swift */; };
 		586B734F1C83A90500934192 /* SHOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B734E1C83A90500934192 /* SHOperationTests.swift */; };
+		588294422016606600B96137 /* Debounce+Throttle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588294412016606600B96137 /* Debounce+Throttle.swift */; };
 		588D09B41E88965D002D7AB8 /* SHNamedEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588D09B31E88965D002D7AB8 /* SHNamedEntity.swift */; };
 		588D09B61E889BDB002D7AB8 /* SHComparisonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588D09B51E889BDB002D7AB8 /* SHComparisonHelpers.swift */; };
 		58BF429B1C44014D009AE63D /* NSURLRequestCURLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58BF429A1C44014D009AE63D /* NSURLRequestCURLTests.swift */; };
@@ -92,6 +93,7 @@
 		5815F19D1E87455A00FFAE40 /* NumbersConvertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumbersConvertion.swift; sourceTree = "<group>"; };
 		5822DFDC1F5D957200A5C8D7 /* SHMailExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHMailExtension.swift; sourceTree = "<group>"; };
 		586B734E1C83A90500934192 /* SHOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHOperationTests.swift; sourceTree = "<group>"; };
+		588294412016606600B96137 /* Debounce+Throttle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Debounce+Throttle.swift"; sourceTree = "<group>"; };
 		58854D391C01E19900B3F303 /* CommonInitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonInitTests.swift; sourceTree = "<group>"; };
 		588D09B31E88965D002D7AB8 /* SHNamedEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHNamedEntity.swift; sourceTree = "<group>"; };
 		588D09B51E889BDB002D7AB8 /* SHComparisonHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHComparisonHelpers.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 		F013D8681E2FA21D006437AB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				588294412016606600B96137 /* Debounce+Throttle.swift */,
 				F013D8691E2FA21D006437AB /* SHArrayExtension.swift */,
 				F013D86A1E2FA21D006437AB /* SHComparisonHelper.swift */,
 				F013D86B1E2FA21D006437AB /* SHDegreesToRadiansExtension.swift */,
@@ -488,6 +491,7 @@
 				F013D8B01E2FA21D006437AB /* SHCreditCardValidator.swift in Sources */,
 				F013D8A51E2FA21D006437AB /* SHNSTimerExtension.swift in Sources */,
 				F013D8BE1E2FA21D006437AB /* SHNoBackTitleViewController.swift in Sources */,
+				588294422016606600B96137 /* Debounce+Throttle.swift in Sources */,
 				F013D8CA1E2FA21D006437AB /* SHUIScreenExtension.swift in Sources */,
 				588D09B61E889BDB002D7AB8 /* SHComparisonHelpers.swift in Sources */,
 				588D09B41E88965D002D7AB8 /* SHNamedEntity.swift in Sources */,
