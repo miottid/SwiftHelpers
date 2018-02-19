@@ -36,7 +36,7 @@ public extension UIView {
     }
 
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
-    public func addAnimation(type: String, subType: String?, duration: TimeInterval) -> CATransition {
+    @discardableResult public func addAnimation(type: String, subType: String?, duration: TimeInterval) -> CATransition {
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
