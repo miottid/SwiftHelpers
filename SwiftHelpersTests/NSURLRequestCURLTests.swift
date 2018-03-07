@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by David Miotti on 11/01/16.
-//  Copyright © 2016 Wopata. All rights reserved.
+//  Copyright © 2016 Muxu.Muxu. All rights reserved.
 //
 
 import XCTest
@@ -24,7 +24,7 @@ class NSURLRequestCURLTests: XCTestCase {
     func testcURL() {
         var req = URLRequest(url: URL(string: "http://google.fr")!)
         req.httpMethod = "POST"
-        let params = [ "email": "david.miotti@wopata.com" ]
+        let params = [ "email": "david.miotti@Muxu.Muxu.com" ]
 
         let json = try! JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         req.httpBody = json
@@ -38,7 +38,7 @@ class NSURLRequestCURLTests: XCTestCase {
         let rangeOfHeader = cURL.rangeString("-H 'Authorization: Boddy'")
         XCTAssert(rangeOfHeader.length > 0, "\(cURL) Should have formatted header")
         
-        let rangeOfParams = cURL.rangeString("-d '{\"email\":\"david.miotti@wopata.com\"}'")
+        let rangeOfParams = cURL.rangeString("-d '{\"email\":\"david.miotti@Muxu.Muxu.com\"}'")
         XCTAssert(rangeOfParams.length > 0, "\(cURL) Should have formatted params")
 
         let rangeOfURL = cURL.rangeString("'http://google.fr'")

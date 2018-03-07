@@ -3,7 +3,7 @@
 //  Boddy
 //
 //  Created by David Miotti on 03/09/2015.
-//  Copyright (c) 2015 Wopata. All rights reserved.
+//  Copyright (c) 2015 Muxu.Muxu. All rights reserved.
 //
 
 #if os(iOS)

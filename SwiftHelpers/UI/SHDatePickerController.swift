@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by Maxime de Chalendar on 16/08/2016.
-//  Copyright © 2016 Wopata. All rights reserved.
+//  Copyright © 2016 Muxu.Muxu. All rights reserved.
 //
 
 import UIKit

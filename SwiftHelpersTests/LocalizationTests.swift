@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by Guillaume Bellue on 18/01/2017.
-//  Copyright © 2017 Wopata. All rights reserved.
+//  Copyright © 2017 Muxu.Muxu. All rights reserved.
 //
 
 import XCTest

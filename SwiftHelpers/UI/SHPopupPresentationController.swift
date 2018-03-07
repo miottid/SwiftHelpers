@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by David Miotti on 18/01/2018.
-//  Copyright © 2018 Wopata. All rights reserved.
+//  Copyright © 2018 Muxu.Muxu. All rights reserved.
 //
 
 #if os(iOS)

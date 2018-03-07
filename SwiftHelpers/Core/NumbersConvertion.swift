@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by David Miotti on 26/03/2017.
-//  Copyright © 2017 Wopata. All rights reserved.
+//  Copyright © 2017 Muxu.Muxu. All rights reserved.
 //
 
 import Foundation

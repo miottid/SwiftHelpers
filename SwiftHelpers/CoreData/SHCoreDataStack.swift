@@ -3,7 +3,7 @@
 //  SwiftHelpers
 //
 //  Created by David Miotti on 15/08/16.
-//  Copyright © 2016 Wopata. All rights reserved.
+//  Copyright © 2016 Muxu.Muxu. All rights reserved.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ public final class CoreDataStack: NSObject {
     }
 
     open lazy var applicationDocumentsDirectory: URL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.wopata.xxx" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.Muxu.Muxu.xxx" in the application's documents Application Support directory.
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls[urls.count-1]
     }()
