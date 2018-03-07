@@ -7,6 +7,10 @@
 //
 
 #if os(iOS)
+    
+public protocol SHPopupPresentationControllerDelegate: class {
+    func presentationControllerDidDismiss(presentationController: SHPopupPresentationController)
+}
 
 import UIKit
 
@@ -22,6 +26,8 @@ private let cornerRadius: CGFloat = 12
 open class SHPopupPresentationController: UIPresentationController, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     
     open var interactor: SHPopupInteractor?
+    
+    public var popupPresentationControllerDelegate: SHPopupPresentationControllerDelegate?
     
     // You can customize the dimming view background color
     open var dimingViewBackgroundColor = UIColor.black.withAlphaComponent(0.5)
@@ -219,7 +225,9 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
     // MARK: - Tap Gesture Recognizer
     
     @objc func dimmingViewTapped(_ sender: UITapGestureRecognizer) {
-        presentingViewController.dismiss(animated: true)
+        presentingViewController.dismiss(animated: true, completion: {
+            self.popupPresentationControllerDelegate?.presentationControllerDidDismiss(presentationController: self)
+        })
     }
     
     // MARK:  - UIViewControllerAnimatedTransitioning
@@ -358,5 +366,5 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
         return interactor.hasStarted ? interactor : nil
     }
 }
-
+    
 #endif
