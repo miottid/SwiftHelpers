@@ -390,6 +390,27 @@ public extension Date {
         return Date()
     }
 
+    /// Return a new date representing the nearest hour
+    public var nearestHour: Date {
+        let currentHour = self.hour
+        let currentMinutes = self.minute
+
+        var comps = (CurrentCalendar as NSCalendar).components(CalendarAllUnits, from: self)
+        if currentMinutes < 30 {
+            comps.minute = 0
+            if let date = CurrentCalendar.date(from: comps) {
+                return date
+            }
+            return self
+        }
+
+        comps.hour = currentHour + 1
+        if let date = CurrentCalendar.date(from: comps) {
+            return date
+        }
+        return self
+    }
+
     ///Create a new date 7 days later than the current, in the current calendar
     ///
     ///- returns: A new NSDate by adding 7 days.
@@ -458,6 +479,12 @@ public extension Date {
     public var hour: Int {
         let comps = (CurrentCalendar as NSCalendar).components(.hour, from: self)
         return comps.hour!
+    }
+
+    ///Returns the minute in the current day, using the current calendar
+    public var minute: Int {
+        let comps = (CurrentCalendar as NSCalendar).components(.minute, from: self)
+        return comps.minute!
     }
 
     ///Returns the number of days in the current month
