@@ -53,6 +53,12 @@ public extension Date {
     }
 }
 
+public extension TimeInterval {
+    public var seconds: SHTimeInterval {
+        return SHTimeInterval(seconds: toInt)
+    }
+}
+
 public extension Date {
     /// Convert a this Date object to an NSDate
     ///
