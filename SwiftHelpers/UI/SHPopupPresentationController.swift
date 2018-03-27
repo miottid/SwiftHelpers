@@ -310,17 +310,17 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
         }
         
         let duration = transitionDuration(using: transitionContext)
-        
-        UIView.animate(withDuration: duration, animations: {
+
+        UIView.animate(withDuration: duration, delay: 0, options: .curveEaseInOut, animations: {
             if isPresenting {
                 toView!.frame = toViewFinalFrame
             } else {
                 fromView!.frame = fromViewFinalFrame
             }
-        }) { finished in
+        }, completion: { finished in
             let wasCancelled = transitionContext.transitionWasCancelled
             transitionContext.completeTransition(!wasCancelled)
-        }
+        })
     }
     
     // MARK: - UIViewControllerTransitioningDelegate
