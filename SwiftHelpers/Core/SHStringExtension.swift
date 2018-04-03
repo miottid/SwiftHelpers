@@ -54,7 +54,7 @@ public extension String {
             return []
         }
         let range = NSRange(location: 0, length: self.count)
-        return re.matches(in: self, options: [], range: range).flatMap { $0.range }
+        return re.matches(in: self, options: [], range: range).compactMap { $0.range }
     }
 }
 

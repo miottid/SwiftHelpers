@@ -61,7 +61,7 @@ import UIKit
 
     fileprivate func addMask(locations: [CGFloat], colors: [CGColor]) {
         let maskLayer = CAGradientLayer()
-        maskLayer.locations = locations.flatMap {
+        maskLayer.locations = locations.compactMap {
             let d = Double($0)
             return NSNumber(floatLiteral: d)
         }
