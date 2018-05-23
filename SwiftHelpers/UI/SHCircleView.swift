@@ -11,9 +11,9 @@
 import UIKit
 
 /// A UIView subclass that updates its corner radius on layoutSubviews to make it look like a circle
-class SHCircleView: UIView {
+open class SHCircleView: UIView {
 
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         layer.cornerRadius = max(bounds.width, bounds.height) / 2
@@ -23,9 +23,9 @@ class SHCircleView: UIView {
 }
 
 /// A UIImageView subclass that updates its corner radius on layoutSubviews to make it look like a circle
-class SHCircleImageView: UIImageView {
+open class SHCircleImageView: UIImageView {
 
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         layer.cornerRadius = max(bounds.width, bounds.height) / 2
@@ -35,9 +35,9 @@ class SHCircleImageView: UIImageView {
 }
 
 /// A UIButton subclass that updates its corner radius on layoutSubviews to make it look like a circle
-class SHCircleButton: UIButton {
+open class SHCircleButton: UIButton {
 
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
 
         layer.cornerRadius = max(bounds.width, bounds.height) / 2

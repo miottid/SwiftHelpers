@@ -11,35 +11,35 @@
 import UIKit
 
 /// A class that allows you to edit the line spacing and kerning of labels without having to deal with NSAttributedString
-@IBDesignable class AttributedLabel: UILabel {
+@IBDesignable open class AttributedLabel: UILabel {
 
     /// The kerning (characters spacing) of the label
-    @IBInspectable var kerning: CGFloat = 0 {
+    @IBInspectable open var kerning: CGFloat = 0 {
         didSet {
             refreshAttributes()
         }
     }
 
     /// The interline spacing (vertical spacing) of the label
-    @IBInspectable var interlineSpacing: CGFloat = 0 {
+    @IBInspectable open var interlineSpacing: CGFloat = 0 {
         didSet {
             refreshAttributes()
         }
     }
 
-    override var text: String? {
+    override open var text: String? {
         didSet {
             refreshAttributes()
         }
     }
 
-    override var font: UIFont? {
+    override open var font: UIFont? {
         didSet {
             refreshAttributes()
         }
     }
 
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         refreshAttributes()
     }
