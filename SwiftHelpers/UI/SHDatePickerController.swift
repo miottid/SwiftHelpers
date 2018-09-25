@@ -18,10 +18,10 @@ import UIKit
 open class SHDatePickerViewController: UIViewController {
 
     /// The date picker of the controller. Can be used to customize the mode, for example.
-    open let datePicker = UIDatePicker()
+    public let datePicker = UIDatePicker()
 
     /// The background view that overlays the presenter's content. Default background is black @ 50%
-    open let background = UIView()
+    public let background = UIView()
 
     /// Called whenenver the view controller is dismissed. Date is `nil` unless the confirm button is tapped.
     open var completion: ((Date?) -> Void)? = nil
