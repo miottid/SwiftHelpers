@@ -310,7 +310,7 @@ public func / (lhs: Int, rhs: CGFloat) -> CGFloat {
 }
 
 public extension Comparable {
-    public func ranged(between v1: Self, and v2: Self) -> Self {
+    func ranged(between v1: Self, and v2: Self) -> Self {
         if v1 < v2 {
             return max(v1, min(v2, self))
         }

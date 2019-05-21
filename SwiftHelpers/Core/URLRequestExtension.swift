@@ -14,7 +14,7 @@ public extension URLRequest {
         return string.replacingOccurrences(of: "\"", with: "\\\"")
     }
     
-    public var cURLString: String {
+    var cURLString: String {
         var cURLString = "curl -i"
         let newLine = " \\\n\t"
         

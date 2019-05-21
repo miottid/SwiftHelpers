@@ -79,7 +79,7 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
         // effect calls for only the top two corners to be rounded we size
         // the view such that the bottom CORNER_RADIUS points lie below
         // the bottom edge of the screen.
-        let presentationRoundedCornerViewFrame = UIEdgeInsetsInsetRect(presentationWrapperView.bounds, UIEdgeInsets(top: 0, left: 0, bottom: -cornerRadius, right: 0))
+        let presentationRoundedCornerViewFrame = presentationWrapperView.bounds.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: -cornerRadius, right: 0))
         let presentationRoundedCornerView = UIView(frame: presentationRoundedCornerViewFrame)
         presentationRoundedCornerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         presentationRoundedCornerView.layer.cornerRadius = cornerRadius
@@ -89,7 +89,7 @@ open class SHPopupPresentationController: UIPresentationController, UIViewContro
         // presentedViewControllerWrapperView is inset by CORNER_RADIUS points.
         // This also matches the size of presentedViewControllerWrapperView's
         // bounds to the size of -frameOfPresentedViewInContainerView.
-        let presentedViewControllerWrapperViewFrame = UIEdgeInsetsInsetRect(presentationRoundedCornerView.bounds, UIEdgeInsets(top: 0, left: 0, bottom: -cornerRadius, right: 0))
+        let presentedViewControllerWrapperViewFrame = presentationRoundedCornerView.bounds.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: -cornerRadius, right: 0))
         let presentedViewControllerWrapperView = UIView(frame: presentedViewControllerWrapperViewFrame)
         presentedViewControllerWrapperView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

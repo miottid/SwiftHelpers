@@ -20,13 +20,13 @@ public enum DeviceResolution {
 }
 
 ///Helper for accessing the device resolution, it may also help checking the kind of device
-public func deviceResolution() -> DeviceResolution {
+func deviceResolution() -> DeviceResolution {
     return UIScreen.main.deviceResolution()
 }
 
 public extension UIScreen {
     
-    public func deviceResolution() -> DeviceResolution {
+    func deviceResolution() -> DeviceResolution {
         var resolution: DeviceResolution = .unknown
         let scale = self.scale
         let pixelHeight = self.bounds.height * scale

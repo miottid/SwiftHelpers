@@ -10,79 +10,79 @@ import Foundation
 import UIKit
 
 public extension TimeInterval {
-    public var toInt: Int {
+    var toInt: Int {
         return Int(self)
     }
     
-    public var toFloat: Float {
+    var toFloat: Float {
         return Float(self)
     }
     
-    public var toCGFloat: CGFloat {
+    var toCGFloat: CGFloat {
         return CGFloat(self)
     }
     
-    public var number: NSNumber {
+    var number: NSNumber {
         return NSNumber(value: self)
     }
 }
 
 public extension Int {
-    public var toDouble: Double {
+    var toDouble: Double {
         return Double(self)
     }
     
-    public var toFloat: Float {
+    var toFloat: Float {
         return Float(self)
     }
     
-    public var toCGFloat: CGFloat {
+    var toCGFloat: CGFloat {
         return CGFloat(self)
     }
     
-    public var number: NSNumber {
+    var number: NSNumber {
         return NSNumber(value: self)
     }
 }
 
 public extension Float {
-    public var toDouble: Double {
+    var toDouble: Double {
         return Double(self)
     }
     
-    public var toInt: Int {
+    var toInt: Int {
         return Int(self)
     }
     
-    public var toCGFloat: CGFloat {
+    var toCGFloat: CGFloat {
         return CGFloat(self)
     }
     
-    public var number: NSNumber {
+    var number: NSNumber {
         return NSNumber(value: self)
     }
 }
 
 public extension CGFloat {
-    public var toDouble: Double {
+    var toDouble: Double {
         return Double(self)
     }
     
-    public var toInt: Int {
+    var toInt: Int {
         return Int(self)
     }
     
-    public var toFloat: Float {
+    var toFloat: Float {
         return Float(self)
     }
     
-    public var number: NSNumber {
+    var number: NSNumber {
         return NSNumber(value: self.toFloat)
     }
 }
 
 public extension Bool {
-    public var number: NSNumber {
+    var number: NSNumber {
         return NSNumber(value: self)
     }
 }

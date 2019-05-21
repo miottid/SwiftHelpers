@@ -11,13 +11,13 @@
 import UIKit
 
 public extension CAShapeLayer {
-    public func addRoundedCornerRadius(topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, in frame: CGRect) {
+    func addRoundedCornerRadius(topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat, in frame: CGRect) {
         path = UIBezierPath(rect: frame, topLeft: topLeft, topRight: topRight, bottomLeft: bottomLeft, bottomRight: bottomRight).cgPath
     }
 }
 
 public extension UIBezierPath {
-    public convenience init(rect: CGRect, topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat) {
+    convenience init(rect: CGRect, topLeft: CGFloat, topRight: CGFloat, bottomLeft: CGFloat, bottomRight: CGFloat) {
         self.init()
         
         let circleCenters: (topLeft: CGPoint, topRight: CGPoint, bottomLeft: CGPoint, bottomRight: CGPoint) = (

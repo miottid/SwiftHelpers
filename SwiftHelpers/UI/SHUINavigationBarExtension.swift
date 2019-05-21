@@ -12,36 +12,36 @@ import UIKit
 
 extension UINavigationBar {
     
-    public func hideBackgroundImageView() {
+    func hideBackgroundImageView() {
         let background = backgroundImageViewInNavigationBar(self)
         background?.alpha = 0
     }
     
-    public func showBackgroundImageView() {
+    func showBackgroundImageView() {
         let background = backgroundImageViewInNavigationBar(self)
         background?.alpha = 1
     }
 
-    public func setBackgroundImageViewAlpha(_ alpha:CGFloat) {
+    func setBackgroundImageViewAlpha(_ alpha:CGFloat) {
         let background = backgroundImageViewInNavigationBar(self)
         UIView.animate(withDuration: 0.2, animations: { () -> Void in
             background!.alpha = alpha
         })
     }
     
-    public func setBottomHairLineAlpha(_ alpha:CGFloat) {
+    func setBottomHairLineAlpha(_ alpha:CGFloat) {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
         UIView.animate(withDuration: 0.2, animations: { () -> Void in
             navigationBarImageView!.alpha = alpha
         })
     }
 
-    public func hideBottomHairline() {
+    func hideBottomHairline() {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
         navigationBarImageView?.alpha = 0
     }
     
-    public func showBottomHairline() {
+    func showBottomHairline() {
         let navigationBarImageView = hairlineImageViewInNavigationBar(self)
         navigationBarImageView?.alpha = 0.5
     }

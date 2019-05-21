@@ -9,7 +9,7 @@
 import Foundation
 
 // Comparison operators with optionals were removed from the Swift Standard Libary.
-public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
     case let (l?, r?):
         return l < r
@@ -21,7 +21,7 @@ public func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 // Comparison operators with optionals were removed from the Swift Standard Libary.
-public func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
     switch (lhs, rhs) {
     case let (l?, r?):
         return l > r

@@ -41,8 +41,8 @@ open class SHDatePickerViewController: UIViewController {
     fileprivate func setupBackground() {
         view.addSubview(background)
         background.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["background": background])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[background]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["background": background])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[background]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["background": background])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
@@ -59,8 +59,8 @@ open class SHDatePickerViewController: UIViewController {
     fileprivate func setupBottomView() {
         view.addSubview(bottomView)
         bottomView.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[bottomView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["bottomView": bottomView])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[bottomView]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["bottomView": bottomView])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[bottomView]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["bottomView": bottomView])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
@@ -70,8 +70,8 @@ open class SHDatePickerViewController: UIViewController {
     fileprivate func setupDatePicker() {
         bottomView.addSubview(datePicker)
         datePicker.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[datePicker]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePicker": datePicker])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePicker]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["datePicker": datePicker])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[datePicker]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["datePicker": datePicker])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
     }
@@ -79,8 +79,8 @@ open class SHDatePickerViewController: UIViewController {
     fileprivate func setupToolbar() {
         bottomView.addSubview(toolbar)
         toolbar.translatesAutoresizingMaskIntoConstraints = false
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolbar]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar])
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[toolbar][datePicker]", options: NSLayoutFormatOptions(), metrics: nil, views: ["toolbar": toolbar, "datePicker": datePicker])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[toolbar]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["toolbar": toolbar])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[toolbar][datePicker]", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["toolbar": toolbar, "datePicker": datePicker])
         let constraints = hConstraints + vConstraints
         view.addConstraints(constraints)
 
@@ -152,8 +152,8 @@ open class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTra
 
         container.addSubview(datePickerView)
 
-        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
-        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[datePickerView]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
+        let hConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|[datePickerView]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
+        let vConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|[datePickerView]|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["datePickerView": datePickerView])
         let constraints = hConstraints + vConstraints
         container.addConstraints(constraints)
         container.layoutIfNeeded()
@@ -164,10 +164,10 @@ open class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTra
         let background = datePickerController.background
         background.alpha = 0
 
-        UIView.animate(withDuration: duration / 3, delay: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: duration / 3, delay: 0, options: UIView.AnimationOptions(), animations: {
             background.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: duration / 3.0 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
+                UIView.animate(withDuration: duration / 3.0 * 2, delay: 0, options: UIView.AnimationOptions(), animations: {
                     bottomView.transform = CGAffineTransform.identity
                     }, completion: { _ in
                         transitionContext.completeTransition(true)
@@ -186,10 +186,10 @@ open class SHDatePickerAnimatedTransition: NSObject, UIViewControllerAnimatedTra
         let bottomView = datePickerController.bottomView
         let background = datePickerController.background
 
-        UIView.animate(withDuration: duration / 3 * 2, delay: 0, options: UIViewAnimationOptions(), animations: {
+        UIView.animate(withDuration: duration / 3 * 2, delay: 0, options: UIView.AnimationOptions(), animations: {
             bottomView.transform = CGAffineTransform(translationX: 0, y: bottomView.bounds.height)
             }, completion: { _ in
-                UIView.animate(withDuration: duration / 3, delay: 0, options: UIViewAnimationOptions(), animations: {
+                UIView.animate(withDuration: duration / 3, delay: 0, options: UIView.AnimationOptions(), animations: {
                     background.alpha = 0
                     }, completion: { _ in
                         datePickerView?.removeFromSuperview()

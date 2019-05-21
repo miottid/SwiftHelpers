@@ -10,7 +10,7 @@ import CoreData
 
 public extension NSManagedObjectContext {
 
-    public func cascadeSave() throws {
+    func cascadeSave() throws {
         var contextToSave: NSManagedObjectContext? = self
         while let ctx = contextToSave {
             if ctx.hasChanges {

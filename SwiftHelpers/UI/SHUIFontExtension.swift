@@ -12,7 +12,7 @@ import UIKit
 
 public extension UIFont {
     
-    public func kern(tracking: CGFloat) -> CGFloat {
+    func kern(tracking: CGFloat) -> CGFloat {
         return tracking * self.pointSize / 1000
     }
 }

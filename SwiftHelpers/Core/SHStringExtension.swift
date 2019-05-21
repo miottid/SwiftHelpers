@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension NSAttributedString {
-    public func replace(HTMLTag tag: String, with attributes: [NSAttributedStringKey: AnyObject]) -> NSAttributedString {
+    func replace(HTMLTag tag: String, with attributes: [NSAttributedString.Key: AnyObject]) -> NSAttributedString {
         let openTag = "<\(tag)>"
         let closeTag = "</\(tag)>"
         let resultingText: NSMutableAttributedString = self.mutableCopy() as! NSMutableAttributedString
@@ -36,19 +36,19 @@ public extension NSAttributedString {
 }
 
 public extension String {
-    public var floatValue: Float {
+    var floatValue: Float {
         return (self as NSString).floatValue
     }
     
-    public func isNumeric() -> Bool {
+    func isNumeric() -> Bool {
         return Int(self) != nil
     }
     
-    public func rangeString(_ string: String) -> NSRange {
+    func rangeString(_ string: String) -> NSRange {
         return NSString(string: self).range(of: string)
     }
 
-    public func ranges(of string: String) -> [NSRange] {
+    func ranges(of string: String) -> [NSRange] {
         let pattern = NSRegularExpression.escapedPattern(for: string)
         guard let re = try? NSRegularExpression(pattern: pattern, options: []) else {
             return []
@@ -60,19 +60,19 @@ public extension String {
 
 public extension String {
     
-    public var CGColor: CGColor {
+    var CGColor: CGColor {
         return self.CGColor(1)
     }
     
-    public var UIColor: UIKit.UIColor {
+    var UIColor: UIKit.UIColor {
         return self.UIColor(1)
     }
     
-    public func CGColor (_ alpha: CGFloat) -> CGColor {
+    func CGColor (_ alpha: CGFloat) -> CGColor {
         return self.UIColor(alpha).cgColor
     }
     
-    public func UIColor (_ alpha: CGFloat) -> UIKit.UIColor {
+    func UIColor (_ alpha: CGFloat) -> UIKit.UIColor {
         var hex = self
         
         if hex.hasPrefix("#") { // Strip leading "#" if it exists
@@ -113,7 +113,7 @@ public extension String {
         return UIKit.UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    public var firstLetterCapitalization: String {
+    var firstLetterCapitalization: String {
         var str = self
         str.replaceSubrange(str.startIndex...str.startIndex, with: String(str[str.startIndex]).uppercased())
         return str
@@ -122,7 +122,7 @@ public extension String {
 
 public extension String {
     
-    public func `repeat` (_ count: Int) -> String {
+    func `repeat` (_ count: Int) -> String {
         return "".padding(toLength: (self as NSString).length * count, withPad: self, startingAt:0)
     }
 }
@@ -144,7 +144,7 @@ public extension String {
 }
 
 public extension String {
-    public func fontSizeThatFits(_ font: UIFont, attributes: [NSAttributedStringKey: AnyObject]?, size: CGSize) -> UIFont {
+    func fontSizeThatFits(_ font: UIFont, attributes: [NSAttributedString.Key: AnyObject]?, size: CGSize) -> UIFont {
         let txt = NSString(string: self)
         var fntSize = font.pointSize + 1
         var width = CGFloat(Float.infinity)
@@ -152,7 +152,7 @@ public extension String {
         repeat {
             fntSize -= 1
             let fnt = UIFont(name: font.fontName, size: fntSize)
-            var attrs = attributes ?? [NSAttributedStringKey: AnyObject]()
+            var attrs = attributes ?? [NSAttributedString.Key: AnyObject]()
             attrs[.font] = fnt
             let size = txt.size(withAttributes: attrs)
             width = size.width
@@ -164,7 +164,7 @@ public extension String {
 
 public extension String {
 
-    public init?(numerator: Int, denominator: Int) {
+    init?(numerator: Int, denominator: Int) {
         var result = ""
         
         // build numerator

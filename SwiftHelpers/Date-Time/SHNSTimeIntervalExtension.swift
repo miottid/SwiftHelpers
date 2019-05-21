@@ -9,13 +9,13 @@
 import Foundation
 
 ///dispatch_after with seconds
-public func delay(_ timeInterval: TimeInterval, closure:@escaping ()->()) {
+func delay(_ timeInterval: TimeInterval, closure:@escaping ()->()) {
     return timeInterval.delay(closure)
 }
 
 public extension TimeInterval {
     ///Perform the given block after a delay
-    public func delay(_ closure:@escaping ()->()) {
+    func delay(_ closure:@escaping ()->()) {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + self, execute: closure)
     }
 }

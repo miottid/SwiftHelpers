@@ -94,7 +94,7 @@ public final class CoreDataStack: NSObject {
 
     // MARK: - Core Data Saving support
 
-    public func saveContext() {
+    func saveContext() {
         if managedObjectContext.hasChanges {
             do {
                 try managedObjectContext.save()

@@ -11,7 +11,7 @@
 import UIKit
 
 extension UIButton {
-    public func centerLabelVertically(with padding:CGFloat) {
+    func centerLabelVertically(with padding:CGFloat) {
         // update positioning of image and title
         let imageSize = self.imageView!.frame.size
         self.titleEdgeInsets = UIEdgeInsets(top:0,
@@ -35,7 +35,7 @@ extension UIButton {
             right:widthDelta/2.0)
     }
     
-    public func setBackgroundColor(color: UIColor?, for state: UIControlState) {
+    func setBackgroundColor(color: UIColor?, for state: UIControl.State) {
         guard let color = color else { return }
         setBackgroundImage(UIImage(color: color), for: state)
     }

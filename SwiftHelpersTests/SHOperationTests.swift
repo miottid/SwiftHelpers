@@ -11,7 +11,7 @@ import SwiftHelpers
 
 private let kTestOperationSayHello = "Hello!"
 
-final class TestOperation: SHOperation {
+class TestOperation: SHOperation {
     func sayHello() -> String {
         return kTestOperationSayHello
     }

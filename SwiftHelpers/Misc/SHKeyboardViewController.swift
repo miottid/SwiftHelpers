@@ -20,15 +20,15 @@ open class SHKeyboardViewController: UIViewController {
 
     open func registerKeyboardNotifications(for view: UIScrollView) {
         scrollableView = view
-        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SHKeyboardViewController.keyboardWillHide(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
     @objc open func keyboardWillShow(_ notification: Foundation.Notification) {
         if let scrollableView = scrollableView {
             let scrollViewRect = view.convert(scrollableView.frame, from: scrollableView.superview)
             
-            if let rectValue = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            if let rectValue = (notification as NSNotification).userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
                 let kbRect = view.convert(rectValue.cgRectValue, from: nil)
                 
                 let hiddenScrollViewRect = scrollViewRect.intersection(kbRect)

@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 
 public class SHMail {
-    public func sendMail(subject: String?, recipient: String, in controller: UIViewController) {
+    func sendMail(subject: String?, recipient: String, in controller: UIViewController) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             if let subject = subject {

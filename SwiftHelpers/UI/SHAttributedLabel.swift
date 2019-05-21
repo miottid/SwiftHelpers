@@ -45,7 +45,7 @@ import UIKit
     }
 
     fileprivate func refreshAttributes() {
-        var attributes: [NSAttributedStringKey: AnyObject] = [:]
+        var attributes: [NSAttributedString.Key: AnyObject] = [:]
         attributes[.font] = font
         if kerning > 0 {
             attributes[.kern] = kerning as AnyObject?

@@ -10,7 +10,7 @@ import Foundation
 
 public extension DateFormatter {
     ///A convenience NSDateFormatter initializer
-    public convenience init(dateFormat: String) {
+    convenience init(dateFormat: String) {
         self.init()
         self.dateFormat = dateFormat
     }

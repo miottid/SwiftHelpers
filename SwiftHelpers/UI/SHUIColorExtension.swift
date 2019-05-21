@@ -11,7 +11,7 @@
 import UIKit
 
 ///Mix two colors
-public func blendColor(_ firstColor: UIColor, secondColor: UIColor, alpha: Float) -> UIColor {
+func blendColor(_ firstColor: UIColor, secondColor: UIColor, alpha: Float) -> UIColor {
     return firstColor.blend(with: secondColor, alpha: alpha)
 }
 
@@ -19,7 +19,7 @@ public extension UIColor {
     
     ///Create a color from hexa
     ///- returns: UIColor created based on the hexa
-    public convenience init(hex: String) {
+    convenience init(hex: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue:  CGFloat = 0.0
@@ -62,18 +62,18 @@ public extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
     
-    public convenience init(rgbValue: UInt32) {
+    convenience init(rgbValue: UInt32) {
         let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
         let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
         let blue = CGFloat(rgbValue & 0xFF)/256.0
         self.init(red:red, green:green, blue:blue, alpha:1.0)
     }
     
-    public convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+    convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
         self.init(red:r/255.0, green:g/255.0, blue:b/255.0, alpha:a)
     }
     
-    public func blend(with color: UIColor, alpha: Float) -> UIColor {
+    func blend(with color: UIColor, alpha: Float) -> UIColor {
         let boundAlpha = min(1.0, max(0.0, alpha))
         let beta = 1.0 - boundAlpha
         var r1: CGFloat = 0; var g1: CGFloat = 0; var b1: CGFloat = 0; var a1: CGFloat = 0
@@ -86,7 +86,7 @@ public extension UIColor {
         return UIColor(red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1.0)
     }
     
-    public func match(with color: UIColor, tolerance: CGFloat = 0.0) -> Bool {
+    func match(with color: UIColor, tolerance: CGFloat = 0.0) -> Bool {
         
         var r1 : CGFloat = 0
         var g1 : CGFloat = 0
@@ -101,10 +101,10 @@ public extension UIColor {
         color.getRed(&r2, green: &g2, blue: &b2, alpha: &a2)
         
         return
-            fabs(r1 - r2) <= tolerance &&
-                fabs(g1 - g2) <= tolerance &&
-                fabs(b1 - b2) <= tolerance &&
-                fabs(a1 - a2) <= tolerance
+            abs(r1 - r2) <= tolerance &&
+                abs(g1 - g2) <= tolerance &&
+                abs(b1 - b2) <= tolerance &&
+                abs(a1 - a2) <= tolerance
     }
     
     typealias RGBComponents = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)

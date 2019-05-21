@@ -32,10 +32,10 @@ open class SHMulticastDelegate<T> {
     }
 }
 
-public func += <T: AnyObject> (left: SHMulticastDelegate<T>, right: T) {
+func += <T: AnyObject> (left: SHMulticastDelegate<T>, right: T) {
     left.add(delegate: right)
 }
 
-public func -= <T: AnyObject> (left: SHMulticastDelegate<T>, right: T) {
+func -= <T: AnyObject> (left: SHMulticastDelegate<T>, right: T) {
     left.remove(delegate: right)
 }

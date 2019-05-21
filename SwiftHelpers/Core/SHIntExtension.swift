@@ -10,14 +10,14 @@ import Foundation
 
 public extension Int {
     ///Create a loop and run the provided block `self` times
-    public func each(_ fn: (Int) -> ()) {
+    func each(_ fn: (Int) -> ()) {
         for item in 0..<self {
             fn(item)
         }
     }
     
     ///Loop from 0 to self and apply the function passed in parameter
-    public func map(_ fn: (Int) -> AnyObject) -> [AnyObject] {
+    func map(_ fn: (Int) -> AnyObject) -> [AnyObject] {
         var objects = [AnyObject]()
         for item in 0..<self {
             objects.append(fn(item))
@@ -31,7 +31,7 @@ public extension Int {
     ///- parameter upper: The higher boundary
     ///
     ///- returns: A Random Int between lower and upper
-    public static func random(lower: Int, upper: Int) -> Int {
+    static func random(lower: Int, upper: Int) -> Int {
         let value = upper - lower + 1
         let rand = Int(arc4random_uniform(UInt32(value)))
         return lower + rand

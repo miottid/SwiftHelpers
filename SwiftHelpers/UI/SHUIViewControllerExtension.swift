@@ -11,7 +11,7 @@
 import UIKit
 
 public extension UIViewController {
-    public func isFirstInNavigationController() -> Bool {
+    func isFirstInNavigationController() -> Bool {
         if let nav = navigationController {
             if let first = nav.viewControllers.first {
                 return first == self
@@ -20,7 +20,7 @@ public extension UIViewController {
         return false
     }
 
-    public func showMessage(title: String, message: String? = nil) {
+    func showMessage(title: String, message: String? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default, handler: nil)
         alert.addAction(okAction)

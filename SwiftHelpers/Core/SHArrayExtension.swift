@@ -8,22 +8,6 @@
 
 import Foundation
 
-public extension Array {
-    ///Loop through each item
-    public func each(_ fn: (Element) -> ()) {
-        for item in self {
-            fn(item)
-        }
-    }
-
-    public func split(forChunkSize chunkSize: Int) -> [[Element]] {
-        return stride(from: 0, to: self.count, by: chunkSize).map({ (startIndex) -> [Element] in
-            let endIndex = (startIndex.advanced(by: chunkSize) > self.count) ? self.count-startIndex : chunkSize
-            return Array(self[startIndex..<startIndex.advanced(by: endIndex)])
-        })
-    }
-}
-
 ///Loop through each item of the provided array
 ///:params: array, the Array to loop from
 public func each(_ array: Array<AnyObject>, fn: ((AnyObject) -> ())) {
@@ -40,7 +24,7 @@ public func uniq<S : Sequence, T : Equatable>(_ source: S) -> [T] where S.Iterat
     return buffer
 }
 
-func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Element == T {
+public func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Element == T {
     var buffer = [T]()
     var added = Set<T>()
     for elem in source {
@@ -52,8 +36,22 @@ func uniq<S : Sequence, T : Hashable>(_ source: S) -> [T] where S.Iterator.Eleme
     return buffer
 }
 
-extension Array {
-    public var shuffled: Array {
+public extension Array {
+    ///Loop through each item
+    func each(_ fn: (Element) -> ()) {
+        for item in self {
+            fn(item)
+        }
+    }
+
+    func split(forChunkSize chunkSize: Int) -> [[Element]] {
+        return stride(from: 0, to: self.count, by: chunkSize).map({ (startIndex) -> [Element] in
+            let endIndex = (startIndex.advanced(by: chunkSize) > self.count) ? self.count-startIndex : chunkSize
+            return Array(self[startIndex..<startIndex.advanced(by: endIndex)])
+        })
+    }
+
+    var shuffled: Array {
         return shuffle()
     }
 
@@ -68,7 +66,7 @@ extension Array {
         return elements
     }
 
-    public var random: Element {
+    var random: Element {
         return chooseOne
     }
 
@@ -76,7 +74,7 @@ extension Array {
         return choose(n: n)
     }
 
-    public var chooseOne: Element {
+    var chooseOne: Element {
         return self[Int(arc4random_uniform(UInt32(count)))]
     }
 

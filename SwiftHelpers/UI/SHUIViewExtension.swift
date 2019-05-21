@@ -21,7 +21,7 @@ public extension UIView {
     func layoutIfNeeded(
         animationDuration duration: TimeInterval,
                           delay: TimeInterval = 0,
-                          options: UIViewAnimationOptions = UIViewAnimationOptions(rawValue: 0),
+                          options:  UIView.AnimationOptions = UIView.AnimationOptions(rawValue: 0),
                           completion: ((Bool) -> Void)? = nil) {
 
         guard duration > 0 else {
@@ -36,10 +36,10 @@ public extension UIView {
     }
 
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
-    @discardableResult public func addAnimation(type: String, subType: String?, duration: TimeInterval) -> CATransition {
+    @discardableResult func addAnimation(type: CATransitionType, subType: CATransitionSubtype?, duration: TimeInterval) -> CATransition {
         let transition = CATransition()
         transition.duration = duration
-        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = type
         transition.subtype = subType
         layer.add(transition, forKey: UUID().uuidString)
@@ -47,7 +47,7 @@ public extension UIView {
     }
     
     // Helper to add rounded corners to any side you want and with a specified radius
-    public func addRound(to corners:UIRectCorner, radius: CGFloat) {
+    func addRound(to corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
         let mask = CAShapeLayer()
         mask.path = path.cgPath
@@ -55,7 +55,7 @@ public extension UIView {
     }
     
     // Pick color from a 1x1 pixel at a given location
-    public func pickColor(at point: CGPoint) -> UIColor {
+    func pickColor(at point: CGPoint) -> UIColor {
         var pixel: [CUnsignedChar] = [0, 0, 0, 0]
         
         let colorSpace = CGColorSpaceCreateDeviceRGB()
@@ -80,7 +80,7 @@ public extension UIView {
     /// Can be used like this :
     /// let view: MyView = .fromNib(named: "MyView")
     /// If the nib name is the same as the classe's name, it can be ommited.
-    public class func fromNib<T : UIView>(named name: String? = nil) -> T {
+    class func fromNib<T : UIView>(named name: String? = nil) -> T {
         let className = NSStringFromClass(self).components(separatedBy: ".").last!
         let name = (name ?? className)
         return Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as! T

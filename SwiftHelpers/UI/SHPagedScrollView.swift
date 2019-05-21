@@ -83,7 +83,7 @@ open class SHPagedScrollView: UIScrollView {
     }
 
     @objc func viewWasTapped(_ gestureRecognizer: UITapGestureRecognizer) {
-        guard let view = gestureRecognizer.view, let index = views.index(of: view) else { return }
+        guard let view = gestureRecognizer.view, let index = views.firstIndex(of: view) else { return }
         datasource?.pagedScrollView?(self, tappedViewAt: index)
     }
 
@@ -94,7 +94,7 @@ public extension SHPagedScrollView /* Public methods */ {
     /**
      Reloads all the views in the paged scroll view
      */
-    public func reloadData() {
+    func reloadData() {
         guard let datasource = datasource else { return }
 
         views.forEach { $0.removeFromSuperview() }
@@ -109,7 +109,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter index:    The index of the item to scroll to
      - parameter animated: Whether the scroll should be animated or not
      */
-    public func scrollToItem(at index: Int, animated: Bool = true) {
+    func scrollToItem(at index: Int, animated: Bool = true) {
         loadViewsUntilIndex(index)
         let pageWidth = bounds.size.width
         let pageOffset = CGPoint(x: pageWidth * CGFloat(index), y: 0)
@@ -121,7 +121,7 @@ public extension SHPagedScrollView /* Public methods */ {
      - parameter idx: The index of the view to get
      - returns: The displayed view
      */
-    public func view(at idx: Int) -> UIView? {
+    func view(at idx: Int) -> UIView? {
         guard idx >= 0 && idx < views.count else {
             print("Can't get view in PagedScrollView at index \(idx). Index should be contained between in 0..<\(views.count)")
             return nil
@@ -138,7 +138,7 @@ public extension SHPagedScrollView /* Public methods */ {
      If currentIndex and nextIndex are the same; it means that the user is bouncing the scrollview.
      - returns: A tuple with the currently displayed index, the next index, and an iterpolation between the two.
      */
-    public func getScrollingInformationsFromCurrentContentOffset() -> (currentIndex: Int, nextIndex: Int, interpolation: Float) {
+    func getScrollingInformationsFromCurrentContentOffset() -> (currentIndex: Int, nextIndex: Int, interpolation: Float) {
         let pageWidth = bounds.width
         guard preloadedCount > 0 && pageWidth > 0 else { return (0, 0, 0) }
 

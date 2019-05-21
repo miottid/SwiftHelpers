@@ -11,7 +11,7 @@ import Foundation
 private var registeredNotificationsAssociationKey: UInt8 = 0
 
 public extension NSObject {
-    public func on(_ notificationName: String, block: @escaping (Foundation.Notification) -> Void) -> NSObjectProtocol {
+    func on(_ notificationName: String, block: @escaping (Foundation.Notification) -> Void) -> NSObjectProtocol {
         return NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: notificationName), object: nil, queue: nil) { n in
             block(n)
         }
