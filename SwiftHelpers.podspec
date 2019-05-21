@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 	s.name = 'SwiftHelpers'
-	s.version = '6.0.0'
+	s.version = '5.0.0'
 	s.license = 'MIT'
 	s.summary = 'A collection of Swift extensions'
 	s.homepage = 'git@github.com:dmiotti/SwiftHelpers.git'
 	s.social_media_url = 'https://twitter.com/davidmiotti'
 	s.authors = { 'David Miotti' => 'david.miotti@gmail.com' }
-	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => 'v6.0.0' }
+	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => 'v7.0.0' }
 
 	s.platform = :ios, '8.0'
 
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 	s.source_files = 'SwiftHelpers/**/*.swift'
 
 	s.requires_arc = true
-    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 
     s.subspec 'Core' do |sp|
         sp.source_files = 'SwiftHelpers/Core'
