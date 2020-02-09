@@ -10,7 +10,7 @@
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     func centerLabelVertically(with padding:CGFloat) {
         // update positioning of image and title
         let imageSize = self.imageView!.frame.size
