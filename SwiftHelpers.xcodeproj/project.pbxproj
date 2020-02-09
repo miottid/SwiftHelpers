@@ -413,22 +413,23 @@
 				TargetAttributes = {
 					B0BF98DF1A667CFA0085ADA4 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1120;
 					};
 					B0BF98EA1A667CFA0085ADA4 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 659B2N7HE9;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
 			buildConfigurationList = B0BF98DA1A667CF90085ADA4 /* Build configuration list for PBXProject "SwiftHelpers" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
 				en,
+				Base,
 			);
 			mainGroup = B0BF98D61A667CF90085ADA4;
 			productRefGroup = B0BF98E11A667CFA0085ADA4 /* Products */;
@@ -712,7 +713,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wopata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -727,7 +727,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wopata.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

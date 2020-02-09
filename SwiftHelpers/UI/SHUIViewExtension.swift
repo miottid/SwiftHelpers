@@ -21,7 +21,7 @@ public extension UIView {
     func layoutIfNeeded(
         animationDuration duration: TimeInterval,
                           delay: TimeInterval = 0,
-                          options:  UIView.AnimationOptions = UIView.AnimationOptions(rawValue: 0),
+                          options: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: 0),
                           completion: ((Bool) -> Void)? = nil) {
 
         guard duration > 0 else {
@@ -36,12 +36,12 @@ public extension UIView {
     }
 
     ///Helper to quickly add an animation to an UIView (typically for refresh purpose)
-    @discardableResult func addAnimation(type: CATransitionType, subType: CATransitionSubtype?, duration: TimeInterval) -> CATransition {
+    @discardableResult func addAnimation(type: String, subType: String?, duration: TimeInterval) -> CATransition {
         let transition = CATransition()
         transition.duration = duration
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        transition.type = type
-        transition.subtype = subType
+        transition.type = convertToCATransitionType(type)
+        transition.subtype = convertToOptionalCATransitionSubtype(subType)
         layer.add(transition, forKey: UUID().uuidString)
         return transition
     }
@@ -89,3 +89,14 @@ public extension UIView {
 }
 
 #endif
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToCATransitionType(_ input: String) -> CATransitionType {
+	return CATransitionType(rawValue: input)
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalCATransitionSubtype(_ input: String?) -> CATransitionSubtype? {
+	guard let input = input else { return nil }
+	return CATransitionSubtype(rawValue: input)
+}
