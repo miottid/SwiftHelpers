@@ -1,21 +1,18 @@
 Pod::Spec.new do |s|
 	s.name = 'SwiftHelpers'
-	s.version = '7.0.3'
+	s.version = '7.0.4'
 	s.license = 'MIT'
 	s.summary = 'A collection of Swift extensions'
 	s.homepage = 'git@github.com:dmiotti/SwiftHelpers.git'
 	s.social_media_url = 'https://twitter.com/davidmiotti'
 	s.authors = { 'David Miotti' => 'david.miotti@gmail.com' }
-	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => 'v7.0.3' }
-
-	s.platform = :ios, '8.0'
+	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => s.version }
 
     s.frameworks = 'UIKit', 'Foundation'
 
 	s.source_files = 'SwiftHelpers/**/*.swift'
-
-	s.requires_arc = true
-    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
+    
+    s.swift_versions = ['5.0', '5.1']
 
     s.subspec 'Core' do |sp|
         sp.source_files = 'SwiftHelpers/Core'
