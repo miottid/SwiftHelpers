@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 	s.name = 'SwiftHelpers'
-	s.version = '7.0.2'
+	s.version = '7.0.3'
 	s.license = 'MIT'
 	s.summary = 'A collection of Swift extensions'
 	s.homepage = 'git@github.com:dmiotti/SwiftHelpers.git'
 	s.social_media_url = 'https://twitter.com/davidmiotti'
 	s.authors = { 'David Miotti' => 'david.miotti@gmail.com' }
-	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => 'v7.0.2' }
+	s.source = { :git => 'git@github.com:dmiotti/SwiftHelpers.git', :tag => 'v7.0.3' }
 
 	s.platform = :ios, '8.0'
 
