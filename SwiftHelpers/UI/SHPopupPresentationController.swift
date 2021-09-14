@@ -8,7 +8,7 @@
 
 #if os(iOS)
     
-public protocol SHPopupPresentationControllerDelegate: class {
+public protocol SHPopupPresentationControllerDelegate: AnyObject {
     func presentationControllerDidDismiss(presentationController: SHPopupPresentationController)
 }
 

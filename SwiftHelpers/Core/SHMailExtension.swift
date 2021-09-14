@@ -27,14 +27,22 @@ public class SHMail {
             // Try googlemail://
             let googleMail = "googlemail://co?subject=\(encodedSubject)&to=\(encodedEmail)"
             if let url = URL(string: googleMail), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
                 return
             }
             
             // Try inbox-gmail://
             let inbox = "inbox-gmail://co?subject=\(encodedSubject)&to=\(encodedEmail)"
             if let url = URL(string: inbox), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.openURL(url)
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
                 return
             }
         }

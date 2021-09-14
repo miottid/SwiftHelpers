@@ -113,7 +113,6 @@ public final class CoreDataStack: NSObject {
         let nc = NotificationCenter.default
         nc.addObserver(self, selector: #selector(CoreDataStack.storesWillChange(_:)), name: NSNotification.Name.NSPersistentStoreCoordinatorStoresWillChange, object: nil)
         nc.addObserver(self, selector: #selector(CoreDataStack.storesDidChange(_:)), name: NSNotification.Name.NSPersistentStoreCoordinatorStoresDidChange, object: nil)
-        nc.addObserver(self, selector: #selector(CoreDataStack.persistentStoreDidImportUbiquitousContentChanges(_:)), name: NSNotification.Name.NSPersistentStoreDidImportUbiquitousContentChanges, object: nil)
     }
 
     @objc func storesWillChange(_ notification: Foundation.Notification) {
@@ -133,12 +132,5 @@ public final class CoreDataStack: NSObject {
 
     @objc func storesDidChange(_ notification: Foundation.Notification) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: kCoreDataStackStoreDidChange), object: nil, userInfo: nil)
-    }
-
-    @objc func persistentStoreDidImportUbiquitousContentChanges(_ notification: Foundation.Notification) {
-        managedObjectContext.perform {
-            self.managedObjectContext.mergeChanges(fromContextDidSave: notification)
-            NSLog("NSPersistentStoreDidImportUbiquitousContentChangesNotification executed")
-        }
     }
 }
